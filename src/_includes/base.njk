@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>My Eleventy Website</title>
+    <title>{{ title }}</title>
   </head>
   <body>
-     
-# Hello World! 
+    {% block content %} {{ content | safe }} {% endblock %}
   </body>
 </html>
