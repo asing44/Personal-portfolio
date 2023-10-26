@@ -1,7 +1,8 @@
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
+    // Watch CSS files for changes
     eleventyConfig.setBrowserSyncConfig({
-      files: './dist/static/**/*.css',
-    });
+          files: './dist/css/**/*.css'
+      });
   
     return {
       dir: {
@@ -10,3 +11,4 @@ module.exports = function (eleventyConfig) {
       },
     };
   };
+  
