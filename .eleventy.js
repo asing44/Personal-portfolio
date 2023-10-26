@@ -1,6 +1,6 @@
 module.exports = {
     dir: {
         input: "src",
-        output: "docs"
+        output: "dist"
     }
 };
