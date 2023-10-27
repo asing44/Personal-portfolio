@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="./css/main.css">
-  </head>
+    {% include "head.njk" %}
+  </head>¡
+  {% include "scripts.njk" %}
   <body>
-    {% block content %} {{ content | safe }} {% endblock %}
+    <!-- ** Fixed references -->
+    <div id="fixedReference"></div>
+    {% include "navigation.njk" %}
+    <main>{% block content %} {{ content | safe }} {% endblock %}</main>
+    {% include "footer.njk" %}
   </body>
+  <script src="/assets/js/base.js" ></script>
 </html> 

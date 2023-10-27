@@ -1,0 +1,841 @@
+// ** ----------------------------------------
+// ** ROOT
+// ** ----------------------------------------
+  
+// :root {
+//     /* Step -2: 9.50px → 14.08px */
+//   --step--2: clamp(0.5938rem, 0.4942rem + 0.4978vw, 0.88rem);
+
+//   /* Step -1: 13.44px → 17.60px */
+//   --step--1: clamp(0.84rem, 0.7496rem + 0.4522vw, 1.1rem);
+
+//   /* Step 0: 19.00px → 22.00px */
+//   --step-0: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+
+//   /* Step 1: 26.87px → 27.50px */
+//   --step-1: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+
+//   /* Step 2: 37.99px → 34.38px */
+//   --step-2: clamp(2.1488rem, 2.4529rem + -0.3924vw, 2.3744rem);
+
+//   /* Step 3: 53.72px → 42.97px */
+//   --step-3: clamp(2.6856rem, 3.5912rem + -1.1685vw, 3.3575rem);
+
+//   /* Step 4: 75.95px → 53.71px */
+//   --step-4: clamp(3.3569rem, 5.2304rem + -2.4174vw, 4.7469rem);
+
+//   /* Step 5: 107.40px → 67.14px */
+//   --step-5: clamp(4.1963rem, 7.5877rem + -4.3761vw, 6.7125rem);
+// }
+
+// ** ----------------------------------------
+// ** SASS VARIABLES
+// ** ----------------------------------------
+
+// * FONTS
+$headingFont: 'Quicksand', sans-serif;
+$mainFont: 'Quattrocento Sans', sans-serif;
+// * FONT SIZE
+$fs-2: clamp(0.5938rem, 0.4942rem + 0.4978vw, 0.88rem); /* Step -2: 9.50px → 14.08px */
+$fs-1: clamp(0.84rem, 0.7496rem + 0.4522vw, 1.1rem); /* 13.44px → 17.60px */
+$fs0: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem); /* Step 0: 19.00px → 22.00px */
+$fs1: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem); /* Step 1: 26.87px → 27.50px */
+$fs2: clamp(2.1488rem, 2.4529rem + -0.3924vw, 2.3744rem); /* Step 2: 37.99px → 34.38px */
+$fs3: clamp(2.6856rem, 3.5912rem + -1.1685vw, 3.3575rem); /* Step 3: 53.72px → 42.97px */
+$fs4: clamp(3.3569rem, 5.2304rem + -2.4174vw, 4.7469rem); /* Step 4: 75.95px → 53.71px */
+$fs5: clamp(4.1963rem, 7.5877rem + -4.3761vw, 6.7125rem); /* Step 5: 107.40px → 67.14px */
+// * FONT WEIGHT
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-bold: 700;
+// * Colors
+$light: #F1F6F9;
+$grey1: #E4E8EA;
+$grey2: #E4E8EA;
+$grey3: #D6DADA;
+$grey4: #BABEBB;
+$primary: #168AB8;
+$primaryLight: #84C0D9;
+$secondary: #2F2963;
+$secondaryLight: #9090AE;
+$info: #84C0D9;
+$success: #53BF32;
+$warning: #C97636;
+$error: #B50238;
+$greenAccent: #418F29;
+$redAccent: #730932;
+$dark: #141301;
+// * GENERAL SIZE
+$size-7: 1.615px;;
+$size-6: 2.615px;
+$size-5: 0.11rem;
+$size-4: 0.19rem;
+$size-3: 0.31rem;
+$size-2: 0.49rem;
+$size-1: 0.80rem;
+$size0: 1.00rem;
+$size1: 1.32rem;
+$size2: 1.73rem;
+$size3: 2.27rem;
+$size4: 3.00rem;
+$size5: 3.95rem;
+$size6: 5.19rem;
+$size7: 8.38rem;
+$size8: 13.35rem;
+// * GRID
+$articleColumn-desktop: 1.32fr 1fr;
+$articleColumn-reverse-desktop: 1fr 1.32fr;
+$altNav-desktop: 100px 3fr 1fr / 100%;
+$gap-desktop: $size3 $size2;
+$gap-laptop: $size1 $size0;
+// * MARGIN
+$margin-sm: $size0;
+$margin-md: $size2;
+$margin-lg: $size4;
+$margin-xl: $size6;
+$margin-hu: $size8;
+// * PADDING
+$padding-xs: $size-2;
+$padding-sm: $size0;
+$padding-md: $size3;
+$padding-lg: $size5;
+// * BORDER-RADIUS
+$border-sm: 10px;
+$border-md: 22.7px;
+$border-lg: 30px;
+
+// ** ----------------------------------------
+// ** MIXINS
+// ** ----------------------------------------
+
+@mixin box-shadow($x, $y, $blur, $c) {
+    -webkit-box-shadow: $x $y $blur $c;
+    -moz-box-shadow: $x $y $blur $c;
+    -ms-box-shadow: $x $y $blur $c;
+    box-shadow: $x $y $blur $c;
+}
+
+// ** ----------------------------------------
+// ** GLOBAL ELEMENTS
+// ** ----------------------------------------
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    line-height: 1.75;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0 $size1;
+    background-color: $light;
+    color: $dark;
+    font-family: $mainFont;
+    overflow-x: hidden;
+}
+
+p {margin-bottom: 1rem;}
+
+h1, h2, h3, h4, h5 {
+    margin: 3rem 0 1.38rem;
+    font-family: $headingFont;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 6.854rem;
+}
+
+h2 {font-size: 4.236rem;}
+
+h3 {font-size: 2.615rem;}
+
+h4 {font-size: 1.615rem;}
+
+small, .text_small {font-size: 0.615rem;}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:visited {
+        color: unset;
+    }
+}
+
+button {
+    padding: $size-1 $size2;
+    border: none;
+    border-radius: 1rem;
+    background-color: transparent;
+    font-size: $fs0;
+    cursor: pointer;
+
+}
+
+img {
+    border: none;
+    outline: none;
+}
+
+// ** ----------------------------------------
+// ** GLOBAL CLASSES
+// ** ----------------------------------------
+
+// * CONTAINERS AND WRAPPERS
+.-contain {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.-wrap {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.-wrap-center {
+    display: grid;
+    place-content: center;
+    @extend .-wrap;
+}
+
+// * DISPLAY OR HIDE
+.-inactive {
+    display: none !important;
+}
+
+// * LOCK SCROLL
+.-lockScroll {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+// * MARGINS AND PADDING
+
+// Margins
+.-margin-smTop {
+    margin-top: $size-3;
+}
+
+.-margin-mdTop {
+    margin-top: $size-1;
+}
+
+.-margin-md-rl {
+    margin: 0 $size-1;
+}
+
+.-margin-lgTop {
+    margin-top: $size1;
+}
+
+.-margin-lg-rl {
+    margin: 0 $size1;
+}
+
+.-margin-xlTop {
+    margin-top: $size4;
+}
+
+.-margin-xl-rl {
+    margin: 0 $size4;
+}
+
+.-margin-huTop {
+    margin-top: $size7;
+}
+
+.-margin-maTop {
+    margin-top: $size8;
+}
+
+// Padding
+.-padding-sm {
+    padding: $size-1 $size1;
+}
+
+.-padding-md {
+    padding: $size1 $size3;
+}
+
+.-padding-md-rl {
+    padding: 0 $size3;
+}
+
+.-padding-lg {
+    padding: $size3 $size5;
+}
+
+.padding-lg-rl {
+    padding: 0 $size5;
+}
+
+.-padding-xl {
+    padding: $size5 $size7;
+}
+
+.-padding-xl-rl {
+    padding: 0 $size7;
+}
+
+// * BUTTONS
+
+// Button 1
+.-button-1 {
+    position: relative;
+    background-color: $dark;
+    color: $light;
+}
+
+// Button 2 - Slider
+.-button-2-wrapper {
+    display: flex;
+    width: min-content;
+    border-radius: 1rem;
+    background-color: $grey1;
+    overflow: clip;
+
+    .-button-2 {
+        flex: 1;
+        padding: $size-2 $size1;
+        border-radius: 1rem;
+        color: $dark;
+        white-space: nowrap;
+        overflow: clip;
+    }
+
+    .-button-2-right {
+        flex: 0;
+    }
+
+    .-button-2-active {
+        background-color: $dark;
+        color: $light;
+    }
+
+    .-button-2:hover {
+        width: 100%;
+    }
+}
+
+// * STYLES
+
+// Remove list style
+.-no-list {
+    list-style: none;
+}
+
+// Ordered list
+.-ordered-list {
+    list-style: decimal;
+
+    .-list-head {
+        list-style: circle;
+    }
+}
+
+// Small emphasis
+.-sm-em {
+    font-style: italic;
+}
+
+// Tags
+.-tag-sm {
+    display: inline-block;
+    margin-left: $margin-sm;
+    padding: $padding-xs;
+    border-radius: $size-2;
+    background-color: $grey3;
+    font-size: $fs0;
+    line-height: $fs0;
+}
+
+// Images
+.-img-shadow-rg {
+    @include box-shadow(0px, 0px, $size4, $grey3);
+}
+
+// * ICONS
+
+// Arrows
+.-SVG-arrow {
+    &.arrow-back {
+        height: 1.5em;
+        fill: $light;
+    }
+}
+
+// ** ----------------------------------------
+// ** MISCELLANEOUS AND TESTING
+// ** ----------------------------------------
+
+#fixedReference {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#test-div {
+    height: 100vh;
+    width: 100%;
+    border: 2px solid green;
+}
+
+#profilePhoto {
+    height: 100%;
+    border-radius: 50%;
+}
+
+// ** ----------------------------------------
+// ** ANIMATIONS
+// ** ----------------------------------------
+
+// * PAGE CHANGE
+
+// Page change in
+.pageChangeIn-container {
+    display: grid;
+    position: fixed;
+    height: 120vh;
+    width: 120vw;
+    right: -10vw;
+    bottom: 0%;
+    place-content: center;
+    background-color: $dark;
+    z-index: 10;
+
+    p {
+        color: $light;
+        text-transform: capitalize;
+        font-family: $headingFont;
+        font-size: $fs3;
+        font-weight: $font-medium;
+    }
+}
+
+// Page change out
+.pageChangeOut-container {
+    display: none;
+    position: fixed;
+    height: 120vh;
+    width: 120vw;
+    right: -10vw;
+    top: 100%;
+    place-content: center;
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    background-color: $dark;
+
+    p {
+        color: $light;
+        text-transform: capitalize;
+        font-family: $headingFont;
+        font-size: $fs3;
+        font-weight: $font-medium;
+    }
+}
+
+// * PAGE LOAD
+// Bounce in
+.-animated-bounceIn {
+    position: relative;
+}
+
+// Slide in
+.-animated-expandRight {
+    display: inline-block;
+    position: relative;
+}
+
+// * LINKS
+
+// Link 1
+.-linkHover-1-hover {
+    display: block;
+    position: absolute;
+    height: $size-2;
+    width: $size-2;
+    top: 75%;
+    left: 50%;
+    margin-left: calc(-0.5 * $size-2);
+    border-radius: 50%;
+    background-color: $dark;
+    opacity: 0;
+}
+
+.-activeLink-page {
+    display: block;
+    position: absolute;
+    height: $size-2;
+    width: $size-2;
+    top: 90%;
+    left: 50%;
+    margin-left: calc(-0.5 * $size-2);
+    border-radius: 50%;
+    background-color: $dark;
+    opacity: 1
+}
+
+// ** ----------------------------------------
+// ** NAVIGATION
+// ** ----------------------------------------
+
+// * TOP NAVIGATION
+.navigation-windowTop {
+    display: grid;
+    position: relative;
+    height: 8.38vh;
+    width: 100%;
+    grid-template: 100% / 50px 1fr min-content;
+    z-index: 7;
+
+    #navigationWindowTop-homeButton {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: $padding-sm;
+        grid-area: 1 / 1;
+
+        #homeButton-link {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            #homeButton-img {
+                height: 100%;
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+
+    .heading-nav {
+        position: relative;
+        height: 100%;
+        grid-area: 1 / 3;
+
+        &:hover {
+            position: relative;
+        }
+
+        & > ul {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+        }
+
+        & > ul li {
+            display: block;
+            position: relative;
+            flex: 1;
+            padding-right: $size2;
+
+            &:last-child {
+                padding: 0;
+            }
+
+            a {
+                display: grid;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                place-content: center center;
+                font-size: $fs0;
+                font-weight: $font-bold;
+            }
+        }
+    }
+}
+
+// * SCOLLRED NAVIGATION BUTTON
+.navigation-scrolled-button {
+    display: flex;
+    position: fixed;
+    height: $size6;
+    width: $size6;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
+    gap: $size-1 0;
+    right: $size2;
+    top: $size4;
+    background-color: $dark;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 11;
+
+    .navButtonLine {
+        height: $size-4;
+        width: $size3;
+        border-radius: 1rem;
+        background-color: $light;
+    }
+
+    .navButtonHover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 100%;
+        border-radius: 50%;
+        background-color: $greenAccent;
+        z-index: -1;
+    }
+}
+
+// * SCROLLED NAVIGATION MODAL
+.navigationScrolledContainer {
+    display: grid;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    
+    .navigationScrolledMainWrapper {
+        display: grid;
+        position: relative;
+        height: 100%;
+        grid-template: $altNav-desktop;
+        width: 30%;
+        left: 100%;
+        padding: $padding-md;
+        background-color: $light;
+        z-index: 11;
+
+        .navScrolled-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: right;
+            column-gap: $size2;
+
+            #navigationScrolledButton-close {
+                display: flex;
+                height: $size6;
+                width: $size6;
+                place-content: center;
+                place-items: center;
+                flex-direction: column;
+                gap: $size-1 0;
+                background-color: $dark;
+                border-radius: 50%;
+                overflow: hidden;
+
+                .navButtonLineWrapper {
+                    position: relative;
+
+                    .navButtonLine {
+                        position: absolute;
+                        height: $size-4;
+                        width: $size3;
+                        border-radius: 1rem;
+                        background-color: $light;
+                        transform: rotate(45deg)
+                    }
+    
+                    .navButtonLine:first-of-type {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .navigationScrolledOverlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+        background:
+            linear-gradient(
+              to right,
+              hsla(0, 0%, 0%, 0) 0%,
+              hsla(0, 0%, 0%, 0.003) 7.5%,
+              hsla(0, 0%, 0%, 0.011) 13.4%,
+              hsla(0, 0%, 0%, 0.023) 18.1%,
+              hsla(0, 0%, 0%, 0.039) 21.8%,
+              hsla(0, 0%, 0%, 0.057) 25%,
+              hsla(0, 0%, 0%, 0.077) 28%,
+              hsla(0, 0%, 0%, 0.099) 31.1%,
+              hsla(0, 0%, 0%, 0.121) 34.6%,
+              hsla(0, 0%, 0%, 0.143) 38.9%,
+              hsla(0, 0%, 0%, 0.163) 44.3%,
+              hsla(0, 0%, 0%, 0.181) 51.2%,
+              hsla(0, 0%, 0%, 0.197) 59.8%,
+              hsla(0, 0%, 0%, 0.209) 70.6%,
+              hsla(0, 0%, 0%, 0.217) 83.9%,
+              hsla(0, 0%, 0%, 0.22) 100%
+            );
+        z-index: 10;
+    }
+}
+
+// ** ----------------------------------------
+// ** FOOTER
+// ** ----------------------------------------
+
+// footer {
+//     position: relative;
+//     width: calc(100% + (2 * $size1));
+//     left: -$size1;
+//     padding: $padding-md $padding-lg;
+//     background-color: $dark;
+    
+//     .footer-top {
+//         display: grid;
+//         position: relative;
+//         grid-template-columns: 400px 1fr;
+//         grid-template-rows: 250px;
+//         gap: $gap-desktop;
+//         color: $light;
+
+//         .fT-contactAsideWrapper {
+//             display: grid;
+//             position: relative;
+//             height: 100%;
+//             grid-template: 30% 1fr 1fr / 100%;
+//             gap: $gap-laptop;
+//             place-items: center;
+
+//             .fTContactAsidePhotoWrapper {
+//                 display: flex;
+//                 position: relative;
+//                 height: 100%;
+//                 width: 100%;
+//                 justify-content: center;
+//                 grid-area: 1 / 1;
+
+//                 img {
+//                     position: relative;
+//                     margin-right: $margin-hu;
+//                 }
+//             }
+
+//             .fTContactAsideButtonWrapper {
+//                 display: flex;
+//                 position: relative;
+//                 width: 83.8%;
+
+//                 .fTContactAside-button {
+//                     width: 100%;
+//                     background-color: $dark;
+//                     border: $size-7 solid $grey1;
+
+//                     i {
+//                         font-size: $fs1;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .fT-contact {
+//             display: flex;
+//             position: relative;
+//             height: 100%;
+//             width: 100%;
+//             place-content: center;
+//             border-radius: $border-md;
+
+//             .fTContact-link {
+//                 display: flex;
+//                 position: relative;
+//                 width: max-content;
+//                 align-self: flex-end;
+
+//                 .fTContactLink-wrapper-2 {
+//                     display: flex;
+//                     position: relative;
+    
+//                     .fTContact-text {
+//                         position: relative;
+//                         font-size: $fs4;
+//                         white-space: nowrap;
+//                     }
+
+//                     .fTContact-text::before {
+//                         content: "Let's work together";
+//                         position: absolute;
+//                         height: 100%;
+//                         width: 100%;
+//                         top: 100%;
+//                         left: 0;
+//                     }
+    
+//                     .fTContact-arrow {
+//                         position: relative;
+//                         font-size: $fs3;
+//                         margin-left: $margin-sm;
+//                         padding-top: $padding-xs;
+//                         overflow: clip;
+    
+//                         i {
+//                             position: relative;
+//                             transform: rotate(-45deg);
+//                         }
+
+//                         #footerContactArrow-2 {
+//                             position: absolute;
+//                             top: 55%;
+//                             left: -100%;
+
+//                             #arrow2 {
+//                                 transform: rotate(-45deg);
+//                             }
+//                         }
+//                     }
+//                 }
+    
+//                 .fTContact-underline {
+//                     height: $size-4;
+//                     width: 100%;
+//                     overflow: clip;
+    
+//                     div {
+//                         height: 100%;
+//                         background-color: $light;
+//                     }
+
+//                     div::before {
+//                         content: "";
+//                         position: absolute;
+//                         height: 100%;
+//                         width: 100%;
+//                         bottom: 0;
+//                         left: -110%;
+//                         background-color: $light;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     .footer-middle {
+
+//     }
+
+//     .footer-bottom {
+
+//     }
+// }
