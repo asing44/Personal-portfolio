@@ -1,0 +1,133 @@
+---
+layout: 'base.njk'
+title: 'Blog'
+permalink: './blog.html'
+---
+<link rel="stylesheet" href="./css/blog.css">
+<!-- ** Page change animation in-->
+<div class="pageChangeIn-container -contain">
+    <p>Blogs</p>
+</div>
+<!-- ** Page change animation out-->
+<div class="pageChangeOut-container -contain">
+    <p id="pageChange-text"></p>
+</div>
+<!-- ** Main -->
+<header class="-margin-huTop">
+    <h1 class="-wrap">
+        <span class="-animated-bounceIn">blog</span><br>
+        <span class="-animated-bounceIn">of First Last</span>
+    </h1>
+    <div class="-margin-mdTop -wrap">
+        <div class="-animated-expandRight-wrapper -button-2-wrapper">
+            <button class="-button-2 -button-2-active"><span class="-animated-expandRight">all blogs</span></button>
+            <button class="-button-2"><span class="-animated-expandRight">DMD 300</span></button>
+        </div>
+    </div>
+</header>
+<div class="articles-container -margin-huTop">
+    <article class="main-article">
+        <a class="article-link -navLink" href="blog-update1.html">
+            <img class="articleThumbnail -img-shadow-rg" src="./assets/images/blogs/thumbnails/blog-1-thumbnail.png" alt="The website's sitemap diagram">
+            <section class="main-article-title">
+                <h2>Project Update 1</h2>
+                <h3>Oct. 22 <span class="-tag-sm">DMD 300</span></h3>
+            </section>
+        </a>
+    </article>
+    <div class="aside-article-container">
+        <article class="aside-article-sm">
+            <img class="-img-shadow-rg">
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img class="-img-shadow-rg">
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article">
+            <img class="-img-shadow-rg">>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img class="-img-shadow-rg">
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+    </div>
+</div>
+<div class="articles-container-reverse -margin-huTop">
+    <article class="main-article-reverse">
+        <img>
+        <section class="main-article-title">
+            <h2>Title</h2>
+            <h3>Date and tag</h3>
+        </section>
+    </article>
+    <div class="aside-article-container">
+        <article class="aside-article-sm">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+        <article class="aside-article-sm">
+            <img>
+            <section class="aside-article-title">
+                <h3>Title</h3>
+                <h4>Date and tag</h4>
+            </section>
+        </article>
+    </div>
+</div>
+<div class="articles-pagination -padding-sm -margin-huTop">
+    <div class="pagination-wrapper -wrap">
+        <ol>
+            <li class="articlePage-forward"><i class="fa-solid fa-angle-left"></i></li>
+            <li class="articlePage -activeArticle">1</li>
+            <li class="articlePage">2</li>
+            <li class="articlePage-back"><i class="fa-solid fa-angle-right"></i></li>
+        </ol>
+    </div>
+</div>
+<script src="./assets/js/base.js"></script>
+<script src="./assets/js/blog.js"></script>

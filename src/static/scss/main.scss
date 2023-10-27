@@ -28,7 +28,7 @@
         p {
             display: flex;
             color: base.$light;
-            font-size: base.$fs3;
+            font-size: base.$fs4;
 
             .text-lt, .text-rt, .text-slash {
                 color: rgb(base.$light, 0.45);
@@ -94,9 +94,10 @@
 .hero {
     min-height: 100vh;
     width: 100%;
+    
     .hero-name {
         font-family: base.$headingFont;
-        font-size: base.$fs3;
+        font-size: base.$fs5;
         font-weight: 700;
     }
     .hero-name-scroll {
@@ -108,10 +109,4 @@
         margin: 0;
         white-space: nowrap;
     }
-}
-
-.temp {
-    height: 100vh;
-    width: 100%;
-    background-color: base.$dark;
 }

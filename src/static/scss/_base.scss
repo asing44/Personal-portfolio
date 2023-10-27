@@ -140,6 +140,11 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    position: relative;
+    padding: $padding-lg;
+}
+
 p {margin-bottom: 1rem;}
 
 h1, h2, h3, h4, h5 {
@@ -168,13 +173,10 @@ ul, ol {
     list-style: none;
 }
 
-a {
+a:hover, a:focus, a:active {
     text-decoration: none;
     cursor: pointer;
-    
-    &:visited {
-        color: unset;
-    }
+    color: $dark;
 }
 
 button {
@@ -426,7 +428,7 @@ img {
         color: $light;
         text-transform: capitalize;
         font-family: $headingFont;
-        font-size: $fs3;
+        font-size: $fs5;
         font-weight: $font-medium;
     }
 }
