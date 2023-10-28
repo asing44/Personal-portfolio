@@ -1,0 +1,68 @@
+// ** ----------------------------------------
+// ** INIT
+// ** ----------------------------------------
+
+@use "base";
+
+// ** ----------------------------------------
+// ** HEADER
+// ** ----------------------------------------
+
+header {
+    width: 100%;
+
+    h1 {
+        position: relative;
+    }
+
+    .blogHeader-bottom-wrapper {            
+        div {
+
+            .blogHeader-button-wrapper {
+                padding: 0;
+                background-color: base.$dark;
+                fill: base.$light;
+            }
+
+            .blogHeader-date {
+                display: inline-block;
+                color: base.$dark;
+            }
+        }
+    }
+}
+
+// ** ----------------------------------------
+// ** ARTICLE
+// ** ----------------------------------------
+
+.blog-articleWrapper {
+    .articleHeroWrapper {
+        position: relative;
+
+        .articleHero-img {
+            width: 100%;
+            border-radius: base.$border-lg;
+        }
+    }
+
+    section {
+        h2 {
+            font-size: base.$fs2;
+            color: base.$primary;
+        }
+
+        figure {
+            height: min-content;
+            width: 100%;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                border-radius: base.$border-md;
+            }
+        }
+    }
+}

@@ -4,8 +4,9 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ cssSrc }}">
     {% include "head.njk" %}
-  </head>¡
-  {% include "scripts.njk" %}
+    <!-- ** Scripts -->
+    {% include "scripts.njk" %}
+  </head>
   <body>
     <!-- ** Fixed references -->
     <div id="fixedReference"></div>
@@ -13,6 +14,6 @@
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
     {% include "footer.njk" %}
   </body>
-  <script src="./assets/js/base.js"></script>
-  <script src="{{ jsSrc }}"></script>
+  <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>
+  <script content-type="text/javascript" src="{{ jsSrc }}"></script>
 </html> 
