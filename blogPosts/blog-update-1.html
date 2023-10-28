@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Update 1</title>
+    <link rel="stylesheet" href="../css/blogPost.css">
+    <meta name="description" content="A personal portfolio website showcasing design and development skills.">
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+<link rel="icon" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ** Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EaselPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+  <script src="https://kit.fontawesome.com/f9e9cf76b4.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <!-- ** Fixed references -->
+    <div id="fixedReference"></div>
+    <nav class="navigation-windowTop -animated-slideDown -desktop">
+    <button id="navigationWindowTop-homeButton">
+      <a id="homeButton-link" class="-navLink" href="./index.html"><img id="homeButton-img" src="https://picsum.photos/62" alt="Logo"></a>
+    </button>
+    <div class="heading-nav">
+      <ul class="headingNav-wrapper">
+        <li class="-linkHover-1">
+            <a class="heading-navLink navLink-about -navLink" href="WIP.html">About<span class="-linkHover-1-hover"></span></a>
+        </li>
+        <li class="-linkHover-1">
+            <a class="heading-navLink navLink-work -navLink" href="WIP.html">Work<span class="-linkHover-1-hover"></span></a>
+        </li>
+        <li class="-linkHover-1">
+            <a class="heading-navLink navLink-blog -navLink" href="./blog.html">Blog<span class="-linkHover-1-hover"></span></a>
+        </li>
+        <li class="-linkHover-1">
+            <a class="heading-navLink navLink-contact -navLink" href="WIP.html">Contact<span class="-linkHover-1-hover"></span></a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<button class="navigation-scrolled-button -desktop">
+    <div class="navButtonLine"></div>
+    <div class="navButtonLine"></div>
+</button>
+<div class="navigationScrolledContainer -desktop -inactive">
+  <div class="navigationScrolledWrapper -wrap">
+      <div class="navScrolled-top -wrap"></div>
+      <div class="navScrolled-middle -wrap">
+        <nav class="navScrolledMiddle-navigation"></nav>
+      </div>
+      <div class="navScrolled-bottom -wrap"></div>
+  </div>
+  <div class="navigationScrolledOverlay"></div>
+</div>
+    <main> <!-- ** Page change animation in -->
+<div class="pageChangeIn-container -contain">
+  <p>Blog Update 1</p>
+</div>
+<!-- ** Page change animation out -->
+<div class="pageChangeOut-container -contain">
+  <p id="pageChange-text">Blog Update 1</p>
+</div>
+<!-- ** MAIN -->
+<header class="-margin-huTop">
+  <h1><span class="-animated-bounceIn">Blog Update 1</span><br></h1>
+  <div class="blogHeader-bottom-wrapper -margin-mdTop -wrap">
+      <div class="-animated-expandRight-wrapper -button-2-wrapper">
+          <a class="blogHeader-button-wrapper -button-2" href="blogs.html">
+              <button class="-navButton -nb-back"><span class="-animated-expandRight"><svg class="-SVG-arrow arrow-back" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg></span></button>
+          </a>
+          <div class="blogHeader-date -button-2-right -padding-sm"><span class="-animated-expandRight">Oct.&nbsp;2023</span></div>
+      </div>
+  </div>
+</header>
+<article class="blog-articleWrapper -margin-xlTop  -padding-xl-rl -wrap">
+  <div class="articleHeroWrapper -padding-md -wrap">
+    <img class="articleHero-img -margin-mdTop -img-shadow-rg -animated-scaleUp" src="../assets/images/blogs/thumbnails/blog-1-thumbnail.png" alt=""></div>
+  <section class="sectionWrapper">
+      <h2>Overview</h2>
+      <p>My project is designing and developing my personal portfolio website. The scope of this project will involve the homepage and the blog page where blogs like these will be located.</p>
+  </section>
+  <section class="sectionWrapper">
+      <h2>Introduction</h2>
+      <p>This week, I began and worked through the ideation and research phases of my project. I used the online project management tool Asana to organize the phases of the project.</p>
+      <figure class="articleFigure"><img class="-img-shadow-rg" src="Assets/Images/Blogs/Thumbnails/Blog update 1.png" alt="The project's timeline">
+          <label class="-sm-em">The project's timeline</label>
+      </figure>
+  </section>
+  <section class="sectionWrapper">
+      <h2>Progress update</h2>
+      <p>For the research and ideation phase I used ChatGPT to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
+          <ol class="-ordered-list -margin-xl-rl">
+              <li>Intent</li>
+              <li>Audience</li>
+              <li><ol class="-ordered-list -list-head">Research benchmarks
+                  <li class="-margin-lg-rl">What the project <em>must</em> have</li>
+                  <li class="-margin-lg-rl">What the project <em>should</em> have</li>
+                  <li class="-margin-lg-rl">What the project <em>can</em> have</li>
+              </ol></li>
+              <li><ol class="-ordered-list -list-head">Design and layout
+                  <li class="-margin-lg-rl">Brand and style</li>
+                  <li class="-margin-lg-rl">Layout and structure</li>
+                  <li class="-margin-lg-rl">Colors</li>
+                  <li class="-margin-lg-rl">Typography</li>
+              </ol></li>
+              <li><ol class="-ordered-list -list-head">Technology stack
+                  <li class="-margin-lg-rl">VS Code</li>
+                  <li class="-margin-lg-rl">Figma</li>
+                  <li class="-margin-lg-rl">Discord (Midjourney Bot)</li>
+                  <li class="-margin-lg-rl">ChatGPT</li>
+                  <li class="-margin-lg-rl">Adobe Firefly</li>
+                  <li class="-margin-lg-rl">Adobe Illustrator</li>
+                  <li class="-margin-lg-rl"><em>Adobe After Effects</em></li>
+                  <li class="-margin-lg-rl">GitHub</li>
+                  <li class="-margin-lg-rl">Git</li>
+                  <li class="-margin-lg-rl"><em>11ty*</em></li>
+              </ol></li>
+              <li class="-no-list"><em>Items marked with '*' may or may not be used</em></li>
+              <li>Sitemap</li>
+              <li>SEO considerations</li>
+          </ol>
+          <p>I used Figma to create some additional resources to better help visualize my research. Here is a visual of the sitemap I am planning on using:</p>
+          <figure class="articleFigure"><img class="-img-shadow-rg" src="Images/Blogs/Blog update 1/Sitemap.png" alt="The site's sitemap">
+              <label class="-sm-em">The site's sitemap</label>
+          </figure>
+      </p>
+  </section>
+  <section class="sectionWrapper">
+      <h2>Challenges faced</h2>
+      <p>Project scope and allotted time are two related pieces of this project that I am working through figuring out. I need to limit the scope of the project with respect to the time we are allotted to complete this project. This website will be used practically for real-world application to represent my work as a multimedia designer and web developer, however, for the scope of this project, I will need to limit my focus to areas of the site. Trying to complete a project of this scale in its entirety with the time we are allotted is not reasonable.</p>&nbsp;
+      <p>The challenge I am facing is trying to determine what I want to limit the scope to. I am initially thinking of focusing on the blog page and homepage of the site. These two pages make the most sense for this project since these pages will be the main pages accessed by site visitors associated with this class project.</p>
+  </section>
+  <section class="sectionWrapper">
+      <h2>Progress Update</h2>
+      <p>For the research and ideation phase I used ChatGPT to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
+          <ol class="-ordered-list -margin-xl-rl">
+              <li>Color</li>
+              <li>Typography</li>
+              <li>Layout</li>
+              <li>Spacing</li>
+              <li>Visual hierachy elements</li>
+          </ol>
+      </p>
+  </section>
+  <section class="sectionWrapper">
+      <h2>Conclusion</h2>
+      <p>I am excited to work on this project and am thankful to have the opportunity to update the progress along the way using my integrated blog page. If you have any concerns or questions, please feel free to reach out to me. Next week's blog will include more site design content and development.</p>
+  </section>
+</article> </main>
+    <footer class="-margin-huTop">
+    <div class="footer-top">
+        <div class="fT-contactAside">
+            <div class="fT-contactAsideWrapper">
+                <div class="fTContactAsidePhotoWrapper"><img id="profilePhoto" src=""></div>
+                <div class="fTContactAsideButtonWrapper"><button class="fTContactAside-button phone -button-1">
+                    <i class="fa-solid fa-phone"></i>
+                </button></div>
+                <div class="fTContactAsideButtonWrapper"><button class="fTContactAside-button email -button-1">
+                    <i class="fa-solid fa-envelope"></i>
+                </button></div>
+            </div>
+        </div>
+        <div class="fT-contact">
+            <a class="fTContact-link">
+                <div class="fTContactLink-wrapper">
+                    <div class="fTContactLink-wrapper-2 -wrap">
+                        <div class="fTContact-text">Let's work together</div>
+                        <div class="fTContact-arrow -wrap">
+                            <div id="footerContactArrow-1"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div id="footerContactArrow-2"><i id="arrow2" class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="fTContact-underline"><div id="footerContactUnderline"></div></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <div class="socials">Socials</div>
+        <div class="siteLinks">siteLinks</div>
+    </div>
+    <div class="footer-bottom">
+        <a  href=".index.html"><img id="homeButton-img" src="https://picsum.photos/62" alt="Logo"></a>
+        <p>Copyright</p>
+    </div>
+</footer>
+  </body>
+  <script content-type="text/javascript" src="../assets/js/base.js"></script>
+  <script content-type="text/javascript" src="../assets/js/blogPage.js"></script>
+</html> 
