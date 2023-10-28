@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ cssSrc }}">
     {% include "head.njk" %}
   </head>¡
   {% include "scripts.njk" %}
@@ -12,4 +13,6 @@
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
     {% include "footer.njk" %}
   </body>
+  <script src="./assets/js/base.js"></script>
+  <script src="{{ jsSrc }}"></script>
 </html> 
