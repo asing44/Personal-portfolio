@@ -29,7 +29,6 @@ body {
 
 main {
   position: relative;
-  padding: 3.95rem;
 }
 
 p {
@@ -70,7 +69,12 @@ ul, ol {
   list-style: none;
 }
 
-a:hover, a:focus, a:active {
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #141301;
+}
+a:hover, a:focus, a:active, a:visited {
   text-decoration: none;
   cursor: pointer;
   color: #141301;
@@ -303,7 +307,7 @@ img {
   color: #F1F6F9;
   text-transform: capitalize;
   font-family: "Quicksand", sans-serif;
-  font-size: clamp(2.6856rem, 3.5912rem - 1.1685vw, 3.3575rem);
+  font-size: clamp(4.1963rem, 7.5877rem - 4.3761vw, 6.7125rem);
   font-weight: 500;
 }
 
