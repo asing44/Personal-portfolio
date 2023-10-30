@@ -359,7 +359,7 @@ $(".-navLink").on("click", function(e) {
             if (/index/g.test($(this).attr("href"))) {
                 $("#pageChange-text").html("Home")
             } else {
-                $("#pageChange-text").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replace("-", " "));
+                $("#pageChange-text").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
             }
         }
     }).to(".pageChangeOut-container", {
