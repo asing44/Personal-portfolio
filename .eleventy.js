@@ -11,6 +11,5 @@ module.exports = function(eleventyConfig) {
         input: 'src',
         output: 'dist',
       },
-      pathPrefix: "/Personal-portfolio/"
     };
   };
