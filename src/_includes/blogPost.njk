@@ -14,24 +14,19 @@ cssSrc: ../css/blogPost.css
   <p id="pageChange-text">{{ title }}</p>
 </div>
 <!-- ** MAIN -->
+{# !! CHANGE DIV #}
 <header class="-margin-huTop">
   <h1><span class="-animated-bounceIn">{{ title }}</span><br></h1>
-  <div class="blogHeader-bottom-wrapper -margin-mdTop -wrap">
-      <div class="-animated-expandRight-wrapper -button-2-wrapper">
-          <a class="blogHeader-button-wrapper -button-2" href="blogs.html">
-              <button class="-navButton -nb-back"><span class="-animated-expandRight"><svg class="-SVG-arrow arrow-back" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg></span></button>
-          </a>
-          <div class="blogHeader-date -button-2-right -padding-sm"><span class="-animated-expandRight">Oct.&nbsp;2023</span></div>
-      </div>
-  </div>
+  <div class="-margin-mdTop -wrap">
+        <div class="-animated-expandRight-wrapper -button-2-wrapper">
+            <div class="-button-2 -button-2-active"><span class="-animated-expandRight">back</span></div>
+            <div class="-button-2"><span class="-animated-expandRight">{{ published }}</span></div>
+        </div>
+    </div>
 </header>
 <article class="blog-articleWrapper -margin-xlTop  -padding-xl-rl -wrap">
   <div class="articleHeroWrapper -padding-md -wrap">
     <img class="articleHero-img -margin-mdTop -img-shadow-rg -animated-scaleUp" src="{{ blogThumbnail }}" alt="{{ blogThumbnailAlt }}"></div>
-  <section class="sectionWrapper">
-      <h2>Overview</h2>
-      <p>My project is designing and developing my personal portfolio website. The scope of this project will involve the homepage and the blog page where blogs like these will be located.</p>
-  </section>
   <section class="sectionWrapper">
       <h2>Introduction</h2>
       <p>This week, I began and worked through the ideation and research phases of my project. I used the online project management tool Asana to organize the phases of the project.</p>

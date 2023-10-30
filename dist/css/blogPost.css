@@ -402,7 +402,7 @@ img {
   height: 100%;
   width: 100%;
   place-content: center center;
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: clamp(0.84rem, 0.7496rem + 0.4522vw, 1.1rem);
   font-weight: 700;
 }
 
