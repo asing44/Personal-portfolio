@@ -1,18 +1,10 @@
-@charset "UTF-8";
-/* Step -2: 9.50px → 14.08px */
-/* 13.44px → 17.60px */
-/* Step 0: 19.00px → 22.00px */
-/* Step 1: 26.87px → 27.50px */
-/* Step 2: 37.99px → 34.38px */
-/* Step 3: 53.72px → 42.97px */
-/* Step 4: 75.95px → 53.71px */
-/* Step 5: 107.40px → 67.14px */
 * {
   box-sizing: border-box;
 }
 
 html {
   height: 100%;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   line-height: 1.3;
 }
 
@@ -24,6 +16,8 @@ body {
   background-color: #F1F6F9;
   color: #141301;
   font-family: "Quattrocento Sans", sans-serif;
+  kerning: auto;
+  font-kerning: auto;
   overflow-x: hidden;
 }
 
@@ -85,7 +79,7 @@ button {
   border: none;
   border-radius: 1rem;
   background-color: transparent;
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -236,8 +230,8 @@ img {
   padding: 0.49rem;
   border-radius: 0.49rem;
   background-color: #D6DADA;
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
-  line-height: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
 .-img-shadow-rg {
@@ -287,7 +281,7 @@ img {
   color: #F1F6F9;
   text-transform: capitalize;
   font-family: "Quicksand", sans-serif;
-  font-size: clamp(4.1963rem, 7.5877rem - 4.3761vw, 6.7125rem);
+  font-size: 5.625rem;
   font-weight: 500;
 }
 
@@ -307,7 +301,7 @@ img {
   color: #F1F6F9;
   text-transform: capitalize;
   font-family: "Quicksand", sans-serif;
-  font-size: clamp(4.1963rem, 7.5877rem - 4.3761vw, 6.7125rem);
+  font-size: 5.625rem;
   font-weight: 500;
 }
 
@@ -318,6 +312,47 @@ img {
 .-animated-expandRight {
   display: inline-block;
   position: relative;
+}
+
+.-inline-link {
+  position: relative;
+  color: #730932;
+  cursor: pointer;
+  overflow: clip;
+}
+.-inline-link span {
+  transition: color 250ms ease-in-out;
+}
+.-inline-link span:hover {
+  color: #168AB8;
+}
+.-inline-link span::before {
+  content: "";
+  position: absolute;
+  height: 2.615px;
+  width: 100%;
+  bottom: 0%;
+  left: 0;
+  border-radius: 1rem;
+  background-color: #730932;
+  transition: left 250ms ease-in-out;
+}
+.-inline-link span:hover::before {
+  left: 100%;
+}
+.-inline-link span::after {
+  content: "";
+  position: absolute;
+  height: 2.615px;
+  width: 100%;
+  bottom: 0%;
+  left: -100%;
+  border-radius: 1rem;
+  background-color: #730932;
+  transition: left 250ms ease-in-out 150ms;
+}
+.-inline-link span:hover::after {
+  left: 0%;
 }
 
 .-linkHover-1-hover {
@@ -402,7 +437,7 @@ img {
   height: 100%;
   width: 100%;
   place-content: center center;
-  font-size: clamp(0.84rem, 0.7496rem + 0.4522vw, 1.1rem);
+  font-size: 0.84rem;
   font-weight: 700;
 }
 
@@ -535,10 +570,10 @@ header h1 span {
   z-index: 1;
 }
 .articles-container .main-article .main-article-title h2 {
-  font-size: clamp(2.1488rem, 2.4529rem - 0.3924vw, 2.3744rem);
+  font-size: 2rem;
 }
 .articles-container .main-article .main-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
   font-weight: 400;
 }
 .articles-container .aside-article-container {
@@ -554,10 +589,10 @@ header h1 span {
   margin: 0;
 }
 .articles-container .aside-article-container .aside-article .aside-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
 }
 .articles-container .aside-article-container .aside-article .aside-article-title h4 {
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
   font-weight: 400;
 }
 .articles-container .aside-article-container .aside-article-sm {
@@ -567,10 +602,10 @@ header h1 span {
   margin: 0;
 }
 .articles-container .aside-article-container .aside-article-sm .aside-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
 }
 .articles-container .aside-article-container .aside-article-sm .aside-article-title h4 {
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -600,10 +635,10 @@ header h1 span {
   z-index: 1;
 }
 .articles-container-reverse .main-article-reverse .main-article-title h2 {
-  font-size: clamp(2.1488rem, 2.4529rem - 0.3924vw, 2.3744rem);
+  font-size: 2rem;
 }
 .articles-container-reverse .main-article-reverse .main-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
   font-weight: 400;
 }
 .articles-container-reverse .aside-article-container {
@@ -620,10 +655,10 @@ header h1 span {
   margin: 0;
 }
 .articles-container-reverse .aside-article-container .aside-article .aside-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
 }
 .articles-container-reverse .aside-article-container .aside-article .aside-article-title h4 {
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
   font-weight: 400;
 }
 .articles-container-reverse .aside-article-container .aside-article-sm {
@@ -633,10 +668,10 @@ header h1 span {
   margin: 0;
 }
 .articles-container-reverse .aside-article-container .aside-article-sm .aside-article-title h3 {
-  font-size: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
+  font-size: 1.375rem;
 }
 .articles-container-reverse .aside-article-container .aside-article-sm .aside-article-title h4 {
-  font-size: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -645,7 +680,7 @@ header h1 span {
   height: 20%;
   place-content: center;
   place-items: center;
-  font-size: calc(clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem) * 1.315);
+  font-size: 1.808125rem;
 }
 .articles-pagination .pagination-wrapper {
   display: flex;

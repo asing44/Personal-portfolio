@@ -1,7 +1,7 @@
 ---
-title: 'Blog Update 1'
-published: Oct. 22, 2023
-blogThumbnail: ../assets/images/blogs/thumbnails/blog-1-thumbnail.png
+title: 'Blog Update 2'
+published: Oct. 31, 2023
+blogThumbnail: ../assets/images/blogs/thumbnails/blog-2-thumbnail.png
 blogThumnailAlt: The site's sitemap
 ---
 
@@ -9,9 +9,12 @@ blogThumnailAlt: The site's sitemap
 
 ## Introduction
 
-This week, I began and worked through the ideation and research phases of my project. I used the online project management tool Asana to organize the phases of the project.
+The journey of a creative project is often a dynamic one, filled with surprises, shifts, and exciting opportunities for growth. This week, I find myself at a crossroads in my personal portfolio project, and I'm excited to share the latest developments with you.
+I've decided to redefine the objectives of my project. While my original plan encompassed both design and development aspects, I've chosen to divide my approach. I'm focusing my creative energy on the design of the site, aiming to create a visually captivating digital space that truly represents me. On the other hand, the development phase is now concentrated on two key areas: the home page and the blog pages.
 
-![The project's timeline](Assets/Images/Blogs/Thumbnails/Blog update 1.png)
+My overall objective has undergone a transformation as well. I've embraced the world of static site generators as a means to streamline and enhance the development process. Specifically, I've I have decided to use <a class="-inline-link"><span>11ty</span></a>, exploring the possibilities of Nunjucks templating, harnessing the power of Markdown files, and experimenting with the versatility of JSON files. These tools and technologies are now integral to my project, paving the way for a more efficient and flexible development process.
+I've begun utilizing AI for content writing and coding assistance ase well, allowing me to streamline the creation process and gain insights and suggestions that are both innovative and invaluable. It's a game-changer that promises to elevate the quality of my project and expand my creative horizons.
+
 
 </section>
 <section class="sectionWrapper">
