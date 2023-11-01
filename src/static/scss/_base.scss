@@ -1,34 +1,4 @@
 // ** ----------------------------------------
-// ** ROOT
-// ** ----------------------------------------
-  
-// :root {
-//     /* Step -2: 9.50px → 14.08px */
-//   --step--2: clamp(0.5938rem, 0.4942rem + 0.4978vw, 0.88rem);
-
-//   /* Step -1: 13.44px → 17.60px */
-//   --step--1: clamp(0.84rem, 0.7496rem + 0.4522vw, 1.1rem);
-
-//   /* Step 0: 19.00px → 22.00px */
-//   --step-0: clamp(1.1875rem, 1.1223rem + 0.3261vw, 1.375rem);
-
-//   /* Step 1: 26.87px → 27.50px */
-//   --step-1: clamp(1.6794rem, 1.6657rem + 0.0685vw, 1.7188rem);
-
-//   /* Step 2: 37.99px → 34.38px */
-//   --step-2: clamp(2.1488rem, 2.4529rem + -0.3924vw, 2.3744rem);
-
-//   /* Step 3: 53.72px → 42.97px */
-//   --step-3: clamp(2.6856rem, 3.5912rem + -1.1685vw, 3.3575rem);
-
-//   /* Step 4: 75.95px → 53.71px */
-//   --step-4: clamp(3.3569rem, 5.2304rem + -2.4174vw, 4.7469rem);
-
-//   /* Step 5: 107.40px → 67.14px */
-//   --step-5: clamp(4.1963rem, 7.5877rem + -4.3761vw, 6.7125rem);
-// }
-
-// ** ----------------------------------------
 // ** SASS VARIABLES
 // ** ----------------------------------------
 
@@ -126,7 +96,8 @@ $border-lg: 30px;
 
 html {
     height: 100%;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
     line-height: 1.3;
 }
 
@@ -434,10 +405,10 @@ img {
 
     p {
         color: $light;
-        text-transform: capitalize;
         font-family: $headingFont;
-        font-size: $fs5;
+        font-size: $fs4;
         font-weight: $font-medium;
+        text-transform: lowercase;
     }
 }
 
@@ -456,10 +427,10 @@ img {
 
     p {
         color: $light;
-        text-transform: capitalize;
         font-family: $headingFont;
-        font-size: $fs5;
+        font-size: $fs4;
         font-weight: $font-medium;
+        text-transform: lowercase;
     }
 }
 
@@ -483,13 +454,13 @@ img {
     color: $redAccent;
     cursor: pointer;
     overflow: clip;
+
+    &:hover, &:visited, &:focus {
+        color: $redAccent;
+    }
     
     span {
       transition: color 250ms ease-in-out;
-      
-      &:hover {
-        color: $primary;
-      }
     
       &::before {
         content: "";
@@ -510,7 +481,7 @@ img {
       &::after {
         content: "";
         position: absolute;
-        height: $size-6;
+        height: 2px;
         width: 100%;
         bottom: 0%;
         left: -100%;

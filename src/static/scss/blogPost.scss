@@ -47,22 +47,40 @@ header {
     }
 
     section {
+
         h2 {
-            font-size: base.$fs2;
             color: base.$primary;
+            font-size: base.$fs2;
+        }
+
+        h3 {
+            color: base.$primaryLight;
+            font-size: base.$fs1;
+        }
+
+        ul {
+            margin-left: base.$margin-md;
+            list-style: circle;
         }
 
         figure {
+            position: relative;
             height: min-content;
             width: 100%;
-            position: relative;
 
             img {
                 height: 100%;
                 width: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 border-radius: base.$border-md;
             }
         }
     }
+}
+
+.articleImg-sm {
+    display: block;
+    height: 50% !important;
+    width: 50% !important;
+    margin: 0 auto;
 }

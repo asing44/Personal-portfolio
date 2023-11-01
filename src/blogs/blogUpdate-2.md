@@ -1,7 +1,7 @@
 ---
 title: 'Blog Update 2'
 published: Oct. 31, 2023
-blogThumbnail: ../assets/images/blogs/thumbnails/blog-2-thumbnail.png
+blogThumbnail: /assets/images/blogs/thumbnails/blog-2-thumbnail.png
 blogThumnailAlt: The site's sitemap
 ---
 
@@ -12,7 +12,8 @@ blogThumnailAlt: The site's sitemap
 The journey of a creative project is often a dynamic one, filled with surprises, shifts, and exciting opportunities for growth. This week, I find myself at a crossroads in my personal portfolio project, and I'm excited to share the latest developments with you.
 I've decided to redefine the objectives of my project. While my original plan encompassed both design and development aspects, I've chosen to divide my approach. I'm focusing my creative energy on the design of the site, aiming to create a visually captivating digital space that truly represents me. On the other hand, the development phase is now concentrated on two key areas: the home page and the blog pages.
 
-My overall objective has undergone a transformation as well. I've embraced the world of static site generators as a means to streamline and enhance the development process. Specifically, I've I have decided to use <a class="-inline-link"><span>11ty</span></a>, exploring the possibilities of Nunjucks templating, harnessing the power of Markdown files, and experimenting with the versatility of JSON files. These tools and technologies are now integral to my project, paving the way for a more efficient and flexible development process.
+My overall objective has undergone a transformation as well. I've embraced the world of static site generators as a means to streamline and enhance the development process. Specifically, I've I have decided to use <a class="-inline-link"><span>11ty</span></a>, exploring the possibilities of <a class="-inline-link"><span>Nunjucks</span></a> templating, harnessing the power of <a class="-inline-link" href="https://www.markdownguide.org/" target="_blank"><span>Markdown</span></a> files, and experimenting with the versatility of JSON files. These tools and technologies are now integral to my project, paving the way for a more efficient and flexible development process.
+
 I've begun utilizing AI for content writing and coding assistance ase well, allowing me to streamline the creation process and gain insights and suggestions that are both innovative and invaluable. It's a game-changer that promises to elevate the quality of my project and expand my creative horizons.
 
 
@@ -21,45 +22,86 @@ I've begun utilizing AI for content writing and coding assistance ase well, allo
 
 ## Progress Update
 
-For the research and ideation phase I used ChatGPT to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
+In the ever-evolving landscape of web development, adapting to new tools and technologies is paramount. My decision to pivot my project towards static site generation using 11ty has opened up exciting possibilities. Here's a glimpse of the steps I've taken to set up the static site and the resulting progress:
 
-1.  Intent
-2.  Audience
-3.  Research benchmarks1.  What the project _must_ have
-    1.  What the project _should_ have
-    2.  What the project _can_ have
-4.  Design and layout1.  Brand and style
-    1.  Layout and structure
-    2.  Colors
-    3.  Typography
-5.  Technology stack1.  VS Code
-    1.  Figma
-    2.  Discord (Midjourney Bot)
-    3.  ChatGPT
-    4.  Adobe Firefly
-    5.  Adobe Illustrator
-    6.  _Adobe After Effects_
-    7.  GitHub
-    8.  Git
-    9.   _11ty\*_
-6.  _Items marked with '\*' may or may not be used_
-7.  Sitemap
-8.  SEO considerations
+1.	**Installation and Configuration:** I kicked off the journey by installing 11ty and configuring it to suit the unique requirements of my portfolio. The installation process was smooth, and I was able to set up the basic folder structure in no time.
 
-I used Figma to create some additional resources to better help visualize my research. Here is a visual of the sitemap I am planning on using:
+<figure class="articleFigure" name="articleFigure-1"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-1/Sitemap.png" alt="The site's sitemap">
+<figcaption class="-sm-em" for="articleFigure-1">11ty file structure</figcaption>
+</figure>
 
-<figure class="articleFigure" id="articleFigure-1"><img class="-img-shadow-rg" src="../assets/images/blogs/blog-1/Sitemap.png" alt="The site's sitemap">
-<label class="-sm-em" for="articleFigure-1">The site's sitemap</label>
+2.	**Nunjucks Templating:** One of the highlights of working with 11ty is the use of Nunjucks templating. This powerful template engine has made structuring my site a breeze. I've created reusable templates for various sections of the site, which has significantly streamlined the development process.
+ 
+3.	**Leveraging Markdown:** Incorporating Markdown files has allowed me to separate content from layout, making content management more flexible and efficient. Creating and editing content is now a straightforward task.
+ 
+4.	**JSON Files for Data:** To ensure a dynamic touch to my static site, I've employed JSON files to store data. These files contain crucial information for elements such as project descriptions and metadata, which can be easily manipulated as my portfolio evolves.
+
+### Designing the Logo and Style Guide
+
+Beyond the technical aspects, I've also delved into the creative side of the project. Crafting the aesthetics of my portfolio is just as crucial as its functionality. Here's an update on the design elements I've been working on:
+
+1.	**Logo Design:** The visual identity of my portfolio is taking shape with the design of a unique and memorable logo. I wanted the logo to encapsulate my personality and style, and the creative process is well underway.
+ 
+2.	**Base Style Guide:** A solid foundation is essential, and that's precisely what the base style guide provides. It includes color schemes, typography choices, and layout guidelines, ensuring consistency and cohesion throughout the site.
+ 
+The process of developing the static site and crafting the design elements has been both a technical and artistic adventure. Stay tuned for further updates as I continue to fine-tune these aspects, bringing my portfolio project one step closer to its final form. Your support and feedback are invaluable as I navigate this creative journey!
+
 </figure>
 
 ## Challenges faced
 
-Project scope and allotted time are two related pieces of this project that I am working through figuring out. I need to limit the scope of the project with respect to the time we are allotted to complete this project. This website will be used practically for real-world application to represent my work as a multimedia designer and web developer; however, for the scope of this project, I will need to limit my focus to areas of the site. Trying to complete a project of this scale in its entirety with the time we are allotted is not reasonable.
+Embarking on a project that incorporates new technologies and approaches is always an exciting adventure, but it comes with its fair share of challenges. In this section, I'll delve into the obstacles I encountered while working with 11ty, Nunjucks, and Markdown, as well as the complexities of migrating an old site into this new static site. Here's a look at the challenges I faced:
 
-The challenge I am facing is trying to determine what I want to limit the scope to. I am initially thinking of focusing on the blog page and homepage of the site. These two pages make the most sense for this project since these pages will be the main pages accessed by site visitors associated with this class project.
+1.	**Learning Curve** - 11ty, Nunjucks, and Markdown:
+Learning new tools and technologies is an integral part of growth in web development. However, diving into the world of 11ty, Nunjucks, and even Markdown presented a steeper learning curve than I initially anticipated.
+    
+    - 11ty's Flexibility: While 11ty is renowned for its flexibility, this characteristic can also be a double-edged sword. The freedom to structure the project as I saw fit meant I needed to establish a clear and efficient workflow, which took some time to perfect.
+    - Nunjucks Templating: Though Nunjucks is a powerful templating engine, grasping its nuances and employing it effectively required a significant investment of time in understanding its syntax and logic.
+    - Markdown Mastery: Working with Markdown was relatively new to me, and I found myself learning on the fly. While it's an incredibly user-friendly markup language, the fine details took some effort to master.
+
+2.	**Site Migration Challenges:**
+Migrating an existing site into a new static site structure brought its own set of complexities:
+    -	Content Transformation: Converting the content from the old site into Markdown format was a meticulous task, especially given the variations in formatting between the old and new platforms.
+    -	Layout and Design Transition: Adapting the old site's layout and design to the new templates created with Nunjucks proved to be a challenge in maintaining the consistency and aesthetics I desired.
+    -	URL Handling: Handling URLs and redirects was another puzzle to solve, ensuring that the transition from the old site to the new one would be seamless for visitors and search engines.
+
+Overcoming these hurdles allowed me to gain a deeper understanding of these technologies and improve my problem-solving skills. I can now appreciate the flexibility of 11ty, the power of Nunjucks, and the simplicity of Markdown even more. As for the site migration, it has enabled me to ensure a smoother and more user-friendly experience for visitors. The journey of this project has been both enlightening and rewarding, and I look forward to sharing the results of my efforts with you soon.
+
+## Upcoming Plans
+
+As any creative endeavor progresses, it's crucial to have a clear plan for the future. The journey of building my personal portfolio site is far from over, and I'm excited to share my upcoming plan to take this project to new heights.
+
+1.	**Fine-Tuning the Site and Migration:**
+The immediate focus remains on fine-tuning the site and perfecting the migration process from the old site. Here's what I have in mind:
+    -	Content Refinement: I'll continue refining and optimizing the content, ensuring that it aligns seamlessly with the new Markdown format, providing a better reading experience for visitors.
+    -	Layout and Design Tweaks: Design is an ever-evolving process, and I'll be making adjustments to ensure a consistent and visually engaging experience. This includes refining the existing design elements and incorporating new ones.
+    -	URL Management: Maintaining a seamless transition from the old site to the new one is paramount. I'll be working on creating and implementing an effective URL structure and redirection system
+
+2.	**Continuing to Design Site Elements:**
+Crafting the aesthetics of the site is an ongoing effort. Here's what's in store:
+    -	Logo Perfection: The design of the logo is in progress, and I'll be dedicating time to perfecting this crucial element. It's essential that the logo embodies the essence of my digital identity.
+    -	Visual Elements: Beyond the logo, I'll be working on additional visual elements to enhance the overall look and feel of the site, making it more immersive and engaging.
+    -	Consistency in Design: Maintaining a cohesive and unified design approach across all pages of the site is a priority. This consistency will contribute to a more polished and professional appearance.
+
+3.	**Starting the Wireframing Process:**
+Looking ahead, I'm excited to kickstart the wireframing process for the site. Wireframing is a fundamental step in web design, serving as a blueprint that outlines the structure and layout of each page. This process will involve:
+    -	Layout Planning: Carefully planning the arrangement of elements on each page to maximize usability and aesthetics.
+    -	User Experience Focus: Ensuring that the site is intuitive and user-friendly, providing visitors with a seamless and enjoyable browsing experience.
+    -	Responsive Design: Designing with responsiveness in mind, so the site looks and functions well on a variety of devices and screen sizes.
+
+In the coming weeks, I'll be diving headfirst into these tasks, and I'm excited to see the project evolve even further. Your support, feedback, and insights are invaluable as I navigate this creative journey. Stay tuned for updates and insights on my progress as I continue crafting my digital identity!
 
 ## Conclusion
 
-I am excited to work on this project and am thankful to have the opportunity to update the progress along the way using my integrated blog page. If you have any concerns or questions, please feel free to reach out to me. Next week's blog will include more site design content and development.
+As I wrap up this blog post, I'm filled with a sense of accomplishment and anticipation for what lies ahead in my portfolio project. This journey has been nothing short of transformative, and it's not just about creating a website; it's about crafting my digital identity, one pixel at a time.
+
+Throughout this project, I've faced challenges that pushed me to learn and adapt. Embracing new technologies like 11ty, Nunjucks, and Markdown was an enlightening experience, and it reinforced the idea that growth often emerges from stepping out of one's comfort zone. These tools have allowed me to create a site that is not only visually captivating but also highly manageable and adaptable, and I'm excited to see how they will continue to shape my digital presence.
+
+The migration of the old site brought its own set of complexities, but it was a worthwhile endeavor. It has allowed me to not only preserve the essence of my previous work but also present it in a more sophisticated and engaging manner.
+
+As I look to the future, my upcoming plan is clear. I'm determined to fine-tune the site, enhancing its content, design, and functionality. The design process continues, with a logo that's taking shape and a focus on visual elements that will make the site even more compelling. The wireframing process is on the horizon, promising a structure that's not only visually appealing but also user-friendly.
+
+I want to express my gratitude to all of you who have followed along on this journey. Your support, feedback, and encouragement have been invaluable, and they continue to fuel my enthusiasm for this project. I'm excited to share the results of my efforts with you soon and to continue growing and learning in the world of web development and design.
+
 
 </section>

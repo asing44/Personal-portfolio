@@ -238,8 +238,8 @@ let navScrolled = $(".navigation-scrolled-button");
 let showHideNavButtonAnim = gsap.timeline({
     scrollTrigger: {
         trigger: "#fixedReference",
-        start: "10% top",
-        end: "20% top",
+        start: "50% top",
+        end: "50% top",
         toggleActions: "play none reverse none",
     }
 })
