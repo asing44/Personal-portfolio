@@ -35,7 +35,7 @@ header {
         width: 100%;
         aspect-ratio: 1 / 0.7;
         border-radius: base.$border-md;
-        background-color: red;
+        @include base.box-shadow(0, 0, base.$size1, base.$grey2);
     }
         
     .main-article {

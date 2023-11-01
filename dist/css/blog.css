@@ -4,7 +4,7 @@
 
 html {
   height: 100%;
-  font-size: 1rem;
+  font-size: 100%;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
   line-height: 1.3;
 }
@@ -118,8 +118,16 @@ img {
   margin-top: 0.31rem;
 }
 
+.-margin-smBot {
+  margin-bottom: 0.31rem;
+}
+
 .-margin-mdTop {
   margin-top: 0.8rem;
+}
+
+.-margin-mdBot {
+  margin-bottom: 0.8rem;
 }
 
 .-margin-md-rl {
@@ -128,6 +136,10 @@ img {
 
 .-margin-lgTop {
   margin-top: 1.32rem;
+}
+
+.-margin-lgBot {
+  margin-bottom: 1.32rem;
 }
 
 .-margin-lg-rl {
@@ -225,14 +237,22 @@ img {
   font-style: italic;
 }
 
+.-sm-bd {
+  font-size: 0.5938rem;
+  font-weight: 700;
+  letter-spacing: 1.2;
+  text-transform: uppercase;
+}
+
 .-tag-sm {
   display: inline-block;
-  margin-left: 1rem;
-  padding: 0.49rem;
-  border-radius: 0.49rem;
-  background-color: #D6DADA;
-  font-size: 1rem;
-  line-height: 1rem;
+  padding: 0.19rem;
+  border-radius: 6px;
+  background-color: #2F2963;
+  color: #FFF;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.5938rem;
+  font-weight: 700;
 }
 
 .-img-shadow-rg {
@@ -359,11 +379,11 @@ img {
 .-linkHover-1-hover {
   display: block;
   position: absolute;
-  height: 0.49rem;
-  width: 0.49rem;
+  height: 0.31rem;
+  width: 0.31rem;
   top: 75%;
   left: 50%;
-  margin-left: -0.245rem;
+  margin-left: -0.155rem;
   border-radius: 50%;
   background-color: #141301;
   opacity: 0;
@@ -372,11 +392,11 @@ img {
 .-activeLink-page {
   display: block;
   position: absolute;
-  height: 0.49rem;
-  width: 0.49rem;
+  height: 0.31rem;
+  width: 0.31rem;
   top: 90%;
   left: 50%;
-  margin-left: -0.245rem;
+  margin-left: -0.155rem;
   border-radius: 50%;
   background-color: #141301;
   opacity: 1;
@@ -445,8 +465,8 @@ img {
 .navigation-scrolled-button {
   display: flex;
   position: fixed;
-  height: 5.19rem;
-  width: 5.19rem;
+  height: 3.95rem;
+  width: 3.95rem;
   place-content: center;
   place-items: center;
   flex-direction: column;
@@ -459,8 +479,8 @@ img {
   z-index: 11;
 }
 .navigation-scrolled-button .navButtonLine {
-  height: 0.19rem;
-  width: 2.27rem;
+  height: 0.11rem;
+  width: 1.73rem;
   border-radius: 1rem;
   background-color: #F1F6F9;
 }
@@ -470,7 +490,7 @@ img {
   width: 100%;
   top: 100%;
   border-radius: 50%;
-  background-color: #418F29;
+  background-color: #2F2963;
   z-index: -1;
 }
 
@@ -557,7 +577,10 @@ header h1 span {
   width: 100%;
   aspect-ratio: 1/0.7;
   border-radius: 22.7px;
-  background-color: red;
+  -webkit-box-shadow: 0 0 1.32rem #E4E8EA;
+  -moz-box-shadow: 0 0 1.32rem #E4E8EA;
+  -ms-box-shadow: 0 0 1.32rem #E4E8EA;
+  box-shadow: 0 0 1.32rem #E4E8EA;
 }
 .articles-container .main-article {
   height: min-content;

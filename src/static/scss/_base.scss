@@ -6,7 +6,8 @@
 $headingFont: 'Quicksand', sans-serif;
 $mainFont: 'Quattrocento Sans', sans-serif;
 // * FONT SIZE
-$fs-2: 0.5938re;
+$fs-3: 0.35rem;
+$fs-2: 0.5938rem;
 $fs-1: 0.840rem;
 $fs0: 1rem;
 $fs1: 1.375rem;
@@ -20,6 +21,7 @@ $font-normal: 400;
 $font-medium: 500;
 $font-bold: 700;
 // * COLORS
+$white: #FFF;
 $light: #F1F6F9;
 $grey1: #E4E8EA;
 $grey2: #E4E8EA;
@@ -66,11 +68,13 @@ $margin-lg: $size4;
 $margin-xl: $size6;
 $margin-hu: $size8;
 // * PADDING
+$padding-xxs: $size-4;
 $padding-xs: $size-2;
 $padding-sm: $size0;
 $padding-md: $size3;
 $padding-lg: $size5;
 // * BORDER-RADIUS
+$border-xs: 6px;
 $border-sm: 10px;
 $border-md: 22.7px;
 $border-lg: 30px;
@@ -96,7 +100,7 @@ $border-lg: 30px;
 
 html {
     height: 100%;
-    font-size: 1rem;
+    font-size: 100%;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
     line-height: 1.3;
 }
@@ -118,7 +122,9 @@ main {
     position: relative;
 }
 
-p {margin-bottom: 1rem;}
+p {
+    margin-bottom: 1rem;
+}
 
 h1, h2, h3, h4, h5 {
     margin: 3rem 0 1.38rem;
@@ -132,13 +138,21 @@ h1 {
     font-size: 6.854rem;
 }
 
-h2 {font-size: 4.236rem;}
+h2 {
+    font-size: 4.236rem;
+}
 
-h3 {font-size: 2.615rem;}
+h3 {
+    font-size: 2.615rem;
+}
 
-h4 {font-size: 1.615rem;}
+h4 {
+    font-size: 1.615rem;
+}
 
-small, .text_small {font-size: 0.615rem;}
+small, .text_small {
+    font-size: 0.615rem;
+}
 
 ul {
     margin: 0;
@@ -213,8 +227,16 @@ img {
     margin-top: $size-3;
 }
 
+.-margin-smBot {
+    margin-bottom: $size-3;
+}
+
 .-margin-mdTop {
     margin-top: $size-1;
+}
+
+.-margin-mdBot {
+    margin-bottom: $size-1;
 }
 
 .-margin-md-rl {
@@ -223,6 +245,10 @@ img {
 
 .-margin-lgTop {
     margin-top: $size1;
+}
+
+.-margin-lgBot {
+    margin-bottom: $size1;
 }
 
 .-margin-lg-rl {
@@ -335,15 +361,24 @@ img {
     font-style: italic;
 }
 
+// Small bold
+.-sm-bd {
+    font-size: $fs-2;
+    font-weight: $font-bold;
+    letter-spacing: 1.2;
+    text-transform: uppercase;
+}
+
 // Tags
 .-tag-sm {
     display: inline-block;
-    margin-left: $margin-sm;
-    padding: $padding-xs;
-    border-radius: $size-2;
-    background-color: $grey3;
-    font-size: $fs0;
-    line-height: $fs0;
+    padding: $padding-xxs;
+    border-radius: $border-xs;
+    background-color: $secondary;
+    color: $white;
+    font-family: $headingFont;
+    font-size: $fs-2;
+    font-weight: $font-bold;
 }
 
 // Images
@@ -500,11 +535,11 @@ img {
 .-linkHover-1-hover {
     display: block;
     position: absolute;
-    height: $size-2;
-    width: $size-2;
+    height: $size-3;
+    width: $size-3;
     top: 75%;
     left: 50%;
-    margin-left: calc(-0.5 * $size-2);
+    margin-left: calc(-0.5 * $size-3);
     border-radius: 50%;
     background-color: $dark;
     opacity: 0;
@@ -513,11 +548,11 @@ img {
 .-activeLink-page {
     display: block;
     position: absolute;
-    height: $size-2;
-    width: $size-2;
+    height: $size-3;
+    width: $size-3;
     top: 90%;
     left: 50%;
-    margin-left: calc(-0.5 * $size-2);
+    margin-left: calc(-0.5 * $size-3);
     border-radius: 50%;
     background-color: $dark;
     opacity: 1
@@ -601,8 +636,8 @@ img {
 .navigation-scrolled-button {
     display: flex;
     position: fixed;
-    height: $size6;
-    width: $size6;
+    height: $size5;
+    width: $size5;
     place-content: center;
     place-items: center;
     flex-direction: column;
@@ -615,8 +650,8 @@ img {
     z-index: 11;
 
     .navButtonLine {
-        height: $size-4;
-        width: $size3;
+        height: $size-5;
+        width: $size2;
         border-radius: 1rem;
         background-color: $light;
     }
@@ -627,7 +662,7 @@ img {
         width: 100%;
         top: 100%;
         border-radius: 50%;
-        background-color: $greenAccent;
+        background-color: $secondary;
         z-index: -1;
     }
 }

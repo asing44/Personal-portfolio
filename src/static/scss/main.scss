@@ -97,8 +97,8 @@
     
     .hero-name {
         font-family: base.$headingFont;
-        font-size: base.$fs5;
-        font-weight: 700;
+        font-size: base.$fs3;
+        font-weight: base.$font-medium;
     }
     .hero-name-scroll {
         display: flex;

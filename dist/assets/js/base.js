@@ -255,7 +255,7 @@ showHideNavButtonAnim.fromTo(navScrolled, {
 // * NAV SCROLLED BUTTON HOVER
 let navButtonHoverAnim = gsap.to(".navButtonHover", {
     paused: true,
-    duration: 1,
+    duration: 0.5,
     top: "0%",
     ease: "power3.out"
 });

@@ -9,26 +9,14 @@
 // ** ----------------------------------------
 
 header {
+    display: grid;
     width: 100%;
+    place-content: center;
+    margin: base.$size5 base.$size2 base.$size2;
 
     h1 {
         position: relative;
-    }
-
-    .blogHeader-bottom-wrapper {            
-        div {
-
-            .blogHeader-button-wrapper {
-                padding: 0;
-                background-color: base.$dark;
-                fill: base.$light;
-            }
-
-            .blogHeader-date {
-                display: inline-block;
-                color: base.$dark;
-            }
-        }
+        font-size: base.$fs4;
     }
 }
 
@@ -73,6 +61,11 @@ header {
                 width: 100%;
                 object-fit: cover;
                 border-radius: base.$border-md;
+            }
+
+            figcaption {
+                margin-top: base.$margin-sm;
+                text-align: center;
             }
         }
     }

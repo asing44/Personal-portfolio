@@ -1,5 +1,6 @@
 ---
 title: 'Blog Update 1'
+postCategory: 'DMD 300'
 published: Oct. 22, 2023
 blogThumbnail: /assets/images/blogs/thumbnails/blog-1-thumbnail.png
 blogThumbnailAlt: The site's timeline in the online project management tool Asana.
