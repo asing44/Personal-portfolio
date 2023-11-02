@@ -110,19 +110,16 @@ Looking ahead, I'm excited to kickstart the wireframing process for the site. Wi
     -	User Experience Focus: Ensuring that the site is intuitive and user-friendly, providing visitors with a seamless and enjoyable browsing experience.
     -	Responsive Design: Designing with responsiveness in mind, so the site looks and functions well on a variety of devices and screen sizes.
 
-In the coming weeks, I'll be diving headfirst into these tasks, and I'm excited to see the project evolve even further. Your support, feedback, and insights are invaluable as I navigate this creative journey. Stay tuned for updates and insights on my progress as I continue crafting my digital identity!
+In the coming week, I'll be diving headfirst into these tasks, and I'm excited to see the project evolve even further. Stay tuned for updates and insights on my progress as I continue crafting my digital identity!
 
 ## Conclusion
 
-As I wrap up this blog post, I'm filled with a sense of accomplishment and anticipation for what lies ahead in my portfolio project. This journey has been nothing short of transformative, and it's not just about creating a website; it's about crafting my digital identity, one pixel at a time.
-
-Throughout this project, I've faced challenges that pushed me to learn and adapt. Embracing new technologies like 11ty, Nunjucks, and Markdown was an enlightening experience, and it reinforced the idea that growth often emerges from stepping out of one's comfort zone. These tools have allowed me to create a site that is not only visually captivating but also highly manageable and adaptable, and I'm excited to see how they will continue to shape my digital presence.
+Throughout this project, I've faced challenges that pushed me to learn and adapt. Embracing new technologies like 11ty, Nunjucks, and Markdown was a rewarding experience, and it reinforced the idea that growth often emerges from stepping out of one's comfort zone. These tools have allowed me to create a site that is not only visually captivating but also highly manageable and adaptable, and I'm excited to see how they will continue to shape my project.
 
 The migration of the old site brought its own set of complexities, but it was a worthwhile endeavor. It has allowed me to not only preserve the essence of my previous work but also present it in a more sophisticated and engaging manner.
 
-As I look to the future, my upcoming plan is clear. I'm determined to fine-tune the site, enhancing its content, design, and functionality. The design process continues, with a logo that's taking shape and a focus on visual elements that will make the site even more compelling. The wireframing process is on the horizon, promising a structure that's not only visually appealing but also user-friendly.
+I am planning to fine-tune the site, enhancing its content, design, and functionality. The design process continues, with a logo that's taking shape and a focus on visual elements. I am also starting the wireframing process for the site.
 
-I want to express my gratitude to all of you who have followed along on this journey. Your support, feedback, and encouragement have been invaluable, and they continue to fuel my enthusiasm for this project. I'm excited to share the results of my efforts with you soon and to continue growing and learning in the world of web development and design.
-
+I'm excited to share the results of my efforts with you soon and to continue growing and learning in the world of web development and design.
 
 </section>
