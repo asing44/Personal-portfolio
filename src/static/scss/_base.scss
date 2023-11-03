@@ -470,6 +470,7 @@ img {
 }
 
 // * PAGE LOAD
+
 // Bounce in
 .-animated-bounceIn {
     position: relative;
@@ -535,11 +536,11 @@ img {
 .-linkHover-1-hover {
     display: block;
     position: absolute;
-    height: $size-3;
-    width: $size-3;
+    height: $size-2;
+    width: $size-2;
     top: 75%;
     left: 50%;
-    margin-left: calc(-0.5 * $size-3);
+    margin-left: calc(-0.5 * $size-2);
     border-radius: 50%;
     background-color: $dark;
     opacity: 0;

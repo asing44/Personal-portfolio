@@ -10,9 +10,9 @@
   <body>
     <!-- ** Fixed references -->
     <div id="fixedReference"></div>
-    {% include "navigation.njk" %}
+    {% include "partials/navigation.njk" %}
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
-    {% include "footer.njk" %}
+    {% include "partials/footer.njk" %}
   </body>
   <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>
   <script content-type="text/javascript" src="{{ jsSrc }}"></script>

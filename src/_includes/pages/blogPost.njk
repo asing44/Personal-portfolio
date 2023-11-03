@@ -1,8 +1,8 @@
 ---
 layout: 'base.njk'
-jsSrc: ../assets/js/blogPage.js
-jsSrcBase: ../assets/js/base.js
-cssSrc: ../css/blogPost.css
+jsSrc: /assets/js/blogPage.js
+jsSrcBase: /assets/js/base.js
+cssSrc: /css/blogPost.css
 ---
 <!-- ** Page change animation in -->
 <div class="pageChangeIn-container -contain">
@@ -14,7 +14,7 @@ cssSrc: ../css/blogPost.css
 </div>
 <!-- ** MAIN -->
 <header class="-animated-bounceIn">
-  {% include "pagination.njk" %}
+  {% include "partials/pagination.njk" %}
   <div>
     <div class="blog-tag -tag-sm -margin-smBot">{{ postCategory }}</div>
     <h1><span class="-animated-bounceIn">{{ title }}</span></h1>
