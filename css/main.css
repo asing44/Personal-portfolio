@@ -380,11 +380,11 @@ img {
 .-linkHover-1-hover {
   display: block;
   position: absolute;
-  height: 0.31rem;
-  width: 0.31rem;
+  height: 0.49rem;
+  width: 0.49rem;
   top: 75%;
   left: 50%;
-  margin-left: -0.155rem;
+  margin-left: -0.245rem;
   border-radius: 50%;
   background-color: #141301;
   opacity: 0;
