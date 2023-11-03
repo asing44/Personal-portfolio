@@ -9,10 +9,21 @@
 // ** ----------------------------------------
 
 header {
+    position: relative;
     display: grid;
     width: 100%;
-    place-content: center;
     margin: base.$size5 base.$size2 base.$size2;
+
+    // ** PAGINATION
+    .paginationWrapper {
+        height: 25%;
+        width: 10%;
+        border: 2px solid red;
+    }
+
+    & > div {
+        margin-left: base.$size7;
+    }
 
     h1 {
         position: relative;

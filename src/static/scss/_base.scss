@@ -6,15 +6,15 @@
 $headingFont: 'Quicksand', sans-serif;
 $mainFont: 'Quattrocento Sans', sans-serif;
 // * FONT SIZE
-$fs-3: 0.35rem;
-$fs-2: 0.5938rem;
-$fs-1: 0.840rem;
-$fs0: 1rem;
-$fs1: 1.375rem;
-$fs2: 2rem;
-$fs3: 2.813rem;
-$fs4: 4rem;
-$fs5: 5.625rem;
+$fs-3: clamp(0.35rem, 1.0vw, 2.375rem);
+$fs-2: clamp(0.5938rem, 1.414vw, 3.375rem);
+$fs-1: clamp(0.840rem, 1.414vw, 4.75rem);
+$fs0: clamp(1rem, 1.414vw, 5.625rem); /* Base size */
+$fs1: clamp(1.375rem, 1.75vw, 7.125rem);
+$fs2: clamp(2rem, 2.828vw, 11.313rem);
+$fs3: clamp(2.813rem, 3.983vw, 15.625rem);
+$fs4: clamp(4rem, 5.656vw, 22.625rem);
+$fs5: clamp(5.625rem, 7.963vw, 31.625rem);
 // * FONT WEIGHT
 $font-light: 300;
 $font-normal: 400;
@@ -101,7 +101,6 @@ $border-lg: 30px;
 html {
     height: 100%;
     font-size: 100%;
-    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
     line-height: 1.3;
 }
 
@@ -113,6 +112,7 @@ body {
     background-color: $light;
     color: $dark;
     font-family: $mainFont;
+    font-size: $fs0;
     kerning: auto;
     font-kerning: auto;
     overflow-x: hidden;
@@ -135,23 +135,23 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     margin-top: 0;
-    font-size: 6.854rem;
+    font-size: $fs5;
 }
 
 h2 {
-    font-size: 4.236rem;
+    font-size: $fs4;
 }
 
 h3 {
-    font-size: 2.615rem;
+    font-size: $fs3;
 }
 
 h4 {
-    font-size: 1.615rem;
+    font-size: $fs2;
 }
 
 small, .text_small {
-    font-size: 0.615rem;
+    font-size: $fs-1;
 }
 
 ul {

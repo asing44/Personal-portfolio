@@ -13,8 +13,8 @@ cssSrc: ../css/blogPost.css
   <p id="pageChange-text">{{ title }}</p>
 </div>
 <!-- ** MAIN -->
-{# !! CHANGE DIV #}
-<header>
+<header class="-animated-bounceIn">
+  {% include "pagination.njk" %}
   <div>
     <div class="blog-tag -tag-sm -margin-smBot">{{ postCategory }}</div>
     <h1><span class="-animated-bounceIn">{{ title }}</span></h1>
