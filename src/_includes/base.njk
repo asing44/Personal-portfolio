@@ -8,8 +8,20 @@
     {% include "scripts.njk" %}
   </head>
   <body>
-    <!-- ** Fixed references -->
+    {# Fixed reference #}
     <div id="fixedReference"></div>
+    {# Cursor #}
+    <div class="cursor">
+      <div class="cursor-ball">
+        <svg height="16" width="16">
+          <circle cx="8" cy="8" r="8" stroke-width="0"></circle>
+        </svg>
+      </div>
+    </div>
+    {# Page change #}
+    <div class="pageChangeContainer -contain">
+        <p id="pageChangeText">{{ name }}</p>
+    </div>
     {% include "partials/navigation.njk" %}
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
     {% include "partials/footer.njk" %}

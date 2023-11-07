@@ -8,6 +8,10 @@ gsap.config({
     autoSleep: 60,
 });
 
+// Set the page change container to the previous color
+$('.pageChangeContainer').css('background-color', localStorage.getItem("pageChangeColor")
+);
+
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
@@ -27,7 +31,7 @@ gsap.to(window, {
 // ** HELPER FUNCTIONS
 // ** ----------------------------------------
 
-// Infinite horizontal loop
+// * INFINITE HORIZONTAL LOOPING
 /*
 This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
 
@@ -100,6 +104,17 @@ Features:
 	return tl;
 }
 
+// * DELAY LINKS
+
+var pageChangeHref = '';
+
+function goToLink() {
+
+    gsap.delayedCall(0.25, function() {
+        document.location.href = pageChangeHref;
+    });
+};
+
 // !! ----------------------------------------
 // !? GLOBAL
 // !! ----------------------------------------
@@ -139,7 +154,7 @@ function slideDownAnims() {
         return tl;
     });
     return slideDown;
-}
+};
 
 // * BOUNCE IN
 function bounceInAnims() {
@@ -167,9 +182,10 @@ function bounceInAnims() {
         bounceIn.add(tl)
     })
     return bounceIn
-}
+};
 
 // * EXPAND RIGHT
+
 function expandRightAnims() {
     let expandRightArr = gsap.utils.toArray(".-animated-expandRight");
     let expandRightParentsArr = gsap.utils.toArray(".-animated-expandRight-wrapper");
@@ -199,9 +215,10 @@ function expandRightAnims() {
         expandRight.add(tl)
     });
     return expandRight;
-}
+};
 
 // * SCALE UP
+
 function scaleUpAnims() {
     scaleUpArray = gsap.utils.toArray(".-animated-scaleUp");
     let scaleUp = gsap.timeline({});
@@ -221,18 +238,66 @@ function scaleUpAnims() {
         });
     })
     return scaleUp
-}
+};
 
 // * DELAY PAGELOAD ANIMATIONS
+
 gsap.delayedCall(0.5, function() {
     pageLoadAnimParent.play()
-})
+});
+
+// * PAGE CHANGE IN
+
+var pageChangeColors = {
+    1: "#32853F", /* green */
+    2: "#2A1E5C", /* blue */
+    3: "#694873", /* purple */
+    4: "#BA2D0B", /* red */
+}
+
+let pageChangeAnim = gsap.timeline({
+    delay: 0.2,
+    defaults: {
+        duration: 1
+    },
+    onReverseComplete: goToLink,
+});
+
+pageChangeAnim.set(".pageChangeContainer", {
+    x: 0,
+    y: 0,
+}).to(".pageChangeContainer", {
+    scale: 0.85,
+    ease: "power3.inOut",
+    borderRadius: "5rem"
+}).to(".pageChangeContainer", {
+    duration: 0.75,
+    yPercent: -100,
+    ease: "power3.in"
+}, "<75%")
+
+// * PAGE CHANGE OUT
+$(".navLink").on("click", function(e) {
+    e.preventDefault();
+
+    if (/index/.test($(this).attr("href"))) {
+        $('#pageChangeText').html("home")
+    } else {
+        $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
+    }
+    pageChangeHref = $(this).attr('href');
+    var pageChangeColor = pageChangeColors[Math.round((Math.random() * 4))];
+    localStorage.setItem("pageChangeColor", pageChangeColor);
+    $('.pageChangeContainer').css('background-color', pageChangeColor);
+    pageChangeAnim.reverse();
+});
 
 // ** ----------------------------------------
 // ** NAVIGATION
 // ** ----------------------------------------
 
 // * SHOW/HIDE NAV SCROLLED BUTTON
+
 let navScrolled = $(".navigation-scrolled-button");
 
 let showHideNavButtonAnim = gsap.timeline({
@@ -324,99 +389,40 @@ $("#navigationScrolledButton-close").on("click", () => {
 // ** LINKS
 // ** ----------------------------------------
 
-// * PAGE CHANGE IN
-let pageChangeInAnim = gsap.timeline({
-    onComplete: () => {
-        gsap.set(".pageChangeIn-container", {
-            display: "none"
-        })
-    }
-})
-pageChangeInAnim.set(".pageChangeIn-container", {
-    x: 0,
-    y: 0,
-}).to(".pageChangeIn-container", {
-    duration: 1,
-    yPercent: -100,
-    ease: "power3.inOut"
-}).to(".pageChangeIn-container", {
-    borderRadius: "40%",
-}, "<0.25")
+// * NAV LINKS
 
-// * PAGE CHANGE OUT
-$(".-navLink").on("click", function(e) {
-    e.preventDefault();
-    let pageChangeOutAnim = gsap.timeline({
-        onComplete: goToLink,
-        onCompleteParams: [ $(this).attr('href') ]
+navLinksArr = gsap.utils.toArray(".navLink");
+
+navLinksArr.forEach(item => {
+
+    let hovered = $(item).children().children();
+
+    let navLinksAnim = gsap.timeline({
+        paused: true
     });
-    pageChangeOutAnim.set(".pageChangeOut-container", {
-        display: "grid",
-        x: 0,
-        y: 0,
-        zIndex: 10,
-        onComplete: () => {
-            if (/index/g.test($(this).attr("href"))) {
-                $("#pageChange-text").html("Home")
-            } else {
-                $("#pageChange-text").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
-            }
-        }
-    }).to(".pageChangeOut-container", {
-        duration: 1,
-        yPercent: -100,
-        ease: "power3.inOut"
-    }).to(".pageChangeOut-container", {
+
+    navLinksAnim.to(hovered, {
+        yPercent: 150,
+    }).to(hovered, {
+        autoAlpha: 1,
+        ease: "ease.in"
+    }, '<20%').to(hovered, {
+        scaleX: function() {
+            let num = gsap.getProperty(".navLink-hover", "width");
+            let den = gsap.getProperty(item.children[0], "width");
+            return (1 / (num / den))
+        },
+        scaleY: 0.4,
         borderRadius: 0,
-    }, "-=0.25")
-});
-
-function goToLink(url) {
-    gsap.delayedCall(0.25, function() {
-        document.location.href = url;
-    })
-}
-
-// * LINK HOVER 1
-link1Array = gsap.utils.toArray(".-linkHover-1");
-// ? May need to adjust the array?
-// TODO - Make chart in Figma for animation
-
-link1Array.forEach(item => {
-
-    let link1Anim = gsap.timeline({
-        paused: true
-    });
-
-    let activeLink1Anim = gsap.timeline({
-        paused: true
-    })
-
-    activeLink1Anim.to($(".-activeLink-page"), {
-        yPercent: -100,
-        opacity: 0
-    })
-
-    link1Anim.to($(item).children().children(), {
-        yPercent: 100,
-        autoAlpha: 1
-    })
+        ease: "power2.out"
+    }, "<85%")
 
     $(item).on("mouseenter", function() {
-        if (this.children[0].children[0].classList.contains("-activeLink-page")) {
-        } else {
-        activeLink1Anim.play();
-        link1Anim.play();
-        }
+        navLinksAnim.play();
     }).on("mouseleave", function() {
-        link1Anim.reverse();
-        gsap.delayedCall(1, () => {
-            if (!link1Anim.isActive()) {
-                activeLink1Anim.reverse();
-            }
-        });
+        navLinksAnim.reverse();
     });
-})
+});
 
 // ** ----------------------------------------
 // ** BUTTONS

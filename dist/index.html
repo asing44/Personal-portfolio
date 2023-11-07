@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <title>My personal portfolio</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
     <meta name="description" content="A personal portfolio website showcasing design and development skills.">
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1.0">
 <link rel="icon" href=".">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- ** Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
@@ -27,29 +27,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
-    <!-- ** Fixed references -->
+    
     <div id="fixedReference"></div>
-    <nav class="navigation-windowTop -animated-slideDown -desktop">
-    <button id="navigationWindowTop-homeButton">
-      <a id="homeButton-link" class="-navLink" href="/Personal-portfolio/index.html"><img id="homeButton-img" src="https://picsum.photos/62" alt="Logo"></a>
-    </button>
-    <div class="heading-nav">
-      <ul class="headingNav-wrapper">
-        <li class="-linkHover-1">
-            <a class="heading-navLink navLink-about -navLink" href="WIP.html">About<span class="-linkHover-1-hover"></span></a>
-        </li>
-        <li class="-linkHover-1">
-            <a class="heading-navLink navLink-work -navLink" href="WIP.html">Work<span class="-linkHover-1-hover"></span></a>
-        </li>
-        <li class="-linkHover-1">
-            <a class="heading-navLink navLink-blog -navLink" href="/Personal-portfolio/blog.html">Blog<span class="-linkHover-1-hover"></span></a>
-        </li>
-        <li class="-linkHover-1">
-            <a class="heading-navLink navLink-contact -navLink" href="WIP.html">Contact<span class="-linkHover-1-hover"></span></a>
-        </li>
-      </ul>
+    
+    <div class="cursor">
+      <div class="cursor-ball">
+        <svg height="16" width="16">
+          <circle cx="8" cy="8" r="8" stroke-width="0"></circle>
+        </svg>
+      </div>
     </div>
-</nav>
+    
+    <div class="pageChangeContainer -contain">
+        <p id="pageChangeText">home</p>
+    </div>
+    <div class="navigationWindowTop -animated-slideDown">
+  <div class="navigationWindowTop-container">
+      <nav class="navigationWindowTop-wrapper">
+        <a class="navLink-home navLink" href="/Personal-portfolio/index.html"><img class="logo" src="https://picsum.photos/62" alt="Logo"></a>
+        <ul class="navLinks-wrapper">
+          <li class="navLink-wrapper">
+              <a class="navLink" href="."><span>about</span><span class="navLink-hover"></span></a>
+          </li>
+          <li class="navLink-wrapper">
+              <a class="navLink" href="."><span>work</span><span class="navLink-hover"></span></a>
+          </li>
+          <li class="navLink-wrapper">
+              <a class="navLink" href="/Personal-portfolio/blog.html"><span>blog</span><span class="navLink-hover"></span></a>
+          </li>
+          <li class="navLink-wrapper">
+              <a class="navLink" href="."><span>contact</span><span class="navLink-hover"></span></a>
+          </li>
+        </ul>
+      </nav>
+  </div>
+</div>
 <button class="navigation-scrolled-button -desktop">
     <div class="navButtonLine"></div>
     <div class="navButtonLine"></div>
@@ -67,10 +79,10 @@
 </div>
     <main> <!-- TODO:
 *  - Add favicon
-*  - Transfer css properties to classes
+*  - Transfer css class attr to properties
 -->
 <!-- ** Loading animation -->
-<section class="loading-container -contain">
+<!-- <section class="loading-container -contain">
   <div class="loading-message-wrapper -wrap">
     <p id="loading-message">
       <span class="text-lt msg-txt">&lt;</span>
@@ -87,15 +99,7 @@
   <div class="loading-bar-vertical"></div>
   <div class="loading-bar-horizontal"></div>
   <div class="loading-circle"></div>
-</section>
-<!-- ** Page change animation in-->
-<div id="heroPageChangeIn" class="pageChangeIn-container -contain">
-  <p>Home</p>
-</div>
-<!-- ** Page change animation out-->
-<div class="pageChangeOut-container -contain">
-  <p id="pageChange-text"></p>
-</div>
+</section> -->
 <!-- ** Main -->
 <heading class="hero">
   <div class="hero-name -wrap">
@@ -149,5 +153,5 @@
 </footer>
   </body>
   <script content-type="text/javascript" src="assets/js/base.js"></script>
-  <script content-type="text/javascript" src="assets/js/main.js"></script>
+  <script content-type="text/javascript" src="assets/js/home.js"></script>
 </html> 

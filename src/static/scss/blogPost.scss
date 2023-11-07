@@ -2,89 +2,12 @@
 // ** INIT
 // ** ----------------------------------------
 
-@use "base";
+@use "main";
 
 // ** ----------------------------------------
 // ** HEADER
 // ** ----------------------------------------
 
-header {
-    position: relative;
-    display: grid;
-    width: 100%;
-    margin: base.$size5 base.$size2 base.$size2;
-
-    // ** PAGINATION
-    .paginationWrapper {
-        height: 25%;
-        width: 10%;
-        border: 2px solid red;
-    }
-
-    & > div {
-        margin-left: base.$size7;
-    }
-
-    h1 {
-        position: relative;
-        font-size: base.$fs4;
-    }
-}
-
 // ** ----------------------------------------
 // ** ARTICLE
 // ** ----------------------------------------
-
-.blog-articleWrapper {
-    .articleHeroWrapper {
-        position: relative;
-
-        .articleHero-img {
-            width: 100%;
-            border-radius: base.$border-lg;
-        }
-    }
-
-    section {
-
-        h2 {
-            color: base.$primary;
-            font-size: base.$fs2;
-        }
-
-        h3 {
-            color: base.$primaryLight;
-            font-size: base.$fs1;
-        }
-
-        ul {
-            margin-left: base.$margin-md;
-            list-style: circle;
-        }
-
-        figure {
-            position: relative;
-            height: min-content;
-            width: 100%;
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                border-radius: base.$border-md;
-            }
-
-            figcaption {
-                margin-top: base.$margin-sm;
-                text-align: center;
-            }
-        }
-    }
-}
-
-.articleImg-sm {
-    display: block;
-    height: 50% !important;
-    width: 50% !important;
-    margin: 0 auto;
-}
