@@ -32,6 +32,7 @@ gsap.to(window, {
 // ** ----------------------------------------
 
 // * INFINITE HORIZONTAL LOOPING
+
 /*
 This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
 
@@ -115,6 +116,16 @@ function goToLink() {
     });
 };
 
+// * GET CURSOR POSITION
+
+function getCursor(e) {
+    var rect = e.target.getBoundingClientRect();
+    return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+    }
+}
+
 // !! ----------------------------------------
 // !? GLOBAL
 // !! ----------------------------------------
@@ -127,11 +138,13 @@ const cursor = document.querySelector('.cursor-ball');
 
 document.body.addEventListener('mousemove', cursorMove);
 
+$('.--cursor-shrink').on('mouseenter', function(){gsap.to(cursor, {scale: 0})}).on('mouseleave', function(){gsap.to(cursor, {scale: 1})})
+
 function cursorMove(e) {
     gsap.to(cursor, {
       delay: 0.02,
-      x: e.pageX - 8,
-      y: e.pageY - 16,
+      x: e.clientX - 8,
+      y: e.clientY - 16,
       ease: "power4"
     })
 }
@@ -408,37 +421,64 @@ $("#navigationScrolledButton-close").on("click", () => {
 
 // * NAV LINKS
 
-navLinksArr = gsap.utils.toArray(".navLink");
+navLinksArr = gsap.utils.toArray('.--hover-1-wrapper');
 
 navLinksArr.forEach(item => {
 
-    let hovered = $(item).children().children();
+    let container = $(item).parent();
 
-    let navLinksAnim = gsap.timeline({
-        paused: true
+    $(item).children('.--hover-1-text').each(function(index, i){
+        (i.dataset.word).split("").forEach(ltr => {
+        $(i).append(`<span class='--hover-1-ltr'>${ltr}</span>`)
+        })
+    })
+
+    let arr1 = gsap.utils.toArray($(item).children('div:first-of-type').children());
+    let arr2 = gsap.utils.toArray($(item).children('div:last-of-type').children());
+
+    let tl = gsap.timeline({
+        paused: true,
     });
 
-    navLinksAnim.to(hovered, {
-        yPercent: 150,
-    }).to(hovered, {
-        autoAlpha: 1,
-        ease: "ease.in"
-    }, '<20%').to(hovered, {
-        scaleX: function() {
-            let num = gsap.getProperty(".navLink-hover", "width");
-            let den = gsap.getProperty(item.children[0], "width");
-            return (1 / (num / den))
-        },
-        scaleY: 0.4,
-        borderRadius: 0,
-        ease: "power2.out"
-    }, "<85%")
+    for (let i = 0; i <= arr1.length; i++) {
+        tl.add(gsap.to(arr1[i], {
+            duration: 0.4,
+            yPercent: -100,
+            ease: 'ease.inOut'
+        }), '<10%');
+        tl.add(gsap.to(arr2[i], {
+            duration: 0.4,
+            yPercent: -100,
+            ease: 'ease.inOut'
+        }), '<10%');
+    };
 
-    $(item).on("mouseenter", function() {
-        navLinksAnim.play();
-    }).on("mouseleave", function() {
-        navLinksAnim.reverse();
-    });
+    // Background circle
+
+    let innerCircle = $(container).children('.navLink-hover');
+
+    gsap.set(innerCircle, {
+        x: 0,
+        y: 0
+    })
+
+    $(container).on('mouseenter', function(e){
+        let newX = getCursor(e).x;
+        let newY = getCursor(e).y;
+        tl.set(innerCircle, {
+            x: newX + "px",
+            y: newY + "px",
+        }, 0).to(innerCircle, {
+            autoAlpha: 1,
+            ease: 'ease.inOut'
+        }, '<').to(innerCircle, {
+            scale: 75,
+            ease: 'power2.inOut'
+        }, '<5%');
+        tl.play();
+    }).on('mouseleave', function(){
+        tl.reverse();
+    })
 });
 
 // ** ----------------------------------------

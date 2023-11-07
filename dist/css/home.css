@@ -12,6 +12,7 @@
 /* 271px */
 * {
   box-sizing: border-box;
+  cursor: none;
 }
 
 html {
@@ -84,12 +85,10 @@ ul {
 
 a {
   text-decoration: none;
-  cursor: pointer;
   color: #000;
 }
 a:hover, a:focus, a:active, a:visited {
   text-decoration: none;
-  cursor: pointer;
   color: #000;
 }
 
@@ -99,7 +98,6 @@ button {
   border-radius: 1rem;
   background-color: transparent;
   font-size: 1rem;
-  cursor: pointer;
 }
 
 img {
@@ -118,7 +116,7 @@ img {
   z-index: 1000;
 }
 .cursor-ball circle {
-  fill: #f7f8fa;
+  fill: #ECEBB6;
 }
 
 .-contain {
@@ -366,25 +364,44 @@ img {
 }
 .navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a {
   display: flex;
+  position: relative;
+  max-height: 40px;
   padding: 8px 24px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 0.05rem solid #141301;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 1rem;
+  overflow: hidden;
 }
-.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a > span {
+.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .--hover-1-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .--hover-1-wrapper > div {
   display: flex;
   width: 90px;
   height: 100%;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 17px;
   font-weight: 700;
   text-align: center;
+  z-index: 1;
+}
+.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .navLink-hover {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  background-color: #E6E073;
+  visibility: hidden;
+  z-index: -1;
 }
 .navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a.-activeNavLink {
   background-color: #ECEBB6;
