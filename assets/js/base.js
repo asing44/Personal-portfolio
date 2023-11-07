@@ -120,6 +120,23 @@ function goToLink() {
 // !! ----------------------------------------
 
 // ** ----------------------------------------
+// ** CURSOR
+// ** ----------------------------------------
+
+const cursor = document.querySelector('.cursor-ball');
+
+document.body.addEventListener('mousemove', cursorMove);
+
+function cursorMove(e) {
+    gsap.to(cursor, {
+      delay: 0.02,
+      x: e.pageX - 8,
+      y: e.pageY - 16,
+      ease: "power4"
+    })
+}
+
+// ** ----------------------------------------
 // ** PAGELOAD ANIMATIONS
 // ** ----------------------------------------
 
