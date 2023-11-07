@@ -135,18 +135,37 @@ function getCursor(e) {
 // ** ----------------------------------------
 
 const cursor = document.querySelector('.cursor-ball');
+const cursorOuter = document.querySelector('.cursor-outer');
+const cursorOuterCircle = $('.cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
-$('.--cursor-shrink').on('mouseenter', function(){gsap.to(cursor, {scale: 0})}).on('mouseleave', function(){gsap.to(cursor, {scale: 1})})
+// * EXPAND CURSOR
+
+$('.--cursor-expand').on('mouseenter', function(){
+    gsap.to(cursor, {scale: 0});
+    gsap.to(cursorOuter, {scale: 2});
+}).on('mouseleave', function(){
+    gsap.to(cursor, {scale: 1});
+    gsap.to(cursorOuter, {scale: 1});
+    gsap.to(cursorOuterCircle, {
+        strokeWidth: "1px"
+    }, '<')
+});
 
 function cursorMove(e) {
-    gsap.to(cursor, {
-      delay: 0.02,
-      x: e.clientX - 8,
+    let tl = gsap.timeline({
+    });
+
+    tl.to(cursor, {
+      x: e.clientX - 7,
       y: e.clientY - 16,
       ease: "power4"
-    })
+    }).to(cursorOuter, {
+        x: e.clientX - 25,
+        y: e.clientY - 25,
+        ease: "power4"
+    }, '<5%')
 }
 
 // ** ----------------------------------------
@@ -165,6 +184,7 @@ let pageLoadAnimParent = gsap.timeline({
 .add(scaleUpAnims(), "-=50%");
 
 // * SLIDE DOWN
+
 function slideDownAnims() {
     let slideDownArr = gsap.utils.toArray(".-animated-slideDown");
     let slideDown = slideDownArr.map(animation => {
@@ -187,6 +207,7 @@ function slideDownAnims() {
 };
 
 // * BOUNCE IN
+
 function bounceInAnims() {
     let bounceInArr = gsap.utils.toArray(".-animated-bounceIn");
     let bounceIn = gsap.timeline({
@@ -270,12 +291,6 @@ function scaleUpAnims() {
     return scaleUp
 };
 
-// * DELAY PAGELOAD ANIMATIONS
-
-gsap.delayedCall(0.5, function() {
-    pageLoadAnimParent.play()
-});
-
 // * PAGE CHANGE IN
 
 var pageChangeColors = {
@@ -307,6 +322,7 @@ pageChangeAnim.set(".pageChangeContainer", {
 }, "<75%")
 
 // * PAGE CHANGE OUT
+
 $(".navLink").on("click", function(e) {
     e.preventDefault();
 
@@ -320,6 +336,12 @@ $(".navLink").on("click", function(e) {
     localStorage.setItem("pageChangeColor", pageChangeColor);
     $('.pageChangeContainer').css('background-color', pageChangeColor);
     pageChangeAnim.reverse();
+});
+
+// * DELAY PAGELOAD ANIMATIONS
+
+gsap.delayedCall(0.5, function() {
+    pageLoadAnimParent.play()
 });
 
 // ** ----------------------------------------
