@@ -168,7 +168,7 @@ img {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 1rem;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 
 .--hover-1-wrapper {
@@ -176,6 +176,7 @@ img {
   min-width: 3.75rem;
   max-width: max-content;
   overflow: hidden;
+  z-index: 2;
 }
 .--hover-1-wrapper .--hover-1-text {
   display: flex;
@@ -197,7 +198,7 @@ img {
   border-radius: 100%;
   background-color: #E6E073;
   visibility: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 
 .-no-list {
@@ -407,6 +408,7 @@ img {
 
 header {
   display: flex;
+  position: relative;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -416,6 +418,8 @@ header {
   border: 0.05rem solid #141301;
   border-bottom-right-radius: 1.414rem;
   border-bottom-left-radius: 1.414rem;
+  overflow: hidden;
+  z-index: 2;
 }
 header .h1-wrapper {
   padding: 0 0 2.8333rem 2rem;
@@ -429,7 +433,7 @@ header .h1-wrapper .heading-h1 {
 header .filter-container {
   display: flex;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
   justify-content: center;
   align-items: center;
 }
@@ -454,12 +458,49 @@ header .filter-container .filter-wrapper .filter-item-wrapper button {
   border-radius: 2rem 1.4167rem;
 }
 
-.artciles {
+.articles {
   display: inline-flex;
-  padding-top: 5.625rem;
+  position: relative;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 33.936px;
+  margin-top: -5.625rem;
+  padding-top: 5.625rem;
+  gap: 1.4167rem;
+  background-color: #694873;
+  z-index: 1;
+}
+
+.article-container {
+  display: flex;
+  width: 100%;
+  padding: 0px 1rem 2rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.article-container .article-wrapper {
+  display: flex;
+  height: 10.5833rem;
+  align-items: center;
+  gap: -2.8333rem;
+  align-self: stretch;
+}
+.article-container .article-wrapper .article-content {
+  display: flex;
+  padding: 0px 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+.article-container .article-divider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 /*# sourceMappingURL=blog.css.map */

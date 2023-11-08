@@ -168,7 +168,7 @@ img {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 1rem;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 
 .--hover-1-wrapper {
@@ -176,6 +176,7 @@ img {
   min-width: 3.75rem;
   max-width: max-content;
   overflow: hidden;
+  z-index: 2;
 }
 .--hover-1-wrapper .--hover-1-text {
   display: flex;
@@ -197,7 +198,7 @@ img {
   border-radius: 100%;
   background-color: #E6E073;
   visibility: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 
 .-no-list {
