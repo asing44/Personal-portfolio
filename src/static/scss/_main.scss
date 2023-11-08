@@ -188,7 +188,7 @@ img {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 1rem;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 
 .--hover-1-wrapper {
@@ -196,6 +196,7 @@ img {
     min-width: base.$dimension-small-plus;
     max-width: max-content;
     overflow: hidden;
+    z-index: 2;
 
     .--hover-1-text {
         display: flex;
@@ -218,7 +219,7 @@ img {
     border-radius: 100%;
     background-color: base.$secondary-light-main;
     visibility: hidden;
-    z-index: -1;
+    z-index: 1;
 }
 
 
@@ -333,11 +334,13 @@ img {
 // * PAGE LOAD
 
 // Bounce in
+
 .-animated-bounceIn {
     position: relative;
 }
 
 // Slide in
+
 .-animated-expandRight {
     display: inline-block;
     position: relative;
@@ -346,6 +349,7 @@ img {
 // * LINKS
 
 // Link 1
+
 .-inline-link {
     position: relative;
     color: base.$accent-light-red;
@@ -357,42 +361,41 @@ img {
     }
     
     span {
-      transition: color 250ms ease-in-out;
+        transition: color 250ms ease-in-out;
     
-      &::before {
-        content: "";
-        position: absolute;
-        height: base.$font-size-4;
-        width: 100%;
-        bottom: 0%;
-        left: 0;
-        border-radius: 1rem;
-        background-color: base.$accent-light-red;
-        transition: left 250ms ease-in-out;
-      }
-      
-      &:hover::before{
+        &::before {
+            content: "";
+            position: absolute;
+            height: base.$font-size-4;
+            width: 100%;
+            bottom: 0%;
+            left: 0;
+            border-radius: 1rem;
+            background-color: base.$accent-light-red;
+            transition: left 250ms ease-in-out;
+        }
+
+        &:hover::before{
         left: 100%;
-      }
-      
-      &::after {
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        bottom: 0%;
-        left: -100%;
-        border-radius: 1rem;
-        background-color: base.$accent-light-red;
-        transition: left 250ms ease-in-out 150ms;
-      }
-      
-      &:hover::after{
-        left: 0%;
-      }
-      
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            bottom: 0%;
+            left: -100%;
+            border-radius: 1rem;
+            background-color: base.$accent-light-red;
+            transition: left 250ms ease-in-out 150ms;
+        }
+
+        &:hover::after{
+            left: 0%;
+        }
     }
-  }
+}
 // ** ----------------------------------------
 // ** NAVIGATION
 // ** ----------------------------------------
@@ -473,12 +476,10 @@ img {
 
 // * SCOLLRED NAVIGATION BUTTON
 .navigation-scrolled-button {
-    
 }
 
 // * SCROLLED NAVIGATION MODAL
 .navigationScrolledContainer {
-   
 }
 
 // ** ----------------------------------------

@@ -88,23 +88,24 @@ $dimension-massive: 45rem;         // 1080px
 $dimension-massive: 60rem;         // 1440px
 
 // * GRID
+$grid-gap-tiny: $font-size-2;
 $grid-grap-small: $font-size1;
 $grid-gap-regular: $font-size2;
 
 // * MARGIN AND PADDING
 // Margin
-$margin-tiny: $font-size-4;
-$margin-tiny-plus: $font-size-3;
-$margin-small: $font-size-2;
-$margin-small-plus: $font-size-1;
-$margin-regular: $font-size0;
-$margin-regular-plus: $font-size1;
-$margin-medium: $font-size2;
-$margin-medium-plus: $font-size3;
-$margin-large: $font-size4;
-$margin-large-plus: $font-size5;
-$margin-huge: $font-size6;
-$margin-huge-plus: $font-size7;
+$margin-tiny: $font-size-4;        //
+$margin-tiny-plus: $font-size-3;   //
+$margin-small: $font-size-2;       //
+$margin-small-plus: $font-size-1;  //
+$margin-regular: $font-size0;      //
+$margin-regular-plus: $font-size1; //
+$margin-medium: $font-size2;       // 48px
+$margin-medium-plus: $font-size3;  //
+$margin-large: $font-size4;        //
+$margin-large-plus: $font-size5;   //
+$margin-huge: $font-size6;         // 
+$margin-huge-plus: $font-size7;    // 
 // Padding
 $padding-tiny: $font-size-4;
 $padding-tiny-plus: $font-size-3;
@@ -112,7 +113,7 @@ $padding-small: $font-size-2;
 $padding-small-plus: $font-size-1;
 $padding-regular: $font-size0;
 $padding-regular-plus: $font-size1;
-$padding-medium: $font-size2;
+$padding-medium: $font-size2;       // 48px
 $padding-medium-plus: $font-size3;
 $padding-large: $font-size4;
 $padding-large-plus: $font-size5;

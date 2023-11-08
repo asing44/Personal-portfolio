@@ -171,9 +171,9 @@ function cursorMove(e) {
     let cursorY = e.clientY;
 
     tl.to(cursor, {
-      x: cursorX - 7,
-      y: cursorY - 16,
-      ease: "power4"
+        x: cursorX - 7,
+        y: cursorY - 16,
+        ease: "power4"
     }).to(cursorOuter, {
         x: cursorX - 25,
         y: cursorY - 25,

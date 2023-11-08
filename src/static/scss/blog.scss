@@ -11,6 +11,7 @@
 
 header {
     display: flex;
+    position: relative;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
@@ -19,6 +20,8 @@ header {
     background-size: cover;
     @include base.border(small-all);
     @include base.border-radius(2);
+    overflow: hidden;
+    z-index: 2;
 
     .h1-wrapper {
         padding: 0 0 base.$padding-medium-plus base.$padding-medium;
@@ -34,7 +37,7 @@ header {
     .filter-container {
         display: flex;
         width: 100%;
-        padding: 0 base.$padding-medium;
+        padding: 0 base.$padding-medium base.$padding-medium base.$padding-medium;
         justify-content: center;
         align-items: center;
 
@@ -67,10 +70,55 @@ header {
 // ** ARTICLES
 // ** ----------------------------------------
 
-.artciles {
+.articles {
     display: inline-flex;
-    padding-top: base.$font-size5;
+    position: relative;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 33.936px;
+    margin-top: calc(-1 * base.$font-size5);
+    padding-top: base.$font-size5;
+    gap: base.$grid-grap-small;
+    // !! Change!
+    background-color: base.$accent-light-purple;
+    z-index: 1;
+}
+
+.article-container {
+    display: flex;
+    width: 100%;
+    padding: 0px base.$font-size0 base.$font-size2 base.$font-size0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: base.$grid-gap-regular;
+
+    .article-wrapper {
+        display: flex;
+        height: base.$dimension-large;
+        align-items: center;
+        gap: calc(-1 * base.$font-size3);
+        align-self: stretch;
+
+        .article-content {
+            display: flex;
+            padding: 0px base.$padding-medium;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: base.$grid-gap-tiny;
+            align-self: stretch;
+        }
+
+        .article-thumbnail {
+
+        }
+    }
+
+    .article-divider-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: base.$font-size-2;
+    }
 }
