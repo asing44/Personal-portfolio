@@ -1,5 +1,6 @@
 ---
 title: 'Blog Update 1'
+tags: post
 postCategory: 'DMD 300'
 published: Oct. 22, 2023
 blogThumbnail: /assets/images/blogs/thumbnails/blog-1-thumbnail.png

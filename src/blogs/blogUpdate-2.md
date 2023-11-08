@@ -1,5 +1,6 @@
 ---
 title: 'Changing project focus'
+tags: post
 postCategory: 'DMD 300'
 published: Oct. 31, 2023
 blogThumbnail: /assets/images/blogs/thumbnails/blog-2-thumbnail.png

@@ -1,7 +1,6 @@
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
-    // Template aliases
     // Watch CSS files for changes
     eleventyConfig.setBrowserSyncConfig({
           files: './dist/css/**/*.css'

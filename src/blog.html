@@ -1,11 +1,5 @@
 ---
-layout: 'base.njk'
-title: 'WORKING ON THIS!'
-name: 'blog'
-permalink: '/blog.html'
-jsSrc: ./assets/js/blog.js
-jsSrcBase: ./assets/js/base.js
-cssSrc: ./css/blog.css
+layout: 'pages/blog.njk'
 ---
 <!-- ** Main -->
 <header>
@@ -27,8 +21,5 @@ cssSrc: ./css/blog.css
     </div>
 </header>
 <section class="articles">
-    {%- for post in collections.post -%}
-      {% include "../partials/article.njk" %}
-    {%- endfor -%}
-
+    
 </section>

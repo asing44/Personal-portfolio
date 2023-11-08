@@ -139,30 +139,30 @@ $border-width-large: 0.25rem;
 // ** ----------------------------------------
 
 @mixin border($type, $color) {
-    @if $type == small && $color == light {
+    @if $type == small and $color == light {
         border-top: $border-width-small solid $background-light-light;
         border-bottom: $border-width-small solid $background-light-light;
     }
 
-    @else if $type == small && $color == dark {
+    @else if $type == small and $color == dark {
         border-top: $border-width-small solid $background-light-dark;
         border-bottom: $border-width-small solid $background-light-dark;
     }
 
-    @else if $type == small-all && $color == light {
+    @else if $type == small-all and $color == light {
         border: $border-width-small solid $background-light-light;
     }
 
-    @else if $type == small-all && $color == dark {
+    @else if $type == small-all and $color == dark {
         border: $border-width-small solid $background-light-dark;
     }
 
-    @else if $type == medium && $color == dark {
+    @else if $type == medium and $color == dark {
         border-top: $border-width-medium solid $background-light-dark;
         border-bottom: $border-width-medium solid $background-light-dark;
     }
 
-    @else if $type == medium-all && $color == dark {
+    @else if $type == medium-all and $color == dark {
         border: $border-width-medium solid $background-light-dark;
     }
 }
@@ -188,7 +188,6 @@ $border-width-large: 0.25rem;
         border-radius: $font-size0 0px $font-size2 $font-size0;
     }
 }
-
 
 @mixin box-shadow($x, $y, $blur, $c) {
     -webkit-box-shadow: $x $y $blur $c;
