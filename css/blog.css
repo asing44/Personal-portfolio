@@ -345,8 +345,8 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border-top: 0.05rem solid #141301;
+  border-bottom: 0.05rem solid #141301;
 }
 .navigationWindowTop .navigationWindowTop-container {
   display: flex;
@@ -395,8 +395,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border: 0.05rem solid #141301;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
@@ -416,8 +415,7 @@ header {
   padding-top: 3.9583rem;
   background-image: url("../assets/images/backgrounds/background light.png");
   background-size: cover;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border: 0.05rem solid #141301;
   border-bottom-right-radius: 1.414rem;
   border-bottom-left-radius: 1.414rem;
   overflow: hidden;
@@ -456,8 +454,7 @@ header .filter-container .filter-wrapper .filter-item-wrapper button {
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 0.7083rem;
   font-weight: 400;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border: 0.05rem solid #141301;
   border-radius: 2rem 1.4167rem;
 }
 
@@ -499,8 +496,7 @@ header .filter-container .filter-wrapper .filter-item-wrapper button {
   align-self: stretch;
   padding: 0px 2rem;
   background-color: #F1F6F9;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border: 0.05rem solid #141301;
   border-radius: 1rem 0px 2rem 1rem;
 }
 .article-container .article-wrapper .article-thumbnail {
@@ -512,8 +508,7 @@ header .filter-container .filter-wrapper .filter-item-wrapper button {
   flex: 1 0 0;
   align-self: stretch;
   border-radius: 0% 50% 50% 0%;
-  border-top: 0.05rem solid #F1F6F9;
-  border-bottom: 0.05rem solid #F1F6F9;
+  border: 0.05rem solid #F1F6F9;
 }
 .article-container .article-divider-wrapper {
   display: flex;
