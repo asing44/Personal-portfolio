@@ -106,6 +106,7 @@ img {
 }
 
 .cursor {
+  position: absolute;
   pointer-events: none;
 }
 .cursor-ball {
@@ -268,7 +269,7 @@ img {
   margin: 0;
   padding: 0;
   color: #FFF;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 3.9583rem;
   font-weight: 500;
   text-transform: lowercase;
