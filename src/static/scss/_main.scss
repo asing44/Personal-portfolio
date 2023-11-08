@@ -111,6 +111,7 @@ img {
 // ** ----------------------------------------
 
 .cursor {
+    position: absolute;
     pointer-events: none;
     
     &-ball {
@@ -314,7 +315,7 @@ img {
         margin: 0;
         padding: 0;
         color: base.$white;
-        font-family: base.$font-family-heading;
+        font-family: base.$font-family-display;
         font-size: base.$font-size4;
         font-weight: base.$font-weight-medium;
         text-transform: lowercase;

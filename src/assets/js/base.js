@@ -140,6 +140,10 @@ const cursorOuterCircle = $('.cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
+// * SET CURSOR
+
+// !! Need to figure out how to set the cursor across page changes
+
 // * EXPAND CURSOR
 
 $('.--cursor-expand').on('mouseenter', function(){
@@ -153,19 +157,27 @@ $('.--cursor-expand').on('mouseenter', function(){
     }, '<')
 });
 
+// * TRACK MOVE
+
 function cursorMove(e) {
     let tl = gsap.timeline({
     });
 
+    let cursorX = e.clientX;
+    let cursorY = e.clientY;
+
     tl.to(cursor, {
-      x: e.clientX - 7,
-      y: e.clientY - 16,
+      x: cursorX - 7,
+      y: cursorY - 16,
       ease: "power4"
     }).to(cursorOuter, {
-        x: e.clientX - 25,
-        y: e.clientY - 25,
+        x: cursorX - 25,
+        y: cursorY - 25,
         ease: "power4"
     }, '<5%')
+
+    localStorage.setItem("cursorX", cursorX);
+    localStorage.setItem("cursorY", cursorY);
 }
 
 // ** ----------------------------------------
@@ -323,7 +335,7 @@ pageChangeAnim.set(".pageChangeContainer", {
 
 // * PAGE CHANGE OUT
 
-$(".navLink").on("click", function(e) {
+$('.--delay-link').on('click', function(e) {
     e.preventDefault();
 
     if (/index/.test($(this).attr("href"))) {
@@ -506,3 +518,9 @@ navLinksArr.forEach(item => {
 // ** ----------------------------------------
 // ** BUTTONS
 // ** ----------------------------------------
+
+// ** ----------------------------------------
+// ** TESTING ZONE
+// ** ----------------------------------------
+
+console.log($('.cursor'))
