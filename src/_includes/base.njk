@@ -24,12 +24,12 @@
       </div>
     </div>
     {# Page change #}
-    <div class="pageChangeContainer -contain">
+    <div class="pageChangeContainer --contain">
         <p id="pageChangeText">{{ name }}</p>
     </div>
     {% include "partials/navigation.njk" %}
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
-    {% include "partials/footer.njk" %}
+    {# {% include "partials/footer.njk" %} #}
   </body>
   <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>
   <script content-type="text/javascript" src="{{ jsSrc }}"></script>

@@ -76,22 +76,20 @@ $state-warning: #C97636;
 $state-error: #B50238;
 
 // * DIMENSIONS
-$dimension-small: 2.6667rem;
-$dimension-small-plus: 3.75rem;
-$dimension-medium: 5.2917rem;
-$dimension-medium-plus: 7.5rem;
-$dimension-large: 10.5833rem;
-$dimension-large-plus: 15rem;
-$dimension-huge: 21.2083rem;
-$dimension-huge-plus: 30rem;
-$dimension-massive: 45rem;
-$dimension-massive: 60rem;
+$dimension-small: 2.6667rem;        // 64px
+$dimension-small-plus: 3.75rem;     // 90px
+$dimension-medium: 5.2917rem;      // 127px
+$dimension-medium-plus: 7.5rem;    // 180px
+$dimension-large: 10.5833rem;     // 254px
+$dimension-large-plus: 15rem;      // 360px
+$dimension-huge: 21.2083rem;       // 509px
+$dimension-huge-plus: 30rem;       // 720px
+$dimension-massive: 45rem;         // 1080px
+$dimension-massive: 60rem;         // 1440px
 
 // * GRID
-$articleColumn-desktop: 1.32fr 1fr;
-$articleColumn-reverse-desktop: 1fr 1.32fr;
-$altNav-desktop: 100px 3fr 1fr / 100%;
-$gap-desktop: $font-size2 $font-size3;
+$grid-grap-small: $font-size1;
+$grid-gap-regular: $font-size2;
 
 // * MARGIN AND PADDING
 // Margin
@@ -165,6 +163,15 @@ $border-width-large: 0.25rem;
         border-top-right-radius: $border-radius-tiny;
         border-bottom-right-radius: $border-radius-tiny;
         border-bottom-left-radius: $border-radius-regular;
+    }
+
+    @else if $type == 2 {
+        border-bottom-right-radius: $border-radius-medium;
+        border-bottom-left-radius: $border-radius-medium;
+    }
+
+    @else if $type == 3 {
+        border-radius: $font-size2 $font-size1;
     }
 }
 

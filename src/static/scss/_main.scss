@@ -93,12 +93,8 @@ a {
 }
 
 button {
-    padding: base.$font-size-1 base.$font-size2;
     border: none;
-    border-radius: base.$font-size0;
     background-color: transparent;
-    font-size: base.$font-size0;
-
 }
 
 img {
@@ -111,8 +107,8 @@ img {
 // ** ----------------------------------------
 
 .cursor {
-    position: absolute;
     pointer-events: none;
+    opacity: 0;
     
     &-ball {
       position: fixed;
@@ -146,7 +142,7 @@ img {
 // ** ----------------------------------------
 
 // * CONTAINERS AND WRAPPERS
-.-contain {
+.--contain {
     min-height: 100vh;
     width: 100%;
 }
@@ -174,45 +170,57 @@ img {
     overflow-y: hidden;
 }
 
-// * BUTTONS
+// * HOVER
 
 // Button 1
-.-button-1 {
+
+.--hover-1 {
     position: relative;
-    background-color: base.$background-light-dark;
-    color: base.$white;
-}
-
-// Button 2 - Slider
-.-button-2-wrapper {
     display: flex;
-    width: min-content;
-    border-radius: 1rem;
-    background-color: base.$grey-light;
-    overflow: clip;
+    max-height: 40px;
+    padding: 0.3333rem 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0.05rem solid #141301;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 1rem;
+    overflow: hidden;
+    z-index: 1;
+}
 
-    .-button-2 {
-        flex: 1;
-        padding: base.$font-size-2 base.$font-size1;
-        border-radius: 1rem;
-        color: base.$black;
-        white-space: nowrap;
-        overflow: clip;
-    }
+.--hover-1-wrapper {
+    position: relative;
+    min-width: base.$dimension-small-plus;
+    max-width: max-content;
+    overflow: hidden;
 
-    .-button-2-right {
-        flex: 0;
-    }
-
-    .-button-2-active {
-        background-color: base.$background-light-dark;
-        color: base.$white;
-    }
-
-    .-button-2:hover {
+    .--hover-1-text {
+        display: flex;
         width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: base.$font-size-1;
+        font-weight: base.$font-weight-bold;
+        text-align: center;
     }
 }
+
+.--hover-1-hover {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background-color: base.$secondary-light-main;
+    visibility: hidden;
+    z-index: -1;
+}
+
 
 // * STYLES
 
@@ -433,7 +441,7 @@ img {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                gap: 16.968px;
+                gap: base.$grid-gap-regular;
     
                 li {
                     display: flex;
@@ -445,42 +453,13 @@ img {
                         display: flex;
                         position: relative;
                         max-height: 40px;
-                        padding: 8px 24px;
+                        padding: base.$padding-tiny-plus base.$padding-regular;
                         flex-direction: column;
                         justify-content: flex-start;
                         align-items: center;
                         @include base.border(small-all);
                         @include base.border-radius(1);
                         overflow: hidden;
-
-                        .--hover-1-wrapper {
-                            position: relative;
-                            overflow: hidden;
-
-                            & > div {
-                                display: flex;
-                                width: 90px;
-                                height: 100%;
-                                justify-content: center;
-                                align-items: center;
-                                font-size: 17px;
-                                font-weight: base.$font-weight-bold;
-                                text-align: center;
-                                z-index: 1;
-                            }
-                        }
-
-                        .navLink-hover {
-                            position: absolute;
-                            height: 5px;
-                            width: 5px;
-                            top: 0;
-                            left: 0;
-                            border-radius: 100%;
-                            background-color: base.$secondary-light-main;
-                            visibility: hidden;
-                            z-index: -1;
-                        }
 
                         &.-activeNavLink {
                             background-color: base.$secondary-light-light;

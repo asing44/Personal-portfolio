@@ -160,6 +160,10 @@ $('.--cursor-expand').on('mouseenter', function(){
 // * TRACK MOVE
 
 function cursorMove(e) {
+    gsap.set('.cursor', {
+        opacity: 1,
+    });
+
     let tl = gsap.timeline({
     });
 
@@ -489,7 +493,7 @@ navLinksArr.forEach(item => {
 
     // Background circle
 
-    let innerCircle = $(container).children('.navLink-hover');
+    let innerCircle = $(container).children('.--hover-1-hover');
 
     gsap.set(innerCircle, {
         x: 0,
@@ -506,7 +510,8 @@ navLinksArr.forEach(item => {
             autoAlpha: 1,
             ease: 'ease.inOut'
         }, '<').to(innerCircle, {
-            scale: 75,
+            duration: 0.75,
+            scale: 70,
             ease: 'power2.inOut'
         }, '<5%');
         tl.play();
