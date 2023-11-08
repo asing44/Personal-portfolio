@@ -409,7 +409,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include base.border(small);
+    @include base.border(small, dark);
 
     .navigationWindowTop-container {
         display: flex;
@@ -460,7 +460,7 @@ img {
                         flex-direction: column;
                         justify-content: flex-start;
                         align-items: center;
-                        @include base.border(small-all);
+                        @include base.border(small-all, dark);
                         @include base.border-radius(1);
                         overflow: hidden;
 

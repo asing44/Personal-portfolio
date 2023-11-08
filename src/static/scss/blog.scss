@@ -18,7 +18,7 @@ header {
     padding-top: base.$padding-large;
     background-image: url('../assets/images/backgrounds/background light.png');
     background-size: cover;
-    @include base.border(small-all);
+    @include base.border(small-all, dark);
     @include base.border-radius(2);
     overflow: hidden;
     z-index: 2;
@@ -58,7 +58,7 @@ header {
                     font-family: base.$font-family-body;
                     font-size: base.$font-size-1;
                     font-weight: base.$font-weight-normal;
-                    @include base.border(small-all);
+                    @include base.border(small-all, dark);
                     @include base.border-radius(3);
                 }
             }
@@ -102,16 +102,27 @@ header {
 
         .article-content {
             display: flex;
-            padding: 0px base.$padding-medium;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: base.$grid-gap-tiny;
             align-self: stretch;
+            padding: 0px base.$padding-medium;
+            background-color: base.$background-light-light;
+            @include base.border(small-all, dark);
+            @include base.border-radius(4);
         }
 
         .article-thumbnail {
-
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: base.$grid-gap-tiny;
+            flex: 1 0 0;
+            align-self: stretch;
+            border-radius: 0% 50% 50% 0%;
+            @include base.border(small-all, light);
         }
     }
 

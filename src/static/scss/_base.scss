@@ -138,23 +138,32 @@ $border-width-large: 0.25rem;
 // ** MIXINS
 // ** ----------------------------------------
 
-@mixin border($type) {
-    @if $type == small {
+@mixin border($type, $color) {
+    @if $type == small && $color == light {
+        border-top: $border-width-small solid $background-light-light;
+        border-bottom: $border-width-small solid $background-light-light;
+    }
+
+    @else if $type == small && $color == dark {
         border-top: $border-width-small solid $background-light-dark;
         border-bottom: $border-width-small solid $background-light-dark;
     }
 
-    @else if $type == small-all {
-        border: $border-width-small solid $background-light-dark
+    @else if $type == small-all && $color == light {
+        border: $border-width-small solid $background-light-light;
     }
 
-    @else if $type == medium {
+    @else if $type == small-all && $color == dark {
+        border: $border-width-small solid $background-light-dark;
+    }
+
+    @else if $type == medium && $color == dark {
         border-top: $border-width-medium solid $background-light-dark;
         border-bottom: $border-width-medium solid $background-light-dark;
     }
 
-    @else if $type == medium-all {
-        border: $border-width-medium solid $background-light-dark
+    @else if $type == medium-all && $color == dark {
+        border: $border-width-medium solid $background-light-dark;
     }
 }
 
@@ -173,6 +182,10 @@ $border-width-large: 0.25rem;
 
     @else if $type == 3 {
         border-radius: $font-size2 $font-size1;
+    }
+
+    @else if $type == 4 {
+        border-radius: $font-size0 0px $font-size2 $font-size0;
     }
 }
 
