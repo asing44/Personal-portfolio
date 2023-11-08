@@ -93,11 +93,8 @@ a:hover, a:focus, a:active, a:visited {
 }
 
 button {
-  padding: 0.7083rem 2rem;
   border: none;
-  border-radius: 1rem;
   background-color: transparent;
-  font-size: 1rem;
 }
 
 img {
@@ -106,8 +103,8 @@ img {
 }
 
 .cursor {
-  position: absolute;
   pointer-events: none;
+  opacity: 0;
 }
 .cursor-ball {
   position: fixed;
@@ -132,7 +129,7 @@ img {
   stroke-width: 2px;
 }
 
-.-contain {
+.--contain {
   min-height: 100vh;
   width: 100%;
 }
@@ -157,36 +154,50 @@ img {
   overflow-y: hidden;
 }
 
-.-button-1 {
+.--hover-1 {
   position: relative;
-  background-color: #141301;
-  color: #FFF;
+  display: flex;
+  max-height: 40px;
+  padding: 0.3333rem 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 0.05rem solid #141301;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 1rem;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.-button-2-wrapper {
+.--hover-1-wrapper {
+  position: relative;
+  min-width: 3.75rem;
+  max-width: max-content;
+  overflow: hidden;
+}
+.--hover-1-wrapper .--hover-1-text {
   display: flex;
-  width: min-content;
-  border-radius: 1rem;
-  background-color: #E4E8EA;
-  overflow: clip;
-}
-.-button-2-wrapper .-button-2 {
-  flex: 1;
-  padding: 0.5rem 1.4167rem;
-  border-radius: 1rem;
-  color: #000;
-  white-space: nowrap;
-  overflow: clip;
-}
-.-button-2-wrapper .-button-2-right {
-  flex: 0;
-}
-.-button-2-wrapper .-button-2-active {
-  background-color: #141301;
-  color: #FFF;
-}
-.-button-2-wrapper .-button-2:hover {
   width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7083rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.--hover-1-hover {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  background-color: #E6E073;
+  visibility: hidden;
+  z-index: -1;
 }
 
 .-no-list {
@@ -367,7 +378,7 @@ img {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 16.968px;
+  gap: 2rem;
 }
 .navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li {
   display: flex;
@@ -379,7 +390,7 @@ img {
   display: flex;
   position: relative;
   max-height: 40px;
-  padding: 8px 24px;
+  padding: 0.3333rem 1rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -389,32 +400,6 @@ img {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 1rem;
   overflow: hidden;
-}
-.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .--hover-1-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .--hover-1-wrapper > div {
-  display: flex;
-  width: 90px;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 700;
-  text-align: center;
-  z-index: 1;
-}
-.navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a .navLink-hover {
-  position: absolute;
-  height: 5px;
-  width: 5px;
-  top: 0;
-  left: 0;
-  border-radius: 100%;
-  background-color: #E6E073;
-  visibility: hidden;
-  z-index: -1;
 }
 .navigationWindowTop .navigationWindowTop-container .navigationWindowTop-wrapper .navLinks-wrapper li a.-activeNavLink {
   background-color: #ECEBB6;
