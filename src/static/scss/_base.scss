@@ -2,14 +2,29 @@
 // ** SASS VARIABLES
 // ** ----------------------------------------
 
+// * SIZING
+$size-1px: 1.414px;         /* 1px */
+$size-2px: 2px;             /* 2px */
+$size-0_17: 0.17rem;        /* 4px */
+$size-0_25: 0.25rem;        /* 6px */
+$size-0_32: 0.3333rem;      /* 8px */
+$size-0_50: 0.5rem;         /* 12px */
+$size-0_70: 0.7083rem;      /* 17px */
+$size-1_00: 1rem;           /* 24px */
+$size-1_41: 1.4167rem;      /* 34px */
+$size-2_00: 2rem;           /* 48px */
+$size-2_83: 2.8333rem;      /* 68px */
+$size-3_95: 3.9583rem;      /* 95px */
+$size-5_62: 5.625rem;       /* 135px */
+$size-7_95: 7.9583rem;      /* 191px */
+$size-11_29: 11.2917rem;    /* 271px */
+
 // * FONTS
 // Family
 $font-family-display: 'Orbitron', sans-serif;
 $font-family-heading: 'Quicksand', sans-serif;
 $font-family-body: 'Quattrocento Sans', sans-serif;
 // Size
-$font-size-4: 0.25rem;       /* 6px */
-$font-size-3: 0.3333rem;     /* 8px */
 $font-size-2: 0.5rem;        /* 12px */
 $font-size-1: 0.7083rem;     /* 17px */
 $font-size0: 1rem;           /* 24px */
@@ -38,37 +53,17 @@ $font-spacing-decreased: -7%;
 // Background and base
 $white: #FFF;
 $black: #000;
-$background-light-light: #F1F6F9;
-$background-light-dark: #141301;
-$background-dark-light: #FEFDEC;
-$background-dark-dark: #060B0E;
+$background-light: #EDFAFD;
+$background-dark: #050B10;
 // Grey
-$grey-veryLight: #E4E8EA;
-$grey-light: #E4E8EA;
-$grey-dark: #D6DADA;
-$grey-veryDark: #BABEBB;
+$grey-light: #798387;
+$grey-dark: #3F474C;
 // Primary and secondary
-$primary-light-main: #168AB8;
-$primary-light-light: #84C0D9;
-$primary-light-dark: #154F5D;
-$primary-dark-main: #48BCEA;
-$primary-dark-light: #A4DCEA;
-$primary-dark-dark: #26637D;
-$secondary-light-main: #E6E073;
-$secondary-light-light: #ECEBB6;
-$secondary-light-dark: #7D7A3A;
-$secondary-dark-main: #8B8518;
-$secondary-dark-light: #C5C281;
-$secondary-dark-dark: #494813;
+$primary: #111DF8;
+$secondary: #EBE56F;
 // Accent
-$accent-light-green: #32853F;
-$accent-light-red: #BA2D0B;
-$accent-light-blue: #2A1E5C;
-$accent-light-purple: #694873;
-$accent-dark-green: #7ACD86;
-$accent-dark-red: #F46643;
-$accent-dark-blue: #AFA3E1;
-$accent-dark-purple: #AC8BB6;
+$accent-green: #074064;
+$accent-purple: #8F44EB;
 // State
 $state-info: #84C0D9;
 $state-success: #53BF32;
@@ -76,94 +71,116 @@ $state-warning: #C97636;
 $state-error: #B50238;
 
 // * DIMENSIONS
-$dimension-small: 2.6667rem;        // 64px
-$dimension-small-plus: 3.75rem;     // 90px
+$dimension-small: 2.6667rem;       // 64px
+$dimension-small-plus: 3.75rem;    // 90px
 $dimension-medium: 5.2917rem;      // 127px
 $dimension-medium-plus: 7.5rem;    // 180px
-$dimension-large: 10.5833rem;     // 254px
+$dimension-large: 10.5833rem;      // 254px
 $dimension-large-plus: 15rem;      // 360px
 $dimension-huge: 21.2083rem;       // 509px
 $dimension-huge-plus: 30rem;       // 720px
 $dimension-massive: 45rem;         // 1080px
-$dimension-massive: 60rem;         // 1440px
+$dimension-massive-plus: 60rem;    // 1440px
 
 // * GRID
-$grid-gap-tiny: $font-size-2;
-$grid-grap-small: $font-size1;
-$grid-gap-regular: $font-size2;
+$grid-gap-tiny: $size-0_50;        // 12px
+$grid-grap-small: $size-1_41;      // 34px
+$grid-gap-regular: $size-2_00;     // 48px
+$grid-gap-large: $size-2_83;       // 68px
+$grid-gap-huge: $size-5_62;        // 135px
 
 // * MARGIN AND PADDING
 // Margin
-$margin-tiny: $font-size-4;        //
-$margin-tiny-plus: $font-size-3;   //
-$margin-small: $font-size-2;       //
-$margin-small-plus: $font-size-1;  //
-$margin-regular: $font-size0;      //
-$margin-regular-plus: $font-size1; //
-$margin-medium: $font-size2;       // 48px
-$margin-medium-plus: $font-size3;  //
-$margin-large: $font-size4;        //
-$margin-large-plus: $font-size5;   //
-$margin-huge: $font-size6;         // 
-$margin-huge-plus: $font-size7;    // 
+$margin-tiny: $size-0_25;          // 6px
+$margin-tiny-plus: $size-0_32;     // 8px
+$margin-small: $size-0_50;         // 12px 
+$margin-small-plus: $size-0_70;    // 17px 
+$margin-regular: $size-1_00;       // 24px 
+$margin-regular-plus: $size-1_41;  // 32px
+$margin-medium: $size-2_00;        // 48px
+$margin-medium-plus: $size-2_83;   // 68px
+$margin-large: $size-3_95;         // 95px
+$margin-large-plus: $size-5_62;    // 135px
+$margin-huge: $size-7_95;          // 191px
+$margin-huge-plus: $size-11_29;    // 271px
 // Padding
-$padding-tiny: $font-size-4;
-$padding-tiny-plus: $font-size-3;
-$padding-small: $font-size-2;
-$padding-small-plus: $font-size-1;
-$padding-regular: $font-size0;
-$padding-regular-plus: $font-size1;
-$padding-medium: $font-size2;       // 48px
-$padding-medium-plus: $font-size3;
-$padding-large: $font-size4;
-$padding-large-plus: $font-size5;
-$padding-huge: $font-size6;
-$padding-huge-plus: $font-size7;
+$padding-tiny: $size-0_25;         // 6px
+$padding-tiny-plus: $size-0_32;    // 8px
+$padding-small: $size-0_50;        // 12px 
+$padding-small-plus: $size-0_70;   // 17px 
+$padding-regular: $size-1_00;      // 24px 
+$padding-regular-plus: $size-1_41; // 32px
+$padding-medium: $size-2_00;       // 48px
+$padding-medium-plus: $size-2_83;  // 68px
+$padding-large: $size-3_95;        // 95px
+$padding-large-plus: $size-5_62;   // 135px
+$padding-huge: $size-7_95;         // 191px
+$padding-huge-plus: $size-11_29;   // 271px
 
 // * BORDER
 // Radius
-$border-radius-tiny: 0.25rem;
-$border-radius-small: 0.5rem;
-$border-radius-regular: 1rem;
-$border-radius-medium: 1.414rem;
-$border-radius-large: 2rem;
+$border-radius-tiny: $size-0_25;
+$border-radius-small: $size-0_50;
+$border-radius-regular: $size-1_00;
+$border-radius-medium: $size-1_41;
+$border-radius-large: $size-2_00;
 $border-radius-50: 50%;
 $border-radius-100: 100%;
 // Width
-$border-width-small: 0.05rem;
-$border-width-medium: 0.1rem;
-$border-width-large: 0.25rem;
+$border-width-small: $size-1px;
+$border-width-medium: $size-0_17;
+$border-width-large: $size-0_25;
+
+// * OPACITY
+$opacity-low: 14%;
+$opacity-medium: 50%;
+$opacity-high: 85%;
 
 // ** ----------------------------------------
 // ** MIXINS
 // ** ----------------------------------------
 
+// * LINKS
+
+@mixin link-style($type) {
+    @if $type == 1 {
+        color: $background-light;
+        text-align: center;
+        font-family: $font-family-body;
+        font-size: $font-size0;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+    }
+}
+
+// * BORDERS
+
 @mixin border($type, $color) {
     @if $type == small and $color == light {
-        border-top: $border-width-small solid $background-light-light;
-        border-bottom: $border-width-small solid $background-light-light;
+        border-top: $border-width-small solid $background-light;
+        border-bottom: $border-width-small solid $background-light;
     }
 
     @else if $type == small and $color == dark {
-        border-top: $border-width-small solid $background-light-dark;
-        border-bottom: $border-width-small solid $background-light-dark;
+        border-top: $border-width-small solid $background-dark;
+        border-bottom: $border-width-small solid $background-dark;
     }
 
     @else if $type == small-all and $color == light {
-        border: $border-width-small solid $background-light-light;
+        border: $border-width-small solid $background-light;
     }
 
     @else if $type == small-all and $color == dark {
-        border: $border-width-small solid $background-light-dark;
+        border: $border-width-small solid $background-dark;
     }
 
     @else if $type == medium and $color == dark {
-        border-top: $border-width-medium solid $background-light-dark;
-        border-bottom: $border-width-medium solid $background-light-dark;
+        border-top: $border-width-medium solid $background-dark;
+        border-bottom: $border-width-medium solid $background-dark;
     }
 
     @else if $type == medium-all and $color == dark {
-        border: $border-width-medium solid $background-light-dark;
+        border: $border-width-medium solid $background-dark;
     }
 }
 
@@ -181,13 +198,15 @@ $border-width-large: 0.25rem;
     }
 
     @else if $type == 3 {
-        border-radius: $font-size2 $font-size1;
+        border-radius: $size-2_00 $size-1_41;
     }
 
     @else if $type == 4 {
-        border-radius: $font-size0 0px $font-size2 $font-size0;
+        border-radius: $size-1_00 0px $size-2_00 $size-1_00;
     }
 }
+
+// * EFFECTS
 
 @mixin box-shadow($x, $y, $blur, $c) {
     -webkit-box-shadow: $x $y $blur $c;

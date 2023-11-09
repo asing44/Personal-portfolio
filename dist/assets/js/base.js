@@ -1,6 +1,6 @@
-// ** ----------------------------------------
-// ** INIT AND SETUP
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? INIT AND SETUP
+// ?? ----------------------------------------
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
@@ -27,9 +27,9 @@ gsap.to(window, {
     ease: "power3.out"
 });
 
-// ** ----------------------------------------
-// ** HELPER FUNCTIONS
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? HELPER FUNCTIONS
+// ?? ----------------------------------------
 
 // * INFINITE HORIZONTAL LOOPING
 
@@ -126,9 +126,9 @@ function getCursor(e) {
     }
 }
 
-// !! ----------------------------------------
-// !? GLOBAL
-// !! ----------------------------------------
+// ?? ----------------------------------------
+// ?? GLOBAL
+// ?? ----------------------------------------
 
 // ** ----------------------------------------
 // ** CURSOR
@@ -188,125 +188,6 @@ function cursorMove(e) {
 // ** PAGELOAD ANIMATIONS
 // ** ----------------------------------------
 
-// * PARENT
-let pageLoadAnimParent = gsap.timeline({
-    duration: 1,
-    paused: true,
-    delay: -1
-})
-.add(slideDownAnims())
-.add(bounceInAnims(), "-=50%")
-.add(expandRightAnims(), "-=50%")
-.add(scaleUpAnims(), "-=50%");
-
-// * SLIDE DOWN
-
-function slideDownAnims() {
-    let slideDownArr = gsap.utils.toArray(".-animated-slideDown");
-    let slideDown = slideDownArr.map(animation => {
-        let tl = gsap.timeline({
-            defaults: {
-                ease: "power2.out"
-            },
-            stagger: 0.2
-        });
-        tl.set(animation, {
-            yPercent: 0
-        }).fromTo(animation, {
-            yPercent: -100
-        }, {
-            yPercent: 0
-        })
-        return tl;
-    });
-    return slideDown;
-};
-
-// * BOUNCE IN
-
-function bounceInAnims() {
-    let bounceInArr = gsap.utils.toArray(".-animated-bounceIn");
-    let bounceIn = gsap.timeline({
-        stagger: 0.2
-    });
-    bounceInArr.forEach(animation => {
-        let tl = gsap.timeline({
-            defaults: {
-                ease: "back.out"
-            }
-        });
-        tl.fromTo(animation, {
-            opacity: 0
-        }, {
-            duration: 0.2,
-            opacity: 1,
-            ease: "power2"
-        }).fromTo(animation, {
-            yPercent: 100
-        }, {
-            yPercent: 0
-        }, "-=50%")
-        bounceIn.add(tl)
-    })
-    return bounceIn
-};
-
-// * EXPAND RIGHT
-
-function expandRightAnims() {
-    let expandRightArr = gsap.utils.toArray(".-animated-expandRight");
-    let expandRightParentsArr = gsap.utils.toArray(".-animated-expandRight-wrapper");
-    let expandRight = gsap.timeline({
-    });
-    expandRightParentsArr.forEach(parentAnimation => {
-        let expandRightChildArr = gsap.utils.toArray(".-animated-expandRight");
-        let initialWidth = gsap.getProperty(parentAnimation, "width");
-        let tl = gsap.timeline({
-            defaults: {
-                duration: 1,
-                ease: "power2.out"
-            }
-        });
-        tl.fromTo(parentAnimation, {
-            width: 0
-        }, {
-            width: initialWidth
-        }).fromTo(expandRightChildArr, {
-            xPercent: 100,
-            opacity: 0
-        }, {
-            xPercent: 0
-        }, "<25%").to(expandRightChildArr, {
-            opacity: 1
-        }, "<25%")
-        expandRight.add(tl)
-    });
-    return expandRight;
-};
-
-// * SCALE UP
-
-function scaleUpAnims() {
-    scaleUpArray = gsap.utils.toArray(".-animated-scaleUp");
-    let scaleUp = gsap.timeline({});
-    scaleUpArray.forEach(animation => {
-        let tl = gsap.timeline({
-            defaults: {
-                duration: 1.5,
-                ease: "power2.out"
-            }
-        });
-        tl.set(animation, {
-            scale: 0,
-            autoAlpha: 0
-        }).to(animation, {
-            scale: 1,
-            autoAlpha: 1
-        });
-    })
-    return scaleUp
-};
-
 // * PAGE CHANGE IN
 
 var pageChangeColors = {
@@ -360,9 +241,9 @@ gsap.delayedCall(0.5, function() {
     pageLoadAnimParent.play()
 });
 
-// ** ----------------------------------------
-// ** NAVIGATION
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? NAVIGATION
+// ?? ----------------------------------------
 
 // * SHOW/HIDE NAV SCROLLED BUTTON
 
@@ -453,72 +334,32 @@ $("#navigationScrolledButton-close").on("click", () => {
     navModalShowHideAnim.reverse();
 })
 
+// ?? ----------------------------------------
+// ?? LINKS
+// ?? ----------------------------------------
+
 // ** ----------------------------------------
-// ** LINKS
+// ** LINK 1
 // ** ----------------------------------------
 
-// * NAV LINKS
-
-navLinksArr = gsap.utils.toArray('.--hover-1-wrapper');
-
-navLinksArr.forEach(item => {
-
-    let container = $(item).parent();
-
-    $(item).children('.--hover-1-text').each(function(index, i){
-        (i.dataset.word).split("").forEach(ltr => {
-        $(i).append(`<span class='--hover-1-ltr'>${ltr}</span>`)
-        })
-    })
-
-    let arr1 = gsap.utils.toArray($(item).children('div:first-of-type').children());
-    let arr2 = gsap.utils.toArray($(item).children('div:last-of-type').children());
-
-    let tl = gsap.timeline({
-        paused: true,
+gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
+    let hover1 = $(item).children("._inner-1");
+    let hover2 = $(item).children("._inner-2");
+    let link1Hover_tl = gsap.timeline({ paused: true });
+    link1Hover_tl.to(hover1, {
+        scale: 0.85
+    }).to(hover2, {
+        duration: 0.4,
+        yPercent: -100,
+        ease: "power3.inOut"
+    },"<5%");
+    $(item).on("mouseenter", function () {
+        link1Hover_tl.play();
+    }).on("mouseleave", function () {
+        link1Hover_tl.reverse();
     });
-
-    for (let i = 0; i <= arr1.length; i++) {
-        tl.add(gsap.to(arr1[i], {
-            duration: 0.4,
-            yPercent: -100,
-            ease: 'ease.inOut'
-        }), '<10%');
-        tl.add(gsap.to(arr2[i], {
-            duration: 0.4,
-            yPercent: -100,
-            ease: 'ease.inOut'
-        }), '<10%');
-    };
-
-    // Background circle
-
-    let innerCircle = $(container).children('.--hover-1-hover');
-
-    gsap.set(innerCircle, {
-        x: 0,
-        y: 0
-    })
-
-    $(container).on('mouseenter', function(e){
-        let newX = getCursor(e).x;
-        let newY = getCursor(e).y;
-        tl.set(innerCircle, {
-            x: newX + "px",
-            y: newY + "px",
-        }, 0).to(innerCircle, {
-            autoAlpha: 1,
-            ease: 'ease.inOut'
-        }, '<').to(innerCircle, {
-            duration: 0.75,
-            scale: 70,
-            ease: 'power2.inOut'
-        }, '<5%');
-        tl.play();
-    }).on('mouseleave', function(){
-        tl.reverse();
-    })
 });
+
 
 // ** ----------------------------------------
 // ** BUTTONS

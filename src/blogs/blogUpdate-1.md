@@ -1,10 +1,11 @@
 ---
-title: 'Blog Update 1'
-tags: post
-postCategory: 'DMD 300'
+title: 'Blog update 1'
+readTime: '5 min'
+category: 'DMD 300'
 published: Oct. 22, 2023
-blogThumbnail: /assets/images/blogs/thumbnails/blog-1-thumbnail.png
-blogThumbnailAlt: The site's timeline in the online project management tool Asana.
+summary: 'In my DMD 300 project update, I used Asana and ChatGPT for project management, focusing on the blog page and homepage.'
+postThumbnail: assets/images/blogs/thumbnails/blog-1-thumbnail.png
+postThumbnailAlt: The site's timeline in the online project management tool Asana.
 ---
 
 <section class="sectionWrapper">
@@ -13,8 +14,8 @@ blogThumbnailAlt: The site's timeline in the online project management tool Asan
 
 This week, I began and worked through the ideation and research phases of my project. I used the online project management tool Asana to organize the phases of the project.
 
-<figure class="articleFigure" id="articleFigure-1"><img class="-img-shadow-rg" src="{{ blogThumbnail }}" alt="{{ blogThumbnailAlt }}">
-<label class="-sm-em" for="articleFigure-1">{{ blogThumbnailAlt }}</label>
+<figure class="articleFigure" id="articleFigure-1"><img class="-img-shadow-rg" src="{{ postThumbnail }}" alt="{{ postThumbnailAlt }}">
+<label class="-sm-em" for="articleFigure-1">{{ postThumbnailAlt }}</label>
 </figure>
 
 </section>

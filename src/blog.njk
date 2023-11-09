@@ -1,13 +1,12 @@
 ---
 layout: 'base.njk'
-title: 'WORKING ON THIS!'
+title: 'blog'
 name: 'blog'
 permalink: '/blog.html'
 jsSrc: ./assets/js/blog.js
 jsSrcBase: ./assets/js/base.js
 cssSrc: ./css/blog.css
 ---
-<!-- ** Main -->
 <header>
     <div class="h1-wrapper">
         <h1 class="heading-h1">blog</h1>
@@ -21,14 +20,19 @@ cssSrc: ./css/blog.css
                 <button class="--hover-1 --cursor-expand" href=""><div class="--hover-1-wrapper"><div class="--hover-1-text" data-word="personal"></div><div class="--hover-1-text" data-word="personal"></div></div><span class="--hover-1-hover"></span></button>
             </li>
             <li class="filter-item-wrapper">
-                <button class="--hover-1 --cursor-expand" href="/blog.html"><div class="--hover-1-wrapper"><div class="--hover-1-text" data-word="blog"></div><div class="--hover-1-text" data-word="blog"></div></div><span class="--hover-1-hover"></span></button>
+                <button class="--hover-1 --cursor-expand" href="/blog.html">
+                <div class="--hover-1-wrapper">
+                    <div class="--hover-1-text" data-word="blog"></div>
+                    <div class="--hover-1-text" data-word="blog"></div>
+                </div>
+                <span class="--hover-1-hover"></span>
+                </button>
             </li>
-            </ul>
+        </ul>
     </div>
 </header>
 <section class="articles">
-    {%- for post in collections.post -%}
-      {% include "../partials/article.njk" %}
-    {%- endfor -%}
-
+    {%- for post in collections.post | reverse -%}
+        {% include "partials/article.njk" %}
+    {%- endfor %}
 </section>

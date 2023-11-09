@@ -25,7 +25,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: base.$background-light-light;
+    background-color: base.$background-light;
     color: base.$black;
     font-family: base.$font-family-body;
     font-size: base.$font-size0;
@@ -82,6 +82,10 @@ ul {
     list-style: none;
 }
 
+li {
+    text-align: match-parent;
+}
+
 a {
     text-decoration: none;
     color: base.$black;
@@ -111,15 +115,15 @@ img {
     opacity: 0;
     
     &-ball {
-      position: fixed;
-      top: 0;
-      left: 0;
-      mix-blend-mode: difference;
-      z-index: 1000;
-      
-      circle {
-        fill: base.$secondary-light-main;
-      }
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+
+        circle {
+            fill: base.$secondary;
+        }
     }
 
     &-outer {
@@ -131,7 +135,7 @@ img {
 
         circle {
             fill: transparent;
-            stroke: base.$secondary-light-main;
+            stroke: base.$secondary;
             stroke-width: 2px;
         }
     }
@@ -142,12 +146,13 @@ img {
 // ** ----------------------------------------
 
 // * CONTAINERS AND WRAPPERS
+
 .--contain {
     min-height: 100vh;
     width: 100%;
 }
 
-.-wrap {
+.--wrap {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -156,132 +161,228 @@ img {
 .-wrap-center {
     display: grid;
     place-content: center;
-    @extend .-wrap;
+    @extend .--wrap;
 }
 
 // * DISPLAY OR HIDE
-.-inactive {
+
+.--inactive {
     display: none !important;
 }
 
 // * LOCK SCROLL
-.-lockScroll {
+
+.--lockScroll {
     height: 100%;
     overflow-y: hidden;
 }
 
-// * HOVER
-
-// Button 1
-
-.--hover-1 {
-    position: relative;
-    display: flex;
-    max-height: 40px;
-    padding: 0.3333rem 1rem;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 0.05rem solid #141301;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-    border-bottom-left-radius: 1rem;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.--hover-1-wrapper {
-    position: relative;
-    min-width: base.$dimension-small-plus;
-    max-width: max-content;
-    overflow: hidden;
-    z-index: 2;
-
-    .--hover-1-text {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        font-size: base.$font-size-1;
-        font-weight: base.$font-weight-bold;
-        text-align: center;
-    }
-}
-
-.--hover-1-hover {
-    position: absolute;
-    height: 5px;
-    width: 5px;
-    top: 0;
-    left: 0;
-    border-radius: 100%;
-    background-color: base.$secondary-light-main;
-    visibility: hidden;
-    z-index: 1;
-}
-
-
 // * STYLES
 
+// Remove padding and margin
+
+.--no-pm {
+    margin: 0;
+    padding: 0;
+}
+
 // Remove list style
-.-no-list {
+
+.--no-list {
     list-style: none;
 }
 
 // Ordered list
-.-ordered-list {
+
+.--ordered-list {
     list-style: decimal;
 
-    .-list-head {
+    .list-head {
         list-style: circle;
     }
 }
 
 // Small emphasis
-.-sm-em {
+
+.--sm-em {
     font-style: italic;
 }
 
 // Small bold
-.-sm-bd {
+
+.--sm-bd {
     font-size: base.$font-size-2;
     font-weight: base.$font-weight-bold;
     letter-spacing: 1.2;
     text-transform: uppercase;
 }
 
-// Tags
-.-tag-sm {
-    display: inline-block;
-    padding: base.$padding-tiny;
-    border-radius: base.$border-radius-small;
-    background-color: base.$secondary-light-main;
-    color: base.$white;
-    font-family: base.$font-family-heading;
-    font-size: base.$font-size-2;
-    font-weight: base.$font-weight-bold;
-}
-
 // Images
-.-img-shadow-rg {
+
+.--img-shadow-rg {
     @include base.box-shadow(0px, 0px, base.$font-size4, base.$grey-dark);
 }
 
 // * ICONS
 
 // Arrows
-.-SVG-arrow {
+.--SVG-arrow {
     &.arrow-back {
         height: 1.5em;
         fill: base.$white;
     }
 }
 
+// ?? ----------------------------------------
+// ?? INTERACTIVE
+// ?? ----------------------------------------
+
 // ** ----------------------------------------
-// ** MISCELLANEOUS AND TESTING
+// ** LINKS
 // ** ----------------------------------------
+
+.__link-1 {
+display: flex;
+position: relative;
+width: 153.942px;
+height: 52.963px;
+flex-direction: column;
+align-items: center;
+flex-shrink: 0;
+border-radius: 34px;
+overflow: hidden;
+cursor: pointer;
+
+&--regular {
+    ._inner-1,
+    ._inner-2 {
+        position: absolute;
+        display: flex;
+        height: 52.96px;
+        width: 153.942px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 47px;
+        gap: 10px;
+
+        ._text {
+            color: base.$background-light;
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+
+    ._inner-2 {
+        bottom: -52.997px;
+        border-radius: 34px;
+        background-color: base.$secondary;
+
+        ._text {
+            color: base.$background-dark;
+        }
+    }
+}
+
+&--active {
+background-color: base.$secondary;
+
+._inner-1 {
+._text {
+color: base.$background-dark;
+}
+}
+}
+}
+
+// ?? ----------------------------------------
+// ?? PAGE CHANGE
+// ?? ----------------------------------------
+
+// * PAGE CHANGE
+
+.pageChangeContainer {
+    display: grid;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    right: 0;
+    top: 0;
+    place-content: center;
+    background-color: base.$background-dark;
+    z-index: 11;
+
+    p {
+        margin: 0;
+        padding: 0;
+        color: base.$background-light;
+        font-family: base.$font-family-display;
+        font-size: base.$font-size4;
+        font-weight: base.$font-weight-medium;
+        text-transform: lowercase;
+    }
+}
+
+// ?? ----------------------------------------
+// ?? SECTIONS
+// ?? ----------------------------------------
+
+// ** ----------------------------------------
+// ** NAVIGATION
+// ** ----------------------------------------
+
+// * TOP NAVIGATION
+
+.navigation-top-container {
+    display: flex;
+    height: 138px;
+    width: 100%;
+    padding: 0px base.$size-2_00;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: base.$background-dark;
+
+    .navigation-top-wrapper {
+        display: flex;
+        padding: 24px 0px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        .navigation-top-logo-wrapper {
+            height: 68px;
+            width: 68px;
+
+            .navigation-top-logo {
+
+            }
+        }
+    
+        .navigation-top-links-container {
+            display: flex;
+            position: relative;
+            gap: 24px;
+
+            .navigation-top-links-wrapper {
+                display: flex;
+                width: 153.942px;
+                height: 52.963px;
+                flex-direction: column;
+                align-items: center;
+                flex-shrink: 0;
+            }
+    }
+
+    }
+}
+
+// ** ----------------------------------------
+// ** FOOTER
+// ** ----------------------------------------
+
+// ?? ----------------------------------------
+// ?? MISCELLANEOUS AND TESTING
+// ?? ----------------------------------------
 
 #fixedReference {
     position: fixed;
@@ -289,6 +390,7 @@ img {
     width: 100vw;
     top: 0;
     left: 0;
+    pointer-events: none;
     z-index: 0;
 }
 
@@ -302,186 +404,3 @@ img {
     height: 100%;
     border-radius: 50%;
 }
-
-// ** ----------------------------------------
-// ** ANIMATIONS
-// ** ----------------------------------------
-
-// * PAGE CHANGE
-
-.pageChangeContainer {
-    display: grid;
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    right: 0;
-    top: 0;
-    place-content: center;
-    background-color: base.$background-light-dark;
-    z-index: 11;
-
-    p {
-        margin: 0;
-        padding: 0;
-        color: base.$white;
-        font-family: base.$font-family-display;
-        font-size: base.$font-size4;
-        font-weight: base.$font-weight-medium;
-        text-transform: lowercase;
-    }
-}
-
-// * PAGE LOAD
-
-// Bounce in
-
-.-animated-bounceIn {
-    position: relative;
-}
-
-// Slide in
-
-.-animated-expandRight {
-    display: inline-block;
-    position: relative;
-}
-
-// * LINKS
-
-// Link 1
-
-.-inline-link {
-    position: relative;
-    color: base.$accent-light-red;
-    cursor: pointer;
-    overflow: clip;
-
-    &:hover, &:visited, &:focus {
-        color: base.$accent-light-red;
-    }
-    
-    span {
-        transition: color 250ms ease-in-out;
-    
-        &::before {
-            content: "";
-            position: absolute;
-            height: base.$font-size-4;
-            width: 100%;
-            bottom: 0%;
-            left: 0;
-            border-radius: 1rem;
-            background-color: base.$accent-light-red;
-            transition: left 250ms ease-in-out;
-        }
-
-        &:hover::before{
-        left: 100%;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            bottom: 0%;
-            left: -100%;
-            border-radius: 1rem;
-            background-color: base.$accent-light-red;
-            transition: left 250ms ease-in-out 150ms;
-        }
-
-        &:hover::after{
-            left: 0%;
-        }
-    }
-}
-// ** ----------------------------------------
-// ** NAVIGATION
-// ** ----------------------------------------
-
-// * TOP NAVIGATION
-.navigationWindowTop {
-    display: flex;
-    position: relative;
-    width: 100%;
-    padding: 0px 47.986px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include base.border(small, dark);
-
-    .navigationWindowTop-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-self: stretch;
-
-        .navigationWindowTop-wrapper {
-            display: flex;
-            padding: 24px 0px;
-            justify-content: space-between;
-            align-items: center;
-            align-self: stretch;
-
-            .navLink-home {
-                display: flex;
-                width: 64px;
-                height: 64px;
-                padding: 12px 40px;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-    
-                .logo {
-                    height: 100%;
-                    aspect-ratio: 1 / 1;
-                }
-            }
-    
-            .navLinks-wrapper {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                gap: base.$grid-gap-regular;
-    
-                li {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-        
-                    a {
-                        display: flex;
-                        position: relative;
-                        max-height: 40px;
-                        padding: base.$padding-tiny-plus base.$padding-regular;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        align-items: center;
-                        @include base.border(small-all, dark);
-                        @include base.border-radius(1);
-                        overflow: hidden;
-
-                        &.-activeNavLink {
-                            background-color: base.$secondary-light-light;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-// * SCOLLRED NAVIGATION BUTTON
-.navigation-scrolled-button {
-}
-
-// * SCROLLED NAVIGATION MODAL
-.navigationScrolledContainer {
-}
-
-// ** ----------------------------------------
-// ** FOOTER
-// ** ----------------------------------------

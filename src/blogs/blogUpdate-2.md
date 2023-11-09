@@ -1,10 +1,11 @@
 ---
 title: 'Changing project focus'
-tags: post
-postCategory: 'DMD 300'
+readTime: '5 min'
+category: 'DMD 300'
 published: Oct. 31, 2023
-blogThumbnail: /assets/images/blogs/thumbnails/blog-2-thumbnail.png
-blogThumbnailAlt: The site's sitemap
+summary: 'In this DMD 300 update, I split my project into design and development. Embraced 11ty and AI. Planning for content and design refinement.'
+postThumbnail: assets/images/blogs/thumbnails/blog-2-thumbnail.png
+postThumbnailAlt: The site's sitemap
 ---
 
 <section class="sectionWrapper">
