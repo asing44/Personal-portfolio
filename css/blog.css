@@ -62,6 +62,7 @@ h2,
 h3,
 h4,
 h5 {
+  margin: 0;
   font-family: "Quicksand", sans-serif;
   line-height: 1.1;
 }
@@ -108,11 +109,10 @@ li {
 
 a {
   text-decoration: none;
-  color: #000;
 }
 a:hover, a:focus, a:active, a:visited {
   text-decoration: none;
-  color: #000;
+  color: inherit;
 }
 
 button {
@@ -260,6 +260,14 @@ img {
   color: #050B10;
 }
 
+.__inline-link {
+  color: rgba(143, 68, 235, 0.6);
+  transition: color 250ms ease-in-out;
+}
+.__inline-link:hover {
+  color: #8F44EB;
+}
+
 .__button-1 {
   display: flex;
   position: relative;
@@ -318,12 +326,14 @@ img {
   z-index: 11;
 }
 .pageChangeContainer p {
+  max-width: 45rem;
   margin: 0;
   padding: 0;
   color: #EDFAFD;
   font-family: "Orbitron", sans-serif;
   font-size: 3.9583rem;
   font-weight: 500;
+  text-align: center;
   text-transform: lowercase;
 }
 
@@ -480,13 +490,14 @@ header .header-container h1 {
   text-align: center;
 }
 
-.article-container {
+.article-wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
 }
-.article-container .article-thumbnail-container {
+.article-wrapper .article-thumbnail-container {
   display: flex;
   position: relative;
   width: 15.2rem;
@@ -497,10 +508,55 @@ header .header-container h1 {
   gap: 0.5rem;
   border-radius: 1rem;
   overflow: hidden;
+  z-index: 2;
 }
-.article-container .article-thumbnail-container .article-thumbnail {
+.article-wrapper .article-thumbnail-container .article-thumbnail {
   height: 100%;
   width: 100%;
+  border: 1px solid #EDFAFD;
+  border-radius: 1rem;
+}
+.article-wrapper .article-thumbnail-container .__article-specific-category-wrapper {
+  display: flex;
+  position: absolute;
+  width: min-content;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0 0 0 1rem;
+  background-color: #EDFAFD;
+}
+.article-wrapper .article-thumbnail-container .__article-specific-category-wrapper .__article-specific-category {
+  display: flex;
+  padding: 0.25rem 0.7083rem;
+  border-radius: 1rem;
+  background-color: #111DF8;
+  color: #EDFAFD;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 500;
+}
+.article-wrapper .article-content-container {
+  display: flex;
+  max-width: 15.2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.article-wrapper .article-content-container .article-title {
+  margin-top: 0.17rem;
+  align-self: stretch;
+  color: #050B10;
+  font-size: 1.4167rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.article-wrapper .article-content-container .article-summary {
+  align-self: stretch;
+  font-size: 0.7083rem;
 }
 
 /*# sourceMappingURL=blog.css.map */
