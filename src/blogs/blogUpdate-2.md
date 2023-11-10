@@ -1,11 +1,11 @@
 ---
 title: 'Changing project focus'
-readTime: '5 min'
-category: 'DMD 300'
+readTime: '10 min'
+category: 'dmd 300'
 published: Oct. 31, 2023
 summary: 'In this DMD 300 update, I split my project into design and development. Embraced 11ty and AI. Planning for content and design refinement.'
-postThumbnail: assets/images/blogs/thumbnails/blog-2-thumbnail.png
-postThumbnailAlt: The site's sitemap
+articleThumbnail: assets/images/blogs/thumbnails/blog-2-thumbnail.png
+articleThumbnailAlt: The site's sitemap
 ---
 
 <section class="sectionWrapper">
@@ -41,14 +41,14 @@ In the ever-evolving landscape of web development, adapting to new tools and tec
  
 3.	**Leveraging Markdown:** Incorporating Markdown files has allowed me to separate content from layout, making content management more flexible and efficient. Creating and editing content is now a straightforward task.
 
-<figure class="articleFigure" name="articleFigure-3"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/Markdown.png" alt="The Markdown format for a blog post">
-<figcaption class="-sm-em" for="articleFigure-3">The Markdown format for a blog post</figcaption>
+<figure class="articleFigure" name="articleFigure-3"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/Markdown.png" alt="The Markdown format for a blog article">
+<figcaption class="-sm-em" for="articleFigure-3">The Markdown format for a blog article</figcaption>
 </figure>
  
 4.	**JSON Files for Data:** To ensure a dynamic touch to my static site, I've employed JSON files to store data. These files contain crucial information for elements such as project descriptions and metadata, which can be easily manipulated as my portfolio evolves.
 
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog post">
-<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog post</figcaption>
+<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
 </figure>
 
 ### Designing the Logo and Style Guide
@@ -58,15 +58,15 @@ Beyond the technical aspects, I've also delved into the creative side of the pro
 1.	**Logo Design:** The visual identity of my portfolio is taking shape with the design of a unique and memorable logo. I wanted the logo to encapsulate my personality and style, and the creative process is well underway.
 
 <!-- !! INSERT -->
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog post">
-<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog post</figcaption>
+<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
 </figure>
  
 2.	**Base Style Guide:** A solid foundation is essential, and that's precisely what the base style guide provides. It includes color schemes, typography choices, and layout guidelines, ensuring consistency and cohesion throughout the site.
 
 <!-- !! INSERT -->
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog post">
-<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog post</figcaption>
+<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
 </figure>
  
 The process of developing the static site and crafting the design elements has been both a technical and artistic adventure. Stay tuned for further updates as I continue to fine-tune these aspects, bringing my portfolio project one step closer to its final form. Your support and feedback are invaluable as I navigate this creative journey!

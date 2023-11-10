@@ -13,6 +13,7 @@
 /* 135px */
 /* 191px */
 /* 271px */
+/* 365px */
 /* 12px */
 /* 17px */
 /* 24px */
@@ -53,7 +54,7 @@ main {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 h1,
@@ -382,4 +383,4 @@ img {
   border-radius: 50%;
 }
 
-/*# sourceMappingURL=blogPost.css.map */
+/*# sourceMappingURL=blogArticle.css.map */

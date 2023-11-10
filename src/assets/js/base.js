@@ -252,7 +252,6 @@ $('.--delay-link').on('click', function(e) {
 // * NAVIGATION TOP ACTIVE LINK
 
 $('.navLink').each(function() {
-    console.log($(this))
     if ((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/) == $(this).data('location')) {
         $(this).addClass('__link-1--active');
     } else {
@@ -404,6 +403,3 @@ gsap.utils.toArray($(".__button-1:not(.__button-1--active)")).forEach((item) => 
 // ?? ----------------------------------------
 // ?? TESTING ZONE
 // ?? ----------------------------------------
-
-console.log((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/))
-

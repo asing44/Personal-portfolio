@@ -1,6 +1,6 @@
 {
-    "layout": "pages/blogPost.njk",
-    "tags": "post",
+    "layout": "pages/blogArticle.njk",
+    "tags": "article",
     "permalink": "/blogs/{{ title | slugify}}.html",
     "author": "Drake Smith"
 }

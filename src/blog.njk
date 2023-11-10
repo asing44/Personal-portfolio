@@ -33,7 +33,16 @@ cssSrc: ./css/blog.css
                 <div class="_inner-2"><span class="_text">dmd300</span></div>
             </button>
         </li>
-    </ul>    {%- for post in collections.post | reverse -%}
-        {% include "partials/article.njk" %}
-    {%- endfor %}
+    </ul>    
+    <div class="articles-section-container">
+        <div class="articles-category-wrapper">
+            <p class="articles-category">all</p>
+            <div class="category-count-wrapper">
+                <p class="category-count"></p>
+            </div>
+        </div>
+        {%- for article in collections.article | reverse -%}
+            {% include "partials/article.njk" %}
+        {%- endfor %}
+    </div>
 </div>
