@@ -237,105 +237,120 @@ $('.--delay-link').on('click', function(e) {
 
 // * DELAY PAGELOAD ANIMATIONS
 
-gsap.delayedCall(0.5, function() {
-    pageLoadAnimParent.play()
-});
+// gsap.delayedCall(0.5, function() {
+//     pageLoadAnimParent.play()
+// });
 
 // ?? ----------------------------------------
-// ?? NAVIGATION
+// ?? SECTIONS
 // ?? ----------------------------------------
 
-// * SHOW/HIDE NAV SCROLLED BUTTON
+// ** ----------------------------------------
+// ** NAVIGATION
+// ** ----------------------------------------
 
-let navScrolled = $(".navigation-scrolled-button");
+// * NAVIGATION TOP ACTIVE LINK
 
-let showHideNavButtonAnim = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#fixedReference",
-        start: "50% top",
-        end: "50% top",
-        toggleActions: "play none reverse none",
+$('.navLink').each(function() {
+    console.log($(this))
+    if ((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/) == $(this).data('location')) {
+        $(this).addClass('__link-1--active');
+    } else {
+        $(this).removeClass('__link-1--active');
     }
 })
 
-showHideNavButtonAnim.fromTo(navScrolled, {
-    scale: 0
-}, {
-    duration: 1,
-    scale: 1,
-    ease: "power3.out"
-})
+// // * SHOW/HIDE NAV SCROLLED BUTTON
 
-// * NAV SCROLLED BUTTON HOVER
-let navButtonHoverAnim = gsap.to(".navButtonHover", {
-    paused: true,
-    duration: 0.5,
-    top: "0%",
-    ease: "power3.out"
-});
+// let navScrolled = $(".navigation-scrolled-button");
 
-$(".navigation-scrolled-button").on("mouseenter", function(){
-    navButtonHoverAnim.play();
-});
-$(".navigation-scrolled-button").on("mouseleave", function(){
-    navButtonHoverAnim.reverse()
-})
+// let showHideNavButtonAnim = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: "#fixedReference",
+//         start: "50% top",
+//         end: "50% top",
+//         toggleActions: "play none reverse none",
+//     }
+// })
 
-// * NAV MODAL
-let navModalShowHideAnim = gsap.timeline({
-    paused: true,
-    defaults: {
-        duration: 1
-    },
-    onStart: () => {
-        $("body").addClass("-lockScroll");
-    },
-    onReverseComplete: () => {
-        $("body").removeClass("-lockScroll");
-        $(".navigationScrolledContainer").addClass("-inactive");
-    }
-})
-.add(showHideModal());
+// showHideNavButtonAnim.fromTo(navScrolled, {
+//     scale: 0
+// }, {
+//     duration: 1,
+//     scale: 1,
+//     ease: "power3.out"
+// })
 
-function showHideModal() {
-    let tl = gsap.timeline({
-        defaults: {
-            duration: 1,
-            ease: "power2.out"
-        }
-    });
-    tl.set($(".navigationScrolledContainer"), {
-        autoAlpha: 0
-    }).set($(".navigationScrolledMainWrapper"),{
-        borderRadius: "40% 0% 0% 40%",
-    }).to($(".navigationScrolledContainer"), {
-        xPercent: 0,
-        autoAlpha: 1
-    }, 0).to($(".navigationScrolledMainWrapper"), {
-        xPercent: -100,
-        ease: "power4.inOut"
-    }, 0).to($(".navigationScrolledMainWrapper"), {
-        borderRadius: "0% 0% 0% 0%",
-        ease: "power4.inOut"
-    }, "<10%")
-    return tl;
-}
+// // * NAV SCROLLED BUTTON HOVER
+// let navButtonHoverAnim = gsap.to(".navButtonHover", {
+//     paused: true,
+//     duration: 0.5,
+//     top: "0%",
+//     ease: "power3.out"
+// });
 
-function modalInnerContent() {
-    let tl = gsap.timeline()
-}
+// $(".navigation-scrolled-button").on("mouseenter", function(){
+//     navButtonHoverAnim.play();
+// });
+// $(".navigation-scrolled-button").on("mouseleave", function(){
+//     navButtonHoverAnim.reverse()
+// })
 
-$(".navigation-scrolled-button").on("click", () => {
-    $(".navigationScrolledContainer").removeClass("-inactive");
-    navModalShowHideAnim.play();
-});
+// // * NAV MODAL
+// let navModalShowHideAnim = gsap.timeline({
+//     paused: true,
+//     defaults: {
+//         duration: 1
+//     },
+//     onStart: () => {
+//         $("body").addClass("-lockScroll");
+//     },
+//     onReverseComplete: () => {
+//         $("body").removeClass("-lockScroll");
+//         $(".navigationScrolledContainer").addClass("-inactive");
+//     }
+// })
+// .add(showHideModal());
 
-$("#navigationScrolledButton-close").on("click", () => {
-    navModalShowHideAnim.reverse();
-})
+// function showHideModal() {
+//     let tl = gsap.timeline({
+//         defaults: {
+//             duration: 1,
+//             ease: "power2.out"
+//         }
+//     });
+//     tl.set($(".navigationScrolledContainer"), {
+//         autoAlpha: 0
+//     }).set($(".navigationScrolledMainWrapper"),{
+//         borderRadius: "40% 0% 0% 40%",
+//     }).to($(".navigationScrolledContainer"), {
+//         xPercent: 0,
+//         autoAlpha: 1
+//     }, 0).to($(".navigationScrolledMainWrapper"), {
+//         xPercent: -100,
+//         ease: "power4.inOut"
+//     }, 0).to($(".navigationScrolledMainWrapper"), {
+//         borderRadius: "0% 0% 0% 0%",
+//         ease: "power4.inOut"
+//     }, "<10%")
+//     return tl;
+// }
+
+// function modalInnerContent() {
+//     let tl = gsap.timeline()
+// }
+
+// $(".navigation-scrolled-button").on("click", () => {
+//     $(".navigationScrolledContainer").removeClass("-inactive");
+//     navModalShowHideAnim.play();
+// });
+
+// $("#navigationScrolledButton-close").on("click", () => {
+//     navModalShowHideAnim.reverse();
+// })
 
 // ?? ----------------------------------------
-// ?? LINKS
+// ?? INTERACTIVE
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
@@ -360,13 +375,13 @@ gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
     });
 });
 
-
 // ** ----------------------------------------
 // ** BUTTONS
 // ** ----------------------------------------
 
-// ** ----------------------------------------
-// ** TESTING ZONE
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? TESTING ZONE
+// ?? ----------------------------------------
 
-console.log($('.cursor'))
+console.log((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/))
+
