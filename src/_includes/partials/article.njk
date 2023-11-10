@@ -1,9 +1,14 @@
-<article class="article-container --cursor-expand">
-    <div class="article-thumbnail-container">
-        <div class="article-thumbnail" style="background-image: url('{{article.data.articleThumbnail}}'); background-size: cover;" alt="{{article.data.articleThumbnailAlt}}"></div>
-        <div class="__article-specific-category-wrapper">
-            <p class="__article-specific-category"></p>
+<a class="article-container --delay-link --cursor-expand" href="{{article.url}}">
+    <article class="article-wrapper">
+        <div class="article-thumbnail-container">
+            <div class="article-thumbnail" style="background-image: url('{{article.data.articleThumbnail}}'); background-size: cover;" alt="{{article.data.articleThumbnailAlt}}"></div>
+            <div class="__article-specific-category-wrapper">
+                <p class="__article-specific-category">{{article.data.category}}</p>
+            </div>
         </div>
-    </div>
-    <div class="article-content-container"></div>
-</article>
+        <div class="article-content-container">
+            <h2 class="article-title">{{article.data.title}}</h2>
+            <p class="article-summary">{{article.data.summary}}</p>
+        </div>
+    </article>
+</a>

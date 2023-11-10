@@ -46,6 +46,7 @@ h2,
 h3,
 h4,
 h5 {
+    margin: 0;
     font-family: base.$font-family-heading;
     line-height: base.$font-lineHeight-110;
 }
@@ -92,14 +93,13 @@ li {
 
 a {
     text-decoration: none;
-    color: base.$black;
 
     &:hover,
     &:focus,
     &:active,
     &:visited {
         text-decoration: none;
-        color: base.$black;
+        color: inherit;
     }
 }
 
@@ -301,6 +301,19 @@ img {
     }
 }
 
+.__inline-link {
+    color: adjust-color(base.$accent-purple, $alpha: -0.4);
+    transition: color 250ms ease-in-out;
+
+    &:hover {
+        color: base.$accent-purple
+    }
+}
+
+// ** ----------------------------------------
+// ** BUTTONS
+// ** ----------------------------------------
+
 .__button-1 {
     display: flex;
     position: relative;
@@ -375,12 +388,14 @@ img {
     z-index: 11;
 
     p {
+        max-width: base.$dimension-massive;
         margin: 0;
         padding: 0;
         color: base.$background-light;
         font-family: base.$font-family-display;
         font-size: base.$font-size4;
         font-weight: base.$font-weight-medium;
+        text-align: center;
         text-transform: lowercase;
     }
 }

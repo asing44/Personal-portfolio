@@ -4,25 +4,9 @@ jsSrc: /assets/js/article.js
 jsSrcBase: /assets/js/base.js
 cssSrc: /css/blogArticle.css
 ---
-<!-- ** Page change animation in -->
-<div class="pageChangeIn-container --contain">
-  <p>{{ title }}</p>
-</div>
-<!-- ** Page change animation out -->
-<div class="pageChangeOut-container --contain">
-  <p id="pageChange-text">{{ title }}</p>
-</div>
 <!-- ** MAIN -->
 <header>
-  {% include "partials/pagination.njk" %}
-  <div>
-    <div class="blog-tag -tag-sm -margin-smBot">{{ articleCategory }}</div>
-    <h1><span class="-animated-bounceIn">{{ title }}</span></h1>
-    <div class="blog-date -sm-bd">{{ published }}</div>
-  </div>
 </header>
-<article class="blog-articleWrapper -margin-xlTop  -padding-xl-rl -wrap">
-  <div class="articleHeroWrapper -padding-md -wrap"><img class="articleHero-img -margin-mdTop -img-shadow-rg -animated-scaleUp" src="{{ articleThumbnail }}" alt="{{ articleThumbnailAlt }}">
-  </div>
+<article class="blog-articleWrapper">
   {% block content %} {{ content | safe }} {% endblock %}
 </article>

@@ -25,7 +25,7 @@
     </div>
     {# Page change #}
     <div class="pageChangeContainer --contain">
-        <p id="pageChangeText">{{ name }}</p>
+        <p id="pageChangeText">{{ name if name else title }}</p>
     </div>
     {% include "partials/navigation.njk" %}
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>

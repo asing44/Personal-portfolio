@@ -23,7 +23,7 @@ This week, I began and worked through the ideation and research phases of my pro
 
 ## Progress Update
 
-For the research and ideation phase I used <a class="-inline-link"><span>ChatGPT</span></a> to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
+For the research and ideation phase I used <a class="__inline-link"><span>ChatGPT</span></a> to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
 
 1.  Intent
 2.  Audience
@@ -62,6 +62,6 @@ The challenge I am facing is trying to determine what I want to limit the scope 
 
 ## Conclusion
 
-I am excited to work on this project and am thankful to have the opportunity to update the progress along the way using my integrated blog page. If you have any concerns or questions, please feel free to <a class="-inline-link"><span>reach out to me</span></a>. Next week's blog will include more site design content and development.
+I am excited to work on this project and am thankful to have the opportunity to update the progress along the way using my integrated blog page. If you have any concerns or questions, please feel free to <a class="__inline-link"><span>reach out to me</span></a>. Next week's blog will include more site design content and development.
 
 </section>

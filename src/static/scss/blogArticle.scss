@@ -1,7 +1,6 @@
-// ** ----------------------------------------
-// ** INIT
-// ** ----------------------------------------
+// * INIT
 
+@use "base";
 @use "main";
 
 // ** ----------------------------------------
@@ -11,3 +10,24 @@
 // ** ----------------------------------------
 // ** ARTICLE
 // ** ----------------------------------------
+
+article {
+    color: base.$background-light;
+    padding: 0 base.$padding-large;
+
+    section {
+        margin-bottom: base.$margin-large-plus;
+    }
+
+    h2 {
+        margin-bottom: base.$margin-large;
+    }
+
+    p {
+        margin-bottom: base.$margin-medium;
+    }
+
+    img {
+        max-width: 400px;
+    }
+}

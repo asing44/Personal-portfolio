@@ -47,7 +47,7 @@ Features:
    - current() - returns the current index (if an animation is in-progress, it reflects the final index)
    - times - an Array of the times on the timeline where each element hits the "starting" spot. There's also a label added accordingly, so "label1" is when the 2nd element reaches the start.
  */
-   function horizontalLoop(items, config) {
+    function horizontalLoop(items, config) {
 	items = gsap.utils.toArray(items);
 	config = config || {};
 	let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
@@ -229,6 +229,7 @@ $('.--delay-link').on('click', function(e) {
         $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
     }
     pageChangeHref = $(this).attr('href');
+    console.log($(this).attr('href').match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
     var pageChangeColor = pageChangeColors[Math.round((Math.random() * 4))];
     localStorage.setItem("pageChangeColor", pageChangeColor);
     $('.pageChangeContainer').css('background-color', pageChangeColor);

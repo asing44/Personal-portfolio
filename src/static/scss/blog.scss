@@ -115,8 +115,9 @@ header {
     }
 }
 
-.article-container {
+.article-wrapper {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
     gap: base.$grid-gap-base;
@@ -132,14 +133,60 @@ header {
         gap: base.$grid-gap-tiny;
         border-radius: base.$size-1_00;
         overflow: hidden;
+        z-index: 2;
 
         .article-thumbnail {
             height: 100%;
             width: 100%;
+            border: 1px solid base.$background-light;
+            border-radius: base.$size-1_00;
+        }
+
+        .__article-specific-category-wrapper {
+            display: flex;
+            position: absolute;
+            width: min-content;
+            top: 0;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            gap: base.$grid-gap-tiny;
+            padding: base.$size-0_50;
+            border-radius: 0 0 0 base.$size-1_00;
+            background-color: base.$background-light;
+
+            .__article-specific-category {
+                display: flex;
+                padding: base.$size-0_25 base.$size-0_70;
+                border-radius: base.$size-1_00;
+                background-color: base.$primary;
+                color: base.$background-light;
+                white-space: nowrap;
+                text-align: center;
+                font-weight: base.$font-weight-medium;
+            }
         }
     }
 
     .article-content-container {
+        display: flex;
+        max-width: base.$size-15_20;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: base.$grid-gap-tiny;
 
+        .article-title {
+            margin-top: base.$size-0_17;
+            align-self: stretch;
+            color: base.$background-dark;
+            font-size: base.$font-size1;
+            font-style: normal;
+            font-weight: base.$font-weight-medium;
+        }
+
+        .article-summary {
+            align-self: stretch;
+            font-size: base.$font-size-1;
+        }
     }
 }
