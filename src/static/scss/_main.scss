@@ -92,15 +92,7 @@ li {
 }
 
 a {
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &:visited {
-        text-decoration: none;
-        color: inherit;
-    }
+    all: unset;
 }
 
 button {
@@ -302,11 +294,13 @@ img {
 }
 
 .__inline-link {
-    color: adjust-color(base.$accent-purple, $alpha: -0.4);
+    color: base.$accent-blue;
     transition: color 250ms ease-in-out;
+    text-decoration: underline;
 
     &:hover {
-        color: base.$accent-purple
+        color: base.$accent-purple;
+        text-decoration: underline;
     }
 }
 

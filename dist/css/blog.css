@@ -108,11 +108,7 @@ li {
 }
 
 a {
-  text-decoration: none;
-}
-a:hover, a:focus, a:active, a:visited {
-  text-decoration: none;
-  color: inherit;
+  all: unset;
 }
 
 button {
@@ -261,11 +257,13 @@ img {
 }
 
 .__inline-link {
-  color: rgba(143, 68, 235, 0.6);
+  color: #18B8DC;
   transition: color 250ms ease-in-out;
+  text-decoration: underline;
 }
 .__inline-link:hover {
   color: #8F44EB;
+  text-decoration: underline;
 }
 
 .__button-1 {
