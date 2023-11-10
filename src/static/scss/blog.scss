@@ -1,6 +1,4 @@
-// ** ----------------------------------------
-// ** INIT
-// ** ----------------------------------------
+// * init
 
 @use "main";
 @use "base";
@@ -11,63 +9,62 @@
 
 header {
     display: flex;
-    position: relative;
     width: 100%;
+    padding: base.$size-5_62 base.$size-2_00 base.$size-3_95 base.$size-2_00;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-    padding-top: base.$padding-large;
-    background-image: url('../assets/images/backgrounds/background light.png');
-    background-size: cover;
-    @include base.border(small-all, dark);
-    @include base.border-radius(2);
-    overflow: hidden;
-    z-index: 2;
 
-    .h1-wrapper {
-        padding: 0 0 base.$padding-medium-plus base.$padding-medium;
-
-        .heading-h1 {
-            margin: 0;
-            font-family: base.$font-family-display;
-            font-size: base.$font-size7;
-            letter-spacing: base.$font-spacing-increased;
-        }
-    }
-
-    .filter-container {
+    .header-container {
         display: flex;
-        width: 100%;
-        padding: 0 base.$padding-medium base.$padding-medium base.$padding-medium;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
 
-        .filter-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: base.$grid-gap-regular;
-            flex: 1 0 0;
-
-            .filter-item-wrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                button {
-                    font-family: base.$font-family-body;
-                    font-size: base.$font-size-1;
-                    font-weight: base.$font-weight-normal;
-                    @include base.border(small-all, dark);
-                    @include base.border-radius(3);
-                }
-            }
+        h1 {
+            color: base.$background-light;
+            font-family: base.$font-family-display;
+            font-size: base.$font-size4;
+            font-weight: 700;
+            line-height: 110%; /* 149.228px */
+            letter-spacing: 9.496px;
         }
     }
 }
 
-// ** ----------------------------------------
-// ** ARTICLES
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? ARTICLES
+// ?? ----------------------------------------
 
+.articles-container {
+    display: flex;
+    position: relative;
+    padding: base.$size-1_00 base.$size-2_00 base.$size-2_00 base.$size-2_00;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: base.$grid-gap-regular;
+    border-radius: base.$size-2_00;
+    background: base.$background-light;
+}
 
+.__divider_long {
+    width: 100%;
+    height: base.$size-2px;
+    border-radius: base.$border-radius-regular;
+    background: var(--grey-dark, #3F474C);
+}
+
+.article-filter-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: base.$grid-gap-base;
+    align-self: stretch;
+
+    .article-filter-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: base.$grid-gap-base;
+    }
+}

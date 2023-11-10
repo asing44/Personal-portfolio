@@ -39,8 +39,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #EDFAFD;
-  color: #000;
+  background-color: #050B10;
+  color: #050B10;
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 1rem;
   kerning: auto;
@@ -56,7 +56,11 @@ p {
   margin-bottom: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "Quicksand", sans-serif;
   line-height: 1.1;
 }
@@ -86,7 +90,8 @@ h5 {
   font-weight: 400;
 }
 
-small, .text_small {
+small,
+.text_small {
   font-size: 0.7083rem;
 }
 
@@ -213,8 +218,8 @@ img {
 .__link-1 {
   display: flex;
   position: relative;
-  width: 153.942px;
   height: 52.963px;
+  width: 153.942px;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
@@ -252,6 +257,52 @@ img {
 }
 .__link-1--active ._inner-1 ._text {
   color: #050B10;
+}
+
+.__button-1 {
+  display: flex;
+  position: relative;
+  height: 68px;
+  width: 153.942px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 34px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.__button-1--regular ._inner-1,
+.__button-1--regular ._inner-2 {
+  position: absolute;
+  display: flex;
+  height: 68px;
+  width: 153.942px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 47px;
+  gap: 10px;
+}
+.__button-1--regular ._inner-1 ._text,
+.__button-1--regular ._inner-2 ._text {
+  color: #050B10;
+  text-align: center;
+  font-size: 24px;
+}
+.__button-1--regular ._inner-2 {
+  top: 68px;
+  border-radius: 34px;
+  background-color: #111DF8;
+}
+.__button-1--regular ._inner-2 ._text {
+  color: #EDFAFD;
+}
+.__button-1--active ._inner-1 {
+  border: 2px solid #111DF8;
+  border-radius: 1.4167rem;
+}
+.__button-1--active ._inner-1 ._text {
+  color: #111DF8;
 }
 
 .pageChangeContainer {
@@ -333,54 +384,57 @@ img {
 
 header {
   display: flex;
-  position: relative;
   width: 100%;
+  padding: 5.625rem 2rem 3.9583rem 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .header-container h1 {
+  color: #EDFAFD;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3.9583rem;
+  font-weight: 700;
+  line-height: 110%; /* 149.228px */
+  letter-spacing: 9.496px;
+}
+
+.articles-container {
+  display: flex;
+  position: relative;
+  padding: 1rem 2rem 2rem 2rem;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 3.9583rem;
-  background-image: url("../assets/images/backgrounds/background light.png");
-  background-size: cover;
-  border: 1.414px solid #050B10;
-  border-bottom-right-radius: 1.4167rem;
-  border-bottom-left-radius: 1.4167rem;
-  overflow: hidden;
-  z-index: 2;
+  gap: 2rem;
+  border-radius: 2rem;
+  background: #EDFAFD;
 }
-header .h1-wrapper {
-  padding: 0 0 2.8333rem 2rem;
-}
-header .h1-wrapper .heading-h1 {
-  margin: 0;
-  font-family: "Orbitron", sans-serif;
-  font-size: 11.2917rem;
-  letter-spacing: 7%;
-}
-header .filter-container {
-  display: flex;
+
+.__divider_long {
   width: 100%;
-  padding: 0 2rem 2rem 2rem;
-  justify-content: center;
-  align-items: center;
+  height: 2px;
+  border-radius: 1rem;
+  background: var(--grey-dark, #3F474C);
 }
-header .filter-container .filter-wrapper {
+
+.article-filter-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
-  flex: 1 0 0;
+  gap: 1rem;
+  align-self: stretch;
 }
-header .filter-container .filter-wrapper .filter-item-wrapper {
+.article-filter-container .article-filter-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-}
-header .filter-container .filter-wrapper .filter-item-wrapper button {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-size: 0.7083rem;
-  font-weight: 400;
-  border: 1.414px solid #050B10;
-  border-radius: 2rem 1.4167rem;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=blog.css.map */

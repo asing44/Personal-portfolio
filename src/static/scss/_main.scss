@@ -16,7 +16,6 @@
 html {
     height: 100%;
     font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 700)), 24px);
-    ;
     line-height: 1.5;
 }
 
@@ -25,8 +24,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: base.$background-light;
-    color: base.$black;
+    background-color: base.$background-dark;
+    color: base.$background-dark;
     font-family: base.$font-family-body;
     font-size: base.$font-size0;
     kerning: auto;
@@ -42,7 +41,11 @@ p {
     margin-bottom: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: base.$font-family-heading;
     line-height: base.$font-lineHeight-110;
 }
@@ -72,7 +75,8 @@ h5 {
     font-weight: base.$font-weight-normal;
 }
 
-small, .text_small {
+small,
+.text_small {
     font-size: base.$font-size-1;
 }
 
@@ -90,7 +94,10 @@ a {
     text-decoration: none;
     color: base.$black;
 
-    &:hover, &:focus, &:active, &:visited {
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
         text-decoration: none;
         color: base.$black;
     }
@@ -113,13 +120,13 @@ img {
 .cursor {
     pointer-events: none;
     opacity: 0;
-    
+
     &-ball {
-    position: fixed;
-    top: 0;
-    left: 0;
-    mix-blend-mode: difference;
-    z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        mix-blend-mode: difference;
+        z-index: 1000;
 
         circle {
             fill: base.$secondary;
@@ -139,11 +146,11 @@ img {
             stroke-width: 2px;
         }
     }
-} 
+}
 
-// ** ----------------------------------------
-// ** GLOBAL CLASSES
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? GLOBAL CLASSES
+// ?? ----------------------------------------
 
 // * CONTAINERS AND WRAPPERS
 
@@ -242,56 +249,112 @@ img {
 // ** ----------------------------------------
 
 .__link-1 {
-display: flex;
-position: relative;
-width: 153.942px;
-height: 52.963px;
-flex-direction: column;
-align-items: center;
-flex-shrink: 0;
-border-radius: 34px;
-overflow: hidden;
-cursor: pointer;
+    display: flex;
+    position: relative;
+    height: 52.963px;
+    width: 153.942px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 34px;
+    overflow: hidden;
+    cursor: pointer;
 
-&--regular {
-    ._inner-1,
-    ._inner-2 {
-        position: absolute;
-        display: flex;
-        height: 52.96px;
-        width: 153.942px;
-        justify-content: center;
-        align-items: center;
-        padding: 8px 47px;
-        gap: 10px;
+    &--regular {
+        ._inner-1,
+        ._inner-2 {
+            position: absolute;
+            display: flex;
+            height: 52.96px;
+            width: 153.942px;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 47px;
+            gap: 10px;
 
-        ._text {
-            color: base.$background-light;
-            text-align: center;
-            font-size: 24px;
+            ._text {
+                color: base.$background-light;
+                text-align: center;
+                font-size: 24px;
+            }
+        }
+
+        ._inner-2 {
+            bottom: -52.997px;
+            border-radius: 34px;
+            background-color: base.$secondary;
+
+            ._text {
+                color: base.$background-dark;
+            }
         }
     }
 
-    ._inner-2 {
-        bottom: -52.997px;
-        border-radius: 34px;
+    &--active {
         background-color: base.$secondary;
 
-        ._text {
-            color: base.$background-dark;
+        ._inner-1 {
+            ._text {
+                color: base.$background-dark;
+            }
         }
     }
 }
 
-&--active {
-background-color: base.$secondary;
+.__button-1 {
+    display: flex;
+    position: relative;
+    height: 68px;
+    width: 153.942px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 34px;
+    overflow: hidden;
+    cursor: pointer;
 
-._inner-1 {
-._text {
-color: base.$background-dark;
-}
-}
-}
+    &--regular {
+        ._inner-1,
+        ._inner-2 {
+            position: absolute;
+            display: flex;
+            height: 68px;
+            width: 153.942px;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 47px;
+            gap: 10px;
+
+            ._text {
+                color: base.$background-dark;
+                text-align: center;
+                font-size: 24px;
+            }
+        }
+
+        ._inner-2 {
+            top: 68px;
+            border-radius: 34px;
+            background-color: base.$primary;
+
+            ._text {
+                color: base.$background-light;
+            }
+        }
+    }
+
+    &--active {
+
+        ._inner-1 {
+            border: base.$size-2px solid base.$primary;
+            border-radius: base.$size-1_41;
+
+            ._text {
+                color: base.$primary;
+            }
+        }
+    }
 }
 
 // ?? ----------------------------------------
@@ -354,10 +417,9 @@ color: base.$background-dark;
             width: 68px;
 
             .navigation-top-logo {
-
             }
         }
-    
+
         .navigation-top-links-container {
             display: flex;
             position: relative;
@@ -371,8 +433,7 @@ color: base.$background-dark;
                 align-items: center;
                 flex-shrink: 0;
             }
-    }
-
+        }
     }
 }
 

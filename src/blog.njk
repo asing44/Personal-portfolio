@@ -8,31 +8,32 @@ jsSrcBase: ./assets/js/base.js
 cssSrc: ./css/blog.css
 ---
 <header>
-    <div class="h1-wrapper">
-        <h1 class="heading-h1">blog</h1>
-    </div>
-    <div class="filter-container">
-        <ul class="filter-wrapper">
-            <li class="filter-item-wrapper">
-                <button class="--hover-1 --cursor-expand" href=""><div class="--hover-1-wrapper"><div class="--hover-1-text" data-word="all"></div><div class="--hover-1-text" data-word="all"></div></div><span class="--hover-1-hover"></span></button>
-            </li>
-            <li class="filter-item-wrapper">
-                <button class="--hover-1 --cursor-expand" href=""><div class="--hover-1-wrapper"><div class="--hover-1-text" data-word="personal"></div><div class="--hover-1-text" data-word="personal"></div></div><span class="--hover-1-hover"></span></button>
-            </li>
-            <li class="filter-item-wrapper">
-                <button class="--hover-1 --cursor-expand" href="/blog.html">
-                <div class="--hover-1-wrapper">
-                    <div class="--hover-1-text" data-word="blog"></div>
-                    <div class="--hover-1-text" data-word="blog"></div>
-                </div>
-                <span class="--hover-1-hover"></span>
-                </button>
-            </li>
-        </ul>
+    <div class="header-container">
+        <h1>Insights Explored, Perspectives Shared<span class="header-cursor">_</span></h1>
     </div>
 </header>
-<section class="articles">
-    {%- for post in collections.post | reverse -%}
+<div class="articles-container">
+    <div class="__divider_long"></div>
+    <ul class="article-filter-container">
+        <li class="article-filter-wrapper">
+            <button class="articleFilter __button-1 __button-1--regular __button-1--active --cursor-expand" data-articleFilter="work">
+                <div class="_inner-1"><span class="_text">all</span></div>
+                <div class="_inner-2"><span class="_text">all</span></div>
+            </button>
+        </li>
+        <li class="article-filter-wrapper">
+            <button class="articleFilter __button-1 __button-1--regular  --cursor-expand" data-articleFilter="about">
+                <div class="_inner-1"><span class="_text">personal</span></div>
+                <div class="_inner-2"><span class="_text">personal</span></div>
+            </button>
+        </li>
+        <li class="article-filter-wrapper">
+            <button class="articleFilter __button-1 __button-1--regular  --cursor-expand" data-articleFilter="blog">
+                <div class="_inner-1"><span class="_text">dmd300</span></div>
+                <div class="_inner-2"><span class="_text">dmd300</span></div>
+            </button>
+        </li>
+    </ul>    {%- for post in collections.post | reverse -%}
         {% include "partials/article.njk" %}
     {%- endfor %}
-</section>
+</div>
