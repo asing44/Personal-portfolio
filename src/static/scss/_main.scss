@@ -24,7 +24,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: base.$background-dark;
+    background-color: base.$background-light;
     color: base.$background-dark;
     font-family: base.$font-family-body;
     font-size: base.$font-size0;
@@ -163,7 +163,7 @@ img {
     @extend .--wrap;
 }
 
-// * DISPLAY OR HIDE
+// * DISPLAY, HIDE, AND OVERLAY
 
 .--inactive {
     display: none !important;
@@ -177,13 +177,6 @@ img {
 }
 
 // * STYLES
-
-// Remove padding and margin
-
-.--no-pm {
-    margin: 0;
-    padding: 0;
-}
 
 // Remove list style
 
@@ -219,7 +212,7 @@ img {
 // Images
 
 .--img-shadow-rg {
-    @include base.box-shadow(0px, 0px, base.$font-size4, base.$grey-dark);
+    @include base.box-shadow(0px, 0px, base.$font-size4, base.$gray-dark);
 }
 
 // * ICONS
@@ -382,7 +375,7 @@ img {
     z-index: 11;
 
     p {
-        max-width: base.$dimension-massive;
+        max-width: 85vw;
         margin: 0;
         padding: 0;
         color: base.$background-light;

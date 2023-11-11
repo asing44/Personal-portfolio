@@ -1,3 +1,6 @@
+// * INIT
+@use 'sass:math';
+
 // ** ----------------------------------------
 // ** SASS VARIABLES
 // ** ----------------------------------------
@@ -51,38 +54,50 @@ $font-spacing-increased: 7%;
 $font-spacing-decreased: -7%;
 
 // * COLORS
+// Primary and secondary
+$primary: #111DF8;
+$primary-light: lighten($primary, 15%);
+$primary-dark: darken($primary, 15%);
+$secondary: #EBE56F;
+$secondary-light: lighten($secondary, 15%);
+$secondary-dark: darken($secondary, 15%);
 // Background and base
 $white: #FFF;
 $black: #000;
 $background-light: #EDFAFD;
+$background-light-blue: mix($background-light, $primary, 90%);
 $background-dark: #050B10;
-// Grey
-$grey-light: #798387;
-$grey-dark: #3F474C;
-// Primary and secondary
-$primary: #111DF8;
-$secondary: #EBE56F;
 // Accent
 $accent-green: #074064;
 $accent-blue: #18B8DC;
 $accent-purple: #8F44EB;
+// Gray
+$gray-light: #798387;
+$gray-dark: #3F474C;
 // State
 $state-info: #84C0D9;
 $state-success: #53BF32;
 $state-warning: #C97636;
 $state-error: #B50238;
+// Overlay
+$overlay: transparentize($gray-dark, 0.5);
 
-// * DIMENSIONS
-$dimension-small: 2.6667rem;       // 64px
-$dimension-small-plus: 3.75rem;    // 90px
-$dimension-medium: 5.2917rem;      // 127px
-$dimension-medium-plus: 7.5rem;    // 180px
-$dimension-large: 10.5833rem;      // 254px
-$dimension-large-plus: 15rem;      // 360px
-$dimension-huge: 21.2083rem;       // 509px
-$dimension-huge-plus: 30rem;       // 720px
-$dimension-massive: 45rem;         // 1080px
-$dimension-massive-plus: 60rem;    // 1440px
+// * VIEWPORT DIMENSIONS
+// VIEW HEIGHT
+$vh-17_65: 17.65vh;                // 254px
+$vh-24_98: 24.98vh;                // 359px
+$vh-35_34: 35.34vh;                // 508px
+$vh-49_98: 49.98vh;                // 719px
+$vh-70_7: 70.70vh;                 // 1019px
+$vh-100: 100vh;                    // 1440px
+
+// VIEW WIDTH
+$vw-17_65: 17.65vw;                // 181px
+$vw-24_98: 24.98vw;                // 255px
+$vw-35_34: 35.34vw;                // 361px
+$vw-49_98: 49.98vw;                // 511px
+$vw-70_7: 70.70vw;                 // 723px
+$vw-100: 100vw;                    // 1024px
 
 // * GRID
 $grid-gap-tiny: $size-0_50;        // 12px

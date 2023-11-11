@@ -9,11 +9,12 @@
 
 header {
     display: flex;
-    width: 100%;
-    padding: base.$size-5_62 base.$size-2_00 base.$size-3_95 base.$size-2_00;
+    min-height: base.$vh-35_34;
+    width: base.$vw-100;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
+    padding: base.$padding-large-plus 0px base.$padding-medium base.$padding-medium-plus;
 
     .header-container {
         display: flex;
@@ -21,8 +22,16 @@ header {
         justify-content: center;
         align-items: flex-start;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 48px;
+        flex-shrink: 0;
+        align-self: stretch;
+
         h1 {
-            color: base.$background-light;
+            color: base.$background-dark;
             font-family: base.$font-family-display;
             font-size: base.$font-size4;
             font-weight: 700;
@@ -51,68 +60,66 @@ header {
     width: 100%;
     height: base.$size-2px;
     border-radius: base.$border-radius-regular;
-    background: var(--grey-dark, #3F474C);
+    background: var(--gray-dark, #3F474C);
 }
 
 .article-filter-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: base.$grid-gap-base;
+    justify-content: space-between;
+    align-items: flex-end;
     align-self: stretch;
 
-    .article-filter-wrapper {
+    .articles-category-wrapper {
+        display: flex;
+        position: relative;
+        height: 100%;
+        top: 0;
+        left: base.$size-0_70;
+        align-items: end;
+        gap: base.$grid-gap-base;
+    
+        .articles-category {
+            display: flex;
+            width: min-content;
+            color: base.$gray-light;
+            font-size: base.$font-size0;
+        }
+    
+        .category-count-wrapper {
+            display: flex;
+            width: base.$size-2_83;
+            padding: base.$padding-tiny base.$padding-small;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            border: base.$size-2px solid base.$gray-light;
+            border-radius: base.$border-radius-regular;
+    
+            .category-count {
+                color: base.$gray-light;
+                text-align: center;
+            }
+        }
+    }
+
+    .article-filter-buttons-container {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: base.$grid-gap-base;
+        gap: base.$grid-gap-base; 
     }
 }
 
 .articles-section-container {
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     align-content: flex-start;
     row-gap: base.$grid-gap-huge;
     align-self: stretch;
     flex-wrap: wrap;
     padding: base.$size-5_62 0px base.$size-3_95 0px;
-
-    .articles-category-wrapper {
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: base.$size-0_70;
-        align-items: flex-end;
-        gap: base.$grid-gap-base;
-
-        .articles-category {
-            display: flex;
-            width: min-content;
-            flex-direction: column;
-            justify-content: center;
-            align-self: stretch;
-            color: base.$grey-light;
-            text-align: center;
-            font-size: base.$font-size1;
-        }
-
-        .category-count-wrapper {
-            display: flex;
-            padding: base.$size-0_25 base.$size-1_00;
-            align-items: flex-end;
-            gap: base.$grid-gap-tiny;
-            border: base.$size-2px solid base.$grey-light;
-            border-radius: base.$size-1_00;
-
-            .category-count {
-                color: base.$grey-light;
-                text-align: center;
-            }
-        }
-    }
 }
 
 .article-wrapper {
@@ -159,7 +166,7 @@ header {
                 display: flex;
                 padding: base.$size-0_25 base.$size-0_70;
                 border-radius: base.$size-1_00;
-                background-color: base.$primary;
+                background-color: base.$primary-light;
                 color: base.$background-light;
                 white-space: nowrap;
                 text-align: center;
