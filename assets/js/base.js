@@ -134,19 +134,18 @@ function getCursor(e) {
 // ** CURSOR
 // ** ----------------------------------------
 
-const cursor = document.querySelector('.cursor-ball');
-const cursorOuter = document.querySelector('.cursor-outer');
-const cursorOuterCircle = $('.cursor-outer-circle');
+const cursor = document.querySelector('.__cursor');
+const cursorBall = document.getElementsByClassName('__cursor-ball')[0];
+const cursorText = document.querySelector('.__cursor-text')
+const cursorOuter = document.querySelector('.__cursor-outer');
+const cursorOuterCircle = $('.__cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
-// * SET CURSOR
 
-// !! Need to figure out how to set the cursor across page changes
+// * EXPAND CURSOR OUTER
 
-// * EXPAND CURSOR
-
-$('.--cursor-expand').on('mouseenter', function(){
+$('.__cursor-expand-outer').on('mouseenter', function(){
     gsap.to(cursor, {scale: 0});
     gsap.to(cursorOuter, {scale: 2});
 }).on('mouseleave', function(){
@@ -160,9 +159,6 @@ $('.--cursor-expand').on('mouseenter', function(){
 // * TRACK MOVE
 
 function cursorMove(e) {
-    gsap.set('.cursor', {
-        opacity: 1,
-    });
 
     let tl = gsap.timeline({
     });
@@ -171,8 +167,8 @@ function cursorMove(e) {
     let cursorY = e.clientY;
 
     tl.to(cursor, {
-        x: cursorX - 7,
-        y: cursorY - 16,
+        x: cursorX,
+        y: cursorY,
         ease: "power4"
     }).to(cursorOuter, {
         x: cursorX - 25,
@@ -243,7 +239,11 @@ $('.--delay-link').on('click', function(e) {
 // });
 
 // ?? ----------------------------------------
-// ?? SECTIONS
+// ?? PAGES
+// ?? ----------------------------------------
+
+// ?? ----------------------------------------
+// ?? COMPONENTS
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
@@ -260,102 +260,46 @@ $('.navLink').each(function() {
     }
 })
 
-// // * SHOW/HIDE NAV SCROLLED BUTTON
-
-// let navScrolled = $(".navigation-scrolled-button");
-
-// let showHideNavButtonAnim = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: "#fixedReference",
-//         start: "50% top",
-//         end: "50% top",
-//         toggleActions: "play none reverse none",
-//     }
-// })
-
-// showHideNavButtonAnim.fromTo(navScrolled, {
-//     scale: 0
-// }, {
-//     duration: 1,
-//     scale: 1,
-//     ease: "power3.out"
-// })
-
-// // * NAV SCROLLED BUTTON HOVER
-// let navButtonHoverAnim = gsap.to(".navButtonHover", {
-//     paused: true,
-//     duration: 0.5,
-//     top: "0%",
-//     ease: "power3.out"
-// });
-
-// $(".navigation-scrolled-button").on("mouseenter", function(){
-//     navButtonHoverAnim.play();
-// });
-// $(".navigation-scrolled-button").on("mouseleave", function(){
-//     navButtonHoverAnim.reverse()
-// })
-
-// // * NAV MODAL
-// let navModalShowHideAnim = gsap.timeline({
-//     paused: true,
-//     defaults: {
-//         duration: 1
-//     },
-//     onStart: () => {
-//         $("body").addClass("-lockScroll");
-//     },
-//     onReverseComplete: () => {
-//         $("body").removeClass("-lockScroll");
-//         $(".navigationScrolledContainer").addClass("-inactive");
-//     }
-// })
-// .add(showHideModal());
-
-// function showHideModal() {
-//     let tl = gsap.timeline({
-//         defaults: {
-//             duration: 1,
-//             ease: "power2.out"
-//         }
-//     });
-//     tl.set($(".navigationScrolledContainer"), {
-//         autoAlpha: 0
-//     }).set($(".navigationScrolledMainWrapper"),{
-//         borderRadius: "40% 0% 0% 40%",
-//     }).to($(".navigationScrolledContainer"), {
-//         xPercent: 0,
-//         autoAlpha: 1
-//     }, 0).to($(".navigationScrolledMainWrapper"), {
-//         xPercent: -100,
-//         ease: "power4.inOut"
-//     }, 0).to($(".navigationScrolledMainWrapper"), {
-//         borderRadius: "0% 0% 0% 0%",
-//         ease: "power4.inOut"
-//     }, "<10%")
-//     return tl;
-// }
-
-// function modalInnerContent() {
-//     let tl = gsap.timeline()
-// }
-
-// $(".navigation-scrolled-button").on("click", () => {
-//     $(".navigationScrolledContainer").removeClass("-inactive");
-//     navModalShowHideAnim.play();
-// });
-
-// $("#navigationScrolledButton-close").on("click", () => {
-//     navModalShowHideAnim.reverse();
-// })
-
 // ?? ----------------------------------------
 // ?? INTERACTIVE
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
-// ** LINK 1
+// ** CURSOR
 // ** ----------------------------------------
+
+// * CHANGE INNER
+
+let cursorChangeInner_tl = gsap.timeline({
+    paused: true,
+    onReverseComplete: function() {
+        cursorText.innerHTML = '';
+    }
+});
+
+cursorChangeInner_tl.set(cursor, {
+    mixBlendMode: "normal"
+}).to(cursorOuter, {
+    scale: 0,
+    autoAlpha: 0
+}).to(cursorBall, {
+    scale: 10
+}, 0).to(cursorText, {
+    opacity: 1
+}, '<50%')
+
+$('.__cursor-change-inner').hover(function() {
+    cursorText.innerHTML = this.dataset.cursorHover;
+    cursorChangeInner_tl.play();
+}, function() {
+    cursorChangeInner_tl.reverse();
+});
+
+// ** ----------------------------------------
+// ** LINKS
+// ** ----------------------------------------
+
+// * LINK 1
 
 gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
     let hover1 = $(item).children("._inner-1");
@@ -376,8 +320,10 @@ gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
 });
 
 // ** ----------------------------------------
-// ** BUTTON 1
+// ** BUTTONS
 // ** ----------------------------------------
+
+// * BUTTON 1
 
 gsap.utils.toArray($(".__button-1:not(.__button-1--active)")).forEach((item) => {
     let hover1 = $(item).children("._inner-1");
@@ -396,10 +342,6 @@ gsap.utils.toArray($(".__button-1:not(.__button-1--active)")).forEach((item) => 
         button1Hover_tl.reverse();
     });
 });
-
-// ** ----------------------------------------
-// ** BUTTONS
-// ** ----------------------------------------
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE
