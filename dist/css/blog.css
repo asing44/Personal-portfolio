@@ -121,28 +121,49 @@ img {
   outline: none;
 }
 
-.cursor {
-  pointer-events: none;
-  opacity: 0;
-}
-.cursor-ball {
+.__cursor {
   position: fixed;
+  display: flex;
   top: 0;
   left: 0;
+  pointer-events: none;
   mix-blend-mode: difference;
-  z-index: 1000;
+  z-index: 100;
 }
-.cursor-ball circle {
+.__cursor-wrapper {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.__cursor-wrapper .__cursor-ball {
   fill: #EBE56F;
 }
-.cursor-outer {
-  position: fixed;
+.__cursor-wrapper .__cursor-text {
+  position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
-  mix-blend-mode: difference;
-  z-index: 1000;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translate(-130%, -25%);
+  opacity: 0;
+  z-index: 101;
 }
-.cursor-outer circle {
+
+.__cursor-outer {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+.__cursor-outer circle {
   fill: transparent;
   stroke: #EBE56F;
   stroke-width: 2px;

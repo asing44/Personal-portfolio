@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ cssSrc }}">
@@ -11,17 +11,18 @@
     {# Fixed reference #}
     <div id="fixedReference"></div>
     {# Cursor #}
-    <div class="cursor">
-      <div class="cursor-ball">
-        <svg height="14" width="14">
+    <div class="__cursor">
+      <div class="__cursor-wrapper">
+        <p class="__cursor-text"></p>
+        <svg class="__cursor-ball" height="14" width="14">
           <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
         </svg>
       </div>
-      <div class="cursor-outer">
-        <svg height="50" width="50">
-          <circle class="cursor-outer-circle" cx="25" cy="25" r="24"></circle>
-        </svg>
-      </div>
+    </div>
+    <div class="__cursor-outer">
+      <svg height="50" width="50">
+        <circle class="__cursor-outer-circle" cx="25" cy="25" r="24"></circle>
+      </svg>
     </div>
     {# Page change #}
     <div class="pageChangeContainer --contain">

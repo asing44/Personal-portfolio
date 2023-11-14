@@ -109,34 +109,55 @@ img {
 // ** CURSOR
 // ** ----------------------------------------
 
-.cursor {
+.__cursor {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
     pointer-events: none;
-    opacity: 0;
+    mix-blend-mode: difference;
+    z-index: 100;
 
-    &-ball {
-        position: fixed;
-        top: 0;
-        left: 0;
-        mix-blend-mode: difference;
-        z-index: 1000;
+    &-wrapper {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-        circle {
+        .__cursor-ball {
             fill: base.$secondary;
         }
-    }
 
-    &-outer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        mix-blend-mode: difference;
-        z-index: 1000;
-
-        circle {
-            fill: transparent;
-            stroke: base.$secondary;
-            stroke-width: 2px;
+        .__cursor-text {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            font-weight: base.$font-weight-semiBold;
+            white-space: nowrap;
+            transform: translate(-130%, -25%);
+            opacity: 0;
+            z-index: 101;
         }
+    }
+}
+
+.__cursor-outer {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 100;
+
+    circle {
+        fill: transparent;
+        stroke: base.$secondary;
+        stroke-width: 2px;
     }
 }
 
