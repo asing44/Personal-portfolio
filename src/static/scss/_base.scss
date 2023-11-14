@@ -84,20 +84,20 @@ $overlay: transparentize($gray-dark, 0.5);
 
 // * VIEWPORT DIMENSIONS
 // VIEW HEIGHT
-$vh-17_65: 17.65vh;                // 254px
-$vh-24_98: 24.98vh;                // 359px
-$vh-35_34: 35.34vh;                // 508px
-$vh-49_98: 49.98vh;                // 719px
-$vh-70_7: 70.70vh;                 // 1019px
-$vh-100: 100vh;                    // 1440px
+$vh-17_65: 17.65vh;                // 181px
+$vh-24_98: 24.98vh;                // 255px
+$vh-35_34: 35.34vh;                // 361px
+$vh-49_98: 49.98vh;                // 511px
+$vh-70_7: 70.70vh;                 // 723px
+$vh-100: 100vh;                    // 1024px
 
 // VIEW WIDTH
-$vw-17_65: 17.65vw;                // 181px
-$vw-24_98: 24.98vw;                // 255px
-$vw-35_34: 35.34vw;                // 361px
-$vw-49_98: 49.98vw;                // 511px
-$vw-70_7: 70.70vw;                 // 723px
-$vw-100: 100vw;                    // 1024px
+$vw-17_65: 17.65vw;                // 254px
+$vw-24_98: 24.98vw;                // 359px
+$vw-35_34: 35.34vw;                // 508px
+$vw-49_98: 49.98vw;                // 719px
+$vw-70_7: 70.70vw;                 // 1019px
+$vw-100: 100vw;                    // 1440px
 
 // * GRID
 $grid-gap-tiny: $size-0_50;        // 12px
