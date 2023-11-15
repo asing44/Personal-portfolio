@@ -223,11 +223,113 @@ img {
   box-shadow: 0px 0px 3.9583rem #596470;
 }
 
-.__divider_long {
+.__divider_light, .__divider_light_thick-extraLong, .__divider_light_thick-long, .__divider_light_thick-medium, .__divider_light_thick-small, .__divider_light_regular-extraLong, .__divider_light_regular-long, .__divider_light_regular-medium, .__divider_light_regular-small, .__divider_light_thin-extraLong, .__divider_light_thin-long, .__divider_light_thin-medium, .__divider_light_thin-small {
+  display: flex;
   width: 100%;
+  border-radius: 1rem;
+  background: #D0DFF3;
+}
+.__divider_light_thin-small {
+  height: 1.414px;
+  max-width: 35.34vw;
+}
+.__divider_light_thin-medium {
+  height: 1.414px;
+  max-width: 49.98vw;
+}
+.__divider_light_thin-long {
+  height: 1.414px;
+  max-width: 70.7vw;
+}
+.__divider_light_thin-extraLong {
+  height: 1.414px;
+  max-width: 100%;
+}
+.__divider_light_regular-small {
   height: 2px;
+  max-width: 35.34vw;
+}
+.__divider_light_regular-medium {
+  height: 2px;
+  max-width: 49.98vw;
+}
+.__divider_light_regular-long {
+  height: 2px;
+  max-width: 70.7vw;
+}
+.__divider_light_regular-extraLong {
+  height: 2px;
+  max-width: 100%;
+}
+.__divider_light_thick-small {
+  height: 4px;
+  max-width: 35.34vw;
+}
+.__divider_light_thick-medium {
+  height: 4px;
+  max-width: 49.98vw;
+}
+.__divider_light_thick-long {
+  height: 4px;
+  max-width: 70.7vw;
+}
+.__divider_light_thick-extraLong {
+  height: 4px;
+  max-width: 100%;
+}
+.__divider_dark, .__divider_dark_thick-extraLong, .__divider_dark_thick-long, .__divider_dark_thick-medium, .__divider_dark_thick-small, .__divider_dark_regular-extraLong, .__divider_dark_regular-long, .__divider_dark_regular-medium, .__divider_dark_regular-small, .__divider_dark_thin-extraLong, .__divider_dark_thin-long, .__divider_dark_thin-medium, .__divider_dark_thin-small {
+  display: flex;
+  width: 100%;
   border-radius: 1rem;
   background: #596470;
+}
+.__divider_dark_thin-small {
+  height: 1.414px;
+  max-width: 35.34vw;
+}
+.__divider_dark_thin-medium {
+  height: 1.414px;
+  max-width: 49.98vw;
+}
+.__divider_dark_thin-long {
+  height: 1.414px;
+  max-width: 70.7vw;
+}
+.__divider_dark_thin-extraLong {
+  height: 1.414px;
+  max-width: 100%;
+}
+.__divider_dark_regular-small {
+  height: 2px;
+  max-width: 35.34vw;
+}
+.__divider_dark_regular-medium {
+  height: 2px;
+  max-width: 49.98vw;
+}
+.__divider_dark_regular-long {
+  height: 2px;
+  max-width: 70.7vw;
+}
+.__divider_dark_regular-extraLong {
+  height: 2px;
+  max-width: 100%;
+}
+.__divider_dark_thick-small {
+  height: 4px;
+  max-width: 35.34vw;
+}
+.__divider_dark_thick-medium {
+  height: 4px;
+  max-width: 49.98vw;
+}
+.__divider_dark_thick-long {
+  height: 4px;
+  max-width: 70.7vw;
+}
+.__divider_dark_thick-extraLong {
+  height: 4px;
+  max-width: 100%;
 }
 
 .--SVG-arrow.arrow-back {
@@ -358,50 +460,6 @@ img {
   text-transform: lowercase;
 }
 
-.navigation-top-container {
-  display: flex;
-  width: 100%;
-  padding: 0px 0.7083rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #050B10;
-  border-radius: 0 0 0.5rem 0.5rem;
-  z-index: 10;
-}
-.navigation-top-container .navigation-top-wrapper {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-}
-.navigation-top-container .navigation-top-wrapper .navigation-top-logo-wrapper {
-  display: flex;
-  height: 68px;
-  width: 68px;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #F3F5F7;
-}
-.navigation-top-container .navigation-top-wrapper .navigation-top-logo-wrapper .navigation-top-logo {
-  color: #F3F5F7;
-}
-.navigation-top-container .navigation-top-wrapper .navigation-top-links-container {
-  display: flex;
-  position: relative;
-  gap: 24px;
-  overflow: hidden;
-}
-.navigation-top-container .navigation-top-wrapper .navigation-top-links-container .navigation-top-links-wrapper {
-  display: flex;
-  width: 153.942px;
-  height: 52.963px;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
 #fixedReference {
   position: fixed;
   height: 100vh;
@@ -503,13 +561,13 @@ header .header-container h1 {
 .articles-section-container {
   display: flex;
   position: relative;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
   row-gap: 5.625rem;
   align-self: stretch;
   flex-wrap: wrap;
-  padding: 5.625rem 0px 3.9583rem 0px;
+  padding: 2.8333rem 0px 3.9583rem 0px;
 }
 
 .article-wrapper {
@@ -528,38 +586,39 @@ header .header-container h1 {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  border: 2px solid #596470;
   border-radius: 1rem;
   overflow: hidden;
   z-index: 2;
 }
 .article-wrapper .article-thumbnail-container .article-thumbnail {
-  height: 100%;
-  width: 100%;
-  border: 1px solid #F3F5F7;
-  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
 }
-.article-wrapper .article-thumbnail-container .__article-specific-category-wrapper {
+.article-wrapper .article-thumbnail-container .article-specific-category-wrapper {
   display: flex;
   position: absolute;
-  width: min-content;
+  width: clamp(min-content, auto, 5.625rem);
   top: 0;
   right: 0;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0 0 0 1rem;
-  background-color: #F3F5F7;
+  padding: 0.5rem 1rem;
+  border: 2px solid #596470;
+  border-radius: 0 1rem;
+  background-color: #4C609C;
 }
-.article-wrapper .article-thumbnail-container .__article-specific-category-wrapper .__article-specific-category {
-  display: flex;
-  padding: 0.25rem 0.7083rem;
-  border-radius: 1rem;
-  background-color: #2e70ff;
+.article-wrapper .article-thumbnail-container .article-specific-category-wrapper .article-specific-category {
   color: #F3F5F7;
   white-space: nowrap;
   text-align: center;
+  font-size: 0.7083rem;
   font-weight: 500;
+  line-height: 100%; /* 34px */
 }
 .article-wrapper .article-content-container {
   display: flex;
@@ -578,6 +637,7 @@ header .header-container h1 {
 }
 .article-wrapper .article-content-container .article-summary {
   align-self: stretch;
+  color: #596470;
   font-size: 0.7083rem;
 }
 
