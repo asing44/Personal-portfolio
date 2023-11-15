@@ -8,10 +8,6 @@ gsap.config({
     autoSleep: 60,
 });
 
-// Set the page change container to the previous color
-$('.pageChangeContainer').css('background-color', localStorage.getItem("pageChangeColor")
-);
-
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
@@ -131,6 +127,23 @@ function getCursor(e) {
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
+// ** SECTION SCROLL OVERLAP
+// ** ----------------------------------------
+
+let overlapSection = gsap.utils.toArray(".--overlap-section");
+
+let tops = overlapSection.map(item => ScrollTrigger.create({trigger: item, start: "top top"}));
+
+overlapSection.forEach((item, i) => {
+    ScrollTrigger.create({
+        trigger: item,
+        start: () => item.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+        pin: true, 
+        pinSpacing: false 
+    });
+});
+
+// ** ----------------------------------------
 // ** CURSOR
 // ** ----------------------------------------
 
@@ -186,13 +199,6 @@ function cursorMove(e) {
 
 // * PAGE CHANGE IN
 
-var pageChangeColors = {
-    1: "#32853F", /* green */
-    2: "#2A1E5C", /* blue */
-    3: "#694873", /* purple */
-    4: "#BA2D0B", /* red */
-}
-
 let pageChangeAnim = gsap.timeline({
     delay: 0.2,
     defaults: {
@@ -225,10 +231,6 @@ $('.--delay-link').on('click', function(e) {
         $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
     }
     pageChangeHref = $(this).attr('href');
-    console.log($(this).attr('href').match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
-    var pageChangeColor = pageChangeColors[Math.round((Math.random() * 4))];
-    localStorage.setItem("pageChangeColor", pageChangeColor);
-    $('.pageChangeContainer').css('background-color', pageChangeColor);
     pageChangeAnim.reverse();
 });
 
@@ -239,8 +241,43 @@ $('.--delay-link').on('click', function(e) {
 // });
 
 // ?? ----------------------------------------
-// ?? PAGES
+// ?? ANIMATED
 // ?? ----------------------------------------
+
+// ** ----------------------------------------
+// ** NAVIGATION
+// ** ----------------------------------------
+
+const navContainer = document.getElementsByClassName('navigation-top-container')[0];
+const navLinks = gsap.utils.toArray('.navigation-top-links-wrapper');
+const navLogo = document.getElementsByClassName('navigation-top-logo-wrapper')[0];
+
+let navLinks_anim = function() {
+    let navLinks_tl = gsap.timeline({
+    });
+
+    navLinks.forEach(item => {
+        navLinks_tl.to(item, {
+            scale: 0.85
+        }).to(item, {
+            yPercent: -100
+        }, '<20%');
+    }, '<10%');
+
+    return navLinks_tl
+}
+
+// Parent timeline
+
+let navScroll_anim_tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#fixedReference',
+        start: 'top top',
+        end: '10% top',
+        scrub: 1,
+    }
+})
+.add(navLinks_anim())
 
 // ?? ----------------------------------------
 // ?? COMPONENTS

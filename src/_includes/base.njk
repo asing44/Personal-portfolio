@@ -7,7 +7,7 @@
     <!-- ** Scripts -->
     {% include "scripts.njk" %}
   </head>
-  <body>
+  <body id="body">
     {# Fixed reference #}
     <div id="fixedReference"></div>
     {# Cursor #}
@@ -29,7 +29,7 @@
         <p id="pageChangeText">{{ name if name else title }}</p>
     </div>
     {% include "partials/navigation.njk" %}
-    <main>{% block content %} {{ content | safe }} {% endblock %}</main>
+    <main class="--overlap-section">{% block content %} {{ content | safe }} {% endblock %}</main>
   </body>
   <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>
   <script content-type="text/javascript" src="{{ jsSrc }}"></script>

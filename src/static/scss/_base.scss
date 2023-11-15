@@ -55,30 +55,30 @@ $font-spacing-decreased: -7%;
 
 // * COLORS
 // Primary and secondary
-$primary: #111DF8;
+$primary: #0047E0;
 $primary-light: lighten($primary, 15%);
 $primary-dark: darken($primary, 15%);
-$secondary: #EBE56F;
+$secondary: #FFC857;
 $secondary-light: lighten($secondary, 15%);
 $secondary-dark: darken($secondary, 15%);
 // Background and base
 $white: #FFF;
 $black: #000;
-$background-light: #EDFAFD;
+$background-light: #F3F5F7;
 $background-light-blue: mix($background-light, $primary, 90%);
 $background-dark: #050B10;
 // Accent
-$accent-green: #074064;
-$accent-blue: #18B8DC;
-$accent-purple: #8F44EB;
+$accent-heading: #4C609C;
+$accent-subheading: #18B8DC;
+$accent-purple: #7D1D9A;
 // Gray
-$gray-light: #798387;
-$gray-dark: #3F474C;
+$gray-light: #D0DFF3;
+$gray-dark: #596470;
 // State
 $state-info: #84C0D9;
-$state-success: #53BF32;
-$state-warning: #C97636;
-$state-error: #B50238;
+$state-success: #16B475;
+$state-warning: #E5CF00;
+$state-error: #BF5943;
 // Overlay
 $overlay: transparentize($gray-dark, 0.5);
 
