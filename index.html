@@ -26,7 +26,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
-  <body>
+  <body id="body">
     
     <div id="fixedReference"></div>
     
@@ -47,7 +47,7 @@
     <div class="pageChangeContainer --contain">
         <p id="pageChangeText">home</p>
     </div>
-    <nav class="navigation-top-container">
+    <nav class="navigation-top-container --overlap-section">
   <div class="navigation-top-wrapper">
     <a class="navigation-top-logo-wrapper --delay-link __cursor-expand-outer" href="/Personal-portfolio/index.html">
       <div></div>
@@ -80,7 +80,7 @@
     </ul>
   </div>
 </nav>
-    <main> <!-- TODO:
+    <main class="--overlap-section"> <!-- TODO:
 *  - Add favicon
 *  - Transfer css class attr to properties
 -->
