@@ -252,32 +252,27 @@ const navContainer = document.getElementsByClassName('navigation-top-container')
 const navLinks = gsap.utils.toArray('.navigation-top-links-wrapper');
 const navLogo = document.getElementsByClassName('navigation-top-logo-wrapper')[0];
 
-let navLinks_anim = function() {
-    let navLinks_tl = gsap.timeline({
-    });
+navLinks.forEach((item, index) => {
+    let animScrub = index * 0.4 + 1;
 
-    navLinks.forEach(item => {
-        navLinks_tl.to(item, {
-            scale: 0.85
-        }).to(item, {
-            yPercent: -100
-        }, '<20%');
-    }, '<10%');
+    let navLink_anim = gsap.timeline({
+        defaults: {
 
-    return navLinks_tl
-}
+        },
+        scrollTrigger: {
+            trigger: '#fixedReference',
+            start: '5% top',
+            end: '20% top',
+            scrub: animScrub,
+        }
+    })
 
-// Parent timeline
-
-let navScroll_anim_tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '#fixedReference',
-        start: 'top top',
-        end: '10% top',
-        scrub: 1,
-    }
-})
-.add(navLinks_anim())
+    navLink_anim.to(item, {
+        scale: 0.85
+    }).to(item, {
+        yPercent: -100
+    }, '<20%');
+}, '<10%');
 
 // ?? ----------------------------------------
 // ?? COMPONENTS

@@ -165,7 +165,7 @@ img {
 // ?? GLOBAL CLASSES
 // ?? ----------------------------------------
 
-// * CONTAINERS AND WRAPPERS
+// * Containers and wrappers
 
 .--contain {
     min-height: 100vh;
@@ -184,20 +184,20 @@ img {
     @extend .--wrap;
 }
 
-// * DISPLAY, HIDE, AND OVERLAY
+// * Display hide
 
 .--inactive {
     display: none !important;
 }
 
-// * LOCK SCROLL
+// * Lock scroll
 
 .--lockScroll {
     height: 100%;
     overflow-y: hidden;
 }
 
-// * STYLES
+// ** STYLES
 
 // Remove list style
 
@@ -236,9 +236,25 @@ img {
     @include base.box-shadow(0px, 0px, base.$font-size4, base.$gray-dark);
 }
 
-// * ICONS
+// ** ----------------------------------------
+// ** ELEMENTS
+// ** ----------------------------------------
 
-// Arrows
+// ** DIVIDERS
+
+.__divider_long {
+    width: 100%;
+    height: base.$size-2px;
+    border-radius: base.$border-radius-regular;
+    background: base.$gray-dark;
+}
+
+// ** ----------------------------------------
+// ** ICONS
+// ** ----------------------------------------
+
+// ** ARROWS
+
 .--SVG-arrow {
     &.arrow-back {
         height: 1.5em;
@@ -340,23 +356,23 @@ img {
         ._inner-2 {
             position: absolute;
             display: flex;
-            height: 68px;
-            width: 153.942px;
+            height: 100%;
+            width: 100%;
             justify-content: center;
             align-items: center;
-            padding: 8px 47px;
-            gap: 10px;
+            padding: base.$padding-tiny-plus base.$padding-regular-plus;
+            gap: base.$grid-gap-tiny;
 
             ._text {
                 color: base.$background-dark;
                 text-align: center;
-                font-size: 24px;
+                font-size: base.$font-size0;
             }
         }
 
         ._inner-2 {
-            top: 68px;
-            border-radius: 34px;
+            top: 100%;
+            border-radius: base.$border-radius-medium;
             background-color: base.$primary;
 
             ._text {
@@ -392,7 +408,7 @@ img {
     right: 0;
     top: 0;
     place-content: center;
-    background-color: base.$background-dark;
+    background-color: base.$accent-heading;
     z-index: 11;
 
     p {
@@ -437,10 +453,15 @@ img {
         align-self: stretch;
 
         .navigation-top-logo-wrapper {
+            display: flex;
             height: 68px;
             width: 68px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid base.$background-light;
 
             .navigation-top-logo {
+                color: base.$background-light;
             }
         }
 

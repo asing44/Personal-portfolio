@@ -223,6 +223,13 @@ img {
   box-shadow: 0px 0px 3.9583rem #596470;
 }
 
+.__divider_long {
+  width: 100%;
+  height: 2px;
+  border-radius: 1rem;
+  background: #596470;
+}
+
 .--SVG-arrow.arrow-back {
   height: 1.5em;
   fill: #FFF;
@@ -299,22 +306,22 @@ img {
 .__button-1--regular ._inner-2 {
   position: absolute;
   display: flex;
-  height: 68px;
-  width: 153.942px;
+  height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 8px 47px;
-  gap: 10px;
+  padding: 0.3333rem 1.4167rem;
+  gap: 0.5rem;
 }
 .__button-1--regular ._inner-1 ._text,
 .__button-1--regular ._inner-2 ._text {
   color: #050B10;
   text-align: center;
-  font-size: 24px;
+  font-size: 1rem;
 }
 .__button-1--regular ._inner-2 {
-  top: 68px;
-  border-radius: 34px;
+  top: 100%;
+  border-radius: 1.4167rem;
   background-color: #0047E0;
 }
 .__button-1--regular ._inner-2 ._text {
@@ -336,7 +343,7 @@ img {
   right: 0;
   top: 0;
   place-content: center;
-  background-color: #050B10;
+  background-color: #4C609C;
   z-index: 11;
 }
 .pageChangeContainer p {
@@ -370,8 +377,15 @@ img {
   align-self: stretch;
 }
 .navigation-top-container .navigation-top-wrapper .navigation-top-logo-wrapper {
+  display: flex;
   height: 68px;
   width: 68px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #F3F5F7;
+}
+.navigation-top-container .navigation-top-wrapper .navigation-top-logo-wrapper .navigation-top-logo {
+  color: #F3F5F7;
 }
 .navigation-top-container .navigation-top-wrapper .navigation-top-links-container {
   display: flex;
@@ -411,87 +425,73 @@ img {
 
 header {
   display: flex;
-  min-height: 35.34vh;
+  min-height: 49.98vh;
   width: 100vw;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 5.625rem 0px 2rem 2.8333rem;
+  padding: 5.625rem 2rem 1rem 2rem;
 }
 header .header-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 48px;
-  flex-shrink: 0;
   align-self: stretch;
+  padding-right: 3.9583rem;
 }
 header .header-container h1 {
   color: #050B10;
   font-family: "Orbitron", sans-serif;
   font-size: 3.9583rem;
   font-weight: 700;
-  line-height: 110%; /* 149.228px */
-  letter-spacing: 9.496px;
+  line-height: 110%;
+  letter-spacing: 7%;
 }
 
-.articles-container {
+.content-container {
   display: flex;
   position: relative;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 0 2rem 2rem 2rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 2.8333rem;
   border-radius: 2rem;
   background: #F3F5F7;
-}
-
-.__divider_long {
-  width: 100%;
-  height: 2px;
-  border-radius: 1rem;
-  background: var(--gray-dark, #3F474C);
 }
 
 .article-filter-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   align-self: stretch;
 }
 .article-filter-container .articles-category-wrapper {
   display: flex;
   position: relative;
-  height: 100%;
-  top: 0;
-  left: 0.7083rem;
-  align-items: end;
-  gap: 1rem;
+  align-items: flex-end;
+  align-self: stretch;
+  gap: 0.5rem;
 }
 .article-filter-container .articles-category-wrapper .articles-category {
   display: flex;
   width: min-content;
-  color: #D0DFF3;
-  font-size: 1rem;
+  color: #596470;
+  font-size: 2rem;
+  line-height: 100%; /* 47.986px */
 }
 .article-filter-container .articles-category-wrapper .category-count-wrapper {
   display: flex;
-  width: 2.8333rem;
-  padding: 0.25rem 0.5rem;
   justify-content: center;
-  align-items: center;
-  align-self: center;
-  border: 2px solid #D0DFF3;
-  border-radius: 1rem;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 4px;
 }
 .article-filter-container .articles-category-wrapper .category-count-wrapper .category-count {
-  color: #D0DFF3;
+  color: #596470;
   text-align: center;
+  font-weight: 500;
+  line-height: 100%; /* 24px */
 }
 .article-filter-container .article-filter-buttons-container {
   display: flex;
