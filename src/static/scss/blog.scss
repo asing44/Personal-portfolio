@@ -104,13 +104,13 @@ header {
 .articles-section-container {
     display: flex;
     position: relative;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
     row-gap: base.$grid-gap-huge;
     align-self: stretch;
     flex-wrap: wrap;
-    padding: base.$size-5_62 0px base.$size-3_95 0px;
+    padding: base.$padding-medium-plus 0px base.$padding-large 0px;
 }
 
 // Article snippets
@@ -131,39 +131,40 @@ header {
         justify-content: center;
         align-items: center;
         gap: base.$grid-gap-tiny;
+        border: base.$size-2px solid base.$gray-dark;
         border-radius: base.$size-1_00;
         overflow: hidden;
         z-index: 2;
 
         .article-thumbnail {
-            height: 100%;
-            width: 100%;
-            border: 1px solid base.$background-light;
-            border-radius: base.$size-1_00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 0;
+            align-self: stretch;
         }
 
-        .__article-specific-category-wrapper {
+        .article-specific-category-wrapper {
             display: flex;
             position: absolute;
-            width: min-content;
+            width: clamp(min-content, auto, base.$size-5_62);
             top: 0;
             right: 0;
             justify-content: center;
             align-items: center;
             gap: base.$grid-gap-tiny;
-            padding: base.$size-0_50;
-            border-radius: 0 0 0 base.$size-1_00;
-            background-color: base.$background-light;
+            padding: base.$padding-small base.$padding-regular;
+            border: base.$size-2px solid base.$gray-dark;
+            border-radius: 0 base.$border-radius-regular;
+            background-color: base.$accent-subheading;
 
-            .__article-specific-category {
-                display: flex;
-                padding: base.$size-0_25 base.$size-0_70;
-                border-radius: base.$size-1_00;
-                background-color: base.$primary-light;
+            .article-specific-category {
                 color: base.$background-light;
                 white-space: nowrap;
                 text-align: center;
+                font-size: base.$font-size-1;
                 font-weight: base.$font-weight-medium;
+                line-height: 100%; /* 34px */
             }
         }
     }
@@ -186,6 +187,7 @@ header {
 
         .article-summary {
             align-self: stretch;
+            color: base.$gray-dark;
             font-size: base.$font-size-1;
         }
     }
