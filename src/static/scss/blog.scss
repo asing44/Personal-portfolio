@@ -95,7 +95,7 @@ header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: base.$grid-gap-base;
+        gap: base.$grid-gap-regular;
     }
 }
 
@@ -120,7 +120,7 @@ header {
     position: relative;
     flex-direction: column;
     align-items: flex-start;
-    gap: base.$grid-gap-base;
+    gap: base.$grid-gap-regular;
 
     .article-thumbnail-container {
         display: flex;

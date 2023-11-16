@@ -74,7 +74,7 @@ footer {
                 display: flex;
                 padding: base.$padding-small base.$padding-small-plus;
                 align-items: flex-start;
-                gap: base.$grid-gap-regular;
+                gap: base.$grid-gap-medium;
                 align-self: stretch;
             }
         }
@@ -124,7 +124,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: base.$grid-gap-base;
+    gap: base.$grid-gap-regular;
     flex-shrink: 0;
     align-self: stretch;
     padding: 0px base.$padding-regular;
@@ -146,7 +146,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: base.$grid-gap-base;
+    gap: base.$grid-gap-regular;
     top: base.$size-2_83;
     z-index: -1;
 

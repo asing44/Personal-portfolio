@@ -11,13 +11,16 @@ cssSrc: /css/article.css
 <article class="article-container">
   <div class="__divider_dark_regular-extraLong"></div>
   <div class="article-details-container">
-    <p class="article-category">dmd 300</p>
-    <p class="article-author">Drake Smith</p>
-    <p class="article-published">{{published}}</p>
+    <small class="article-category">{{category}}</small>
+    <small class="article-readTime">{{readTime}}</small>
+    <small class="article-published">{{published}}</small>
   </div>
   <!-- main content -->
   <div class="article-sections-container">
-    <aside class="paginaiton-and-info-container"></aside>
+    <aside class="paginaiton-and-info-container">
+      <div class="page-pagination-container"></div>
+      <div class="article-pagination-container"></div>
+    </aside>
     <header class="article-content-header-container">
       <div class="article-thumbnail-wrapper">
         <img class="article-thumbnail --parallex-img" src="{{articleThumbnail}}" alt="{{articleThumbnailAlt}}">
