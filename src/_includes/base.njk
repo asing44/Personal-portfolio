@@ -29,7 +29,7 @@
         <p id="pageChangeText">{{ name if name else title }}</p>
     </div>
     {% include "partials/navigation.njk" %}
-    <main class="--overlap-section">{% block content %} {{ content | safe }} {% endblock %}</main>
+    <main>{% block content %} {{ content | safe }} {% endblock %}</main>
     {% include 'partials/footer.njk' %}
   </body>
   <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>

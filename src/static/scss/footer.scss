@@ -15,6 +15,7 @@ footer {
     background-color: base.$background-dark;
     color: base.$background-light;
     overflow: hidden;
+    z-index: 1;
 }
 
 // Top ribbons
@@ -147,6 +148,7 @@ footer {
     align-items: center;
     gap: base.$grid-gap-base;
     top: base.$size-2_83;
+    z-index: -1;
 
     .footer-tagline-wrapper {
         display: flex;

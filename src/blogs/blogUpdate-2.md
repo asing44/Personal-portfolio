@@ -4,7 +4,7 @@ readTime: '10 min'
 category: 'dmd 300'
 published: Oct. 31, 2023
 summary: 'In this DMD 300 update, I split my project into design and development. Embraced 11ty and AI. Planning for content and design refinement.'
-articleThumbnail: ./assets/images/blogs/thumbnails/blog-2-thumbnail.png
+articleThumbnail: /assets/images/blogs/thumbnails/blog-2-thumbnail.png
 articleThumbnailAlt: The site's sitemap
 ---
 

@@ -4,7 +4,7 @@ readTime: '5 min'
 category: 'dmd 300'
 published: Oct. 22, 2023
 summary: 'In my DMD 300 project update, I used Asana and ChatGPT for project management, focusing on the blog page and homepage.'
-articleThumbnail: ./assets/images/blogs/thumbnails/blog-1-thumbnail.png
+articleThumbnail: assets/images/blogs/thumbnails/blog-1-thumbnail.png
 articleThumbnailAlt: The site's timeline in the online project management tool Asana.
 ---
 
