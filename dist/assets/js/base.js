@@ -158,7 +158,7 @@ document.body.addEventListener('mousemove', cursorMove);
 
 // * EXPAND CURSOR OUTER
 
-$('.__cursor-expand-outer').on('mouseenter', function(){
+$('.--cursor-expand-outer').on('mouseenter', function(){
     gsap.to(cursor, {scale: 0});
     gsap.to(cursorOuter, {scale: 2});
 }).on('mouseleave', function(){
@@ -375,6 +375,28 @@ gsap.utils.toArray($(".__button-1:not(.__button-1--active)")).forEach((item) => 
     });
 });
 
+// * BUTTON 2
+
+gsap.utils.toArray($(".__button-2:not(.__button-2--active)")).forEach((item) => {
+    let hover1 = $(item).children("._inner-1");
+    let hover2 = $(item).children("._inner-2");
+    let button1Hover_tl = gsap.timeline({ paused: true });
+    button1Hover_tl.to(hover1, {
+        scale: 0.85
+    }).to(hover2, {
+        duration: 0.4,
+        yPercent: -100,
+        ease: "power3.inOut"
+    },"<5%");
+    $(item).on("mouseenter", function () {
+        button1Hover_tl.play();
+    }).on("mouseleave", function () {
+        button1Hover_tl.reverse();
+    });
+});
+
 // ?? ----------------------------------------
 // ?? TESTING ZONE
 // ?? ----------------------------------------
+
+console.log($('.__button-2:not(.__button-2--active)'))

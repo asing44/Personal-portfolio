@@ -138,17 +138,18 @@ $padding-huge-plus: $size-11_29;   // 271px
 
 // * BORDER
 // Radius
-$border-radius-tiny: $size-0_25;
-$border-radius-small: $size-0_50;
-$border-radius-regular: $size-1_00;
-$border-radius-medium: $size-1_41;
-$border-radius-large: $size-2_00;
-$border-radius-50: 50%;
-$border-radius-100: 100%;
+$border-radius-tiny: $size-0_25;   // 6px
+$border-radius-small: $size-0_50;  // 12px
+$border-radius-regular: $size-1_00;// 24px
+$border-radius-medium: $size-1_41; // 34px
+$border-radius-large: $size-2_00;  // 48px
+$border-radius-50: 50%;            // 50%
+$border-radius-100: 100%;          // 100%
 // Width
-$border-width-small: $size-1px;
-$border-width-medium: $size-0_17;
-$border-width-large: $size-0_25;
+$border-width-small: $size-1px;    // 1.414px
+$border-width-small-plus: $size-2px; // 2px
+$border-width-medium: $size-0_17;  // 4px
+$border-width-large: $size-0_25;   // 6px
 
 // * OPACITY
 $opacity-low: 14%;

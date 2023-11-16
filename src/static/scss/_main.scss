@@ -417,8 +417,12 @@ img {
     }
 }
 
+// ?? ----------------------------------------
+// ?? INTERACTIVE
+// ?? ----------------------------------------
+
 // ** ----------------------------------------
-// ** ICONS
+// ** SYMBOLS
 // ** ----------------------------------------
 
 // ** ARROWS
@@ -427,6 +431,92 @@ img {
     &.arrow-back {
         height: 1.5em;
         fill: base.$white;
+    }
+}
+
+// ** ----------------------------------------
+// ** ICONS
+// ** ----------------------------------------
+
+// Copy
+
+.__icon-copy {
+
+    &-regular {
+        &-light {
+            display: inline-flex;
+            position: relative;
+            height: 27px;
+            width: 24px;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    fill: base.$background-light
+                }
+            }
+        }
+
+        &-dark {
+            display: inline-flex;
+            position: relative;
+            height: 27px;
+            width: 24px;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    fill: base.$background-dark
+                }
+            }
+        }
+    }
+
+    &-medium {
+
+        &-light {
+            display: inline-flex;
+            position: relative;
+            height: 46px;
+            width: 40px;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    fill: base.$background-light
+                }
+            }
+        }
+
+        &-dark {
+            display: inline-flex;
+            position: relative;
+            height: 46px;
+            width: 40px;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    fill: base.$background-dark
+                }
+            }
+        }
     }
 }
 
@@ -557,6 +647,131 @@ img {
 
             ._text {
                 color: base.$primary;
+            }
+        }
+    }
+}
+
+.__button-2 {
+
+    &--normal {
+        display: flex;
+        position: relative;
+        height: 68px;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        padding: 0;
+        border-radius: base.$border-radius-medium;
+        border: base.$border-width-small solid transparent;
+        overflow: hidden;
+
+        &--regular {
+            @extend .__button-2--normal;
+
+            ._inner-1,
+            ._inner-2 {
+                display: flex;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                left: 0;
+                padding: base.$padding-tiny-plus base.$padding-regular-plus;
+                border: base.$border-width-small solid base.$background-light;
+                border-radius: base.$border-radius-medium;
+    
+                ._text {
+                    color: base.$background-light;
+                    text-align: center;
+                    font-size: base.$font-size0;
+                }
+            }
+    
+            ._inner-2 {
+                top: 100%;
+                border: none;
+                background-color: base.$primary;
+    
+                ._text {
+                    color: base.$background-light;
+                }
+            }
+        }
+    
+        &--active {
+            @extend .__button-2--normal;
+            ._inner-1 {
+                border: base.$size-2px solid base.$primary;
+                border-radius: base.$size-1_41;
+    
+                ._text {
+                    color: base.$primary;
+                }
+            }
+        }
+    }
+
+    &--large {
+        display: flex;
+        position: relative;
+        height: 68px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex: 1;
+        padding: 0;
+        border-radius: base.$border-radius-medium;
+        border: 1.414px solid transparent;
+        overflow: hidden;
+
+        &--regular {
+            @extend .__button-2--large;
+
+            ._inner-1,
+            ._inner-2 {
+                display: flex;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                left: 0;
+                border: base.$border-width-small solid base.$background-light;
+                border-radius: base.$border-radius-medium;
+    
+                ._text {
+                    color: base.$background-light;
+                    text-align: center;
+                    font-size: base.$font-size0;
+                }
+            }
+    
+            ._inner-2 {
+                top: 100%;
+                border: none;
+                background-color: base.$primary;
+    
+                ._text {
+                    color: base.$background-light;
+                }
+            }
+        }
+    
+    
+        &--active {
+            @extend .__button-2--large;
+    
+            ._inner-1 {
+                border: base.$size-2px solid base.$primary;
+                border-radius: base.$size-1_41;
+    
+                ._text {
+                    color: base.$primary;
+                }
             }
         }
     }
