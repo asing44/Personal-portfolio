@@ -127,23 +127,6 @@ function getCursor(e) {
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
-// ** SECTION SCROLL OVERLAP
-// ** ----------------------------------------
-
-let overlapSection = gsap.utils.toArray(".--overlap-section");
-
-let tops = overlapSection.map(item => ScrollTrigger.create({trigger: item, start: "top top"}));
-
-overlapSection.forEach((item, i) => {
-    ScrollTrigger.create({
-        trigger: item,
-        start: () => item.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-        pin: true, 
-        pinSpacing: false 
-    });
-});
-
-// ** ----------------------------------------
 // ** CURSOR
 // ** ----------------------------------------
 
@@ -245,6 +228,12 @@ $('.--delay-link').on('click', function(e) {
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
+// ** SECTIONS
+// ** ----------------------------------------
+
+let animatedSections = gsap.utils.toArray('.--animated-section');
+
+// ** ----------------------------------------
 // ** NAVIGATION
 // ** ----------------------------------------
 
@@ -273,6 +262,21 @@ navLinks.forEach((item, index) => {
         yPercent: -100
     }, '<20%');
 }, '<10%');
+
+// ** ----------------------------------------
+// ** IMAGES
+// ** ----------------------------------------
+
+let parallexImages = gsap.utils.toArray('.--parallex-img');
+
+parallexImages.forEach(item => {
+    gsap.to(item, {
+        scrollTrigger: {
+            scrub: 1
+        },
+        yPercent: -10
+    })
+})
 
 // ?? ----------------------------------------
 // ?? COMPONENTS
@@ -398,5 +402,3 @@ gsap.utils.toArray($(".__button-2:not(.__button-2--active)")).forEach((item) => 
 // ?? ----------------------------------------
 // ?? TESTING ZONE
 // ?? ----------------------------------------
-
-console.log($('.__button-2:not(.__button-2--active)'))

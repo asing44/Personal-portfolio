@@ -4,11 +4,10 @@ readTime: '5 min'
 category: 'dmd 300'
 published: Oct. 22, 2023
 summary: 'In my DMD 300 project update, I used Asana and ChatGPT for project management, focusing on the blog page and homepage.'
-articleThumbnail: assets/images/blogs/thumbnails/blog-1-thumbnail.png
+articleThumbnail: ./assets/images/blogs/thumbnails/blog-1-thumbnail.png
 articleThumbnailAlt: The site's timeline in the online project management tool Asana.
 ---
 
-<section class="sectionWrapper">
 
 ## Introduction
 
@@ -18,12 +17,10 @@ This week, I began and worked through the ideation and research phases of my pro
 <label class="-sm-em" for="articleFigure-1">{{ articleThumbnailAlt }}</label>
 </figure>
 
-</section>
-<section class="sectionWrapper">
 
 ## Progress Update
 
-For the research and ideation phase I used <a class="__inline-link"><span>ChatGPT</span></a> to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
+For the research and ideation phase I used <a class="__inline-link --cursor-expand-outer"><span>ChatGPT</span></a> to assist in my researching efforts. I utilized ChatGPT to help me focus on establishing a solid framework for further research by asking the AI to create me a skeleton outline of topics to help guide my research. ChatGPT provided the following topics to help guide my research for this project:
 
 1.  Intent
 2.  Audience
@@ -34,19 +31,20 @@ For the research and ideation phase I used <a class="__inline-link"><span>ChatGP
     1.  Layout and structure
     2.  Colors
     3.  Typography
-5.  Technology stack1.  VS Code
-    1.  Figma
-    2.  Discord (Midjourney Bot)
-    3.  ChatGPT
-    4.  Adobe Firefly
-    5.  Adobe Illustrator
-    6.  _Adobe After Effects_
-    7.  GitHub
-    8.  Git
-    9.   _11ty\*_
-6.  _Items marked with '\*' may or may not be used_
-7.  Sitemap
-8.  SEO considerations
+5.  Technology stack
+    1.  VS Code
+    2.  Figma
+    3.  Discord (Midjourney Bot)
+    4.  ChatGPT
+    5.  Adobe Firefly
+    6.  Adobe Illustrator
+    7.  _Adobe After Effects_
+    8.  GitHub
+    9.  Git
+    10. _11ty\*_
+    11. <small>_Items marked with '\*' may or may not be used_</small>
+1.  Sitemap
+2.  SEO considerations
 
 I used Figma to create some additional resources to better help visualize my research. Here is a visual of the sitemap I am planning on using:
 
@@ -63,5 +61,3 @@ The challenge I am facing is trying to determine what I want to limit the scope 
 ## Conclusion
 
 I am excited to work on this project and am thankful to have the opportunity to update the progress along the way using my integrated blog page. If you have any concerns or questions, please feel free to <a class="__inline-link"><span>reach out to me</span></a>. Next week's blog will include more site design content and development.
-
-</section>

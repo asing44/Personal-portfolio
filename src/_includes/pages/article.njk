@@ -1,0 +1,33 @@
+---
+layout: 'base.njk'
+title: '{{title}}'
+jsSrc: /assets/js/article.js
+jsSrcBase: /assets/js/base.js
+cssSrc: /css/article.css
+---
+<header class="article-header">
+  <h1 class="article-title">{{title}}</h1>
+</header>
+<article class="article-container">
+  <div class="__divider_dark_regular-extraLong"></div>
+  <div class="article-details-container">
+    <p class="article-category">dmd 300</p>
+    <p class="article-author">Drake Smith</p>
+    <p class="article-published">{{published}}</p>
+  </div>
+  <!-- main content -->
+  <div class="article-sections-container">
+    <aside class="paginaiton-and-info-container"></aside>
+    <header class="article-content-header-container">
+      <div class="article-thumbnail-wrapper">
+        <img class="article-thumbnail --parallex-img" src="{{articleThumbnail}}" alt="{{articleThumbnailAlt}}">
+      </div>
+      <div class="article-headline-wrapper">
+        <h2 class="article-headline">{{summary}}</h2>
+      </div>
+    </header>
+    <div class="article-content-container">
+      {% block content %} {{ content | safe }} {% endblock %}
+    </div>
+  </div>
+</article>

@@ -6,81 +6,22 @@
 // ** ----------------------------------------
 
 // * SIZING
-$size-1px: 1.414px;         /* 1px */
-$size-2px: 2px;             /* 2px */
-$size-0_17: 0.17rem;        /* 4px */
-$size-0_25: 0.25rem;        /* 6px */
-$size-0_32: 0.3333rem;      /* 8px */
-$size-0_50: 0.5rem;         /* 12px */
-$size-0_70: 0.7083rem;      /* 17px */
-$size-1_00: 1rem;           /* 24px */
-$size-1_41: 1.4167rem;      /* 34px */
-$size-2_00: 2rem;           /* 48px */
-$size-2_83: 2.8333rem;      /* 68px */
-$size-3_95: 3.9583rem;      /* 95px */
-$size-5_62: 5.625rem;       /* 135px */
-$size-7_95: 7.9583rem;      /* 191px */
-$size-11_29: 11.2917rem;    /* 271px */
-$size-15_20: 15.20rem;      /* 365px */
-
-// * FONTS
-// Family
-$font-family-display: 'Orbitron', sans-serif;
-$font-family-heading: 'Quicksand', sans-serif;
-$font-family-body: 'Quattrocento Sans', sans-serif;
-// Size
-$font-size-2: 0.5rem;        /* 12px */
-$font-size-1: 0.7083rem;     /* 17px */
-$font-size0: 1rem;           /* 24px */
-$font-size1: 1.4167rem;      /* 34px */
-$font-size2: 2rem;           /* 48px */
-$font-size3: 2.8333rem;      /* 68px */
-$font-size4: 3.9583rem;      /* 95px */
-$font-size5: 5.625rem;       /* 135px */
-$font-size6: 7.9583rem;      /* 191px */
-$font-size7: 11.2917rem;     /* 271px */
-// Weight
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semiBold: 600;
-$font-weight-bold: 700;
-// Line height
-$font-lineHeight-150: 1.5;
-$font-lineHeight-110: 1.1;
-$font-lineHeight-100: 1;
-// Letter spacing
-$font-spacing-increased: 7%;
-$font-spacing-decreased: -7%;
-
-// * COLORS
-// Primary and secondary
-$primary: #0047E0;
-$primary-light: lighten($primary, 15%);
-$primary-dark: darken($primary, 15%);
-$secondary: #FFC857;
-$secondary-light: lighten($secondary, 15%);
-$secondary-dark: darken($secondary, 15%);
-// Background and base
-$white: #FFF;
-$black: #000;
-$background-light: #F3F5F7;
-$background-light-blue: mix($background-light, $primary, 90%);
-$background-dark: #050B10;
-// Accent
-$accent-heading: #4C609C;
-$accent-subheading: #4C609C;
-$accent-purple: #7D1D9A;
-// Gray
-$gray-light: #D0DFF3;
-$gray-dark: #596470;
-// State
-$state-info: #84C0D9;
-$state-success: #16B475;
-$state-warning: #E5CF00;
-$state-error: #BF5943;
-// Overlay
-$overlay: transparentize($gray-dark, 0.5);
+$size-1px: 1.414px;                /* 1px */
+$size-2px: 2px;                    /* 2px */
+$size-0_17: 0.17rem;               /* 4px */
+$size-0_25: 0.25rem;               /* 6px */
+$size-0_32: 0.3333rem;             /* 8px */
+$size-0_50: 0.5rem;                /* 12px */
+$size-0_70: 0.7083rem;             /* 17px */
+$size-1_00: 1rem;                  /* 24px */
+$size-1_41: 1.4167rem;             /* 34px */
+$size-2_00: 2rem;                  /* 48px */
+$size-2_83: 2.8333rem;             /* 68px */
+$size-3_95: 3.9583rem;             /* 95px */
+$size-5_62: 5.625rem;              /* 135px */
+$size-7_95: 7.9583rem;             /* 191px */
+$size-11_29: 11.2917rem;           /* 271px */
+$size-15_20: 15.20rem;             /* 365px */
 
 // * VIEWPORT DIMENSIONS
 // VIEW HEIGHT
@@ -136,6 +77,35 @@ $padding-large-plus: $size-5_62;   // 135px
 $padding-huge: $size-7_95;         // 191px
 $padding-huge-plus: $size-11_29;   // 271px
 
+// * COLORS
+// Primary and secondary
+$primary: #0047E0;
+$primary-light: lighten($primary, 15%);
+$primary-dark: darken($primary, 15%);
+$secondary: #FFC857;
+$secondary-light: lighten($secondary, 15%);
+$secondary-dark: darken($secondary, 15%);
+// Background and base
+$white: #FFF;
+$black: #000;
+$background-light: #F3F5F7;
+$background-light-blue: mix($background-light, $primary, 90%);
+$background-dark: #050B10;
+// Accent
+$accent-heading: #4C609C;
+$accent-subheading: #4C609C;
+$accent-purple: #7D1D9A;
+// Gray
+$gray-light: #D0DFF3;
+$gray-dark: #596470;
+// State
+$state-info: #84C0D9;
+$state-success: #16B475;
+$state-warning: #E5CF00;
+$state-error: #BF5943;
+// Overlay
+$overlay: transparentize($gray-dark, 0.5);
+
 // * BORDER
 // Radius
 $border-radius-tiny: $size-0_25;   // 6px
@@ -151,6 +121,36 @@ $border-width-small-plus: $size-2px; // 2px
 $border-width-medium: $size-0_17;  // 4px
 $border-width-large: $size-0_25;   // 6px
 
+// * FONTS
+// Family
+$font-family-display: 'Orbitron', sans-serif;
+$font-family-heading: 'Quicksand', sans-serif;
+$font-family-body: 'Quattrocento Sans', sans-serif;
+// Size
+$font-size-2: 0.5rem;        /* 12px */
+$font-size-1: 0.7083rem;     /* 17px */
+$font-size0: 1rem;           /* 24px */
+$font-size1: 1.4167rem;      /* 34px */
+$font-size2: 2rem;           /* 48px */
+$font-size3: 2.8333rem;      /* 68px */
+$font-size4: 3.9583rem;      /* 95px */
+$font-size5: 5.625rem;       /* 135px */
+$font-size6: 7.9583rem;      /* 191px */
+$font-size7: 11.2917rem;     /* 271px */
+// Weight
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;
+// Line height
+$font-lineHeight-150: 1.5;
+$font-lineHeight-110: 1.1;
+$font-lineHeight-100: 1;
+// Letter spacing
+$font-spacing-increased: 7%;
+$font-spacing-decreased: -7%;
+
 // * OPACITY
 $opacity-low: 14%;
 $opacity-medium: 50%;
@@ -160,8 +160,25 @@ $opacity-high: 85%;
 // ** MIXINS
 // ** ----------------------------------------
 
-// * LINKS
+// ** FONT
 
+// * Body font style
+@mixin bodyStyle {
+    font-family: $font-family-body;
+    letter-spacing: 0;
+    line-height: 150%;
+    text-indent: $size-2_00;
+}
+
+// * Title blocks
+@mixin title-font {
+    font-family: $font-family-display;
+    font-size: $font-size5;
+    font-weight: $font-weight-bold;
+    letter-spacing: $font-spacing-increased;
+}
+
+// * Links
 @mixin link-style($type) {
     @if $type == 1 {
         color: $background-light;
@@ -173,64 +190,17 @@ $opacity-high: 85%;
     }
 }
 
-// * BORDERS
-
-@mixin border($type, $color) {
-    @if $type == small and $color == light {
-        border-top: $border-width-small solid $background-light;
-        border-bottom: $border-width-small solid $background-light;
-    }
-
-    @else if $type == small and $color == dark {
-        border-top: $border-width-small solid $background-dark;
-        border-bottom: $border-width-small solid $background-dark;
-    }
-
-    @else if $type == small-all and $color == light {
-        border: $border-width-small solid $background-light;
-    }
-
-    @else if $type == small-all and $color == dark {
-        border: $border-width-small solid $background-dark;
-    }
-
-    @else if $type == medium and $color == dark {
-        border-top: $border-width-medium solid $background-dark;
-        border-bottom: $border-width-medium solid $background-dark;
-    }
-
-    @else if $type == medium-all and $color == dark {
-        border: $border-width-medium solid $background-dark;
-    }
-}
-
-@mixin border-radius($type) {
-    @if $type == 1 {
-        border-top-left-radius: $border-radius-tiny;
-        border-top-right-radius: $border-radius-tiny;
-        border-bottom-right-radius: $border-radius-tiny;
-        border-bottom-left-radius: $border-radius-regular;
-    }
-
-    @else if $type == 2 {
-        border-bottom-right-radius: $border-radius-medium;
-        border-bottom-left-radius: $border-radius-medium;
-    }
-
-    @else if $type == 3 {
-        border-radius: $size-2_00 $size-1_41;
-    }
-
-    @else if $type == 4 {
-        border-radius: $size-1_00 0px $size-2_00 $size-1_00;
-    }
-}
-
-// * EFFECTS
+// ** EFFECTS
 
 @mixin box-shadow($x, $y, $blur, $c) {
     -webkit-box-shadow: $x $y $blur $c;
     -moz-box-shadow: $x $y $blur $c;
     -ms-box-shadow: $x $y $blur $c;
     box-shadow: $x $y $blur $c;
+}
+
+// !! TESTING
+
+@mixin wireframe {
+    border: 2px solid red;
 }

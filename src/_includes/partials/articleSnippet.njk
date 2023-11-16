@@ -1,7 +1,9 @@
 <a class="article-container __article-snippet __cursor-change-inner --delay-link" href="{{article.url}}" data-cursor-hover="view">
     <article class="article-wrapper">
         <div class="article-thumbnail-container">
-            <div class="article-thumbnail" style="background-image: url('{{article.data.articleThumbnail}}'); background-size: cover;" alt="{{article.data.articleThumbnailAlt}}"></div>
+            <div class="article-thumbnail-wrapper">
+                <img class="article-thumbnail --parallex-img" src="{{article.data.articleThumbnail}}" alt="{{article.data.articleThumbnailAlt}}">
+            </div>
             <div class="article-specific-category-wrapper">
                 <p class="article-specific-category">{{article.data.category}}</p>
             </div>

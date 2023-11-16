@@ -9,7 +9,7 @@ cssSrc: ./css/blog.css
 ---
 <header>
     <div class="header-container">
-        <h1>Insights Explored, Perspectives Shared<span class="header-__cursor">_</span></h1>
+        <h1>Insights Explored, Perspectives Shared<span class="header-cursor">_</span></h1>
     </div>
 </header>
 <div class="content-container">
@@ -44,7 +44,7 @@ cssSrc: ./css/blog.css
     </div>
     <div class="articles-section-container">
         {%- for article in collections.article | reverse -%}
-            {% include "partials/article.njk" %}
+            {% include "partials/articleSnippet.njk" %}
         {%- endfor %}
     </div>
 </div>

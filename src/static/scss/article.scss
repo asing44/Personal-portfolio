@@ -1,0 +1,96 @@
+// * Init
+
+@use "base";
+@use 'main';
+
+// ** ----------------------------------------
+// ** HEADER
+// ** ----------------------------------------
+
+header.article-header {
+    display: flex;
+    width: 100%;
+    padding: base.$padding-large base.$padding-medium base.$padding-medium base.$padding-medium;
+    flex-direction: column;
+
+    h1.article-title {
+        @include base.title-font;
+    }
+}
+
+// ** ----------------------------------------
+// ** MAIN CONTENT
+// ** ----------------------------------------
+
+// ** MAIN CONTAINER
+article.article-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0 base.$padding-medium base.$padding-medium base.$padding-medium;
+    flex-direction: column;
+    gap: base.$grid-gap-large;
+    border-radius: base.$border-radius-medium;
+    background: base.$background-light;
+}
+
+// * Article details
+.article-details-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    padding: 0 base.$padding-medium-plus;
+}
+
+// * Articles section container
+.article-sections-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template: auto 1fr / 181px 1fr;
+    gap: base.$grid-gap-large base.$grid-grap-small;
+    overflow: hidden;
+}
+
+// * Article content header
+header.article-content-header-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    grid-area: 1 / 2;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: base.$grid-gap-regular;
+
+    .article-thumbnail-wrapper {
+        height: base.$vh-70_7;
+        border-radius: base.$border-radius-medium;
+        overflow: hidden;
+
+        img.article-thumbnail {
+            width: 100%;
+        }
+    }
+
+    .article-headline-wrapper {
+
+        h2.article-headline {
+            font-size: base.$font-size1;
+            font-weight: base.$font-weight-medium;
+            @include base.bodyStyle;
+        }
+    }
+}
+
+// ** MAIN CONTENT
+
+.article-content-container {
+    grid-area: 2 / 2;
+    width: 100%;
+    @include base.wireframe;
+}

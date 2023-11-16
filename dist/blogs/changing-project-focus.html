@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Changing project focus</title>
-    <link rel="stylesheet" href="/Personal-portfolio/css/blogArticle.css">
+    <link rel="stylesheet" href="/Personal-portfolio/css/article.css">
     <meta name="description" content="A personal portfolio website showcasing design and development skills.">
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1.0">
@@ -44,7 +44,7 @@
       </svg>
     </div>
     
-    <div class="pageChangeContainer --contain">
+    <div class="pageChangeContainer contain">
         <p id="pageChangeText">Changing project focus</p>
     </div>
     <link rel="stylesheet" href="/Personal-portfolio/css/navigation.css">
@@ -81,60 +81,75 @@
     </ul>
   </div>
 </nav>
-    <main class="--overlap-section"> <!-- ** MAIN -->
-<header>
+    <main class="--overlap-section"> <header class="article-header">
+  <h1 class="article-title">Changing project focus</h1>
 </header>
-<article class="blog-articleWrapper">
-   <section class="sectionWrapper">
-<h2>Introduction</h2>
+<article class="article-container">
+  <div class="__divider_dark_regular-extraLong"></div>
+  <div class="article-details-container">
+    <p class="article-category">dmd 300</p>
+    <p class="article-author">Drake Smith</p>
+    <p class="article-published">Oct. 31, 2023</p>
+  </div>
+  <!-- main content -->
+  <div class="article-sections-container">
+    <aside class="paginaiton-and-info-container"></aside>
+    <header class="article-content-header-container">
+      <div class="article-thumbnail-wrapper">
+        <img class="article-thumbnail --parallex-img" src="assets/images/blogs/thumbnails/blog-2-thumbnail.png" alt="The site&#39;s sitemap">
+      </div>
+      <div class="article-headline-wrapper">
+        <h2 class="article-headline">In this DMD 300 update, I split my project into design and development. Embraced 11ty and AI. Planning for content and design refinement.</h2>
+      </div>
+    </header>
+    <div class="article-content-container">
+       <h2>Introduction</h2>
 <p>The journey of a creative project is often a dynamic one, filled with surprises, shifts, and exciting opportunities for growth. This week, I find myself at a crossroads in my personal portfolio project, and I'm excited to share the latest developments with you.
 I've decided to redefine the objectives of my project. While my original plan encompassed both design and development aspects, I've chosen to divide my approach. I'm focusing my creative energy on the design of the site, aiming to create a visually captivating digital space that truly represents me. On the other hand, the development phase is now concentrated on two key areas: the home page and the blog pages.</p>
 <p>My overall objective has undergone a transformation as well. I've embraced the world of static site generators as a means to streamline and enhance the development process. Specifically, I've I have decided to use <a class="__inline-link --cursor-expand-outer" href="https://www.11ty.dev/" target="_blank"><span>11ty</span></a>, exploring the possibilities of <a class="__inline-link --cursor-expand-outer" href="https://mozilla.github.io/nunjucks/" target="_blank"><span>Nunjucks</span></a> templating, harnessing the power of <a class="__inline-link --cursor-expand-outer" href="https://www.markdownguide.org/" target="_blank"><span>Markdown</span></a> files, and experimenting with the versatility of JSON files. These tools and technologies are now integral to my project, paving the way for a more efficient and flexible development process.</p>
 <p>I've begun utilizing AI for content writing and coding assistance ase well, allowing me to streamline the creation process and gain insights and suggestions that are both innovative and invaluable. It's a game-changer that promises to elevate the quality of my project and expand my creative horizons.</p>
-</section>
-<section class="sectionWrapper">
 <h2>Progress Update</h2>
 <p>In the ever-evolving landscape of web development, adapting to new tools and technologies is paramount. My decision to pivot my project towards static site generation using 11ty has opened up exciting possibilities. Here's a glimpse of the steps I've taken to set up the static site and the resulting progress:</p>
 <ol>
 <li><strong>Installation and Configuration:</strong> I kicked off the journey by installing 11ty and configuring it to suit the unique requirements of my portfolio. The installation process was smooth, and I was able to set up the basic folder structure in no time.</li>
 </ol>
-<figure class="articleFigure" name="articleFigure-1"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/thumbnails/blog-2-thumbnail.png" alt="The site's sitemap">
+<!-- <figure class="articleFigure" name="articleFigure-1"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/thumbnails/blog-2-thumbnail.png" alt="The site's sitemap">
 <figcaption class="-sm-em" for="articleFigure-1">11ty file structure</figcaption>
-</figure>
+</figure> -->
 <ol start="2">
 <li><strong>Nunjucks Templating:</strong> One of the highlights of working with 11ty is the use of Nunjucks templating. This powerful template engine has made structuring my site a breeze. I've created reusable templates for various sections of the site, which has significantly streamlined the development process.</li>
 </ol>
-<figure class="articleFigure" name="articleFigure-2"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/blog-2/Nunjucks template.png" alt="An example of a Nunjucks template">
+<!-- <figure class="articleFigure" name="articleFigure-2"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/Nunjucks template.png" alt="An example of a Nunjucks template">
 <figcaption class="-sm-em" for="articleFigure-2">Nunjuck's 'base' template for the website</figcaption>
-</figure>
+</figure> -->
 <ol start="3">
 <li><strong>Leveraging Markdown:</strong> Incorporating Markdown files has allowed me to separate content from layout, making content management more flexible and efficient. Creating and editing content is now a straightforward task.</li>
 </ol>
-<figure class="articleFigure" name="articleFigure-3"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/blog-2/Markdown.png" alt="The Markdown format for a blog article">
+<!-- <figure class="articleFigure" name="articleFigure-3"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/Markdown.png" alt="The Markdown format for a blog article">
 <figcaption class="-sm-em" for="articleFigure-3">The Markdown format for a blog article</figcaption>
-</figure>
+</figure> -->
 <ol start="4">
 <li><strong>JSON Files for Data:</strong> To ensure a dynamic touch to my static site, I've employed JSON files to store data. These files contain crucial information for elements such as project descriptions and metadata, which can be easily manipulated as my portfolio evolves.</li>
 </ol>
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<!-- <figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
 <figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
-</figure>
+</figure> -->
 <h3>Designing the Logo and Style Guide</h3>
 <p>Beyond the technical aspects, I've also delved into the creative side of the project. Crafting the aesthetics of my portfolio is just as crucial as its functionality. Here's an update on the design elements I've been working on:</p>
 <ol>
 <li><strong>Logo Design:</strong> The visual identity of my portfolio is taking shape with the design of a unique and memorable logo. I wanted the logo to encapsulate my personality and style, and the creative process is well underway.</li>
 </ol>
 <!-- !! INSERT -->
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<!-- <figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
 <figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
-</figure>
+</figure> -->
 <ol start="2">
 <li><strong>Base Style Guide:</strong> A solid foundation is essential, and that's precisely what the base style guide provides. It includes color schemes, typography choices, and layout guidelines, ensuring consistency and cohesion throughout the site.</li>
 </ol>
 <!-- !! INSERT -->
-<figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/Personal-portfolio/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
+<!-- <figure class="articleFigure" name="articleFigure-4"><img class="articleImg-sm -img-shadow-rg" src="/assets/images/blogs/blog-2/JSON.png" alt="JSON data for each blog article">
 <figcaption class="-sm-em" for="articleFigure-4">JSON data for each blog article</figcaption>
-</figure>
+</figure> -->
 <p>The process of developing the static site and crafting the design elements has been both a technical and artistic adventure. Stay tuned for further updates as I continue to fine-tune these aspects, bringing my portfolio project one step closer to its final form. Your support and feedback are invaluable as I navigate this creative journey!</p>
 <h2>Challenges faced</h2>
 <p>Embarking on a project that incorporates new technologies and approaches is always an exciting adventure, but it comes with its fair share of challenges. In this section, I'll delve into the obstacles I encountered while working with 11ty, Nunjucks, and Markdown, as well as the complexities of migrating an old site into this new static site. Here's a look at the challenges I faced:</p>
@@ -196,7 +211,9 @@ Looking ahead, I'm excited to kickstart the wireframing process for the site. Wi
 <p>The migration of the old site brought its own set of complexities, but it was a worthwhile endeavor. It has allowed me to not only preserve the essence of my previous work but also present it in a more sophisticated and engaging manner.</p>
 <p>I am planning to fine-tune the site, enhancing its content, design, and functionality. The design process continues, with a logo that's taking shape and a focus on visual elements. I am also starting the wireframing process for the site.</p>
 <p>I'm excited to share the results of my efforts with you soon and to continue growing and learning in the world of web development and design.</p>
-</section> 
+ 
+    </div>
+  </div>
 </article> </main>
     <link rel="stylesheet" href="/Personal-portfolio/css/footer.css">
 <footer class="footer-container">

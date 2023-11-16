@@ -136,12 +136,17 @@ header {
         overflow: hidden;
         z-index: 2;
 
-        .article-thumbnail {
+        .article-thumbnail-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             flex: 1 0 0;
             align-self: stretch;
+            overflow: hidden;
+
+            img.article-thumbnail {
+                height: 120%;
+            }
         }
 
         .article-specific-category-wrapper {
