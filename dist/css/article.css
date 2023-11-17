@@ -695,6 +695,7 @@ article.article-container {
 .article-sections-container aside.paginaiton-and-info-container .page-pagination-container {
   width: 100%;
 }
+
 header.article-content-header-container {
   display: flex;
   position: relative;

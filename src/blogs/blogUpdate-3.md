@@ -23,6 +23,8 @@ This project's primary challenge revolves around infusing individuality and uniq
 
 To tackle this, I've dived deep into research, scanning various portfolio websites for inspiration. Consolidating previous notes and research on proper design has been crucial. Embracing an iterative, circular design process allows for constant refinement and improvement. The footer section for my site is inspired off of {% include 'partials/linkExternal.njk' text:"runway.com" link:"https://runway.com/" %}.
 
+</section>
+
 {% include 'partials/articleImage.njk' href:"blog-3/reference-site.png" alt:"The footer section on runway.com"%}
 
 #### Managing a Divergent Process
