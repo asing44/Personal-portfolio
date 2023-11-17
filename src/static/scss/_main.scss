@@ -583,20 +583,35 @@ img {
 
 .__external-link {
     display: inline-flex;
+    height: min-content;
+    gap: 8px;
     padding: 0 base.$padding-tiny-plus;
-    border: 2px solid base.$accent-purple;
     border-radius: 0.5em;
     color: base.$background-dark;
+    text-decoration: 2px underline base.$accent-purple;
     transition: all 250ms ease-in-out;
     pointer-events: all;
+
+    span.__external-link-arrow {
+        display: none;
+        height: min-content;
+        width: min-content;
+        border-radius: 0.5em;
+        background-color: base.$background-light;
+        opacity: 0%;
+        transition: opacity 250ms ease-in-out;
+    }
 
     &:hover {
         background-color: base.$accent-purple;
         color: base.$background-light;
+
+        // span {
+        //     display: inline-flex;
+        //     opacity: 100%;
+        // }
     }
 }
-
-
 
 // ** ----------------------------------------
 // ** BUTTONS

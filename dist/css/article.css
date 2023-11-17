@@ -441,12 +441,23 @@ img {
 
 .__external-link {
   display: inline-flex;
+  height: min-content;
+  gap: 8px;
   padding: 0 0.3333rem;
-  border: 2px solid #7D1D9A;
   border-radius: 0.5em;
   color: #050B10;
+  text-decoration: 2px underline #7D1D9A;
   transition: all 250ms ease-in-out;
   pointer-events: all;
+}
+.__external-link span.__external-link-arrow {
+  display: none;
+  height: min-content;
+  width: min-content;
+  border-radius: 0.5em;
+  background-color: #F3F5F7;
+  opacity: 0%;
+  transition: opacity 250ms ease-in-out;
 }
 .__external-link:hover {
   background-color: #7D1D9A;
