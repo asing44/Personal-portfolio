@@ -24,6 +24,7 @@ This project's primary challenge revolves around infusing individuality and uniq
 To tackle this, I've dived deep into research, scanning various portfolio websites for inspiration. Consolidating previous notes and research on proper design has been crucial. Embracing an iterative, circular design process allows for constant refinement and improvement. The footer section for my site is inspired off of {% include 'partials/linkExternal.njk' text:"runway.com" link:"https://runway.com/" %}.
 
 </section>
+<section class="article-section">
 
 {% include 'partials/articleImage.njk' href:"blog-3/reference-site.png" alt:"The footer section on runway.com"%}
 
@@ -40,7 +41,6 @@ I could have hosted updates elsewhere, like other students do. But my vision was
 {% include 'partials/articleImage.njk' href:"blog-3/blog 3 code.png" alt:"A screenshot of this pages Markdown syntax"%}
 
 </section>
-
 <section class="article-section">
 
 ### Developing Designs
@@ -68,7 +68,6 @@ The visual choices sought a delicate harmony. The yellow circle cursor and fluid
 Maintaining a clear process amidst this divergence was vital. It's about ensuring transparency in how the project evolved despite the complexities. Detailing the challenges faced and the strategies employed to maintain coherence highlights the adaptability inherent in the development process.
 
 </section>
-
 <section class="article-section">
 
 ### Concluding Thoughts
