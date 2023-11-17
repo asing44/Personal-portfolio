@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navigating Design Divergence</title>
+    <link rel="stylesheet" href="/Personal-portfolio/css/article.css">
+    <meta name="description" content="A personal portfolio website showcasing design and development skills.">
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+<link rel="icon" href=".">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ** Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EaselPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+  <script src="https://kit.fontawesome.com/f9e9cf76b4.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body id="body">
+    
+    <div id="fixedReference"></div>
+    
+    <div class="__cursor">
+      <div class="__cursor-wrapper">
+        <p class="__cursor-text"></p>
+        <svg class="__cursor-ball" height="14" width="14">
+          <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
+        </svg>
+      </div>
+    </div>
+    <div class="__cursor-outer">
+      <svg height="50" width="50">
+        <circle class="__cursor-outer-circle" cx="25" cy="25" r="24"></circle>
+      </svg>
+    </div>
+    
+    <div class="pageChangeContainer -contain">
+        <p id="pageChangeText">Navigating Design Divergence</p>
+    </div>
+    
+<link rel="stylesheet" href="/Personal-portfolio/css/navigation.css">
+
+<nav class="navigation-top-container">
+  <div class="navigation-top-wrapper">
+    <a class="navigation-top-logo-wrapper --delay-link --cursor-expand-outer" href="/Personal-portfolio/index.html">
+      <div class="navigation-top-logo">Logo</div>
+    </a>
+    <ul class="navigation-top-links-container">
+      <li class="navigation-top-links-wrapper">
+        <a class="navLink __link-1 __link-1--regular --delay-link --cursor-expand-outer" href="." data-location="work">
+          <div class="_inner-1"><span class="_text">work</span></div>
+          <div class="_inner-2"><span class="_text">work</span></div>
+        </a>
+      </li>
+      <li class="navigation-top-links-wrapper">
+        <a class="navLink __link-1 __link-1--regular --delay-link --cursor-expand-outer" href="." data-location="about">
+          <div class="_inner-1"><span class="_text">about</span></div>
+          <div class="_inner-2"><span class="_text">about</span></div>
+        </a>
+      </li>
+      <li class="navigation-top-links-wrapper">
+        <a class="navLink __link-1 __link-1--regular --delay-link --cursor-expand-outer" href="/Personal-portfolio/blog.html" data-location="blog">
+          <div class="_inner-1"><span class="_text">blog</span></div>
+          <div class="_inner-2"><span class="_text">blog</span></div>
+        </a>
+      </li>
+      <li class="navigation-top-links-wrapper">
+        <a class="navLink __link-1 __link-1--regular --delay-link --cursor-expand-outer" href="." data-location="contact">
+          <div class="_inner-1"><span class="_text">contact</span></div>
+          <div class="_inner-2"><span class="_text">contact</span></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <main> <header class="article-header">
+  <h1 class="article-title">Navigating Design Divergence</h1>
+</header>
+<article class="article-container">
+  <div class="__divider_dark_regular-extraLong"></div>
+  <div class="article-details-container">
+    <small class="article-category">dmd 300</small>
+    <small class="article-readTime">10 min</small>
+    <small class="article-published">Nov. 15, 2023</small>
+  </div>
+  <!-- main content -->
+  <div class="article-sections-container">
+    <aside class="paginaiton-and-info-container">
+      <div class="page-pagination-container"></div>
+      <div class="article-pagination-container"></div>
+    </aside>
+    <header class="article-content-header-container">
+      <div class="article-thumbnail-container">
+        <div class="article-thumbnail-wrapper">
+            <img class="article-thumbnail --parallex-img" src="/Personal-portfolio/assets/images/blogs/thumbnails/blog-3-thumbnail.png" alt="The Figma mockup for blog update 3">
+          </div>
+      </div>
+      <div class="article-headline-wrapper">
+        <h2 class="article-headline -paragraph-indent">In the world of project development, milestones mark the path to success. My recent strides are a testament to innovation, meticulous planning, and the delicate dance between individuality and professionalism within a portfolio project.</h2>
+      </div>
+      <div class="article-divider __divider_dark_thin-long"></div>
+    </header>
+    <div class="article-content-container">
+       <section class="article-section">
+<h3>Before We Begin</h3>
+<p>Here is a quick update on this project as a whole; it's objectives, design process, juggling it's different divergent processes, and <em>why</em> my blog is embedded within the project (and how this has been a challenge!).</p>
+<h4>Project objective</h4>
+<p>This project's primary challenge revolves around infusing individuality and uniqueness while maintaining a professional and credible portfolio. This portfolio isn’t just a showcase; it's a representation of my skills in web development and design. Striking a balance where creativity meets credibility is the ultimate goal.</p>
+<h4>Research and design process</h4>
+<p>To tackle this, I’ve dived deep into research, scanning various portfolio websites for inspiration. Consolidating previous notes and research on proper design has been crucial. Embracing an iterative, circular design process allows for constant refinement and improvement. The footer section for my site is inspired off of <a class="__external-link" href="true" target="_blank"></a></p>
+<span class="__external-link-arrow">
+    <img src="../assets/svg/icons/arrows/__arrow_small_top-right.svg" alt="">
+</span>
+.
+<div class="article-content-image-container">
+<div class="article-content-image-wrapper">
+<img class="article-content-image --parallex-img" src="../assets/images/blogs/blog-3/reference-site.png" alt="A screenshot of runway.com's footer section">
+</div>
+</div>
+<h4>Managing a Divergent Process</h4>
+<p>However, maintaining this structured process faced a snag. [Image: Visualizing the iterative design cycle.] The need for a blog page to share updates disrupted the flow. Developing the blog page while continuing the base development split the project into two streams. One focused on core development, while the other centered on the blog page—a divergence challenging the project's coherence.</p>
+<h4>Intention Behind Blog Integration</h4>
+<p>I could have hosted updates elsewhere, like other students do. But my vision was different—I wanted these updates to be part of the site itself. [Image: Illustrating the integration of blog updates within the site.] The posts embedded within the project's environment add depth and tangibility, providing a richer experience for visitors to engage with my work.</p>
+</section>
+<section class="article-section">
+<h3>Developing Designs</h3>
+</section> 
+    </div>
+  </div>
+</article> </main>
+    
+<link rel="stylesheet" href="/Personal-portfolio/css/footer.css">
+
+<footer class="footer-container">
+    <div class="footer-ribbons-container"></div>
+    <section class="footer-top-container">
+        <div class="middle-container">
+            <div class="CTA-container">
+                <h3 class="CTA">Let's work together!</h3>
+                <ul class="contact-info-container">
+                    <button class="contact-info-email __button-2 __button-2--large--regular --cursor-expand-outer">
+                        <div class="_inner-1"><span class="_text">email@domain.com</span></div>
+                        <div class="_inner-2">
+                            <span class="__icon-copy-medium-light">
+                                <svg id="icon-copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="matrix(-1 0 0 1 24 0)"><path d="M22,11.1v-4.2C22,3.4,20.6,2,17.1,2h-4.2C9.4,2,8,3.4,8,6.9L8,8h3.1C14.6,8,16,9.4,16,12.9v3.1h1.1c3.5,0,4.9-1.4,4.9-4.9Z" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.1,22h-4.2C3.4,22,2,20.6,2,17.1v-4.2C2,9.4,3.4,8,6.9,8h4.2C14.6,8,16,9.4,16,12.9v4.2c0,3.5-1.4,4.9-4.9,4.9Z" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path></g><path d="M6.08008,15l1.95,1.95l3.89002-3.9" transform="translate(5.91992 0)" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="contact-info-phone __button-2 __button-2--large--regular --cursor-expand-outer">
+                        <div class="_inner-1"><span class="_text">(412) 926-8464</span></div>
+                        <div class="_inner-2">
+                            <span class="__icon-copy-medium-light">
+                                <svg id="icon-copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="matrix(-1 0 0 1 24 0)"><path d="M22,11.1v-4.2C22,3.4,20.6,2,17.1,2h-4.2C9.4,2,8,3.4,8,6.9L8,8h3.1C14.6,8,16,9.4,16,12.9v3.1h1.1c3.5,0,4.9-1.4,4.9-4.9Z" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.1,22h-4.2C3.4,22,2,20.6,2,17.1v-4.2C2,9.4,3.4,8,6.9,8h4.2C14.6,8,16,9.4,16,12.9v4.2c0,3.5-1.4,4.9-4.9,4.9Z" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path></g><path d="M6.08008,15l1.95,1.95l3.89002-3.9" transform="translate(5.91992 0)" fill="none" stroke="#292d32" stroke-width="1.41" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </div>
+                    </button>
+                </ul>
+            </div>
+            <div class="contact-button-wrapper">
+                <div class="temp-button-3"></div>
+            </div>
+        </div>
+        <ul class="social-links-wrapper">
+            <li class="social-link --cursor-expand-outer">social link</li>
+            <li class="social-link --cursor-expand-outer">social link</li>
+            <li class="social-link --cursor-expand-outer">social link</li>
+            <li class="social-link --cursor-expand-outer">social link</li>
+        </ul>
+    </section>
+    <div class="footer-bottom-container">
+        <div class="__divider_light_thin-extraLong"></div>
+        <div class="footer-bottom-content-container">
+            <div class="bottom-info-wrapper">
+                <small class="copyright">© my name 2023</small>
+                <small class="date-and-time">date and time</small>
+            </div>
+            <div class="bottom-logo-wrapper">
+                <div class="bottom-logo">Logo</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-tagline-container">
+        <div class="footer-tagline-wrapper">
+            <p class="footer-tagline">tagline / tagline</p>
+        </div>
+        <div class="footer-tagline-wrapper">
+            <p class="footer-tagline">tagline / tagline</p>
+        </div>
+    </div>
+</footer>
+  </body>
+  <script content-type="text/javascript" src="/Personal-portfolio/assets/js/base.js"></script>
+  <script content-type="text/javascript" src="/Personal-portfolio/assets/js/article.js"></script>
+</html> 

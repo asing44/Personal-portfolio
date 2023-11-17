@@ -1,5 +1,6 @@
 ---
-title: 'Changing project focus'
+title: 'Changing project utilities'
+subtitle: 'Implementing additional frameworks'
 readTime: '10 min'
 category: 'dmd 300'
 published: Oct. 31, 2023

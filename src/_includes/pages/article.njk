@@ -22,12 +22,15 @@ cssSrc: /css/article.css
       <div class="article-pagination-container"></div>
     </aside>
     <header class="article-content-header-container">
-      <div class="article-thumbnail-wrapper">
-        <img class="article-thumbnail --parallex-img" src="{{articleThumbnail}}" alt="{{articleThumbnailAlt}}">
+      <div class="article-thumbnail-container">
+        <div class="article-thumbnail-wrapper">
+            <img class="article-thumbnail --parallex-img" src="{{articleThumbnail}}" alt="{{articleThumbnailAlt}}">
+          </div>
       </div>
       <div class="article-headline-wrapper">
-        <h2 class="article-headline">{{summary}}</h2>
+        <h2 class="article-headline -paragraph-indent">{{summary}}</h2>
       </div>
+      <div class="article-divider __divider_dark_thin-long"></div>
     </header>
     <div class="article-content-container">
       {% block content %} {{ content | safe }} {% endblock %}

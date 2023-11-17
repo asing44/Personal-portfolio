@@ -74,17 +74,17 @@ h1 {
 
 h2 {
   font-size: 3.9583rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 2.8333rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h4 {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h5 {
@@ -169,58 +169,55 @@ img {
   stroke-width: 2px;
 }
 
-.contain {
+.-contain {
   min-height: 100vh;
   width: 100%;
 }
 
-.wrap, .wrap-center {
+.-wrap, .-wrap-center {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.wrap-center {
+.-wrap-center {
   display: grid;
   place-content: center;
 }
 
-.inactive {
+.-inactive {
   display: none !important;
 }
 
-.lockScroll {
+.-lockScroll {
   height: 100%;
   overflow-y: hidden;
 }
 
-.no-list {
+.-no-list {
   list-style: none;
 }
 
-.ordered-list {
+.-ordered-list {
   list-style: decimal;
 }
-.ordered-list .list-head {
+.-ordered-list .list-head {
   list-style: circle;
 }
 
-.sm-em {
+.-paragraph-indent {
+  text-indent: 2rem;
+}
+
+.-sm-em {
   font-style: italic;
 }
 
-.sm-bd {
+.-sm-bd {
   font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 1.2;
   text-transform: uppercase;
-}
-
-.img-shadow-rg {
-  -webkit-box-shadow: 0px 0px 3.9583rem #596470;
-  -moz-box-shadow: 0px 0px 3.9583rem #596470;
-  -ms-box-shadow: 0px 0px 3.9583rem #596470;
-  box-shadow: 0px 0px 3.9583rem #596470;
 }
 
 .__divider_light, .__divider_light_thick-extraLong, .__divider_light_thick-long, .__divider_light_thick-medium, .__divider_light_thick-small, .__divider_light_regular-extraLong, .__divider_light_regular-long, .__divider_light_regular-medium, .__divider_light_regular-small, .__divider_light_thin-extraLong, .__divider_light_thin-long, .__divider_light_thin-medium, .__divider_light_thin-small {
@@ -350,7 +347,7 @@ img {
   width: 100%;
 }
 .__icon-copy-regular-light svg path {
-  fill: #F3F5F7;
+  stroke: #F3F5F7;
 }
 .__icon-copy-regular-dark {
   display: inline-flex;
@@ -365,7 +362,7 @@ img {
   width: 100%;
 }
 .__icon-copy-regular-dark svg path {
-  fill: #050B10;
+  stroke: #050B10;
 }
 .__icon-copy-medium-light {
   display: inline-flex;
@@ -380,7 +377,7 @@ img {
   width: 100%;
 }
 .__icon-copy-medium-light svg path {
-  fill: #F3F5F7;
+  stroke: #F3F5F7;
 }
 .__icon-copy-medium-dark {
   display: inline-flex;
@@ -395,7 +392,7 @@ img {
   width: 100%;
 }
 .__icon-copy-medium-dark svg path {
-  fill: #050B10;
+  stroke: #050B10;
 }
 
 .__link-1 {
@@ -442,14 +439,18 @@ img {
   color: #050B10;
 }
 
-.__inline-link {
-  color: #4C609C;
-  transition: color 250ms ease-in-out;
-  text-decoration: underline;
+.__external-link {
+  display: inline-flex;
+  padding: 0 0.3333rem;
+  border: 2px solid #7D1D9A;
+  border-radius: 0.5em;
+  color: #050B10;
+  transition: all 250ms ease-in-out;
+  pointer-events: all;
 }
-.__inline-link:hover {
-  color: #4C609C;
-  text-decoration: underline;
+.__external-link:hover {
+  background-color: #7D1D9A;
+  color: #F3F5F7;
 }
 
 .__button-1 {

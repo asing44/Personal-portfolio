@@ -43,9 +43,9 @@ $vw-100: 100vw;                    // 1440px
 // * GRID
 $grid-gap-4px: 4px;                // 4px
 $grid-gap-tiny: $size-0_50;        // 12px
-$grid-gap-regular: $size-1_00;        // 24px
+$grid-gap-regular: $size-1_00;     // 24px
 $grid-grap-small: $size-1_41;      // 34px
-$grid-gap-medium: $size-2_00;     // 48px
+$grid-gap-medium: $size-2_00;      // 48px
 $grid-gap-large: $size-2_83;       // 68px
 $grid-gap-huge: $size-5_62;        // 135px
 
@@ -89,7 +89,6 @@ $secondary-dark: darken($secondary, 15%);
 $white: #FFF;
 $black: #000;
 $background-light: #F3F5F7;
-$background-light-blue: mix($background-light, $primary, 90%);
 $background-dark: #050B10;
 // Accent
 $accent-heading: #4C609C;
@@ -105,6 +104,8 @@ $state-warning: #E5CF00;
 $state-error: #BF5943;
 // Overlay
 $overlay: transparentize($gray-dark, 0.5);
+// Box shadow
+$box-shadow: transparentize($gray-light, 0.85);
 
 // * BORDER
 // Radius
@@ -192,11 +193,11 @@ $opacity-high: 85%;
 
 // ** EFFECTS
 
-@mixin box-shadow($x, $y, $blur, $c) {
-    -webkit-box-shadow: $x $y $blur $c;
-    -moz-box-shadow: $x $y $blur $c;
-    -ms-box-shadow: $x $y $blur $c;
-    box-shadow: $x $y $blur $c;
+@mixin box-shadow($x, $y, $spread, $blur, $c) {
+    -webkit-box-shadow: $x $y $spread $blur $c;
+    -moz-box-shadow: $x $y $spread $blur $c;
+    -ms-box-shadow: $x $y $spread $blur $c;
+    box-shadow: $x $y $spread $blur $c;
 }
 
 // !! TESTING

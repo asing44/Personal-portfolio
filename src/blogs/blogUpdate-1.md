@@ -1,5 +1,6 @@
 ---
-title: 'Blog update 1'
+title: 'Welcome to the site'
+subtitle: 'Initializing the project'
 readTime: '5 min'
 category: 'dmd 300'
 published: Oct. 22, 2023

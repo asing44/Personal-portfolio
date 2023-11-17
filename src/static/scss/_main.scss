@@ -58,17 +58,17 @@ h1 {
 
 h2 {
     font-size: base.$font-size4;
-    font-weight: base.$font-weight-bold;
+    font-weight: base.$font-weight-semiBold;
 }
 
 h3 {
     font-size: base.$font-size3;
-    font-weight: base.$font-weight-semiBold;
+    font-weight: base.$font-weight-medium;
 }
 
 h4 {
     font-size: base.$font-size2;
-    font-weight: base.$font-weight-medium;
+    font-weight: base.$font-weight-normal;
 }
 
 h5 {
@@ -167,32 +167,32 @@ img {
 
 // * Containers and wrappers
 
-.contain {
+.-contain {
     min-height: 100vh;
     width: 100%;
 }
 
-.wrap {
+.-wrap {
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
-.wrap-center {
+.-wrap-center {
     display: grid;
     place-content: center;
-    @extend .wrap;
+    @extend .-wrap;
 }
 
 // * Display hide
 
-.inactive {
+.-inactive {
     display: none !important;
 }
 
 // * Lock scroll
 
-.lockScroll {
+.-lockScroll {
     height: 100%;
     overflow-y: hidden;
 }
@@ -201,13 +201,13 @@ img {
 
 // Remove list style
 
-.no-list {
+.-no-list {
     list-style: none;
 }
 
 // Ordered list
 
-.ordered-list {
+.-ordered-list {
     list-style: decimal;
 
     .list-head {
@@ -215,25 +215,25 @@ img {
     }
 }
 
+// Paragraph indent
+
+.-paragraph-indent {
+    text-indent: base.$size-2_00;
+}
+
 // Small emphasis
 
-.sm-em {
+.-sm-em {
     font-style: italic;
 }
 
 // Small bold
 
-.sm-bd {
+.-sm-bd {
     font-size: base.$font-size-2;
     font-weight: base.$font-weight-bold;
     letter-spacing: 1.2;
     text-transform: uppercase;
-}
-
-// Images
-
-.img-shadow-rg {
-    @include base.box-shadow(0px, 0px, base.$font-size4, base.$gray-dark);
 }
 
 // ?? ----------------------------------------
@@ -456,7 +456,7 @@ img {
                 width: 100%;
 
                 path {
-                    fill: base.$background-light
+                    stroke: base.$background-light
                 }
             }
         }
@@ -474,7 +474,7 @@ img {
                 width: 100%;
 
                 path {
-                    fill: base.$background-dark
+                    stroke: base.$background-dark
                 }
             }
         }
@@ -495,7 +495,7 @@ img {
                 width: 100%;
 
                 path {
-                    fill: base.$background-light
+                    stroke: base.$background-light
                 }
             }
         }
@@ -513,7 +513,7 @@ img {
                 width: 100%;
 
                 path {
-                    fill: base.$background-dark
+                    stroke: base.$background-dark
                 }
             }
         }
@@ -581,16 +581,22 @@ img {
     }
 }
 
-.__inline-link {
-    color: base.$accent-subheading;
-    transition: color 250ms ease-in-out;
-    text-decoration: underline;
+.__external-link {
+    display: inline-flex;
+    padding: 0 base.$padding-tiny-plus;
+    border: 2px solid base.$accent-purple;
+    border-radius: 0.5em;
+    color: base.$background-dark;
+    transition: all 250ms ease-in-out;
+    pointer-events: all;
 
     &:hover {
-        color: base.$accent-heading;
-        text-decoration: underline;
+        background-color: base.$accent-purple;
+        color: base.$background-light;
     }
 }
+
+
 
 // ** ----------------------------------------
 // ** BUTTONS
