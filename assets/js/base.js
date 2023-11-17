@@ -242,10 +242,6 @@ documentReady(function () {
     // ?? ----------------------------------------
 
     // ** ----------------------------------------
-    // ** SECTIONS
-    // ** ----------------------------------------
-
-    // ** ----------------------------------------
     // ** NAVIGATION
     // ** ----------------------------------------
 
@@ -286,7 +282,7 @@ documentReady(function () {
             scrollTrigger: {
                 scrub: 1
             },
-            yPercent: -10
+            yPercent: -15
         })
     })
 
@@ -347,7 +343,7 @@ documentReady(function () {
     // ** LINKS
     // ** ----------------------------------------
 
-    // * LINK 1
+    // * Link 1
 
     gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
         let hover1 = $(item).children("._inner-1");
@@ -367,11 +363,13 @@ documentReady(function () {
         });
     });
 
+    // ** INLINE LINKS
+
     // ** ----------------------------------------
     // ** BUTTONS
     // ** ----------------------------------------
 
-    // * BUTTON 1
+    // * Button 1
 
     gsap.utils.toArray($(".__button-1:not(.__button-1--active)")).forEach((item) => {
         let hover1 = $(item).children("._inner-1");
@@ -391,7 +389,7 @@ documentReady(function () {
         });
     });
 
-    // * BUTTON 2
+    // * Button 2
 
     gsap.utils.toArray($(".__button-2:not(.__button-2--active)")).forEach((item) => {
         let inner1 = $(item).children("._inner-1");
