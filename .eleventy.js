@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
         input: 'src',
         output: 'dist',
       },
-      markdownTemplateEngine: 'njk',
+      // markdownTemplateEngine: 'njk',
       pathPrefix: "/Personal-portfolio/"
     };
   };
