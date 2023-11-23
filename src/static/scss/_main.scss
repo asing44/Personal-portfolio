@@ -540,7 +540,7 @@ img {
     overflow: hidden;
     cursor: pointer;
 
-    &--regular {
+    &_regular {
         ._inner-1,
         ._inner-2 {
             position: absolute;
@@ -570,7 +570,7 @@ img {
         }
     }
 
-    &--active {
+    &_active {
         background-color: base.$secondary;
 
         ._inner-1 {
@@ -799,10 +799,16 @@ img {
 }
 
 // ?? ----------------------------------------
-// ?? PAGE CHANGE
+// ?? ANIMATION
 // ?? ----------------------------------------
 
-// * PAGE CHANGE
+// * Parallex images
+
+.--parallex-img {
+    aspect-ratio: 1 / 1;
+}
+
+// * Page change
 
 .pageChangeContainer {
     display: grid;
@@ -851,4 +857,17 @@ img {
 #profilePhoto {
     height: 100%;
     border-radius: 50%;
+}
+
+.coming-soon {
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+    place-content: center;
+    background-color: base.$background-dark;
+
+    .coming-soon-text {
+        font-family: base.$font-family-display;
+        color: base.$background-light;
+    }
 }

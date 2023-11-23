@@ -42,7 +42,7 @@ body {
   padding: 0;
   background-color: #F3F5F7;
   color: #050B10;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   kerning: auto;
   font-kerning: auto;
@@ -63,7 +63,7 @@ h3,
 h4,
 h5 {
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   line-height: 1.1;
 }
 
@@ -407,8 +407,8 @@ img {
   overflow: hidden;
   cursor: pointer;
 }
-.__link-1--regular ._inner-1,
-.__link-1--regular ._inner-2 {
+.__link-1_regular ._inner-1,
+.__link-1_regular ._inner-2 {
   position: absolute;
   display: flex;
   height: 52.96px;
@@ -418,24 +418,24 @@ img {
   padding: 8px 47px;
   gap: 10px;
 }
-.__link-1--regular ._inner-1 ._text,
-.__link-1--regular ._inner-2 ._text {
+.__link-1_regular ._inner-1 ._text,
+.__link-1_regular ._inner-2 ._text {
   color: #F3F5F7;
   text-align: center;
   font-size: 24px;
 }
-.__link-1--regular ._inner-2 {
+.__link-1_regular ._inner-2 {
   bottom: -52.997px;
   border-radius: 34px;
   background-color: #FFC857;
 }
-.__link-1--regular ._inner-2 ._text {
+.__link-1_regular ._inner-2 ._text {
   color: #050B10;
 }
-.__link-1--active {
+.__link-1_active {
   background-color: #FFC857;
 }
-.__link-1--active ._inner-1 ._text {
+.__link-1_active ._inner-1 ._text {
   color: #050B10;
 }
 
@@ -605,6 +605,10 @@ img {
   color: #0047E0;
 }
 
+.--parallex-img {
+  aspect-ratio: 1/1;
+}
+
 .pageChangeContainer {
   display: grid;
   position: fixed;
@@ -647,6 +651,18 @@ img {
 #profilePhoto {
   height: 100%;
   border-radius: 50%;
+}
+
+.coming-soon {
+  display: grid;
+  min-height: 100vh;
+  width: 100%;
+  place-content: center;
+  background-color: #050B10;
+}
+.coming-soon .coming-soon-text {
+  font-family: "Orbitron", sans-serif;
+  color: #F3F5F7;
 }
 
 header {

@@ -8,19 +8,7 @@ gsap.config({
     autoSleep: 60,
 });
 
-// * Document ready
-
-function documentReady(callback) {
-    if (document.readyState !== 'loading') {
-        callback();
-    } else {
-        document.addEventListener('DOMContentLoaded', callback);
-    }
-};
-
-// ** DOCUMENT READY
-
-documentReady(function () {
+function documentReady() {
 
     var viewportHeight = window.innerHeight;
     var viewportWidth = window.innerWidth;
@@ -194,7 +182,17 @@ documentReady(function () {
     // ** PAGELOAD ANIMATIONS
     // ** ----------------------------------------
 
-    // * PAGE CHANGE IN
+    // * Set and remove classes
+
+    $('.navLink').each(function () {
+        if ((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/) == $(this).data('location')) {
+            $(this).addClass('--active-page');
+        } else {
+            $(this).removeClass('--active-page');
+        }
+    })
+
+    // * Page change in
 
     let pageChangeAnim = gsap.timeline({
         delay: 0.2,
@@ -217,18 +215,15 @@ documentReady(function () {
         ease: "power3.in"
     }, "<75%")
 
-    // * PAGE CHANGE OUT
+    // * Page change out
 
     $('.--delay-link').on('click', function(e) {
         e.preventDefault();
-
-        if (/index/.test($(this).attr("href"))) {
-            $('#pageChangeText').html("home")
-        } else {
-            $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
+        if (!this.classList.contains('--active-page')) {
+            $("#pageChangeText").html(this.dataset.location)
+            pageChangeHref = $(this).attr('href');
+            pageChangeAnim.reverse();
         }
-        pageChangeHref = $(this).attr('href');
-        pageChangeAnim.reverse();
     });
 
     // * DELAY PAGELOAD ANIMATIONS
@@ -254,7 +249,6 @@ documentReady(function () {
 
         let navLink_anim = gsap.timeline({
             defaults: {
-
             },
             scrollTrigger: {
                 trigger: '#fixedReference',
@@ -275,34 +269,28 @@ documentReady(function () {
     // ** IMAGES
     // ** ----------------------------------------
 
-    let parallexImages = gsap.utils.toArray('.--parallex-img');
+    let parallexImages = document.querySelectorAll('.--parallex-img');
 
     parallexImages.forEach(item => {
+
+        let imageHeight = item.naturalHeight;
+        let imageContainer = $(item).parent();
+        let imageContainerHeight = $(imageContainer).height();
+        let parallexRatio = (imageContainerHeight / imageHeight) * 100
+
         gsap.to(item, {
             scrollTrigger: {
-                scrub: 1
+                trigger: imageContainer,
+                scrub: 2,
+                markers: true
             },
-            yPercent: -15
-        })
+            yPercent: -parallexRatio
+        });
     })
 
     // ?? ----------------------------------------
     // ?? COMPONENTS
     // ?? ----------------------------------------
-
-    // ** ----------------------------------------
-    // ** NAVIGATION
-    // ** ----------------------------------------
-
-    // * NAVIGATION TOP ACTIVE LINK
-
-    $('.navLink').each(function() {
-        if ((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/) == $(this).data('location')) {
-            $(this).addClass('__link-1--active');
-        } else {
-            $(this).removeClass('__link-1--active');
-        }
-    })
 
     // ?? ----------------------------------------
     // ?? INTERACTIVE
@@ -345,7 +333,18 @@ documentReady(function () {
 
     // * Link 1
 
-    gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
+    // Set active link
+
+    gsap.utils.toArray('.navLink').forEach(item => {
+        if (item.classList.contains('--active-page')) {
+            item.classList.add('.__link-1_active')
+        } else {
+            item.classList.remove('.__link-1_active')
+        }
+    })
+
+    gsap.utils.toArray($(".__link-1:not(.__link-1_active)")).forEach((item) => {
+        console.log(item.classList)
         let hover1 = $(item).children("._inner-1");
         let hover2 = $(item).children("._inner-2");
         let link1Hover_tl = gsap.timeline({ paused: true });
@@ -413,4 +412,8 @@ documentReady(function () {
     // ?? ----------------------------------------
     // ?? TESTING ZONE
     // ?? ----------------------------------------
-});
+}
+
+// * Document ready
+
+document.addEventListener("DOMContentLoaded", documentReady());
