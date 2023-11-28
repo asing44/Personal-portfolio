@@ -185,9 +185,7 @@ $opacity_high: 85%;
 // ** MIXINS
 // ** ----------------------------------------
 
-// ** FONT
-
-// * Body font style
+// Font reset
 @mixin baseFontSet {
     font-family: $font-family-body;
     font-size: $font-size_body;
