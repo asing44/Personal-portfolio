@@ -195,7 +195,7 @@ input, button, textarea, select {
   width: 100%;
   padding: 1.6rem;
   border-radius: 1rem;
-  background: rgba(207, 223, 239, 0.09);
+  background: rgba(207, 223, 239, 0.02);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -212,18 +212,42 @@ input, button, textarea, select {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  border: 1px solid purple;
 }
 .landing-header .inner-container .top-container .tagline {
-  color: #D8DADD;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #A4A7AA;
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 130%;
 }
+.landing-header .inner-container .top-container .tagline > span svg rect {
+  fill: #FFD379;
+}
 .landing-header .inner-container .middle-container {
-  border: 1px solid green;
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+.landing-header .inner-container .middle-container strong {
+  height: max-content;
+  border: 1px solid red;
+  font-family: "Orbitron", sans-serif;
+  font-size: 5.61rem;
+  line-height: 0.73em;
+  transform: scaleY(1.2);
+}
+.landing-header .inner-container .middle-container strong:last-of-type {
+  align-self: flex-end;
+  text-align: right;
+}
+.landing-header .inner-container .middle-container .blurb-container {
+  position: absolute;
 }
 
 /*# sourceMappingURL=home.css.map */

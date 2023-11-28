@@ -6,8 +6,8 @@
   "scripts": {
     "build:eleventy": "eleventy",
     "build:sass": "sass src/static/scss:dist/css",
-    "watch:eleventy": "eleventy --serve",
-    "watch:sass": "sass --watch src/static/scss:dist/css",
+    "watch:eleventy": "eleventy --serve ",
+    "watch:sass": "sass --watch src/static/scss/*.scss:dist/css",
     "start": "npm-run-all build:sass --parallel watch:eleventy watch:sass",
     "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"

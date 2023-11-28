@@ -166,9 +166,6 @@ function documentReady() {
     }).on('mouseleave', function(){
         gsap.to(cursor, {scale: 1});
         gsap.to(cursorOuter, {scale: 1});
-        gsap.to(cursorOuterCircle, {
-            strokeWidth: "1px"
-        }, '<')
     });
 
     // * TRACK MOVE
