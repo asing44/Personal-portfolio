@@ -72,7 +72,7 @@
   display: grid;
   position: absolute;
   place-content: center;
-  left: 50%;
+  left: 0;
   padding: 0.6rem 1.2rem;
 }
 .navigation-top-container .logo-wrapper .header-logo {
