@@ -24,10 +24,10 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 base.$padding-global-rl;
     background-color: base.$dark;
     background-image:
         radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
@@ -45,39 +45,6 @@ body {
     overflow-x: hidden;
     animation: body-background 5s ease-in-out infinite;
     -webkit-font-smoothing: antialiased;
-}
-
-@keyframes body-background {
-    0% {
-        background-image:
-            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
-    }
-    50% {
-        background-image:
-            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 10% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 20% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
-    }
-    100% {
-        background-image:
-            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
-            radial-gradient(at 0% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
-    }
 }
 
 h1, h2, h3, h4, h5 {

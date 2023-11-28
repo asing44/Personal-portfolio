@@ -7,27 +7,29 @@
 
 // * VIEWPORT DIMENSIONS
 // VIEW HEIGHT
-$vh-75: calc(0.76vh); // 775px
-$vh-57: calc(0.57vh); // 587px
-$vh-43: calc(0.43vh); // 444px
-$vh-32: calc(0.33vh); // 335px
-$vh-25: calc(0.25vh); // 254px
-$vh-19: calc(0.19vh); // 192px
-$vh-14: calc(0.14vh); // 145px
-$vh-11: calc(0.11vh); // 110px
+$vh-75: calc(76vh); // 775px
+$vh-57: calc(57vh); // 587px
+$vh-43: calc(43vh); // 444px
+$vh-32: calc(32vh); // 335px
+$vh-25: calc(25vh); // 254px
+$vh-19: calc(19vh); // 192px
+$vh-14: calc(14vh); // 145px
+$vh-11: calc(11vh); // 110px
+$vh-8: calc(8vh); // 83px
+$vh-6: calc(6vh); // 62px;
 
 // VIEW WIDTH
 $vw-100: calc(1.00vw); //1440px
-$vw-91: calc(0.91vw); // 1311px
-$vw-75: calc(0.76vw); // 1089px
-$vw-57: calc(0.57vw); // 825px
-$vw-43: calc(0.43vw); // 625px
-$vw-32: calc(0.33vw); // 473px
-$vw-25: calc(0.25vw); // 359px
-$vw-19: calc(0.19vw); // 272px
-$vw-14: calc(0.14vw); // 206px
-$vw-11: calc(0.11vw); // 156px
-$vw-08: calc(0.08vw); // 118px
+$vw-91: calc(91vw); // 1311px
+$vw-75: calc(76vw); // 1089px
+$vw-57: calc(57vw); // 825px
+$vw-43: calc(43vw); // 625px
+$vw-32: calc(32vw); // 473px
+$vw-25: calc(25vw); // 359px
+$vw-19: calc(19vw); // 272px
+$vw-14: calc(14vw); // 206px
+$vw-11: calc(11vw); // 156px
+$vw-08: calc(8vw); // 118px
 
 // * GRID
 
@@ -42,6 +44,8 @@ $external-60px: calc(3rem); // 60px
 $external-80px: calc(4rem); // 80px
 $external-105px: calc(5.25rem); // 105px
 $external-140px: calc(7rem); // 140px
+// Global
+$padding-global-rl: calc(1.6rem); // 32px
 
 // * COLORS
 // Background and base
@@ -129,13 +133,13 @@ $error-25: #F2DED9;
 
 // * BORDER
 // Radius
-$border-border-radius_132: 1.32rem; /* 26.4px */
-$border-border-radius_100: 1rem; /* 20px */
-$border-border-radius_75: 0.75rem; /* 15px */
-$border-border-radius_57: 0.57rem; /* 11px */
-$border-border-radius_4px: 4px; 
-$border-border-radius_2px: 2px;
-$border-border-radius_1px: 1px;
+$border-radius_132: 1.32rem; /* 26.4px */
+$border-radius_100: 1rem; /* 20px */
+$border-radius_75: 0.75rem; /* 15px */
+$border-radius_57: 0.57rem; /* 11px */
+$border-radius_4px: 4px; 
+$border-radius_2px: 2px;
+$border-radius_1px: 1px;
 // Width
 $border-width_100: 1px;
 $border-width_132: 1.32px;

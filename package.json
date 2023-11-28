@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --watch src/static/scss:dist/css",
+    "build:eleventy": "eleventy",
     "build:sass": "sass src/static/scss:dist/css",
     "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
+    "watch:sass": "sass sass:dist/css --watch",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
