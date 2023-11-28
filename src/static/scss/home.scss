@@ -17,21 +17,5 @@
 // ** HERO
 // ** ----------------------------------------
 .hero {
-    min-height: 100vh;
-    width: 100%;
-    
-    .hero-name {
-        font-family: base.$font-family-heading;
-        font-size: base.$font-size3;
-        font-weight: base.$font-weight-medium;
-    }
-    .hero-name-scroll {
-        display: flex;
-        position: relative;
-        max-height: min-content;
-    }
-    .hero-name-scroll p {
-        margin: 0;
-        white-space: nowrap;
-    }
+
 }

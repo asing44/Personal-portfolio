@@ -17,3 +17,6 @@ notes
 # Visual Studio Code
 /.vscode
 .history
+
+# Previous files
+/previous
