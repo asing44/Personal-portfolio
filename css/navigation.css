@@ -30,6 +30,7 @@
   position: relative;
   height: 0.6rem;
   width: 0.6rem;
+  z-index: 2;
 }
 .navigation-top-container .header-cta-container .circle-wrapper .circle-static {
   height: 100%;
@@ -37,7 +38,7 @@
   background-color: #FFC857;
   border-radius: 50%;
 }
-.navigation-top-container .header-cta-container .circle-wrapper .circle-static::after {
+.navigation-top-container .header-cta-container .circle-wrapper .circle-animated {
   content: "";
   position: absolute;
   top: 0;

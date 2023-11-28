@@ -190,6 +190,28 @@ input, button, textarea, select {
   border: 2px solid green;
 }
 
+#under-dev-banner {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  place-content: center;
+  padding: 1.2rem 0;
+  bottom: 0;
+  left: 0;
+}
+#under-dev-banner .text {
+  color: #F3F5F7;
+  animation: devBannerPulse 4s ease-in-out infinite alternate;
+}
+@keyframes devBannerPulse {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 50%;
+  }
+}
+
 .landing-header {
   display: flex;
   height: 76vh;
@@ -218,15 +240,16 @@ input, button, textarea, select {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #A4A7AA;
+  color: rgba(164, 167, 170, 0.5);
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 130%;
+  letter-spacing: 0.05rem;
 }
 .landing-header .inner-container .top-container .tagline > span svg rect {
-  fill: #FFD379;
+  fill: rgba(255, 211, 121, 0.5);
 }
 .landing-header .inner-container .middle-container {
   display: flex;
@@ -249,7 +272,13 @@ input, button, textarea, select {
   text-align: right;
 }
 .landing-header .inner-container .middle-container .blurb-container {
+  display: flex;
   position: absolute;
+  flex-direction: column;
+  gap: 0.6rem;
+  top: 20%;
+  right: 10%;
+  color: #BEC0C3;
 }
 
 /*# sourceMappingURL=home.css.map */
