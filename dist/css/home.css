@@ -232,11 +232,11 @@ input, button, textarea, select {
   position: relative;
   width: 100%;
   justify-content: space-between;
-  border: 1px solid red;
+  border: 1px solid blue;
 }
 .landing-header .inner-container .middle-container strong {
   height: max-content;
-  border: 1px solid red;
+  border: 1px solid gold;
   font-family: "Orbitron", sans-serif;
   font-size: 5.61rem;
   line-height: 0.73em;

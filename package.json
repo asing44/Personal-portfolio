@@ -6,9 +6,9 @@
   "scripts": {
     "build:eleventy": "eleventy",
     "build:sass": "sass src/static/scss:dist/css",
-    "watch:eleventy": "eleventy --serve ",
-    "watch:sass": "sass --watch src/static/scss/*.scss:dist/css",
-    "start": "npm-run-all build:sass --parallel watch:eleventy watch:sass",
+    "watch:eleventy": "eleventy --serve --quiet",
+    "watch:sass": "sass src/static/scss:dist/css --watch",
+    "start": "npm-run-all --parallel build:sass watch:eleventy watch:sass",
     "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-server-browsersync": "^1.0.2",
     "markdown-it": "^13.0.2"
   }
 }
