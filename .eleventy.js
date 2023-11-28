@@ -3,7 +3,7 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 module.exports = function(eleventyConfig) {
     // Watch CSS files for changes
     eleventyConfig.setBrowserSyncConfig({
-          files: './dist/css/*.css'
+          files: './dist/**'
     });
     // Copy files to dist
     eleventyConfig.addPassthroughCopy("./src/assets");
@@ -15,7 +15,6 @@ module.exports = function(eleventyConfig) {
         input: 'src',
         output: 'dist',
       },
-      // markdownTemplateEngine: 'njk',
       pathPrefix: "/Personal-portfolio/"
     };
   };
