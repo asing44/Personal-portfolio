@@ -253,21 +253,3 @@ input, button, textarea, select {
     width: 100%;
     border: 2px solid green;
 }
-
-#profilePhoto {
-    height: 100%;
-    border-radius: 50%;
-}
-
-.coming-soon {
-    display: grid;
-    min-height: 100vh;
-    width: 100%;
-    place-content: center;
-    background-color: base.$background-dark;
-
-    .coming-soon-text {
-        font-family: base.$font-family-display;
-        color: base.$background-light;
-    }
-}
