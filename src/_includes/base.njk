@@ -12,12 +12,9 @@
     <div id="fixedReference"></div>
     {# Cursor #}
     <div class="__cursor">
-      <div class="__cursor-wrapper">
-        <p class="__cursor-text"></p>
-        <svg class="__cursor-ball" height="14" width="14">
-          <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
-        </svg>
-      </div>
+      <svg class="__cursor-ball" height="14" width="14">
+        <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
+      </svg>
     </div>
     <div class="__cursor-outer">
       <svg height="50" width="50">
@@ -25,9 +22,9 @@
       </svg>
     </div>
     {# Page change #}
-    <div class="pageChangeContainer -contain">
+    {# <div class="pageChangeContainer -contain">
         <p id="pageChangeText">{{ name if name else title }}</p>
-    </div>
+    </div> #}
     {% include "partials/navigation.njk" %}
     <main>{% block content %} {{ content | safe }} {% endblock %}</main>
     {% include 'partials/footer.njk' %}

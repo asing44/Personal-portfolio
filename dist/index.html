@@ -6,7 +6,7 @@
     <meta name="description" content="A personal portfolio website showcasing design and development skills.">
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-<link rel="icon" type="image/x-icon" href="/Personal-portfolio/assets/svg/icons/logos/__logo_dark.svg">
+<link rel="icon" type="image/x-icon" href="/Personal-portfolio/assets/svg/logos/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Metrophobic&family=Orbitron:wght@400;500;700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,12 +32,9 @@
     <div id="fixedReference"></div>
     
     <div class="__cursor">
-      <div class="__cursor-wrapper">
-        <p class="__cursor-text"></p>
-        <svg class="__cursor-ball" height="14" width="14">
-          <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
-        </svg>
-      </div>
+      <svg class="__cursor-ball" height="14" width="14">
+        <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
+      </svg>
     </div>
     <div class="__cursor-outer">
       <svg height="50" width="50">
@@ -45,20 +42,41 @@
       </svg>
     </div>
     
-    <div class="pageChangeContainer -contain">
-        <p id="pageChangeText">home</p>
-    </div>
+    
     
 <link rel="stylesheet" href="/Personal-portfolio/css/navigation.css">
 
 <nav class="navigation-top-container">
-
+    <div class="header-cta-container">
+        <div class="circle-wrapper">
+            <div class="circle-static"></div>
+            <div class="circle-animated"></div>
+        </div>
+        <p class="cta">available to work</p>
+    </div>
+    <div class="logo-wrapper">
+        <img src="/Personal-portfolio/assets/svg/logos/__logo_light.svg" alt="My personal logo" class="header-logo">
+    </div>
+    <div class="header-menu-wrapper">
+        <button class="header-menu">
+            <svg width="33" height="18" viewBox="0 0 33 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="menu-line_1" d="M11.029 0.999268H31.9146" stroke="#F3F5F7" stroke-width="1.32" stroke-linecap="round"></path>
+                <path id="menu-line_2" d="M1.23949 16.6619H22.125" stroke="#F3F5F7" stroke-width="1.32" stroke-linecap="round"></path>
+                <path id="menu-line_3" d="M5.80687 8.83105H26.6924" stroke="#F3F5F7" stroke-width="1.32" stroke-linecap="round"></path>
+            </svg>
+        </button>
+    </div>
 </nav>
     <main> <!-- TODO:
 *  - Add favicon
 *  - Transfer css class attr to properties
 -->
 <!-- ** Main -->
+<header class="landing-header">
+    <div class="header-container">
+        
+    </div>
+</header>
 <!-- !! REMOVE -->
 <section id="test-div"></section> </main>
     
