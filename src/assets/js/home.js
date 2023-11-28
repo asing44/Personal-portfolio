@@ -92,5 +92,3 @@ if (playIntroAnim) {
 // ** HERO
 
 const nameScroll = gsap.utils.toArray(".hero-name-item");
-
-const loop = horizontalLoop(nameScroll, {paused: false, repeat: -1, speed: 2});

@@ -2,11 +2,28 @@
 // ?? INIT AND SETUP
 // ?? ----------------------------------------
 
+// * GSAP
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
 gsap.config({
     autoSleep: 60,
 });
+
+//* Smooth Scroll
+
+const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+//     console.log(e)
+// })
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 function documentReady() {
 
