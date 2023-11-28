@@ -105,36 +105,14 @@ input, button, textarea, select {
 .__cursor {
     position: fixed;
     display: flex;
-    top: 0;
-    left: 0;
+    top: -6px;
+    left: -7px;
     pointer-events: none;
-    mix-blend-mode: difference;
+    mix-blend-mode:exclusion;
     z-index: 100;
 
-    &-wrapper {
-        display: flex;
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        .__cursor-ball {
-            fill: base.$primary-500;
-        }
-
-        .__cursor-text {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            font-weight: base.$font-weight-semiBold;
-            white-space: nowrap;
-            transform: translate(-130%, -25%);
-            opacity: 0;
-            z-index: 101;
-        }
+    .__cursor-ball {
+        fill: base.$primary-900;
     }
 }
 
@@ -144,12 +122,12 @@ input, button, textarea, select {
     top: 0;
     left: 0;
     pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 100;
+    mix-blend-mode: exclusion;
+    z-index: 99;
 
     circle {
         fill: transparent;
-        stroke: base.$primary-500;
+        stroke: base.$primary-900;
         stroke-width: 2px;
     }
 }

@@ -96,34 +96,14 @@ input, button, textarea, select {
 .__cursor {
   position: fixed;
   display: flex;
-  top: 0;
-  left: 0;
+  top: -6px;
+  left: -7px;
   pointer-events: none;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
   z-index: 100;
 }
-.__cursor-wrapper {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.__cursor-wrapper .__cursor-ball {
-  fill: #FFDE9A;
-}
-.__cursor-wrapper .__cursor-text {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  font-weight: 600;
-  white-space: nowrap;
-  transform: translate(-130%, -25%);
-  opacity: 0;
-  z-index: 101;
+.__cursor .__cursor-ball {
+  fill: #FFC857;
 }
 
 .__cursor-outer {
@@ -132,12 +112,12 @@ input, button, textarea, select {
   top: 0;
   left: 0;
   pointer-events: none;
-  mix-blend-mode: difference;
-  z-index: 100;
+  mix-blend-mode: exclusion;
+  z-index: 99;
 }
 .__cursor-outer circle {
   fill: transparent;
-  stroke: #FFDE9A;
+  stroke: #FFC857;
   stroke-width: 2px;
 }
 
@@ -208,6 +188,15 @@ input, button, textarea, select {
 #profilePhoto {
   height: 100%;
   border-radius: 50%;
+}
+
+.landing-header {
+  position: relative;
+  min-height: 76vh;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(190, 192, 195, 0.1);
+  -webkit-backdrop-filter: blur(32px);
 }
 
 /*# sourceMappingURL=home.css.map */

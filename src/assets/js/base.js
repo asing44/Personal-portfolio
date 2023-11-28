@@ -194,48 +194,48 @@ documentReady(function () {
     // ** PAGELOAD ANIMATIONS
     // ** ----------------------------------------
 
-    // * PAGE CHANGE IN
+    // // * PAGE CHANGE IN
 
-    let pageChangeAnim = gsap.timeline({
-        delay: 0.2,
-        defaults: {
-            duration: 1
-        },
-        onReverseComplete: goToLink,
-    });
-
-    pageChangeAnim.set(".pageChangeContainer", {
-        x: 0,
-        y: 0,
-    }).to(".pageChangeContainer", {
-        scale: 0.85,
-        ease: "power3.inOut",
-        borderRadius: "5rem"
-    }).to(".pageChangeContainer", {
-        duration: 0.75,
-        yPercent: -100,
-        ease: "power3.in"
-    }, "<75%")
-
-    // * PAGE CHANGE OUT
-
-    $('.--delay-link').on('click', function(e) {
-        e.preventDefault();
-
-        if (/index/.test($(this).attr("href"))) {
-            $('#pageChangeText').html("home")
-        } else {
-            $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
-        }
-        pageChangeHref = $(this).attr('href');
-        pageChangeAnim.reverse();
-    });
-
-    // * DELAY PAGELOAD ANIMATIONS
-
-    // gsap.delayedCall(0.5, function() {
-    //     pageLoadAnimParent.play()
+    // let pageChangeAnim = gsap.timeline({
+    //     delay: 0.2,
+    //     defaults: {
+    //         duration: 1
+    //     },
+    //     onReverseComplete: goToLink,
     // });
+
+    // pageChangeAnim.set(".pageChangeContainer", {
+    //     x: 0,
+    //     y: 0,
+    // }).to(".pageChangeContainer", {
+    //     scale: 0.85,
+    //     ease: "power3.inOut",
+    //     borderRadius: "5rem"
+    // }).to(".pageChangeContainer", {
+    //     duration: 0.75,
+    //     yPercent: -100,
+    //     ease: "power3.in"
+    // }, "<75%")
+
+    // // * PAGE CHANGE OUT
+
+    // $('.--delay-link').on('click', function(e) {
+    //     e.preventDefault();
+
+    //     if (/index/.test($(this).attr("href"))) {
+    //         $('#pageChangeText').html("home")
+    //     } else {
+    //         $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
+    //     }
+    //     pageChangeHref = $(this).attr('href');
+    //     pageChangeAnim.reverse();
+    // });
+
+    // // * DELAY PAGELOAD ANIMATIONS
+
+    // // gsap.delayedCall(0.5, function() {
+    // //     pageLoadAnimParent.play()
+    // // });
 
     // ?? ----------------------------------------
     // ?? ANIMATED
@@ -245,46 +245,9 @@ documentReady(function () {
     // ** NAVIGATION
     // ** ----------------------------------------
 
-    const navContainer = document.getElementsByClassName('navigation-top-container')[0];
-    const navLinks = gsap.utils.toArray('.navigation-top-links-wrapper');
-    const navLogo = document.getElementsByClassName('navigation-top-logo-wrapper')[0];
-
-    navLinks.forEach((item, index) => {
-        let animScrub = index * 0.4 + 1;
-
-        let navLink_anim = gsap.timeline({
-            defaults: {
-
-            },
-            scrollTrigger: {
-                trigger: '#fixedReference',
-                start: '5% top',
-                end: '20% top',
-                scrub: animScrub,
-            }
-        })
-
-        navLink_anim.to(item, {
-            scale: 0.85
-        }).to(item, {
-            yPercent: -100
-        }, '<20%');
-    }, '<10%');
-
     // ** ----------------------------------------
     // ** IMAGES
     // ** ----------------------------------------
-
-    let parallexImages = gsap.utils.toArray('.--parallex-img');
-
-    parallexImages.forEach(item => {
-        gsap.to(item, {
-            scrollTrigger: {
-                scrub: 1
-            },
-            yPercent: -15
-        })
-    })
 
     // ?? ----------------------------------------
     // ?? COMPONENTS
