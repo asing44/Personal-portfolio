@@ -55,15 +55,16 @@
             position: relative;
             width: 100%;
             justify-content: space-between;
-            border: 1px solid blue;
             strong {
                 height: max-content;
-                border: 1px solid gold;
+                width: min-content;
                 font: {
                     family: base.$font-family-display;
-                    size: base.$font-size_h1;
+                    size: 7rem;
                 }
-                line-height: 0.73em;
+                line-height: 1em;
+                letter-spacing: 1rem;
+                text-transform: uppercase;
                 transform: scaleY(1.2);
 
                 &:last-of-type {

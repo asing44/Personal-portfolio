@@ -31,7 +31,6 @@ body {
   margin: 0;
   padding: 0 1.6rem;
   background-color: #050B10;
-  background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
   color: #050B10;
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
@@ -173,12 +172,14 @@ input, button, textarea, select {
   text-transform: lowercase;
 }
 
-#fixedReference {
+#viewport {
   position: fixed;
   height: 100vh;
   width: 100vw;
   top: 0;
   left: 0;
+  background-color: #050B10;
+  background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -232,14 +233,15 @@ input, button, textarea, select {
   position: relative;
   width: 100%;
   justify-content: space-between;
-  border: 1px solid blue;
 }
 .landing-header .inner-container .middle-container strong {
   height: max-content;
-  border: 1px solid gold;
+  width: min-content;
   font-family: "Orbitron", sans-serif;
-  font-size: 5.61rem;
-  line-height: 0.73em;
+  font-size: 7rem;
+  line-height: 1em;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
   transform: scaleY(1.2);
 }
 .landing-header .inner-container .middle-container strong:last-of-type {
