@@ -26,10 +26,10 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 1.6rem;
   background-color: #050B10;
   background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
   color: #050B10;
@@ -42,17 +42,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-@keyframes body-background {
-  0% {
-    background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
-  }
-  50% {
-    background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 10% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 20% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
-  }
-  100% {
-    background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
-  }
-}
 h1, h2, h3, h4, h5 {
   font-family: "Titillium Web", sans-serif;
   line-height: 1.32;
@@ -107,34 +96,14 @@ input, button, textarea, select {
 .__cursor {
   position: fixed;
   display: flex;
-  top: 0;
-  left: 0;
+  top: -6px;
+  left: -7px;
   pointer-events: none;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
   z-index: 100;
 }
-.__cursor-wrapper {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.__cursor-wrapper .__cursor-ball {
-  fill: #FFDE9A;
-}
-.__cursor-wrapper .__cursor-text {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  font-weight: 600;
-  white-space: nowrap;
-  transform: translate(-130%, -25%);
-  opacity: 0;
-  z-index: 101;
+.__cursor .__cursor-ball {
+  fill: #FFC857;
 }
 
 .__cursor-outer {
@@ -143,12 +112,12 @@ input, button, textarea, select {
   top: 0;
   left: 0;
   pointer-events: none;
-  mix-blend-mode: difference;
-  z-index: 100;
+  mix-blend-mode: exclusion;
+  z-index: 99;
 }
 .__cursor-outer circle {
   fill: transparent;
-  stroke: #FFDE9A;
+  stroke: #FFC857;
   stroke-width: 2px;
 }
 
@@ -175,6 +144,10 @@ input, button, textarea, select {
 .-lockScroll {
   height: 100%;
   overflow-y: hidden;
+}
+
+.--parallex-img {
+  aspect-ratio: 1/1;
 }
 
 .pageChangeContainer {
@@ -216,9 +189,13 @@ input, button, textarea, select {
   border: 2px solid green;
 }
 
-#profilePhoto {
-  height: 100%;
-  border-radius: 50%;
+.landing-header {
+  position: relative;
+  min-height: 76vh;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(190, 192, 195, 0.1);
+  -webkit-backdrop-filter: blur(32px);
 }
 
 /*# sourceMappingURL=home.css.map */

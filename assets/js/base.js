@@ -2,25 +2,30 @@
 // ?? INIT AND SETUP
 // ?? ----------------------------------------
 
+// * GSAP
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
 gsap.config({
     autoSleep: 60,
 });
 
-// * Document ready
+//* Smooth Scroll
 
-function documentReady(callback) {
-    if (document.readyState !== 'loading') {
-        callback();
-    } else {
-        document.addEventListener('DOMContentLoaded', callback);
-    }
-};
+const lenis = new Lenis()
 
-// ** DOCUMENT READY
+// lenis.on('scroll', (e) => {
+//     console.log(e)
+// })
 
-documentReady(function () {
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+function documentReady() {
 
     var viewportHeight = window.innerHeight;
     var viewportWidth = window.innerWidth;
@@ -194,48 +199,48 @@ documentReady(function () {
     // ** PAGELOAD ANIMATIONS
     // ** ----------------------------------------
 
-    // * PAGE CHANGE IN
+    // // * PAGE CHANGE IN
 
-    let pageChangeAnim = gsap.timeline({
-        delay: 0.2,
-        defaults: {
-            duration: 1
-        },
-        onReverseComplete: goToLink,
-    });
-
-    pageChangeAnim.set(".pageChangeContainer", {
-        x: 0,
-        y: 0,
-    }).to(".pageChangeContainer", {
-        scale: 0.85,
-        ease: "power3.inOut",
-        borderRadius: "5rem"
-    }).to(".pageChangeContainer", {
-        duration: 0.75,
-        yPercent: -100,
-        ease: "power3.in"
-    }, "<75%")
-
-    // * PAGE CHANGE OUT
-
-    $('.--delay-link').on('click', function(e) {
-        e.preventDefault();
-
-        if (/index/.test($(this).attr("href"))) {
-            $('#pageChangeText').html("home")
-        } else {
-            $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
-        }
-        pageChangeHref = $(this).attr('href');
-        pageChangeAnim.reverse();
-    });
-
-    // * DELAY PAGELOAD ANIMATIONS
-
-    // gsap.delayedCall(0.5, function() {
-    //     pageLoadAnimParent.play()
+    // let pageChangeAnim = gsap.timeline({
+    //     delay: 0.2,
+    //     defaults: {
+    //         duration: 1
+    //     },
+    //     onReverseComplete: goToLink,
     // });
+
+    // pageChangeAnim.set(".pageChangeContainer", {
+    //     x: 0,
+    //     y: 0,
+    // }).to(".pageChangeContainer", {
+    //     scale: 0.85,
+    //     ease: "power3.inOut",
+    //     borderRadius: "5rem"
+    // }).to(".pageChangeContainer", {
+    //     duration: 0.75,
+    //     yPercent: -100,
+    //     ease: "power3.in"
+    // }, "<75%")
+
+    // // * PAGE CHANGE OUT
+
+    // $('.--delay-link').on('click', function(e) {
+    //     e.preventDefault();
+
+    //     if (/index/.test($(this).attr("href"))) {
+    //         $('#pageChangeText').html("home")
+    //     } else {
+    //         $("#pageChangeText").html($(this).attr("href").match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " "));
+    //     }
+    //     pageChangeHref = $(this).attr('href');
+    //     pageChangeAnim.reverse();
+    // });
+
+    // // * DELAY PAGELOAD ANIMATIONS
+
+    // // gsap.delayedCall(0.5, function() {
+    // //     pageLoadAnimParent.play()
+    // // });
 
     // ?? ----------------------------------------
     // ?? ANIMATED
@@ -245,64 +250,13 @@ documentReady(function () {
     // ** NAVIGATION
     // ** ----------------------------------------
 
-    const navContainer = document.getElementsByClassName('navigation-top-container')[0];
-    const navLinks = gsap.utils.toArray('.navigation-top-links-wrapper');
-    const navLogo = document.getElementsByClassName('navigation-top-logo-wrapper')[0];
-
-    navLinks.forEach((item, index) => {
-        let animScrub = index * 0.4 + 1;
-
-        let navLink_anim = gsap.timeline({
-            defaults: {
-
-            },
-            scrollTrigger: {
-                trigger: '#fixedReference',
-                start: '5% top',
-                end: '20% top',
-                scrub: animScrub,
-            }
-        })
-
-        navLink_anim.to(item, {
-            scale: 0.85
-        }).to(item, {
-            yPercent: -100
-        }, '<20%');
-    }, '<10%');
-
     // ** ----------------------------------------
     // ** IMAGES
     // ** ----------------------------------------
 
-    let parallexImages = gsap.utils.toArray('.--parallex-img');
-
-    parallexImages.forEach(item => {
-        gsap.to(item, {
-            scrollTrigger: {
-                scrub: 1
-            },
-            yPercent: -15
-        })
-    })
-
     // ?? ----------------------------------------
     // ?? COMPONENTS
     // ?? ----------------------------------------
-
-    // ** ----------------------------------------
-    // ** NAVIGATION
-    // ** ----------------------------------------
-
-    // * NAVIGATION TOP ACTIVE LINK
-
-    $('.navLink').each(function() {
-        if ((window.location.pathname).match(/(?<=\/)\w+(?=\.html)/) == $(this).data('location')) {
-            $(this).addClass('__link-1--active');
-        } else {
-            $(this).removeClass('__link-1--active');
-        }
-    })
 
     // ?? ----------------------------------------
     // ?? INTERACTIVE
@@ -345,7 +299,18 @@ documentReady(function () {
 
     // * Link 1
 
-    gsap.utils.toArray($(".__link-1:not(.__link-1--active)")).forEach((item) => {
+    // Set active link
+
+    gsap.utils.toArray('.navLink').forEach(item => {
+        if (item.classList.contains('--active-page')) {
+            item.classList.add('.__link-1_active')
+        } else {
+            item.classList.remove('.__link-1_active')
+        }
+    })
+
+    gsap.utils.toArray($(".__link-1:not(.__link-1_active)")).forEach((item) => {
+        console.log(item.classList)
         let hover1 = $(item).children("._inner-1");
         let hover2 = $(item).children("._inner-2");
         let link1Hover_tl = gsap.timeline({ paused: true });
@@ -413,4 +378,8 @@ documentReady(function () {
     // ?? ----------------------------------------
     // ?? TESTING ZONE
     // ?? ----------------------------------------
-});
+}
+
+// * Document ready
+
+document.addEventListener("DOMContentLoaded", documentReady());
