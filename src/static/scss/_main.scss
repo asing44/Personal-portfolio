@@ -4,13 +4,17 @@
 
 @use "base";
 
-// ** ----------------------------------------
-// ** GLOBAL ELEMENTS
-// ** ----------------------------------------
+// ?? ----------------------------------------
+// ?? GLOBAL ELEMENTS
+// ?? ----------------------------------------
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     cursor: none;
+}
+
+* {
+    margin: 0;
 }
 
 html {
@@ -24,85 +28,107 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: base.$background-light;
-    color: base.$background-dark;
+    background-color: base.$dark;
+    background-image:
+        radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
+    color: base.$dark;
     font-family: base.$font-family-body;
-    font-size: base.$font-size0;
+    font-size: base.$font-size_body;
     kerning: auto;
     font-kerning: auto;
     overflow-x: hidden;
+    animation: body-background 5s ease-in-out infinite;
+    -webkit-font-smoothing: antialiased;
 }
 
-main {
-    position: relative;
+@keyframes body-background {
+    0% {
+        background-image:
+            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
+    }
+    50% {
+        background-image:
+            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 10% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 20% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
+    }
+    100% {
+        background-image:
+            radial-gradient(at 40% 20%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(196, 5%, 34%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(200, 4%, 46%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(207, 52%, 4%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(196, 6%, 46%, 1) 0px, transparent 50%);
+    }
 }
 
-p {
-    margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0;
+h1, h2, h3, h4, h5 {
     font-family: base.$font-family-heading;
-    line-height: base.$font-lineHeight-110;
+    line-height: base.$font-lineHeight_132;
 }
 
 h1 {
-    font-size: base.$font-size5;
-    font-weight: base.$font-weight-bold;
+    font-size: base.$font-size_h1;
+    font-weight: base.$font-weight_bold;
 }
 
 h2 {
-    font-size: base.$font-size4;
-    font-weight: base.$font-weight-semiBold;
+    font-size: base.$font-size_h2;
+    font-weight: base.$font-weight_semiBold;
 }
 
 h3 {
-    font-size: base.$font-size3;
-    font-weight: base.$font-weight-medium;
+    font-size: base.$font-size_h3;
+    font-weight: base.$font-weight_medium;
 }
 
 h4 {
-    font-size: base.$font-size2;
-    font-weight: base.$font-weight-normal;
+    font-size: base.$font-size_h4;
+    font-weight: base.$font-weight_normal;
 }
 
 h5 {
-    font-size: base.$font-size1;
-    font-weight: base.$font-weight-normal;
+    font-size: base.$font-size_h5;
+    font-weight: base.$font-weight_normal;
 }
 
-small,
-.text_small {
-    font-size: base.$font-size-1;
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+small {
+    font-size: base.$font-size_body-small;
 }
 
-li {
-    text-align: match-parent;
-}
-
-a {
+a, button {
     all: unset;
 }
 
-button {
-    border: none;
-    background-color: transparent;
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
 }
 
-img {
-    border: none;
-    outline: none;
+input, button, textarea, select {
+    font: inherit;
 }
 
 // ** ----------------------------------------
@@ -128,7 +154,7 @@ img {
         transform: translate(-50%, -50%);
 
         .__cursor-ball {
-            fill: base.$secondary;
+            fill: base.$primary-500;
         }
 
         .__cursor-text {
@@ -156,7 +182,7 @@ img {
 
     circle {
         fill: transparent;
-        stroke: base.$secondary;
+        stroke: base.$primary-500;
         stroke-width: 2px;
     }
 }
@@ -165,7 +191,7 @@ img {
 // ?? GLOBAL CLASSES
 // ?? ----------------------------------------
 
-// * Containers and wrappers
+//Containers and wrappers
 
 .-contain {
     min-height: 100vh;
@@ -184,14 +210,12 @@ img {
     @extend .-wrap;
 }
 
-// * Display hide
-
+//Display hide
 .-inactive {
     display: none !important;
 }
 
-// * Lock scroll
-
+//Lock scroll
 .-lockScroll {
     height: 100%;
     overflow-y: hidden;
@@ -199,223 +223,11 @@ img {
 
 // ** STYLES
 
-// Remove list style
-
-.-no-list {
-    list-style: none;
-}
-
-// Ordered list
-
-.-ordered-list {
-    list-style: decimal;
-
-    .list-head {
-        list-style: circle;
-    }
-}
-
-// Paragraph indent
-
-.-paragraph-indent {
-    text-indent: base.$size-2_00;
-}
-
-// Small emphasis
-
-.-sm-em {
-    font-style: italic;
-}
-
-// Small bold
-
-.-sm-bd {
-    font-size: base.$font-size-2;
-    font-weight: base.$font-weight-bold;
-    letter-spacing: 1.2;
-    text-transform: uppercase;
-}
-
 // ?? ----------------------------------------
 // ?? ELEMENTS
 // ?? ----------------------------------------
 
 // * Divider
-
-.__divider {
-
-    &_light {
-        display: flex;
-        width: 100%;
-        border-radius: base.$border-radius-regular;
-        background: base.$gray-light;
-
-        &_thin {
-            &-small {
-                height: 1.414px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_light;
-            }
-    
-            &-medium {
-                height: 1.414px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_light;
-            }
-    
-            &-long {
-                height: 1.414px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_light;
-            }
-    
-            &-extraLong {
-                height: 1.414px;
-                max-width: 100%;
-                @extend .__divider_light;
-            }
-            
-        }
-    
-        &_regular {
-            &-small {
-                height: 2px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_light;
-            }
-    
-            &-medium {
-                height: 2px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_light;
-            }
-    
-            &-long {
-                height: 2px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_light;
-            }
-    
-            &-extraLong {
-                height: 2px;
-                max-width: 100%;
-                @extend .__divider_light;
-            }
-        }
-    
-        &_thick {
-            &-small {
-                height: 4px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_light;
-            }
-    
-            &-medium {
-                height: 4px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_light;
-            }
-    
-            &-long {
-                height: 4px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_light;
-            }
-    
-            &-extraLong {
-                height: 4px;
-                max-width: 100%;
-                @extend .__divider_light;
-            }
-        }
-    }
-
-    &_dark {
-        display: flex;
-        width: 100%;
-        border-radius: base.$border-radius-regular;
-        background: base.$gray-dark;
-
-        &_thin {
-            &-small {
-                height: 1.414px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_dark;
-            }
-    
-            &-medium {
-                height: 1.414px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_dark;
-            }
-    
-            &-long {
-                height: 1.414px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_dark;
-            }
-    
-            &-extraLong {
-                height: 1.414px;
-                max-width: 100%;
-                @extend .__divider_dark;
-            }
-            
-        }
-    
-        &_regular {
-            &-small {
-                height: 2px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_dark;
-            }
-    
-            &-medium {
-                height: 2px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_dark;
-            }
-    
-            &-long {
-                height: 2px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_dark;
-            }
-    
-            &-extraLong {
-                height: 2px;
-                max-width: 100%;
-                @extend .__divider_dark;
-            }
-        }
-    
-        &_thick {
-            &-small {
-                height: 4px;
-                max-width: base.$vw-35_34;
-                @extend .__divider_dark;
-            }
-    
-            &-medium {
-                height: 4px;
-                max-width: base.$vw-49_98;
-                @extend .__divider_dark;
-            }
-    
-            &-long {
-                height: 4px;
-                max-width: base.$vw-70_7;
-                @extend .__divider_dark;
-            }
-    
-            &-extraLong {
-                height: 4px;
-                max-width: 100%;
-                @extend .__divider_dark;
-            }
-        }
-    }
-}
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE
@@ -425,100 +237,9 @@ img {
 // ** SYMBOLS
 // ** ----------------------------------------
 
-// ** ARROWS
-
-.--SVG-arrow {
-    &.arrow-back {
-        height: 1.5em;
-        fill: base.$white;
-    }
-}
-
 // ** ----------------------------------------
 // ** ICONS
 // ** ----------------------------------------
-
-// Copy
-
-.__icon-copy {
-
-    &-regular {
-        &-light {
-            display: inline-flex;
-            position: relative;
-            height: 27px;
-            width: 24px;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                height: 100%;
-                width: 100%;
-
-                path {
-                    stroke: base.$background-light
-                }
-            }
-        }
-
-        &-dark {
-            display: inline-flex;
-            position: relative;
-            height: 27px;
-            width: 24px;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                height: 100%;
-                width: 100%;
-
-                path {
-                    stroke: base.$background-dark
-                }
-            }
-        }
-    }
-
-    &-medium {
-
-        &-light {
-            display: inline-flex;
-            position: relative;
-            height: 46px;
-            width: 40px;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                height: 100%;
-                width: 100%;
-
-                path {
-                    stroke: base.$background-light
-                }
-            }
-        }
-
-        &-dark {
-            display: inline-flex;
-            position: relative;
-            height: 46px;
-            width: 40px;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                height: 100%;
-                width: 100%;
-
-                path {
-                    stroke: base.$background-dark
-                }
-            }
-        }
-    }
-}
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE
@@ -528,275 +249,9 @@ img {
 // ** LINKS
 // ** ----------------------------------------
 
-.__link-1 {
-    display: flex;
-    position: relative;
-    height: 52.963px;
-    width: 153.942px;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 34px;
-    overflow: hidden;
-    cursor: pointer;
-
-    &--regular {
-        ._inner-1,
-        ._inner-2 {
-            position: absolute;
-            display: flex;
-            height: 52.96px;
-            width: 153.942px;
-            justify-content: center;
-            align-items: center;
-            padding: 8px 47px;
-            gap: 10px;
-
-            ._text {
-                color: base.$background-light;
-                text-align: center;
-                font-size: 24px;
-            }
-        }
-
-        ._inner-2 {
-            bottom: -52.997px;
-            border-radius: 34px;
-            background-color: base.$secondary;
-
-            ._text {
-                color: base.$background-dark;
-            }
-        }
-    }
-
-    &--active {
-        background-color: base.$secondary;
-
-        ._inner-1 {
-            ._text {
-                color: base.$background-dark;
-            }
-        }
-    }
-}
-
-.__external-link {
-    display: inline-flex;
-    height: min-content;
-    gap: 8px;
-    padding: 0 base.$padding-tiny-plus;
-    border-radius: 0.5em;
-    color: base.$background-dark;
-    text-decoration: 2px underline base.$accent-purple;
-    transition: all 250ms ease-in-out;
-    pointer-events: all;
-
-    span.__external-link-arrow {
-        display: none;
-        height: min-content;
-        width: min-content;
-        border-radius: 0.5em;
-        background-color: base.$background-light;
-        opacity: 0%;
-        transition: opacity 250ms ease-in-out;
-    }
-
-    &:hover {
-        background-color: base.$accent-purple;
-        color: base.$background-light;
-
-        // span {
-        //     display: inline-flex;
-        //     opacity: 100%;
-        // }
-    }
-}
-
 // ** ----------------------------------------
 // ** BUTTONS
 // ** ----------------------------------------
-
-.__button-1 {
-    display: flex;
-    position: relative;
-    height: 68px;
-    width: 153.942px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 34px;
-    overflow: hidden;
-    cursor: pointer;
-
-    &--regular {
-        ._inner-1,
-        ._inner-2 {
-            position: absolute;
-            display: flex;
-            height: 100%;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            padding: base.$padding-tiny-plus base.$padding-regular-plus;
-            gap: base.$grid-gap-tiny;
-
-            ._text {
-                color: base.$background-dark;
-                text-align: center;
-                font-size: base.$font-size0;
-            }
-        }
-
-        ._inner-2 {
-            top: 100%;
-            border-radius: base.$border-radius-medium;
-            background-color: base.$primary;
-
-            ._text {
-                color: base.$background-light;
-            }
-        }
-    }
-
-    &--active {
-
-        ._inner-1 {
-            border: base.$size-2px solid base.$primary;
-            border-radius: base.$size-1_41;
-
-            ._text {
-                color: base.$primary;
-            }
-        }
-    }
-}
-
-.__button-2 {
-
-    &--normal {
-        display: flex;
-        position: relative;
-        height: 68px;
-        flex-direction: column;
-        align-items: center;
-        flex: 1;
-        padding: 0;
-        border-radius: base.$border-radius-medium;
-        border: base.$border-width-small solid transparent;
-        overflow: hidden;
-
-        &--regular {
-            @extend .__button-2--normal;
-
-            ._inner-1,
-            ._inner-2 {
-                display: flex;
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                top: 0;
-                left: 0;
-                padding: base.$padding-tiny-plus base.$padding-regular-plus;
-                border: base.$border-width-small solid base.$background-light;
-                border-radius: base.$border-radius-medium;
-    
-                ._text {
-                    color: base.$background-light;
-                    text-align: center;
-                    font-size: base.$font-size0;
-                }
-            }
-    
-            ._inner-2 {
-                top: 100%;
-                border: none;
-                background-color: base.$primary;
-    
-                ._text {
-                    color: base.$background-light;
-                }
-            }
-        }
-    
-        &--active {
-            @extend .__button-2--normal;
-            ._inner-1 {
-                border: base.$size-2px solid base.$primary;
-                border-radius: base.$size-1_41;
-    
-                ._text {
-                    color: base.$primary;
-                }
-            }
-        }
-    }
-
-    &--large {
-        display: flex;
-        position: relative;
-        height: 68px;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        flex: 1;
-        padding: 0;
-        border-radius: base.$border-radius-medium;
-        border: 1.414px solid transparent;
-        overflow: hidden;
-
-        &--regular {
-            @extend .__button-2--large;
-
-            ._inner-1,
-            ._inner-2 {
-                display: flex;
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                top: 0;
-                left: 0;
-                border: base.$border-width-small solid base.$background-light;
-                border-radius: base.$border-radius-medium;
-    
-                ._text {
-                    color: base.$background-light;
-                    text-align: center;
-                    font-size: base.$font-size0;
-                }
-            }
-    
-            ._inner-2 {
-                top: 100%;
-                border: none;
-                background-color: base.$primary;
-    
-                ._text {
-                    color: base.$background-light;
-                }
-            }
-        }
-    
-    
-        &--active {
-            @extend .__button-2--large;
-    
-            ._inner-1 {
-                border: base.$size-2px solid base.$primary;
-                border-radius: base.$size-1_41;
-    
-                ._text {
-                    color: base.$primary;
-                }
-            }
-        }
-    }
-}
 
 // ?? ----------------------------------------
 // ?? PAGE CHANGE
@@ -812,17 +267,17 @@ img {
     right: 0;
     top: 0;
     place-content: center;
-    background-color: base.$accent-heading;
+    background-color: base.$success-500;
     z-index: 11;
 
     p {
         max-width: 85vw;
         margin: 0;
         padding: 0;
-        color: base.$background-light;
+        color: base.$light;
         font-family: base.$font-family-display;
-        font-size: base.$font-size4;
-        font-weight: base.$font-weight-medium;
+        font-size: base.$font-size_h4;
+        font-weight: base.$font-weight_medium;
         text-align: center;
         text-transform: lowercase;
     }
