@@ -188,11 +188,12 @@ $opacity_high: 85%;
 // ** FONT
 
 // * Body font style
-@mixin bodyStyle {
+@mixin baseFontSet {
     font-family: $font-family-body;
+    font-size: $font-size_body;
+    font-weight: $font-weight_normal;
     letter-spacing: 0;
-    line-height: 150%;
-    text-indent: $internal-24px;
+    line-height: 130%;
 }
 
 // * Title blocks
