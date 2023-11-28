@@ -41,11 +41,12 @@
                 display: inline-flex;
                 align-items: center;
                 gap: base.$internal-8px;
-                color: base.$gray-200;
+                color: fade-out(base.$gray-200, 0.5);
                 @include base.baseFontSet;
+                letter-spacing: base.$font-spacing_5;
 
                 & > span svg rect {
-                    fill: base.$primary-700;
+                    fill: fade-out(base.$primary-700, 0.5);
                 }
             }
         }
@@ -74,7 +75,13 @@
             }
 
             .blurb-container {
+                display: flex;
                 position: absolute;
+                flex-direction: column;
+                gap: base.$internal-12px;
+                top: 20%;
+                right: 10%;
+                color: base.$gray-100;
             }
         }
     }

@@ -24,44 +24,45 @@
             position: relative;
             height: base.$internal-12px;
             width: base.$internal-12px;
+            z-index: 2;
 
             .circle-static {
                 height: 100%;
                 width: 100%;
                 background-color: base.$primary-900;
                 border-radius: 50%;
+            }
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background: radial-gradient(circle, rgba(255, 200, 87, 1) 0%, rgba(255, 250, 238, 0) 100%);
-                    border-radius: 50%;
-                    z-index: -1;
-                    animation: pulseCircle 4s ease-in-out infinite;
+            .circle-animated {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: radial-gradient(circle, rgba(255, 200, 87, 1) 0%, rgba(255, 250, 238, 0) 100%);
+                border-radius: 50%;
+                z-index: -1;
+                animation: pulseCircle 4s ease-in-out infinite;
+            }
+
+            @keyframes pulseCircle {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 100%;
                 }
 
-                @keyframes pulseCircle {
-                    0% {
-                        transform: scale(0.5);
-                        opacity: 100%;
-                    }
+                50% {
+                    transform: scale(2);
+                }
 
-                    50% {
-                        transform: scale(2);
-                    }
+                85% {
+                    opacity: 0%;
+                }
 
-                    85% {
-                        opacity: 0%;
-                    }
-
-                    100% {
-                        transform: scale(0.5);
-                        opacity: 100%
-                    }
+                100% {
+                    transform: scale(0.5);
+                    opacity: 100%
                 }
             }
         }

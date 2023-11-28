@@ -173,10 +173,10 @@ $font-lineHeight_150: 1.50;
 $font-lineHeight_132: 1.32;
 $font-lineHeight_100: 1.00;
 // Letter spacing
-$font-spacing_10: 10%;
-$font-spacing_5: 5%;
-$font-spacing_2: 2%;
-$font-spacing_-2: -2%;
+$font-spacing_100: 1rem;
+$font-spacing_25: .25rem;
+$font-spacing_5: .05rem;
+$font-spacing_-5: calc(-1 * 0.5rem);
 
 // * OPACITY
 $opacity_low: 14%;

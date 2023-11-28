@@ -254,3 +254,28 @@ input, button, textarea, select {
     width: 100%;
     border: 2px solid green;
 }
+
+#under-dev-banner {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    place-content: center;
+    padding: base.$internal-24px 0;
+    bottom: 0;
+    left: 0;
+
+    .text {
+        color: base.$light;
+        animation: devBannerPulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes devBannerPulse {
+        from {
+            opacity: 100%;
+        }
+
+        to {
+            opacity: 50%;
+        }
+    }
+}
