@@ -201,14 +201,14 @@ input, button, textarea, select {
 }
 #under-dev-banner .text {
   color: #F3F5F7;
-  animation: devBannerPulse 4s ease-in-out infinite alternate;
+  animation: devBannerPulse 2s 1s ease-in-out infinite alternate;
 }
 @keyframes devBannerPulse {
   from {
     opacity: 100%;
   }
   to {
-    opacity: 50%;
+    opacity: 0%;
   }
 }
 
@@ -254,7 +254,7 @@ input, button, textarea, select {
 .landing-header .inner-container .middle-container {
   display: flex;
   position: relative;
-  width: 100%;
+  max-width: 100%;
   justify-content: space-between;
 }
 .landing-header .inner-container .middle-container strong {
@@ -266,10 +266,12 @@ input, button, textarea, select {
   letter-spacing: 1rem;
   text-transform: uppercase;
   transform: scaleY(1.2);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.32px #A4A7AA;
+  -webkit-background-clip: text;
 }
 .landing-header .inner-container .middle-container strong:last-of-type {
   align-self: flex-end;
-  text-align: right;
 }
 .landing-header .inner-container .middle-container .blurb-container {
   display: flex;

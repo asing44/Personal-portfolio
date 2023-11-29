@@ -266,7 +266,7 @@ input, button, textarea, select {
 
     .text {
         color: base.$light;
-        animation: devBannerPulse 4s ease-in-out infinite alternate;
+        animation: devBannerPulse 2s 1s ease-in-out infinite alternate;
     }
 
     @keyframes devBannerPulse {
@@ -275,7 +275,7 @@ input, button, textarea, select {
         }
 
         to {
-            opacity: 50%;
+            opacity: 0%;
         }
     }
 }
