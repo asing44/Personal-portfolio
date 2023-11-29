@@ -170,9 +170,6 @@ Features:
 let arrowContainer = document.getElementsByClassName('arrows-container')[0];
 
 for (let i = 0; i <= (Math.floor(arrowContainer.getBoundingClientRect().height / 55)); i++) {
-    if (i == 0) {
-
-    }
     $(".arrows-container").append('<img src="assets/svg/icons/arrows/__carret_down.svg" class="header-arrow"></img>')
 }
 
@@ -187,22 +184,22 @@ gsap.delayedCall(0.5, () => {
 
 let headerName_tl = gsap.timeline({
     defaults: {
-        duration: 1,
-        ease: 'power2.inOut'
+        ease: 'power2.in'
     },
     scrollTrigger: {
         trigger: '.landing-header',
-        start: '20% top',
-        end: '120% top',
-        markers: true,
+        start: '-25% top',
+        end: '150% center',
+        scrub: 0.2,
     },
-    scrub: true
-});
+
+})
 
 headerName_tl.to('.first-name', {
-    xPercent: 15
-}).to('.last-name', {
-    xPercent: -15
-}, '<')
+    xPercent: 5
+}, 0)
+headerName_tl.to('.last-name', {
+    xPercent: -5
+}, 0)
 
 // * ----------------------------------------------
