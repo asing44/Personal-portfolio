@@ -214,7 +214,7 @@ input, button, textarea, select {
 
 .landing-header {
   display: flex;
-  height: 76vh;
+  min-height: 76vh;
   width: 100%;
   padding: 1.6rem;
   border-radius: 1rem;
@@ -226,10 +226,11 @@ input, button, textarea, select {
 }
 .landing-header .inner-container {
   display: grid;
-  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-rows: 4rem minmax(414px, 100%) 4rem;
   grid-template: 100%;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 .landing-header .inner-container .top-container {
   display: flex;
@@ -240,22 +241,22 @@ input, button, textarea, select {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(164, 167, 170, 0.5);
+  color: rgba(243, 245, 247, 0.75);
+  letter-spacing: 0.05rem;
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 130%;
-  letter-spacing: 0.05rem;
 }
 .landing-header .inner-container .top-container .tagline > span svg rect {
-  fill: rgba(255, 211, 121, 0.5);
+  fill: rgba(255, 211, 121, 0.75);
 }
 .landing-header .inner-container .middle-container {
-  display: flex;
+  display: grid;
   position: relative;
+  height: 100%;
   max-width: 100%;
-  justify-content: space-between;
 }
 .landing-header .inner-container .middle-container strong {
   height: max-content;
@@ -271,16 +272,36 @@ input, button, textarea, select {
   -webkit-background-clip: text;
 }
 .landing-header .inner-container .middle-container strong:last-of-type {
-  align-self: flex-end;
+  justify-self: end;
+  align-self: baseline;
 }
 .landing-header .inner-container .middle-container .blurb-container {
   display: flex;
   position: absolute;
   flex-direction: column;
   gap: 0.6rem;
-  top: 20%;
-  right: 10%;
+  top: 10%;
+  right: 20%;
   color: #BEC0C3;
+}
+.landing-header .inner-container .arrows-container {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top: 0;
+  left: 10%;
+  padding: 0 0.4rem;
+  mask-image: linear-gradient(transparent 5%, #000, transparent 95%);
+  overflow: hidden;
+}
+.landing-header .inner-container .arrows-container .header-arrow {
+  height: min-content;
+  padding: 0.6rem 0;
+}
+.landing-header .inner-container .arrows-container:first-child {
+  padding-top: 0;
 }
 
 /*# sourceMappingURL=home.css.map */
