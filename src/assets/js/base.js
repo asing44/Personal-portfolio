@@ -715,6 +715,16 @@ function cursorMove(e) {
     localStorage.setItem("cursorY", cursorY);
 }
 
+// ** ----------------------------------------
+// ** TEXT REVEAL EFFECT
+// ** ----------------------------------------
+
+let textRevealArr = gsap.utils.toArray(".--text-reveal");
+
+textRevealArr.forEach(el => {
+    console.log(el.length);
+})
+
 // ?? ----------------------------------------
 // ?? INTERACTIVE
 // ?? ----------------------------------------

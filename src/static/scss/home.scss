@@ -131,6 +131,7 @@
         .section-number-wrapper {
             width: max-content;
             align-self: flex-start;
+            margin-top: base.$internal-8px;;
             color: base.$gray-300;
         }
 
@@ -138,14 +139,45 @@
             display: inline-block;
             position: relative;
             width: min-content;
-            color: base.$gray-25;
+            color: base.$gray-200;
             line-height: 1;
+            letter-spacing: base.$font-spacing_25;
         }
 
         .section-blurb {
             width: max-content;
+            margin-bottom: base.$internal-8px;
             color: base.$gray-200;
             @include base.baseFontSet;
+        }
+    }
+
+    .about-middle-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        gap: base.$external-80px;
+        margin-top: base.$external-80px;
+        padding: 0 base.$internal-24px;
+
+        .about-photo-wrapper {
+            min-height: base.$vh-75;
+            flex: 1;
+            border: 1px solid red;
+        }
+
+        .about-blurb-wrapper {
+            display: flex;
+            flex: 1;
+
+            .about-blurb {
+                font: {
+                    family: base.$font-family-heading;
+                    size: base.$font-size_h3;
+                }
+                color: base.$gray-300;
+                line-height: 1.32;
+            }
         }
     }
 }
