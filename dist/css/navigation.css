@@ -74,19 +74,28 @@
   display: grid;
   position: absolute;
   place-content: center;
-  left: calc(50% - 1.6rem);
+  left: calc(50% - 2.25rem);
   padding: 0.6rem 1.2rem;
 }
 .navigation-top-container .logo-wrapper .header-logo {
   width: 2.25rem;
+  opacity: 75%;
+  transition: opacity 500ms ease-in-out;
+}
+.navigation-top-container .logo-wrapper .header-logo:hover {
+  opacity: 100%;
 }
 .navigation-top-container .header-menu-wrapper {
+  position: fixed;
+  top: 1.2rem;
+  right: 2.7rem;
   display: grid;
   height: 2.25rem;
   width: 3rem;
   place-content: center;
   border: 1.32px solid #46494C;
   border-radius: 4px;
+  z-index: 100;
 }
 .navigation-top-container .header-menu-wrapper .svg_menu-icon {
   stroke: #A4A7AA;

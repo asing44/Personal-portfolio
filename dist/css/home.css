@@ -26,6 +26,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100dvh;
   width: 100%;
   margin: 0;
@@ -92,6 +93,29 @@ input, button, textarea, select {
   font: inherit;
 }
 
+#gradient-canvas {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  --gradient-color-1: #2a2a29;
+  --gradient-color-2: #050a10;
+  --gradient-color-3: #050a10;
+  --gradient-color-4: #050a10;
+  z-index: -1;
+}
+
+#viewport {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .__cursor {
   position: fixed;
   display: flex;
@@ -136,6 +160,14 @@ input, button, textarea, select {
   place-content: center;
 }
 
+.__spacer {
+  width: 100%;
+  background: transparent;
+}
+.__spacer_regular {
+  height: 4rem;
+}
+
 .-inactive {
   display: none !important;
 }
@@ -172,18 +204,6 @@ input, button, textarea, select {
   text-transform: lowercase;
 }
 
-#viewport {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: #050B10;
-  background-image: radial-gradient(at 40% 20%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(196, 5%, 34%) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(200, 4%, 46%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(207, 52%, 4%) 0px, transparent 50%), radial-gradient(at 0% 0%, hsl(196, 6%, 46%) 0px, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 #test-div {
   height: 100vh;
   width: 100%;
@@ -218,11 +238,11 @@ input, button, textarea, select {
   width: 100%;
   padding: 1.6rem;
   border-radius: 1rem;
-  background: rgba(207, 223, 239, 0.02);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(207, 223, 239, 0.05);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .landing-header .inner-container {
   display: grid;
@@ -302,6 +322,38 @@ input, button, textarea, select {
 }
 .landing-header .inner-container .arrows-container:first-child {
   padding-top: 0;
+}
+
+.about-section-container {
+  min-height: 100vh;
+  width: 100%;
+}
+.about-section-container .about-header-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.about-section-container .about-header-container .section-number-wrapper {
+  width: max-content;
+  align-self: flex-start;
+  color: #8B8E91;
+}
+.about-section-container .about-header-container .section-title {
+  display: inline-block;
+  position: relative;
+  width: min-content;
+  color: #F3F5F7;
+  line-height: 1;
+}
+.about-section-container .about-header-container .section-blurb {
+  width: max-content;
+  color: #A4A7AA;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 130%;
 }
 
 /*# sourceMappingURL=home.css.map */

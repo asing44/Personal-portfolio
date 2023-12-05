@@ -77,21 +77,31 @@
         display: grid;
         position: absolute;
         place-content: center;
-        left: calc(50% - base.$internal-32px);
+        left: calc(50% - base.$external-45px);
         padding: base.$internal-12px base.$internal-24px;
 
         .header-logo {
             width: base.$external-45px;
+            opacity: 75%;
+            transition: opacity 500ms ease-in-out;
+
+            &:hover {
+                opacity: 100%;
+            }
         }
     }
 
     .header-menu-wrapper {
+        position: fixed;
+        top: base.$internal-24px;
+        right: calc(base.$internal-24px + (base.$external-60px / 2));
         display: grid;
         height: base.$external-45px;
         width: base.$external-60px;
         place-content: center;
         border: base.$border-width_132 solid base.$gray-600;
         border-radius: base.$border-radius_4px;
+        z-index: 100;
 
         .svg_menu-icon {
             stroke: base.$gray-200;

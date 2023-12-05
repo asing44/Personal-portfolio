@@ -2,6 +2,7 @@
 // ** HELPER FUNCTIONS
 // ** ----------------------------------------
 
+// Vertical looping function
 function verticalLoop(items, config) {
 
     /*
@@ -165,7 +166,7 @@ Features:
 // ** HOMEPAGE
 // ** ----------------------------------------
 
-// * Arrows ----------------------------------
+// * ---- Arrows ----
 
 let arrowContainer = document.getElementsByClassName('arrows-container')[0];
 
@@ -174,13 +175,9 @@ for (let i = 0; i <= (Math.floor(arrowContainer.getBoundingClientRect().height /
 }
 
 let landingArrows = document.getElementsByClassName('header-arrow');
-gsap.delayedCall(0.5, () => {
-    verticalLoop(landingArrows, {reversed: true, speed: 0.25 });
-});
+verticalLoop(landingArrows, {reversed: true, speed: 0.25 });
 
-// * -----------------------------------------
-
-// * Header name ----------------------------------
+// * ---- Header name ----
 
 let headerName_tl = gsap.timeline({
     defaults: {

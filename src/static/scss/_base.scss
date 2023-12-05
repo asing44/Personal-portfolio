@@ -32,6 +32,10 @@ $vw-11: calc(11vw); // 156px
 $vw-08: calc(8vw); // 118px
 
 // * GRID
+$gap-12px: calc(0.6rem); // 12px
+$gap-24px: calc(1.2rem); // 24px
+$gap-32px: calc(1.6rem); // 32px
+$gap-45px: calc(2.25rem); // 45px
 
 // * MARGIN AND PADDING
 $internal-4px: calc(0.2rem); // 4px
@@ -99,7 +103,7 @@ $blue-green-100: #CFDFEF;
 $blue-green-50: #E7EFF7;
 $blue-green-25: #FFFFFF;
 // Gray
-$gray-900: #050B10;
+$gray-900: rgb(5, 11, 16);
 $gray-800: #1D2023;
 $gray-700: #313437;
 $gray-600: #46494C;
@@ -127,7 +131,7 @@ $error-100: #D99B8E;
 $error-50: #E5BDB4;
 $error-25: #F2DED9;
 // Blur
-$background-blur_dark: rgba(207, 223, 239, 0.02);
+$background-blur_dark: rgba(207, 223, 239, 0.05);
 // Overlay
 // $overlay: transparentize($gray-dark, 0.5);
 // Box shadow
