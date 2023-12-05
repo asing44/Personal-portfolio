@@ -29,6 +29,8 @@
   </head>
   <body id="body">
     
+    <canvas id="gradient-canvas" data-transition-in=""></canvas>
+    
     <div id="viewport"></div>
     
     <div class="__cursor">
@@ -55,7 +57,13 @@
         <p class="cta">available to work</p>
     </div>
     <div class="logo-wrapper --cursor-expand-outer">
-        <img src="/Personal-portfolio/assets/svg/logos/test.svg" alt="My personal logo" class="header-logo">
+        <svg class="header-logo" width="627" height="411" viewBox="0 0 627 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M279.834 255.308L280.625 258.28H280.654L316.715 390.68H249.668L215.234 262.346C215.234 262.345 215.234 262.345 215.234 262.345C215.234 262.344 215.233 262.344 215.233 262.343C213.593 256.222 208.037 251.97 201.71 251.97H85.35C77.6209 251.97 71.35 258.241 71.35 265.97V384.68C71.35 387.991 68.6609 390.68 65.35 390.68H10C6.68914 390.68 4 387.991 4 384.68V26.01C4 22.6916 6.67766 20.0077 10.0041 20H212.65C215.362 20 217.741 21.8263 218.446 24.4623L279.834 255.308ZM71.34 188.47V192.47H75.34H191.58H196.81L195.44 187.422L166.95 82.4622L166.149 79.51H163.09H75.34H71.34V83.51V188.47Z" stroke="#D8DADD" stroke-width="8"></path>
+            <path d="M554.298 20.0098H621.365L521.892 390.67H454.825L554.298 20.0098Z" stroke="#D8DADD" stroke-width="8"></path>
+            <path d="M518.475 389.54H453.778L354.925 21.1602H419.622L518.475 389.54Z" fill="#050B10" stroke="#F3F5F7" stroke-width="8"></path>
+            <path d="M422.293 18.1802L422.193 17.8098H421.81H351.2H350.548L350.717 18.4394L451.107 392.529L451.206 392.9H451.59H522.2H522.852L522.683 392.27L422.293 18.1802ZM423.179 16.5198L524.538 394.19H450.223L348.872 16.5198H423.179Z" fill="#4D609C" stroke="#D8DADD"></path>
+            <path class="--blink" d="M348.21 8.01953H342.074L340.483 13.9459L238.863 392.596L236.16 402.67H246.59H321.94H328.076L329.666 396.743L431.286 18.0931L433.99 8.01953H423.56H348.21Z" fill="#FFC857" stroke="#050B10" stroke-width="16"></path>
+        </svg>
     </div>
     <div class="header-menu-wrapper --cursor-expand-outer">
         <button class="header-menu">
@@ -97,7 +105,21 @@
         </div>
     </div>
 </header>
-<div id="test-div"></div>
+<div class="__spacer_regular"></div>
+<section class="about-section-container">
+    <header class="about-header-container">
+        <p class="section-number-wrapper">[01] /</p>
+        <h2 class="section-title">ABOUT</h2>
+        <h3 class="section-blurb">/ A little bit about me</h3>
+    </header>
+    <div class="about-middle-container">
+        <div class="about-photo-wrapper"></div>
+        <div class="about-blurb-wrapper">
+            <p class="about-blurb --text-reveal">I work to create digital stories online from your creative ideas as a web developer and multimedia designer.</p>
+            <button class="about-button"></button>
+        </div>
+    </div>
+</section>
 <div id="under-dev-banner">
     <p class="text">Under development! Check back later for continual updates!</p>
 </div> </main>
