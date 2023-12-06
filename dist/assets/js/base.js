@@ -728,8 +728,7 @@ textRevealArr.forEach(el => {
         scrollTrigger: {
             start: "45% center",
             end: "75% 80%",
-            scrub: true,
-            markers: true
+            scrub: true
         }
     });
 
