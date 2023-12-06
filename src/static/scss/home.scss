@@ -98,6 +98,7 @@
             top: 0;
             left: 10%;
             padding: 0 base.$internal-8px;
+            -webkit-mask-image: linear-gradient(transparent 5%, #000, transparent 95%);
             mask-image: linear-gradient(transparent 5%, #000, transparent 95%);
             overflow: hidden;
 
@@ -229,7 +230,9 @@
                 justify-content: center;
                 column-gap: base.$external-105px;
                 grid-area: 1 / span 3;
-                mask-image: linear-gradient(transparent 20%, #000, transparent 95%);
+                overflow: hidden;
+                -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
+                mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
             }
 
             .stack-apps-middle {

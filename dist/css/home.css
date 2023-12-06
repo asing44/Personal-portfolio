@@ -312,6 +312,7 @@ input, button, textarea, select {
   top: 0;
   left: 10%;
   padding: 0 0.4rem;
+  -webkit-mask-image: linear-gradient(transparent 5%, #000, transparent 95%);
   mask-image: linear-gradient(transparent 5%, #000, transparent 95%);
   overflow: hidden;
 }
@@ -423,7 +424,9 @@ input, button, textarea, select {
   justify-content: center;
   column-gap: 5.25rem;
   grid-area: 1/span 3;
-  mask-image: linear-gradient(transparent 20%, #000, transparent 95%);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
+  mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
 }
 .about-section-container .about-stack-container .about-stack-wrapper .stack-apps-middle {
   display: flex;

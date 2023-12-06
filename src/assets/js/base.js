@@ -726,9 +726,10 @@ let textRevealArr = gsap.utils.toArray(".--text-reveal");
 textRevealArr.forEach(el => {
     let el_tl = gsap.timeline({
         scrollTrigger: {
-            start: "center center",
-            end: "bottom bottom",
+            start: "45% center",
+            end: "75% 80%",
             scrub: true,
+            markers: true
         }
     });
 
@@ -757,7 +758,6 @@ let expandWordArr = gsap.utils.toArray(".--expand-word");
 
 expandWordArr.forEach(el => {
     let width = gsap.getProperty(el, "width", "px");
-    console.log(el, width)
     // let expand_tl = gsap.timeline({
     //     scrollTrigger: {
     //         scrub: true,
