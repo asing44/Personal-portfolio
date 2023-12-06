@@ -716,14 +716,61 @@ function cursorMove(e) {
 }
 
 // ** ----------------------------------------
-// ** TEXT REVEAL EFFECT
+// ** TEXT EFFECTS
 // ** ----------------------------------------
+
+// * ---- Text highlight ----
 
 let textRevealArr = gsap.utils.toArray(".--text-reveal");
 
 textRevealArr.forEach(el => {
-    console.log(el.length);
+    let el_tl = gsap.timeline({
+        scrollTrigger: {
+            start: "center center",
+            end: "bottom bottom",
+            scrub: true,
+        }
+    });
+
+    charArr = Array.from($(el).text()).map(char => {
+        let charSpan = document.createElement('span');
+        $(charSpan).text(char)
+        return charSpan;
+    });
+
+    $(el).text('');
+
+    charArr.forEach(newSpan => el.appendChild(newSpan));
+
+    charArr.forEach(item => {
+        el_tl.to(item, {
+            onComplete: () => item.classList.add("--text-revealed"),
+            onReverseComplete: () => item.classList.remove("--text-revealed")
+        })
+    })
+    
 })
+
+// * ---- Text expand or contract ----
+
+let expandWordArr = gsap.utils.toArray(".--expand-word");
+
+expandWordArr.forEach(el => {
+    let width = gsap.getProperty(el, "width", "px");
+    console.log(el, width)
+    // let expand_tl = gsap.timeline({
+    //     scrollTrigger: {
+    //         scrub: true,
+    //         markers: true
+    //     }
+    // })
+    // expand_tl.to(el, {
+    //     scaleX: function() {
+    //         return (width * 1.05)
+    //     }
+    // })    
+})
+
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE

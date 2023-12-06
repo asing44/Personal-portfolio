@@ -32,7 +32,7 @@ body {
   margin: 0;
   padding: 0 1.6rem;
   background-color: #050B10;
-  color: #050B10;
+  color: #F3F5F7;
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   kerning: auto;
@@ -237,7 +237,6 @@ input, button, textarea, select {
   min-height: 76vh;
   width: 100%;
   padding: 1.6rem;
-  border-radius: 1rem;
   background: rgba(207, 223, 239, 0.05);
   border-radius: 0.75rem;
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
@@ -346,7 +345,6 @@ input, button, textarea, select {
   width: min-content;
   color: #A4A7AA;
   line-height: 1;
-  letter-spacing: 0.25rem;
 }
 .about-section-container .about-header-container .section-blurb {
   width: max-content;
@@ -378,8 +376,84 @@ input, button, textarea, select {
 .about-section-container .about-middle-container .about-blurb-wrapper .about-blurb {
   font-family: "Titillium Web", sans-serif;
   font-size: 3.16rem;
-  color: #8B8E91;
   line-height: 1.32;
+}
+.about-section-container .about-middle-container .about-blurb-wrapper .about-blurb span {
+  color: #737679;
+  transition: color 50ms ease-in-out;
+}
+.about-section-container .about-middle-container .about-blurb-wrapper .about-blurb span.--text-revealed {
+  color: #F3F5F7;
+}
+.about-section-container .about-stack-container {
+  width: 100%;
+  padding: 3rem 0;
+}
+.about-section-container .about-stack-container .about-stack-wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  row-gap: 1.6rem;
+}
+.about-section-container .about-stack-container .about-stack-wrapper h3.stack-blurb {
+  position: relative;
+  grid-area: 2/2;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.37rem;
+  perspective: 10vw;
+}
+.about-section-container .about-stack-container .about-stack-wrapper h3.stack-blurb::after {
+  content: "/ my stack";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 25%, #FFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(2px);
+  transform: rotateX(20deg) scaleY(-1);
+}
+.about-section-container .about-stack-container .about-stack-wrapper .stack-apps-top {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 5.25rem;
+  grid-area: 1/span 3;
+  mask-image: linear-gradient(transparent 20%, #000, transparent 95%);
+}
+.about-section-container .about-stack-container .about-stack-wrapper .stack-apps-middle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 5.25rem;
+  grid-area: 2/1/2/4;
+  border: 1px solid green;
+}
+.about-section-container .about-stack-container .about-stack-wrapper .stack-apps-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 5.25rem;
+  grid-area: 3/span 3;
+  border: 1px solid red;
+}
+.about-section-container .about-stack-container .about-stack-wrapper .stack-app-wrapper {
+  display: flex;
+  height: 100%;
+  max-width: 5.25rem;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
+  background: rgba(207, 223, 239, 0.05);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /*# sourceMappingURL=home.css.map */
