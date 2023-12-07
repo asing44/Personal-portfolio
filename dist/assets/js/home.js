@@ -204,35 +204,3 @@ headerName_tl.to('.last-name', {
 // ** ----------------------------------------
 
 // * ---- App stack ----
-
-// Top
-let topAppStack = gsap.utils.toArray('.top-stack-app');
-
-function horizontalLoop(containerClass, elementClass) {
-    const additionalX = { val: 0 };
-    let offset = 0;
-    let originalArr = gsap.utils.toArray(elementClass);
-    const container = document.querySelector(containerClass);
-    const sliderWidth = container.offsetWidth;
-
-    let el = gsap.utils.toArray(elementClass);
-
-    // Animation
-    el.forEach((item) => {
-        gsap.to(item, {
-            x: "-=" + Number(sliderWidth / 2),
-            duration: 30,
-            repeat: -1,
-            ease: "none",
-            modifiers: {
-                x: gsap.utils.unitize((x) => {
-                    offset += additionalX.val;
-                    x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
-                    return x;
-                })
-            }
-        });
-    });
-}
-
-horizontalLoop(".stack-apps-top", ".top-stack-app")

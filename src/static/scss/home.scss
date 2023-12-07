@@ -204,6 +204,7 @@
                 grid-area: 2 / 2;
                 justify-self: center;
                 align-self: center;
+                color: base.$gray-100;
                 font-size: base.$font-size_h4;
                 perspective: calc(base.$vw-100 * 10);
             
@@ -233,15 +234,21 @@
                 overflow: hidden;
                 -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
                 mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
+
             }
 
             .stack-apps-middle {
                 display: flex;
                 width: 100%;
-                justify-content: center;
-                column-gap: base.$external-105px;
+                justify-content: space-between;
                 grid-area: 2 / 1 / 2 / 4;
-                border: 1px solid green;
+                padding: 0 calc((base.$external-105px / 2) * 1.2);
+
+                .middle-left, .middle-right {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: base.$external-105px;
+                }
             }
 
             .stack-apps-bottom {
@@ -250,7 +257,9 @@
                 justify-content: center;
                 column-gap: base.$external-105px;
                 grid-area: 3 / span 3;
-                border: 1px solid red;
+                overflow: hidden;
+                -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
+                mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
             }
 
             .stack-app-wrapper {

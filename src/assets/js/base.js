@@ -6,10 +6,6 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
-gsap.config({
-    autoSleep: 60,
-});
-
 //* Smooth Scroll
 
 const lenis = new Lenis({
