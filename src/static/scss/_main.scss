@@ -208,7 +208,44 @@ input, button, textarea, select {
 // ?? ELEMENTS
 // ?? ----------------------------------------
 
-// * Divider
+// ** ----------------------------------------
+// ** ICONS
+// ** ----------------------------------------
+
+// * Accents
+.__corner  {
+    &_vertical {
+        &_small {
+            height: base.$internal-32px;
+            width: base.$internal-24px;
+            border: base.$border-width_132 solid base.$gray-50;
+            border: {
+                right-width: 0;
+                top-width: 0;
+            }
+        }
+        &_medium {
+
+        }
+        &_large {
+
+        }
+    }
+    &_horizontal {
+        &_small {
+            height: base.$internal-12px;
+            width: base.$internal-24px;
+            border: base.$border-width_132 solid base.$gray-200;
+            border: {
+                right-width: 0;
+                top-width: 0;
+            }
+        }
+    }
+}
+
+// * Arrows
+
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE

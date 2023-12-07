@@ -204,3 +204,31 @@ headerName_tl.to('.last-name', {
 // ** ----------------------------------------
 
 // * ---- App stack ----
+let appStackContainerArr = gsap.utils.toArray(".app-container");
+
+appStackContainerArr.forEach(container => {
+    let containerHover_tl = gsap.timeline({
+        paused: true,
+    });
+    let thisContainer = gsap.utils.selector(container);
+
+    containerHover_tl.set(thisContainer(".__arrow_diagonal_small"), {
+        x: 0,
+        y: 0
+    }).to(thisContainer(".__arrow_diagonal_small"), {
+        xPercent: 120,
+        yPercent: -120
+    }).set(thisContainer(".__arrow_diagonal_small"), {
+        xPercent: -240,
+        yPercent: 250
+    }).to(thisContainer(".__arrow_diagonal_small"), {
+        xPercent: 0,
+        yPercent: 0
+    });
+
+    $(container).hover(function(){
+        containerHover_tl.restart();
+    }, function(){
+        containerHover_tl.restart();
+    });
+})

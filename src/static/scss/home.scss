@@ -189,84 +189,49 @@
     }
 
     .about-stack-container {
+        display: flex;
         width: 100%;
-        padding: base.$external-60px 0;
+        flex-direction: column;
+        gap: base.$gap-60px;
+        padding: base.$external-60px base.$internal-32px;
 
-        .about-stack-wrapper {
-            display: grid;
-            height: 100%;
-            width: 100%;
-            grid: repeat(3, 1fr) / repeat(3, 1fr);
-            row-gap: base.$gap-32px;
+        .my-stack-wrapper {
+            display: flex;
+            gap: base.$gap-12px;
+            justify-self: flex-start;
 
             h3.stack-blurb {
                 position: relative;
-                grid-area: 2 / 2;
-                justify-self: center;
-                align-self: center;
-                color: base.$gray-100;
+                color: base.$gray-50;
                 font-size: base.$font-size_h4;
-                perspective: calc(base.$vw-100 * 10);
-            
-                &::after {
-                    content: "/ my stack";
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    opacity: base.$opacity_medium;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 25%, #FFF 100%);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    filter: blur(2px);
-                    transform: 
-                        rotateX(20deg)
-                        scaleY(-1);
-                }
             }
+        }
 
-            .stack-apps-top {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                column-gap: base.$external-105px;
-                grid-area: 1 / span 3;
-                overflow: hidden;
-                -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
-                mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
+        .app-stack-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            gap: base.$gap-60px;
+            padding: 0 base.$external-105px;
 
-            }
-
-            .stack-apps-middle {
+            .app-stack-top, .app-stack-bottom {
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
-                grid-area: 2 / 1 / 2 / 4;
-                padding: 0 calc((base.$external-105px / 2) * 1.2);
-
-                .middle-left, .middle-right {
-                    display: flex;
-                    justify-content: center;
-                    column-gap: base.$external-105px;
-                }
             }
+        }
 
-            .stack-apps-bottom {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                column-gap: base.$external-105px;
-                grid-area: 3 / span 3;
-                overflow: hidden;
-                -webkit-mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
-                mask-image: linear-gradient(transparent 20%, #000, transparent 80%);
-            }
+        .app-container {
+            display: flex;
+            width: base.$external-105px;
+            flex-direction: column;
+            gap: base.$gap-12px;
 
-            .stack-app-wrapper {
+            .app-wrapper {
                 display: flex;
-                height: 100%;
-                max-width: base.$external-105px;
-                width: fit-content;
+                position: relative;
+                height: base.$external-60px;
+                width: base.$external-105px;
                 justify-content: center;
                 align-items: center;
                 padding: base.$internal-12px base.$internal-32px;
@@ -275,6 +240,25 @@
                 box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
+
+                .arrow-wrapper {
+                    position: absolute;
+                    right: base.$internal-8px;
+                    top: base.$internal-8px;
+                    overflow: hidden;
+                }
+            }
+
+            .app-blurb-wrapper {
+                display: flex;
+                padding-left: base.$internal-12px;
+
+                .app-name {
+                    padding-left: base.$internal-4px;
+                    color: base.$gray-200;
+                    font-size: base.$font-size_body-small;
+                    white-space: nowrap;
+                }
             }
         }
     }
