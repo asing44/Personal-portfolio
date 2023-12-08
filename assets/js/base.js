@@ -30,11 +30,12 @@ window.addEventListener("resize", () => {
     viewportWidth = window.innerWidth;
 });
 
-gsap.to(window, {
-    duration: 1,
-    scrollTo: 0,
-    ease: "power3.out"
-});
+// Scroll to top on load
+// gsap.to(window, {
+//     duration: 1,
+//     scrollTo: 0,
+//     ease: "power3.out"
+// });
 
 // ?? ----------------------------------------
 // ?? HELPER FUNCTIONS
@@ -710,8 +711,12 @@ function cursorMove(e) {
     localStorage.setItem("cursorY", cursorY);
 }
 
+// ?? ----------------------------------------
+// ?? EFFECTS
+// ?? ----------------------------------------
+
 // ** ----------------------------------------
-// ** TEXT EFFECTS
+// ** TEXT
 // ** ----------------------------------------
 
 // * ---- Text highlight ----
@@ -765,6 +770,37 @@ expandWordArr.forEach(el => {
     // })    
 })
 
+// ** ----------------------------------------
+// ** BLINK
+// ** ----------------------------------------
+
+gsap.utils.toArray('.--blink').forEach(elem => {
+    let blink_anim = gsap.to(elem, {
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        keyframes: {
+            "0%": {opacity: "50%"},
+            "25%": {opacity: "100%"},
+            easeEach: "power2.inOut"
+        },
+    });
+
+    $(elem).hover(function() {
+        blink_anim.pause();
+    }, function() {
+        blink_anim.play();
+    });
+})
+
+// ** ----------------------------------------
+// ** DELAY LINK
+// ** ----------------------------------------
+
+// ! Needs changed
+$(".--delay-link").on("click", function(e) {
+    e.preventDefault();
+});
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE
@@ -825,31 +861,10 @@ $('.__cursor-change-inner').hover(function() {
 });
 
 // ** ----------------------------------------
-// ** BLINK
+// ** BUTTONS AND LINKS
 // ** ----------------------------------------
 
-gsap.utils.toArray('.--blink').forEach(elem => {
-    let blink_anim = gsap.to(elem, {
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        keyframes: {
-            "0%": {opacity: "50%"},
-            "25%": {opacity: "100%"},
-            easeEach: "power2.inOut"
-        },
-    });
 
-    $(elem).hover(function() {
-        blink_anim.pause();
-    }, function() {
-        blink_anim.play();
-    });
-})
-
-// ** ----------------------------------------
-// ** BUTTONS
-// ** ----------------------------------------
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE
