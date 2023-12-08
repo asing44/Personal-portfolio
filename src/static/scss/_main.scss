@@ -225,7 +225,13 @@ input, button, textarea, select {
             }
         }
         &_medium {
-
+            height: base.$external-45px;
+            width: base.$internal-32px;
+            border: base.$border-width_174 solid base.$gray-50;
+            border: {
+                right-width: 0;
+                top-width: 0;
+            }
         }
         &_large {
 
@@ -245,7 +251,22 @@ input, button, textarea, select {
 }
 
 // * Arrows
+.__arrow {
+    &_horizontal {
+        &_small {
+            height: base.$internal-12px;
+            width: base.$internal-32px;
+        }
+        &_medium {
+            height: base.$internal-24px;
+            width: base.$external-45px;
+        }
+    }
 
+    &_diagonal {
+
+    }
+}
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE
