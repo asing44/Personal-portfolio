@@ -670,7 +670,6 @@ gradient.initGradient('#gradient-canvas')
 
 const cursor = document.querySelector('.__cursor');
 const cursorBall = document.getElementsByClassName('__cursor-ball')[0];
-const cursorText = document.querySelector('.__cursor-text')
 const cursorOuter = document.querySelector('.__cursor-outer');
 const cursorOuterCircle = $('.__cursor-outer-circle');
 
@@ -816,9 +815,7 @@ cursorChangeInner_tl.set(cursor, {
     autoAlpha: 0
 }).to(cursorBall, {
     scale: 10
-}, 0).to(cursorText, {
-    opacity: 1
-}, '<50%')
+}, 0)
 
 $('.__cursor-change-inner').hover(function() {
     cursorText.innerHTML = this.dataset.cursorHover;

@@ -206,6 +206,7 @@ headerName_tl.to('.last-name', {
 // * ---- App stack ----
 let appStackContainerArr = gsap.utils.toArray(".app-container");
 
+// Arrow hover
 appStackContainerArr.forEach(container => {
     let containerHover_tl = gsap.timeline({
         paused: true,
@@ -231,4 +232,33 @@ appStackContainerArr.forEach(container => {
     }, function(){
         containerHover_tl.restart();
     });
+})
+
+let flicker_tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".app-stack-container",
+        start: "top 75%",
+    }
+});
+
+// Random flicker fade in
+appStackContainerArr.forEach(flickerContainer => {
+
+    let tl = gsap.timeline();
+    gsap.set(flickerContainer, {
+        opacity: 0
+    })
+    tl.to(flickerContainer, {
+        duration: 1.5,
+        delay: () => gsap.utils.random(0,0.5),
+        keyframes: {
+            "0%": {opacity: "0%"},
+            "25%": {opacity: "50%"},
+            "50%": {opacity: "20%"},
+            "75%": {opacity: "0%"},
+            "100%": {opacity: 1}
+        },
+        ease: "power2.in"
+    });
+    flicker_tl.add(tl, gsap.utils.random(0,1))
 })
