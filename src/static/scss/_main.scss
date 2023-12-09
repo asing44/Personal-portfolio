@@ -83,6 +83,14 @@ a, button {
     all: unset;
 }
 
+ul.-no-list, ol.-no-list {
+    all: unset;
+
+    li {
+        all: unset;
+    }
+}
+
 img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
@@ -255,6 +263,17 @@ input, button, textarea, select {
 
     &_diagonal {
 
+    }
+}
+
+.arrow-wrapper {
+    position: absolute;
+    right: base.$internal-8px;
+    top: base.$internal-8px;
+    overflow: hidden;
+
+    img, svg {
+        transition: initial !important;
     }
 }
 

@@ -192,6 +192,7 @@
                 align-items: center;
                 gap: base.$gap-12px;
                 align-self: flex-end;
+                padding-right: base.$internal-24px;
 
                 .link-corner {
                     transform: translateY(-1.5ch)
@@ -202,7 +203,7 @@
                     color: base.$gray-100;
                     font: {
                         family: base.$font-family-heading;
-                        size: base.$font-size_h5;
+                        size: base.$font-size_h6;
                         line-height: base.$font-lineHeight_100;
                     };
                     transition: 200ms ease-in-out;
@@ -312,11 +313,16 @@
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
 
-                .arrow-wrapper {
-                    position: absolute;
-                    right: base.$internal-8px;
-                    top: base.$internal-8px;
-                    overflow: hidden;
+                img {
+                    opacity: base.$opacity_medium;
+                    transition: 250ms ease-in-out;
+                }
+
+                &:hover {
+
+                    img {
+                        opacity: 100%;
+                    }
                 }
             }
 

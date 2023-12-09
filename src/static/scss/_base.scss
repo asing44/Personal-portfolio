@@ -229,6 +229,14 @@ $opacity_high: 85%;
     box-shadow: $x $y $spread $blur $c;
 }
 
+// Grayscale
+@mixin grayscale($amt) {
+    -webkit-filter: #{"grayscale(#{$amt})"};
+    -moz-filter: #{"grayscale(#{$amt})"};
+    filter:#{"grayscale(#{$amt})"};
+    transition: 250ms ease-in-out;
+}
+
 // Testing
 @mixin wireframe {
     border: 2px solid red;

@@ -172,8 +172,55 @@
             }
         }
 
-        .menu-contact-wrapper {
+        .menu-contact-container {
             display: flex;
+            flex-direction: column;
+            gap: base.$internal-24px;
+
+            .menu-socials-wrapper {
+                display: flex;
+                flex: 1;
+                justify-content: space-around;
+                align-items: center;
+
+                .social-wrapper {
+                    padding: base.$internal-8px;
+                    background: base.$background-blur_dark;
+                    border-radius: base.$border-radius_4px;
+                    box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+
+                    img {
+                        @include base.grayscale(100%);
+                    }
+
+                    .arrow-wrapper {
+                        right: 0;
+                        top: 0;
+                    }
+
+                    &:hover {
+
+                        img {
+                            @include base.grayscale(0);
+                        }
+                    }
+                }
+            }
+
+            .menu-email-wrapper {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: space-between;
+
+                .menu-contact-button {
+                    padding: base.$internal-4px base.$internal-8px;
+                    border-radius: base.$border-radius_2px;
+                    @include base.glass;
+                }
+            }
         }
     }
 
