@@ -85,6 +85,13 @@ a, button {
   all: unset;
 }
 
+ul.-no-list, ol.-no-list {
+  all: unset;
+}
+ul.-no-list li, ol.-no-list li {
+  all: unset;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -199,6 +206,16 @@ input, button, textarea, select {
   height: 1.2rem;
   width: 2.25rem;
 }
+.arrow-wrapper {
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  overflow: hidden;
+}
+.arrow-wrapper img, .arrow-wrapper svg {
+  transition: initial !important;
+}
+
 .__icon_X {
   font-family: "Orbitron", sans-serif;
 }
@@ -418,6 +435,7 @@ input, button, textarea, select {
   align-items: center;
   gap: 0.6rem;
   align-self: flex-end;
+  padding-right: 1.2rem;
 }
 .about-section-container .about-middle-container .about-blurb-wrapper .about-button .link-corner {
   transform: translateY(-1.5ch);
@@ -426,7 +444,7 @@ input, button, textarea, select {
   position: relative;
   color: #BEC0C3;
   font-family: "Titillium Web", sans-serif;
-  font-size: 1.78rem;
+  font-size: 1.3rem;
   font-line-height: 1;
   transition: 200ms ease-in-out;
   overflow: hidden;
@@ -520,11 +538,12 @@ input, button, textarea, select {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.about-section-container .about-stack-container .app-container .app-wrapper .arrow-wrapper {
-  position: absolute;
-  right: 0.4rem;
-  top: 0.4rem;
-  overflow: hidden;
+.about-section-container .about-stack-container .app-container .app-wrapper img {
+  opacity: 50%;
+  transition: 250ms ease-in-out;
+}
+.about-section-container .about-stack-container .app-container .app-wrapper:hover img {
+  opacity: 100%;
 }
 .about-section-container .about-stack-container .app-container .app-blurb-wrapper {
   display: flex;
