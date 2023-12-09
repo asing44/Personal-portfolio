@@ -17,6 +17,7 @@
 
 * {
   margin: 0;
+  scrollbar-width: none !important;
 }
 
 html {
@@ -123,7 +124,7 @@ input, button, textarea, select {
   left: -7px;
   pointer-events: none;
   mix-blend-mode: exclusion;
-  z-index: 100;
+  z-index: 500;
 }
 .__cursor .__cursor-ball {
   fill: #FFC857;
@@ -136,7 +137,7 @@ input, button, textarea, select {
   left: 0;
   pointer-events: none;
   mix-blend-mode: exclusion;
-  z-index: 99;
+  z-index: 499;
 }
 .__cursor-outer circle {
   fill: transparent;
@@ -355,7 +356,6 @@ input, button, textarea, select {
 }
 
 .about-section-container {
-  min-height: 100vh;
   width: 100%;
 }
 .about-section-container .about-header-container {
@@ -374,7 +374,7 @@ input, button, textarea, select {
   display: inline-block;
   position: relative;
   width: min-content;
-  color: #A4A7AA;
+  color: #BEC0C3;
   line-height: 1;
 }
 .about-section-container .about-header-container .section-blurb {
@@ -540,6 +540,36 @@ input, button, textarea, select {
   color: #A4A7AA;
   font-size: 0.75rem;
   white-space: nowrap;
+}
+
+.work-header-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.work-header-container .section-number-wrapper {
+  width: max-content;
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  color: #8B8E91;
+}
+.work-header-container .section-title {
+  display: inline-block;
+  position: relative;
+  width: min-content;
+  color: #BEC0C3;
+  line-height: 1;
+}
+.work-header-container .section-blurb {
+  width: max-content;
+  margin-bottom: 0.4rem;
+  color: #A4A7AA;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 130%;
 }
 
 /*# sourceMappingURL=home.css.map */

@@ -15,6 +15,7 @@
 
 * {
     margin: 0;
+    scrollbar-width: none !important;
 }
 
 html {
@@ -131,7 +132,7 @@ input, button, textarea, select {
     left: -7px;
     pointer-events: none;
     mix-blend-mode: exclusion;
-    z-index: 100;
+    z-index: 500;
 
     .__cursor-ball {
         fill: base.$primary-900;
@@ -145,7 +146,7 @@ input, button, textarea, select {
     left: 0;
     pointer-events: none;
     mix-blend-mode: exclusion;
-    z-index: 99;
+    z-index: 499;
 
     circle {
         fill: transparent;

@@ -133,6 +133,7 @@ $error-50: #E5BDB4;
 $error-25: #F2DED9;
 // Blur
 $background-blur_dark: rgba(207, 223, 239, 0.05);
+$background-blur_darker: rgba(5, 11, 16, 0.5);
 // Overlay
 // $overlay: transparentize($gray-dark, 0.5);
 // Box shadow
@@ -201,28 +202,25 @@ $opacity_high: 85%;
     line-height: 130%;
 }
 
-// * Title blocks
-// @mixin title-font {
-//     font-family: $font-family-display;
-//     font-size: $font-size5;
-//     font-weight: $font-weight_bold;
-//     letter-spacing: $font-spacing-increased;
-// }
+// Title blocks
+@mixin displayFontSet {
+    font-family: $font-family-display;
+    font-size: $font-size_h1;
+    font-weight: $font-weight_bold;
+    letter-spacing: $font-spacing_5;
+}
 
-// * Links
-// @mixin link-style($type) {
-//     @if $type == 1 {
-//         color: $background-light;
-//         text-align: center;
-//         font-family: $font-family-body;
-//         font-size: $font-size0;
-//         font-style: normal;
-//         font-weight: $font-weight_medium;
-//     }
-// }
+// ---- Effects ----
 
-// ** EFFECTS
+// Glass
+@mixin glass() {
+    background: $background-blur_dark;
+    box-shadow: 0 4px 30px transparentize($dark, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
+// Box shadow
 @mixin box-shadow($x, $y, $spread, $blur, $c) {
     -webkit-box-shadow: $x $y $spread $blur $c;
     -moz-box-shadow: $x $y $spread $blur $c;
@@ -230,8 +228,7 @@ $opacity_high: 85%;
     box-shadow: $x $y $spread $blur $c;
 }
 
-// !! TESTING
-
+// Testing
 @mixin wireframe {
     border: 2px solid red;
 }

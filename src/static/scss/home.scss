@@ -119,7 +119,6 @@
 // ** ----------------------------------------
 
 .about-section-container {
-    min-height: 100vh;
     width: 100%;
 
     .about-header-container {
@@ -139,7 +138,7 @@
             display: inline-block;
             position: relative;
             width: min-content;
-            color: base.$gray-200;
+            color: base.$gray-100;
             line-height: 1;
         }
 
@@ -333,5 +332,38 @@
                 }
             }
         }
+    }
+}
+
+// ** ----------------------------------------
+// ** WORK
+// ** ----------------------------------------
+
+.work-header-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    gap: base.$gap-12px;
+
+    .section-number-wrapper {
+        width: max-content;
+        align-self: flex-start;
+        margin-top: base.$internal-8px;;
+        color: base.$gray-300;
+    }
+
+    .section-title {
+        display: inline-block;
+        position: relative;
+        width: min-content;
+        color: base.$gray-100;
+        line-height: 1;
+    }
+
+    .section-blurb {
+        width: max-content;
+        margin-bottom: base.$internal-8px;
+        color: base.$gray-200;
+        @include base.baseFontSet;
     }
 }

@@ -108,3 +108,91 @@
         }
     }
 }
+
+.expanded-menu-container {
+    display: flex;
+    position: fixed;
+    height: 100dvh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    padding: base.$internal-24px base.$padding-global-rl;
+    overflow: hidden;
+    z-index: 100;
+
+    .menu-container {
+        display: flex;
+        position: relative;
+        min-width: 20vw;
+        flex-direction: column;
+        padding: base.$internal-24px base.$internal-12px base.$internal-12px base.$internal-12px;
+        gap: base.$gap-24px;
+        border-radius: base.$border-radius_100;
+        @include base.glass;
+        z-index: 100;
+
+        .menu-close-wrapper {
+            display: flex;
+            
+        }
+
+        .menu-page-links-wrapper {
+            display: flex;
+        }
+
+        .menu-contact-wrapper {
+            display: flex;
+        }
+    }
+
+    .menu-selection-container {
+        display: grid;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        place-content: center;
+        top: 0;
+        left: 0;
+        opacity: 0%;
+
+        .menu-selection-wrapper {
+            display: flex;
+
+            .menu-selection {
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: base.$border-width_132 base.$gray-200;
+                @include base.displayFontSet;
+            }
+
+            .menu-selection-cursor {
+                color: base.$gray-200;
+                opacity: 0;
+                -webkit-text-fill-color: initial;
+                -webkit-text-stroke: initial;
+                @include base.displayFontSet;
+            }
+        }
+    }
+
+    .menu-background-wrapper {
+        display: grid;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        place-content: center;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        #menu-background {
+            transform: scale(0);
+
+            rect {
+                fill: base.$background-blur_darker;
+                @include base.glass;
+            }
+        }
+    }
+}
