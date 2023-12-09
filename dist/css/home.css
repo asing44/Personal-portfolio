@@ -142,23 +142,7 @@ input, button, textarea, select {
 .__cursor-outer circle {
   fill: transparent;
   stroke: #FFC857;
-  stroke-width: 2px;
-}
-
-.-contain {
-  min-height: 100vh;
-  width: 100%;
-}
-
-.-wrap, .-wrap-center {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.-wrap-center {
-  display: grid;
-  place-content: center;
+  stroke-width: 1px;
 }
 
 .__spacer {
@@ -167,6 +151,13 @@ input, button, textarea, select {
 }
 .__spacer_regular {
   height: 4rem;
+}
+
+.__divider_small {
+  height: 1.32px;
+  width: 100%;
+  background-color: #5C5F62;
+  opacity: 50%;
 }
 
 .-inactive {
@@ -208,6 +199,10 @@ input, button, textarea, select {
   height: 1.2rem;
   width: 2.25rem;
 }
+.__icon_X {
+  font-family: "Orbitron", sans-serif;
+}
+
 .--parallex-img {
   aspect-ratio: 1/1;
 }

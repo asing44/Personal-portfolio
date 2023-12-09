@@ -151,7 +151,7 @@ input, button, textarea, select {
     circle {
         fill: transparent;
         stroke: base.$primary-900;
-        stroke-width: 2px;
+        stroke-width: 1px;
     }
 }
 
@@ -159,28 +159,7 @@ input, button, textarea, select {
 // ?? GLOBAL CLASSES
 // ?? ----------------------------------------
 
-// * ---- Containers and wrappers ----
-
-.-contain {
-    min-height: 100vh;
-    width: 100%;
-}
-
-.-wrap {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.-wrap-center {
-    display: grid;
-    place-content: center;
-    @extend .-wrap;
-}
-
-// * --------------------------------
-
-// * ---- Spacers ----
+// * ---- Spacers and dividers ----
 
 .__spacer {
     width: 100%;
@@ -190,7 +169,17 @@ input, button, textarea, select {
     }
 }
 
-// * --------------------------------
+.__divider {
+
+    &_small {
+        height: 1.32px;
+        width: 100%;
+        background-color: base.$gray-500;
+        opacity: base.$opacity_medium;
+    }
+}
+
+// * ---- / ----
 
 // Display hide
 .-inactive {
@@ -213,7 +202,7 @@ input, button, textarea, select {
 // ** ICONS
 // ** ----------------------------------------
 
-// * Accents
+// Accents
 .__corner  {
     &_vertical {
         &_small {
@@ -251,7 +240,7 @@ input, button, textarea, select {
     }
 }
 
-// * Arrows
+// Arrows
 .__arrow {
     &_horizontal {
         &_small {
@@ -267,6 +256,11 @@ input, button, textarea, select {
     &_diagonal {
 
     }
+}
+
+// Close 'X'
+.__icon_X {
+    font-family: base.$font-family-display;
 }
 
 // ?? ----------------------------------------

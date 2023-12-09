@@ -26,13 +26,17 @@ Features:
     let onChange = config.onChange,
         lastIndex = 0,
         tl = gsap.timeline({
-            repeat: config.repeat, onUpdate: onChange && function () {
+            repeat: config.repeat, 
+            onUpdate: onChange && function () {
                 let i = tl.closestIndex()
                 if (lastIndex !== i) {
                     lastIndex = i;
                     onChange(items[i], i);
                 }
-            }, paused: config.paused, defaults: { ease: "none" }, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+            }, 
+            paused: config.paused, 
+            defaults: { ease: "none" }, 
+            onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
         }),
         length = items.length,
         startY = items[0].offsetTop,
@@ -175,7 +179,7 @@ for (let i = 0; i <= (Math.floor(arrowContainer.getBoundingClientRect().height /
 }
 
 let landingArrows = document.getElementsByClassName('header-arrow');
-verticalLoop(landingArrows, {reversed: true, speed: 0.25 });
+verticalLoop(landingArrows, {reversed: true, repeat: true, speed: 0.25 });
 
 // * ---- Header name ----
 
@@ -204,6 +208,7 @@ headerName_tl.to('.last-name', {
 // ** ----------------------------------------
 
 // * ---- App stack ----
+
 let appStackContainerArr = gsap.utils.toArray(".app-container");
 
 // Arrow hover
@@ -234,7 +239,8 @@ appStackContainerArr.forEach(container => {
     });
 })
 
-let flicker_tl = gsap.timeline({
+// Flicker timeline
+let randomFlicker_tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".app-stack-container",
         start: "top 75%",
@@ -242,13 +248,13 @@ let flicker_tl = gsap.timeline({
 });
 
 // Random flicker fade in
-appStackContainerArr.forEach(flickerContainer => {
+appStackContainerArr.forEach(flickerItem => {
 
     let tl = gsap.timeline();
-    gsap.set(flickerContainer, {
+    gsap.set(flickerItem, {
         opacity: 0
     })
-    tl.to(flickerContainer, {
+    tl.to(flickerItem, {
         duration: 1.5,
         delay: () => gsap.utils.random(0,0.5),
         keyframes: {
@@ -260,5 +266,5 @@ appStackContainerArr.forEach(flickerContainer => {
         },
         ease: "power2.in"
     });
-    flicker_tl.add(tl, gsap.utils.random(0,1))
+    randomFlicker_tl.add(tl, gsap.utils.random(0,1))
 })

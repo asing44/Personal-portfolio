@@ -671,16 +671,6 @@ const cursorOuterCircle = $('.__cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
-
-// Expand the outer cursor on hover
-$('.--cursor-expand-outer').on('mouseenter', function(){
-    gsap.to(cursor, {scale: 0});
-    gsap.to(cursorOuter, {scale: 2});
-}).on('mouseleave', function(){
-    gsap.to(cursor, {scale: 1});
-    gsap.to(cursorOuter, {scale: 1});
-});
-
 // Track cursor movement
 function cursorMove(e) {
 
@@ -703,6 +693,25 @@ function cursorMove(e) {
     localStorage.setItem("cursorX", cursorX);
     localStorage.setItem("cursorY", cursorY);
 }
+
+// Cursor hover timeline
+let cursorChangeInner_tl = gsap.timeline({
+    paused: true,
+    onReverseComplete: function() {
+        cursorText.innerHTML = '';
+    }
+});
+
+// Expand the outer cursor on hover
+$('.--cursor-expand-outer').on('mouseenter', function(){
+    gsap.to(cursor, {scale: 0});
+    gsap.to(cursorOuter, {scale: 2, opacity: 0.5});
+    gsap.to(cursorOuterCircle, {strokeWidth: 0.5})
+}).on('mouseleave', function(){
+    gsap.to(cursor, {scale: 1});
+    gsap.to(cursorOuter, {scale: 1, opacity: 1});
+    gsap.to(cursorOuterCircle, {strokeWidth: 1})
+});
 
 // ?? ----------------------------------------
 // ?? EFFECTS
@@ -826,7 +835,7 @@ const menuSelection = $(".menu-selection");
 const menuBackgroundSVGContainer = $("#menu-background");
 const menuBackgroundSVG = $("#menu-background rect");
 
-// Hover animation
+// Menu icon hover animation
 let menuHover_tl = gsap.timeline({
     defaults: {
         duration: 0.5
@@ -845,7 +854,6 @@ headerMenuIcon.hover(function() {
     menuHover_tl.reverse()
 })
 
-// Activate menu
 let currentLoc = "HOME"
 
 // Position menu off screen to start
@@ -868,7 +876,7 @@ function menuBackground_anim() {
     tl.to(menuBackgroundSVGContainer, {
         duration: 1,
         keyframes: {
-            "25%": {scaleX: 1, scaleY: 1},
+            "25%": {scaleX: 1, scaleY: 1, opacity: 1},
             "100%": {scaleX: 4, scaleY: 4, skewX: 15, ease: "sine.out"}
         }
     }).to(menuBackgroundSVGContainer, {
@@ -894,6 +902,7 @@ function menuSelection_anim() {
     return tl;
 }
 
+// Main menu content animation
 function menuContent_anim() {
     tl = gsap.timeline();
 
@@ -915,38 +924,10 @@ headerMenuIcon.on("click", function() {
     expandedMenu_tl.timeScale(1).play()
 });
 
-// ! Temporary close
-$("#temp-close").on("click", function() {
-    expandedMenu_tl.timeScale(2).reverse()
+// Close menu
+$(".menu-close-wrapper").on("click", function() {
+    expandedMenu_tl.timeScale(1.5).reverse()
 })
-
-// ** ----------------------------------------
-// ** CURSOR
-// ** ----------------------------------------
-
-// Hover
-let cursorChangeInner_tl = gsap.timeline({
-    paused: true,
-    onReverseComplete: function() {
-        cursorText.innerHTML = '';
-    }
-});
-
-cursorChangeInner_tl.set(cursor, {
-    mixBlendMode: "normal"
-}).to(cursorOuter, {
-    scale: 0,
-    autoAlpha: 0
-}).to(cursorBall, {
-    scale: 10
-}, 0)
-
-$('.__cursor-change-inner').hover(function() {
-    cursorText.innerHTML = this.dataset.cursorHover;
-    cursorChangeInner_tl.play();
-}, function() {
-    cursorChangeInner_tl.reverse();
-});
 
 // ** ----------------------------------------
 // ** BUTTONS AND LINKS
