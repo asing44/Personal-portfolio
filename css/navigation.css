@@ -101,4 +101,120 @@
   stroke: #A4A7AA;
 }
 
+.expanded-menu-container {
+  display: flex;
+  position: fixed;
+  height: 100dvh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 0;
+  left: 0;
+  padding: 1.2rem 1.6rem;
+  overflow: hidden;
+  z-index: 100;
+}
+.expanded-menu-container .menu-container {
+  display: flex;
+  position: relative;
+  min-width: 20vw;
+  flex-direction: column;
+  padding: 1.6rem 1.2rem 0.6rem 1.2rem;
+  gap: 1.2rem;
+  border-radius: 1rem;
+  background: rgba(207, 223, 239, 0.05);
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.expanded-menu-container .menu-container .menu-close-wrapper {
+  display: flex;
+  position: relative;
+  padding: 0 0.4rem 0.6rem 0.4rem;
+}
+.expanded-menu-container .menu-container .menu-close-wrapper .__divider_small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.expanded-menu-container .menu-container .menu-page-links-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 0 1.6rem 0.6rem;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper {
+  display: flex;
+  gap: 0.4rem;
+  flex: 1;
+  color: #D8DADD;
+  font-size: 1.78rem;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-number {
+  color: #8B8E91;
+  font-size: 0.75rem;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .__divider_small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.expanded-menu-container .menu-container .menu-contact-wrapper {
+  display: flex;
+}
+.expanded-menu-container .menu-selection-container {
+  display: grid;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  top: 0;
+  left: 0;
+  opacity: 0%;
+}
+.expanded-menu-container .menu-selection-container .menu-selection-wrapper {
+  display: flex;
+}
+.expanded-menu-container .menu-selection-container .menu-selection-wrapper .menu-selection {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.32px #A4A7AA;
+  font-family: "Orbitron", sans-serif;
+  font-size: 5.61rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+.expanded-menu-container .menu-selection-container .menu-selection-wrapper .menu-selection-cursor {
+  color: #A4A7AA;
+  opacity: 0;
+  -webkit-text-fill-color: initial;
+  -webkit-text-stroke: initial;
+  font-family: "Orbitron", sans-serif;
+  font-size: 5.61rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+.expanded-menu-container .menu-background-wrapper {
+  display: grid;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.expanded-menu-container .menu-background-wrapper #menu-background {
+  transform: scale(0);
+  opacity: 0;
+}
+.expanded-menu-container .menu-background-wrapper #menu-background rect {
+  fill: rgba(5, 11, 16, 0.5);
+  background: rgba(207, 223, 239, 0.05);
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 /*# sourceMappingURL=navigation.css.map */

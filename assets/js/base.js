@@ -2,12 +2,10 @@
 // ?? INIT AND SETUP
 // ?? ----------------------------------------
 
-// * GSAP
-
+// GSAP
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
-//* Smooth Scroll
-
+// Smooth scroll
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
@@ -30,7 +28,7 @@ window.addEventListener("resize", () => {
     viewportWidth = window.innerWidth;
 });
 
-// Scroll to top on load
+// !Scroll to top on load
 // gsap.to(window, {
 //     duration: 1,
 //     scrollTo: 0,
@@ -41,8 +39,7 @@ window.addEventListener("resize", () => {
 // ?? HELPER FUNCTIONS
 // ?? ----------------------------------------
 
-// * INFINITE HORIZONTAL LOOPING
-
+// Infinite horizontal looping
 /*
 This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
 
@@ -115,8 +112,7 @@ if (config.reversed) {
     return tl;
 }
 
-// * DELAY LINKS
-
+// Delay links
 var pageChangeHref = '';
 
 function goToLink() {
@@ -126,8 +122,7 @@ function goToLink() {
     });
 };
 
-// * GET CURSOR POSITION
-
+// Get cursor position
 function getCursor(e) {
     var rect = e.target.getBoundingClientRect();
     return {
@@ -676,19 +671,7 @@ const cursorOuterCircle = $('.__cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
-
-// * EXPAND CURSOR OUTER
-
-$('.--cursor-expand-outer').on('mouseenter', function(){
-    gsap.to(cursor, {scale: 0});
-    gsap.to(cursorOuter, {scale: 2});
-}).on('mouseleave', function(){
-    gsap.to(cursor, {scale: 1});
-    gsap.to(cursorOuter, {scale: 1});
-});
-
-// * ---- Track cursor movement ----
-
+// Track cursor movement
 function cursorMove(e) {
 
     let tl = gsap.timeline({
@@ -711,6 +694,25 @@ function cursorMove(e) {
     localStorage.setItem("cursorY", cursorY);
 }
 
+// Cursor hover timeline
+let cursorChangeInner_tl = gsap.timeline({
+    paused: true,
+    onReverseComplete: function() {
+        cursorText.innerHTML = '';
+    }
+});
+
+// Expand the outer cursor on hover
+$('.--cursor-expand-outer').on('mouseenter', function(){
+    gsap.to(cursor, {scale: 0});
+    gsap.to(cursorOuter, {scale: 2, opacity: 0.5});
+    gsap.to(cursorOuterCircle, {strokeWidth: 0.5})
+}).on('mouseleave', function(){
+    gsap.to(cursor, {scale: 1});
+    gsap.to(cursorOuter, {scale: 1, opacity: 1});
+    gsap.to(cursorOuterCircle, {strokeWidth: 1})
+});
+
 // ?? ----------------------------------------
 // ?? EFFECTS
 // ?? ----------------------------------------
@@ -719,8 +721,7 @@ function cursorMove(e) {
 // ** TEXT
 // ** ----------------------------------------
 
-// * ---- Text highlight ----
-
+// Text reveal animation
 let textRevealArr = gsap.utils.toArray(".--text-reveal");
 
 textRevealArr.forEach(el => {
@@ -751,8 +752,7 @@ textRevealArr.forEach(el => {
     
 })
 
-// * ---- Text expand or contract ----
-
+// Text expand
 let expandWordArr = gsap.utils.toArray(".--expand-word");
 
 expandWordArr.forEach(el => {
@@ -774,6 +774,7 @@ expandWordArr.forEach(el => {
 // ** BLINK
 // ** ----------------------------------------
 
+// Regular blink
 gsap.utils.toArray('.--blink').forEach(elem => {
     let blink_anim = gsap.to(elem, {
         duration: 2,
@@ -783,7 +784,7 @@ gsap.utils.toArray('.--blink').forEach(elem => {
             "0%": {opacity: "50%"},
             "25%": {opacity: "100%"},
             easeEach: "power2.inOut"
-        },
+        }
     });
 
     $(elem).hover(function() {
@@ -791,6 +792,17 @@ gsap.utils.toArray('.--blink').forEach(elem => {
     }, function() {
         blink_anim.play();
     });
+})
+
+// Faster blink
+gsap.utils.toArray(".--blink-fast").forEach(item => {
+    gsap.to(item, {
+        duration: 0.75,
+        repeat: -1,
+        yoyo: true,
+        opacity: 1,
+        ease: "expo.inOut"
+    })
 })
 
 // ** ----------------------------------------
@@ -813,6 +825,17 @@ $(".--delay-link").on("click", function(e) {
 const headerMenuIcon = $('.header-menu-wrapper');
 const headerMenuIconSVG = $('.svg_menu-icon');
 
+const expandedMenuContainer = $(".expanded-menu-container");
+
+const menuContainer = $(".menu-container");
+
+const menuSelectionContainer = $(".menu-selection-container");
+const menuSelection = $(".menu-selection");
+
+const menuBackgroundSVGContainer = $("#menu-background");
+const menuBackgroundSVG = $("#menu-background rect");
+
+// Menu icon hover animation
 let menuHover_tl = gsap.timeline({
     defaults: {
         duration: 0.5
@@ -831,40 +854,84 @@ headerMenuIcon.hover(function() {
     menuHover_tl.reverse()
 })
 
-// ** ----------------------------------------
-// ** CURSOR
-// ** ----------------------------------------
+let currentLoc = "HOME"
 
-// * CHANGE INNER
+// Position menu off screen to start
+gsap.set(menuContainer, {
+    xPercent: 120
+})
 
-let cursorChangeInner_tl = gsap.timeline({
+// Parent timeline for menu animation
+let expandedMenu_tl = gsap.timeline({
     paused: true,
-    onReverseComplete: function() {
-        cursorText.innerHTML = '';
+    onReverseComplete: () => $(expandedMenuContainer).toggleClass("-inactive")
+}).add(menuBackground_anim()).add(menuSelection_anim(), "<75%").add(menuContent_anim(), "<")
+
+// Background darkening animation
+function menuBackground_anim() {
+    let tl = gsap.timeline({
+        onComplete: () => {$(body).toggleClass("-lockScroll")}
+    });
+
+    tl.to(menuBackgroundSVGContainer, {
+        duration: 1,
+        keyframes: {
+            "25%": {scaleX: 1, scaleY: 1, opacity: 1},
+            "100%": {scaleX: 4, scaleY: 4, skewX: 15, ease: "sine.out"}
+        }
+    }).to(menuBackgroundSVGContainer, {
+        duration: 1,
+        scale: 40,
+        skewX: 0
+    })
+
+    return tl
+}
+
+// Menu slection container animation
+function menuSelection_anim() {
+    let tl = gsap.timeline();
+
+    tl.to(menuSelectionContainer, {
+        opacity: 1,
+        ease: "sine.inOut"
+    }).to(menuSelection, {
+        duration: 1,
+        text: currentLoc
+    })
+    return tl;
+}
+
+// Main menu content animation
+function menuContent_anim() {
+    tl = gsap.timeline();
+
+    tl.to(menuContainer, {
+        xPercent: 0
+    });
+
+    return tl
+}
+
+// Menu click event listener
+headerMenuIcon.on("click", function() {
+    $(expandedMenuContainer).toggleClass("-inactive");
+    currentLoc = window.location.href;
+    if (currentLoc.match(/[\w-]+(?=\.html)/g) == null) {
+    } else {
+        menuSelection.innerHTML = currentLoc.match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " ").toUpperCase();
     }
+    expandedMenu_tl.timeScale(1).play()
 });
 
-cursorChangeInner_tl.set(cursor, {
-    mixBlendMode: "normal"
-}).to(cursorOuter, {
-    scale: 0,
-    autoAlpha: 0
-}).to(cursorBall, {
-    scale: 10
-}, 0)
-
-$('.__cursor-change-inner').hover(function() {
-    cursorText.innerHTML = this.dataset.cursorHover;
-    cursorChangeInner_tl.play();
-}, function() {
-    cursorChangeInner_tl.reverse();
-});
+// Close menu
+$(".menu-close-wrapper").on("click", function() {
+    expandedMenu_tl.timeScale(1.5).reverse()
+})
 
 // ** ----------------------------------------
 // ** BUTTONS AND LINKS
 // ** ----------------------------------------
-
-
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE

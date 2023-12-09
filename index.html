@@ -6,7 +6,7 @@
     <meta name="description" content="A personal portfolio website showcasing design and development skills.">
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-<link rel="icon" type="image/x-icon" href="/Personal-portfolio/assets/svg/logos/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/Personal-portfolio/assets/png/favicon_2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Metrophobic&family=Orbitron:wght@400;500;700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
@@ -74,12 +74,44 @@
             </svg>
         </button>
     </div>
+    <div class="expanded-menu-container -inactive">
+        <div class="menu-container">
+            <div class="menu-close-wrapper --cursor-expand-outer">
+                <span class="__icon_X">X</span>&nbsp;<div class="menu-close-text">close</div>
+                <div class="__divider_small"></div>
+            </div>
+            <ul class="menu-page-links-container">
+                <li class="menu-page-link-wrapper">
+                    <div class="menu-number">[01] /</div>
+                    <a href="index.html" class="menu-page-link">Home</a>
+                </li>
+                <li class="menu-page-link-wrapper">
+                    <div class="menu-number">[02] /</div>
+                    <a href="index.html" class="menu-page-link">About</a>
+                </li>
+                <li class="menu-page-link-wrapper">
+                    <div class="menu-number">[03] /</div>
+                    <a href="index.html" class="menu-page-link">Work</a>
+                </li>
+                <li class="menu-page-link-wrapper">
+                    <div class="menu-number">[04] /</div>
+                    <a href="index.html" class="menu-page-link">Contact</a>
+                </li>
+                <div class="__divider_small"></div>
+            </ul>
+            <div class="menu-contact-wrapper"></div>
+        </div>
+        <div class="menu-selection-container">
+            <div class="menu-selection-wrapper"><p class="menu-selection"></p><span class="menu-selection-cursor --blink-fast">|</span></div>
+        </div>
+        <div class="menu-background-wrapper">
+            <svg id="menu-background" width="132" height="324" viewBox="0 0 132 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="45" height="335" transform="matrix(1 0 -0.258819 0.965926 86.8522 0.207031)" fill="#D8DADD"></rect>
+            </svg>
+        </div>
+    </div>
 </nav>
-    <main> <!-- TODO:
-*  - Add favicon
-*  - Transfer css class attr to properties
--->
-<!-- ** Main -->
+    <main> <!-- ** Main -->
 <header class="landing-header">
     <div class="inner-container">
         <div class="top-container">
@@ -333,6 +365,13 @@
     </div>
 </section>
 <div class="__spacer_regular"></div>
+<section class="work-section-container">
+    <header class="work-header-container">
+        <p class="section-number-wrapper">[02] /</p>
+        <h2 class="section-title --expand-word">WORK</h2>
+        <h3 class="section-blurb">/ A preview of some of my work</h3>
+    </header>
+</section>
 <div id="under-dev-banner">
     <p class="text">Under development! Check back later for continual updates!</p>
 </div> </main>
