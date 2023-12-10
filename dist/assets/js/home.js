@@ -207,12 +207,8 @@ headerName_tl.to('.last-name', {
 // ** ABOUT
 // ** ----------------------------------------
 
-// * ---- App stack ----
-
-let appStackContainerArr = gsap.utils.toArray(".app-container");
-
-// Arrow hover
-appStackContainerArr.forEach(container => {
+// App stack arrow hover
+gsap.utils.toArray(".app-container").forEach(container => {
     let containerHover_tl = gsap.timeline({
         paused: true,
     });
@@ -239,32 +235,54 @@ appStackContainerArr.forEach(container => {
     });
 })
 
-// Flicker timeline
-let randomFlicker_tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".app-stack-container",
-        start: "top 75%",
+// ** ----------------------------------------
+// ** WORK
+// ** ----------------------------------------
+
+// Qualities hover animation
+const coreQualitiesContainerArr = gsap.utils.toArray(".quality-container");
+
+coreQualitiesContainerArr.forEach(el => {
+    let containerSelector = gsap.utils.selector(el);
+
+    let tl = gsap.timeline({
+        paused: true,
+        ease: "power1.inOut"
+    }).add(expandContainer_anim()).add(skew_anim()).add(showContent_anim(), "<50%");
+
+    function expandContainer_anim() {
+        let tl = gsap.timeline();
+
+        tl.to(el, {
+            flex: "3"
+        });
+
+        return tl;
     }
-});
 
-// Random flicker fade in
-appStackContainerArr.forEach(flickerItem => {
+    function skew_anim() {
+        let tl = gsap.to(containerSelector(".qualtiy-background"), {
+            skewX: "0deg"
+        });
 
-    let tl = gsap.timeline();
-    gsap.set(flickerItem, {
-        opacity: 0
-    })
-    tl.to(flickerItem, {
-        duration: 1.5,
-        delay: () => gsap.utils.random(0,0.5),
-        keyframes: {
-            "0%": {opacity: "0%"},
-            "25%": {opacity: "50%"},
-            "50%": {opacity: "20%"},
-            "75%": {opacity: "0%"},
-            "100%": {opacity: 1}
-        },
-        ease: "power2.in"
+        return tl;
+    };
+
+    function showContent_anim() {
+        let tl = gsap.to(containerSelector(".core-quality-blurb"), {
+            keyframes: [
+                {duration: 0.5, height: "auto", ease: "power1.inOut"},
+                {opacity: 1}
+            ],
+            ease: "power1.inOut"
+        });
+
+        return tl;
+    };
+
+    $(el).hover(function() {
+        tl.play()
+    }, function() {
+        tl.reverse()
     });
-    randomFlicker_tl.add(tl, gsap.utils.random(0,1))
-})
+});

@@ -270,7 +270,6 @@
         .my-stack-wrapper {
             display: flex;
             gap: base.$gap-12px;
-            justify-self: flex-start;
 
             h3.stack-blurb {
                 position: relative;
@@ -308,7 +307,7 @@
                 align-items: center;
                 padding: base.$internal-12px base.$internal-32px;
                 background: base.$background-blur_dark;
-                border-radius: base.$border-radius_75;
+                border-radius: base.$border-radius_4px;
                 box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
@@ -371,5 +370,108 @@
         margin-bottom: base.$internal-8px;
         color: base.$gray-200;
         @include base.baseFontSet;
+    }
+}
+
+.work-top-container {
+    width: 100%;
+    margin-top: base.$external-45px;
+
+    .section-blurb-wrapper {
+        display: flex;
+        gap: base.$gap-12px;
+        padding: base.$external-60px base.$internal-32px;
+        color: base.$gray-50;
+        font-size: base.$font-size_h4;
+    }
+
+    .work-top-content-container {
+        display: grid;
+        width: 100%;
+        grid-template: 100% / calc(base.$vw-57) 1fr;
+
+        .core-qualities-container {
+            display: flex;
+            gap: base.$gap-45px;
+            margin-left: base.$external-60px;
+
+            .quality-container {
+                display: flex;
+                position: relative;
+                height: base.$vh-25;
+                justify-content: center;
+                align-items: center;
+                flex: 1 1 base.$vh-14;
+                z-index: 1;
+
+                &:hover {
+
+                    .core-quality-container {
+
+                        .core-quality-wrapper {
+
+                            .core-quality {
+                                color: base.$gray-25;
+                            }
+
+                            .__divider_small {
+                                background-color: base.$gray-200;
+                            }
+                        }
+                    }
+                }
+
+                .core-quality-container {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    transition: base.$animation_speed_regular;
+                    z-index: 1;
+
+                    .core-quality-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        gap: base.$gap-4px;
+
+                        .core-quality {
+                            color: base.$gray-100;
+                            transition: base.$animation_speed_regular;
+                        }
+                    }
+
+                    .core-quality-blurb-wrapper {
+                        display: flex;
+                        margin-top: base.$internal-12px;
+                        padding: 0 base.$internal-12px;
+                        overflow: hidden;
+
+                        .core-quality-blurb {
+                            height: 0;
+                            color: base.$gray-50;
+                            font-size: base.$font-size_body-small;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .qualtiy-background {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: base.$border-radius_4px;
+                    transform: skewX(-15deg);
+                    transform-origin: bottom middle;
+                    z-index: -1;
+                    @include base.glass;
+                }
+            }
+        }
+
+        .quote-container {
+
+        }
     }
 }

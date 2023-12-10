@@ -741,31 +741,18 @@ textRevealArr.forEach(el => {
     
 })
 
-// ! Text expand
-let expandWordArr = gsap.utils.toArray(".--expand-word");
+// Text expand
+let expandWordArr = gsap.utils.toArray(".--text-expand");
 
 expandWordArr.forEach(el => {
-    let width = gsap.getProperty(el, "width", "px");
-    // let expand_tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         scrub: true,
-    //         markers: true
-    //     }
-    // })
-    // expand_tl.to(el, {
-    //     scaleX: function() {
-    //         return (width * 1.05)
-    //     }
-    // })    
-})
-
-// Text flicker
-let textFlickerArr = gsap.utils.toArray(".--text-flicker");
-
-textFlickerArr.forEach(el => {
-    // ? Maybe add in a separate, duplicate timeline that you can toggle elsewhere?
-    let tl = gsap.timeline({
-        paused: true
+    let el_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            start: "top center",
+            end: "150% center",
+            toggleActions: "play none reverse none",
+            scrub: true
+        }
     });
 
     charArr = Array.from($(el).text()).map(char => {
@@ -779,24 +766,58 @@ textFlickerArr.forEach(el => {
     charArr.forEach(newSpan => el.appendChild(newSpan));
 
     charArr.forEach(item => {
-        let randomTime = gsap.utils.random(0, 0.25);
-
-        tl.to(item, {
-            duration: 0.5,
-            keyframes: {
-                "0%": {opacity: 0},
-                "40%": {opacity: 0.5},
-                "70%": {opacity: 0},
-                "100%": {opacity: 1}
-            }
-        }, randomTime)
+        el_tl.to(item, {
+            duration: 0.25,
+            paddingRight: "0.312rem",
+            ease: "ease.inOut"
+        }, "<10%")
     })
+})
 
-    $(el).hover(function() {
-        tl.restart();
-    }, function() {
-        tl.restart();
+// Text flicker
+let textFlickerArr = gsap.utils.toArray(".--text-flicker-container");
+
+textFlickerArr.forEach(container => {
+
+    let elementSelector = gsap.utils.selector(container);
+
+    let tl = gsap.timeline({
+        paused: true
     });
+
+    gsap.utils.toArray(elementSelector(".--text-flicker")).forEach(el => {
+        // ? Maybe add in a separate, duplicate timeline that you can toggle elsewhere?
+
+        charArr = Array.from($(el).text()).map(char => {
+            let charSpan = document.createElement('span');
+            $(charSpan).text(char)
+            return charSpan;
+        });
+
+        $(el).text('');
+
+        charArr.forEach(newSpan => el.appendChild(newSpan));
+
+        charArr.forEach(item => {
+            let randomTime = gsap.utils.random(0, 0.25);
+
+            tl.to(item, {
+                duration: 0.5,
+                keyframes: {
+                    "0%": {opacity: 0},
+                    "40%": {opacity: 0.5},
+                    "70%": {opacity: 0},
+                    "100%": {opacity: 1}
+                }
+            }, randomTime)
+        })
+
+        $(container).hover(function() {
+            tl.restart();
+        }, function() {
+            tl.restart();
+        });
+    })
 });
 
 // ** ----------------------------------------
@@ -833,6 +854,46 @@ gsap.utils.toArray(".--blink-fast").forEach(item => {
         ease: "expo.inOut"
     })
 })
+
+// ** ----------------------------------------
+// ** FLICKER
+// ** ----------------------------------------
+
+let flickerContainer = gsap.utils.toArray(".--flicker-container");
+
+// Random flicker fade in
+flickerContainer.forEach(flickerContainer => {
+
+    let containerElement = gsap.utils.selector(flickerContainer);
+
+    // Flicker timeline
+    let randomFlicker_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: flickerContainer,
+            start: "top 75%",
+        }
+    });
+
+    gsap.utils.toArray(containerElement(".--flicker-element")).forEach(flickerItem => {
+        let tl = gsap.timeline();
+        gsap.set(flickerItem, {
+            opacity: 0
+        })
+        tl.to(flickerItem, {
+            duration: 1.5,
+            delay: () => gsap.utils.random(0,0.5),
+            keyframes: {
+                "0%": {opacity: "0%"},
+                "25%": {opacity: "50%"},
+                "50%": {opacity: "20%"},
+                "75%": {opacity: "0%"},
+                "100%": {opacity: 1}
+            },
+            ease: "power2.in"
+        });
+        randomFlicker_tl.add(tl, gsap.utils.random(0,1))
+    })
+});
 
 // ** ----------------------------------------
 // ** DELAY LINK

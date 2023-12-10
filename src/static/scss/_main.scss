@@ -184,6 +184,15 @@ input, button, textarea, select {
         width: 100%;
         background-color: base.$gray-500;
         opacity: base.$opacity_medium;
+        transition: base.$animation_speed_regular
+    }
+
+    &_medium {
+        height: 2px;
+        width: 100%;
+        background-color: base.$gray-500;
+        opacity: base.$opacity_medium;
+        transition: base.$animation_speed_regular
     }
 }
 
