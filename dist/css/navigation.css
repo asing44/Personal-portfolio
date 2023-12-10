@@ -126,7 +126,7 @@
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 100;
+  z-index: 101;
 }
 .expanded-menu-container .menu-container .menu-close-wrapper {
   display: flex;
@@ -219,6 +219,7 @@
   top: 0;
   left: 0;
   opacity: 0%;
+  z-index: 100;
 }
 .expanded-menu-container .menu-selection-container .menu-selection-wrapper {
   display: flex;

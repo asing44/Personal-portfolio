@@ -131,7 +131,7 @@
         gap: base.$gap-24px;
         border-radius: base.$border-radius_100;
         @include base.glass;
-        z-index: 100;
+        z-index: 101;
 
         .menu-close-wrapper {
             display: flex;
@@ -233,6 +233,7 @@
         top: 0;
         left: 0;
         opacity: 0%;
+        z-index: 100;
 
         .menu-selection-wrapper {
             display: flex;

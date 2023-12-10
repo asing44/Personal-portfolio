@@ -925,7 +925,7 @@ headerMenuIcon.on("click", function() {
 });
 
 // Close menu
-$(".menu-close-wrapper").on("click", function() {
+$(".menu-close-wrapper, .menu-selection-container").on("click", function() {
     expandedMenu_tl.timeScale(1.5).reverse()
 })
 
