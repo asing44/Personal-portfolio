@@ -49,14 +49,14 @@
 <link rel="stylesheet" href="/Personal-portfolio/css/navigation.css">
 
 <nav class="navigation-top-container">
-    <div class="header-cta-container --cursor-expand-outer">
+    <div class="header-cta-container --cursor-outer-hide">
         <div class="circle-wrapper">
             <div class="circle-static"></div>
             <div class="circle-animated"></div>
         </div>
-        <p class="cta">available to work</p>
+        <p class="cta --text-flicker">available to work</p>
     </div>
-    <div class="logo-wrapper --cursor-expand-outer">
+    <div class="logo-wrapper --cursor-outer-hide">
         <svg class="header-logo" width="627" height="411" viewBox="0 0 627 411" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M279.834 255.308L280.625 258.28H280.654L316.715 390.68H249.668L215.234 262.346C215.234 262.345 215.234 262.345 215.234 262.345C215.234 262.344 215.233 262.344 215.233 262.343C213.593 256.222 208.037 251.97 201.71 251.97H85.35C77.6209 251.97 71.35 258.241 71.35 265.97V384.68C71.35 387.991 68.6609 390.68 65.35 390.68H10C6.68914 390.68 4 387.991 4 384.68V26.01C4 22.6916 6.67766 20.0077 10.0041 20H212.65C215.362 20 217.741 21.8263 218.446 24.4623L279.834 255.308ZM71.34 188.47V192.47H75.34H191.58H196.81L195.44 187.422L166.95 82.4622L166.149 79.51H163.09H75.34H71.34V83.51V188.47Z" stroke="#D8DADD" stroke-width="8"></path>
             <path d="M554.298 20.0098H621.365L521.892 390.67H454.825L554.298 20.0098Z" stroke="#D8DADD" stroke-width="8"></path>
@@ -65,7 +65,7 @@
             <path class="--blink" d="M348.21 8.01953H342.074L340.483 13.9459L238.863 392.596L236.16 402.67H246.59H321.94H328.076L329.666 396.743L431.286 18.0931L433.99 8.01953H423.56H348.21Z" fill="#FFC857" stroke="#050B10" stroke-width="16"></path>
         </svg>
     </div>
-    <div class="header-menu-wrapper --cursor-expand-outer">
+    <div class="header-menu-wrapper --cursor-outer-hide">
         <button class="header-menu">
             <svg class="svg_menu-icon" width="33" height="18" viewBox="0 0 33 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="menu-line_1" d="M11.029 0.999268H31.9146" stroke="#F3F5F7" stroke-width="1.32" stroke-linecap="round"></path>
@@ -76,32 +76,46 @@
     </div>
     <div class="expanded-menu-container -inactive">
         <div class="menu-container">
-            <div class="menu-close-wrapper --cursor-expand-outer">
-                <span class="__icon_X">X</span>&nbsp;<div class="menu-close-text">close</div>
+            <div class="menu-close-wrapper --cursor-outer-hide">
+                <span class="__icon_X">X</span>&nbsp;<div class="menu-close-text --text-flicker">close</div>
                 <div class="__divider_small"></div>
             </div>
             <ul class="menu-page-links-container">
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[01] /</div>
-                    <a href="index.html" class="menu-page-link">Home</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Home</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[02] /</div>
-                    <a href="index.html" class="menu-page-link">About</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">About</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[03] /</div>
-                    <a href="index.html" class="menu-page-link">Work</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Work</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[04] /</div>
-                    <a href="index.html" class="menu-page-link">Contact</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Contact</a>
                 </li>
                 <div class="__divider_small"></div>
             </ul>
             <div class="menu-contact-container">
+                <div class="menu-email-container --cursor-outer-hide">
+                    <button class="menu-contact-copy-button">
+                        <svg class="__symbols_copy" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="__symbols_copy-path-1" fill-rule="evenodd" clip-rule="evenodd" d="M19.6372 7.63564C19.6372 5.82808 18.1719 4.36276 16.3643 4.36276H7.63664C5.82908 4.36276 4.36376 5.82808 4.36376 7.63564V20.7271C4.36376 22.5347 5.82908 24 7.63664 24H16.3643C18.1719 24 19.6372 22.5347 19.6372 20.7271V7.63564ZM17.4553 7.63564C17.4553 7.03312 16.9668 6.54468 16.3643 6.54468H7.63664C7.03412 6.54468 6.54568 7.03312 6.54568 7.63564V20.7271C6.54568 21.3297 7.03412 21.8181 7.63664 21.8181H16.3643C16.9668 21.8181 17.4553 21.3297 17.4553 20.7271V7.63564Z"></path>
+                            <path class="__symbols_copy-path-2" d="M3.27287 2.18192H14.1824C14.785 2.18192 15.2734 1.69347 15.2734 1.09096C15.2734 0.488443 14.785 0 14.1824 0H3.27287C1.46532 0 0 1.46532 0 3.27287V18.5463C0 19.1488 0.488443 19.6372 1.09096 19.6372C1.69347 19.6372 2.18191 19.1488 2.18191 18.5463V3.27287C2.18191 2.67036 2.67036 2.18192 3.27287 2.18192Z"></path>
+                        </svg>
+                    </button>
+                    <div class="menu-email-wrapper --arrow-hover-container">
+                        <a href="mailto:testemail@gmail.com" class="menu-email">myemail@domain.com</a>
+                        <div class="arrow-wrapper">
+                            <img src="assets/svg/icons/arrows/diagonal/__arrow_diagonal_small.svg" alt="" class="__arrow_diagonal_small">
+                        </div>
+                    </div>
+                </div>
                 <ul class="menu-socials-wrapper -no-list">
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://www.linkedin.com/in/adam-j-warsing-6b92691a0/" target="_blank">
                             <img src="assets/svg/icons/socials/Linkedin.svg" alt="Link to my LinkedIn page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -109,7 +123,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://github.com/asing44" target="_blank">
                             <img src="assets/svg/icons/socials/GitHub.svg" alt="Link to my GitHub page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -117,7 +131,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://www.instagram.com/_asing44/" target="_blank">
                             <img src="assets/svg/icons/socials/Instagram.svg" alt="Link to my Instagram page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -126,21 +140,6 @@
                         </a>
                     </li>
                 </ul>
-                <div class="menu-email-wrapper">
-                    <button class="menu-contact-button menu-copy-button-wrapper">
-                        <svg class="__symbols_copy" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="__symbols_copy-path-1" fill-rule="evenodd" clip-rule="evenodd" d="M12 4.66602C12 3.56145 11.1046 2.66602 9.99996 2.66602H4.66663C3.56206 2.66602 2.66663 3.56145 2.66663 4.66602V12.666C2.66663 13.7706 3.56206 14.666 4.66663 14.666H9.99996C11.1046 14.666 12 13.7706 12 12.666V4.66602ZM10.6666 4.66602C10.6666 4.29783 10.3682 3.99935 9.99996 3.99935H4.66663C4.29844 3.99935 3.99996 4.29783 3.99996 4.66602V12.666C3.99996 13.0342 4.29844 13.3327 4.66663 13.3327H9.99996C10.3682 13.3327 10.6666 13.0342 10.6666 12.666V4.66602Z" fill="#D8DADD"></path>
-                            <path class="__symbols_copy-path-2" d="M2 1.33333H8.66667C9.03487 1.33333 9.33333 1.03485 9.33333 0.666667C9.33333 0.29848 9.03487 0 8.66667 0H2C0.895433 0 0 0.895433 0 2V11.3333C0 11.7015 0.29848 12 0.666667 12C1.03485 12 1.33333 11.7015 1.33333 11.3333V2C1.33333 1.63181 1.63181 1.33333 2 1.33333Z" fill="#D8DADD"></path>
-                        </svg>
-                    </button>
-                    <button class="menu-contact-button menu-email-button-wrapper">
-                        <svg class="__symbols_email" width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="__symbols_email-path-1" d="M12.1776 0.775391H2.39721C1.62555 0.775391 1 1.40094 1 2.1726V9.15862C1 9.93028 1.62555 10.5558 2.39721 10.5558H12.1776C12.9493 10.5558 13.5749 9.93028 13.5749 9.15862V2.1726C13.5749 1.40094 12.9493 0.775391 12.1776 0.775391Z" stroke="#D8DADD" stroke-width="1.32" stroke-linecap="round"></path>
-                            <path class="__symbols_email-path-2" d="M1.46912 1.98929L5.9783 5.40867C6.7541 5.99696 7.82074 5.99696 8.59654 5.40867L13.1057 1.98926" stroke="#D8DADD" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                    </button>
-                    <p class="menu-email">myemail@domain.com</p>
-                </div>
             </div>
         </div>
         <div class="menu-selection-container">
@@ -190,14 +189,9 @@
         <div class="about-photo-wrapper"></div>
         <div class="about-blurb-wrapper">
             <p class="about-blurb --text-reveal">I work to create digital stories online from your creative ideas as a web developer and multimedia designer.</p>
-            <a href="." class="about-button --cursor-expand-outer --delay-link">
+            <a href="." class="about-button --cursor-outer-hide --delay-link">
                 <div class="link-corner __corner_vertical_medium"></div>
-                <p class="button-text">learn more</p>
-                <div class="__arrow_horizontal_medium">
-                    <svg class="button-hover-arrow " width="44" height="18" viewBox="0 0 44 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M43.0532 9.81317C43.5023 9.36407 43.5023 8.63593 43.0532 8.18683L35.7346 0.868272C35.2855 0.419169 34.5574 0.419169 34.1083 0.868272C33.6592 1.31738 33.6592 2.04551 34.1083 2.49462L40.6137 9L34.1083 15.5054C33.6592 15.9545 33.6592 16.6826 34.1083 17.1317C34.5574 17.5808 35.2855 17.5808 35.7346 17.1317L43.0532 9.81317ZM0 10.15H42.24V7.85H0V10.15Z" fill="#BEC0C3"></path>
-                        </svg>
-                </div>
+                <p class="button-text --text-flicker">learn more</p>
             </a>
         </div>
     </div>
@@ -208,7 +202,7 @@
         </header>
         <div class="app-stack-container">
             <div class="app-stack-top">
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank"><img src="assets/svg/icons/stack app/HTML.svg" alt="HTML icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -220,7 +214,7 @@
                         <p class="app-name">HTML</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img src="assets/svg/icons/stack app/CSS.svg" alt="CSS icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -232,7 +226,7 @@
                         <p class="app-name">CSS</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.javascript.com/" target="_blank"><img src="assets/svg/icons/stack app/JavaScript.svg" alt="JavaScript icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -244,7 +238,7 @@
                         <p class="app-name">JavaScript</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://git-scm.com/" target="_blank"><img src="assets/svg/icons/stack app/Git.svg" alt="Git icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -256,7 +250,7 @@
                         <p class="app-name">Git</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://github.com/" target="_blank"><img src="assets/svg/icons/stack app/GitHub.svg" alt="GitHub icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -268,7 +262,7 @@
                         <p class="app-name">GitHub</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://gsap.com/" target="_blank"><img src="assets/svg/icons/stack app/GSAP.svg" alt="GSAP icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -280,7 +274,7 @@
                         <p class="app-name">GSAP</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://react.dev/" target="_blank"><img src="assets/svg/icons/stack app/React.svg" alt="React icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -292,7 +286,7 @@
                         <p class="app-name">React</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://sass-lang.com/" target="_blank"><img src="assets/svg/icons/stack app/SCSS.svg" alt="SCSS icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -306,7 +300,7 @@
                 </div>
             </div>
             <div class="app-stack-bottom">
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://nodejs.org/en" target="_blank"><img src="assets/svg/icons/stack app/Node.js.svg" alt="Node.js icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -318,7 +312,7 @@
                         <p class="app-name">Node.js</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.blender.org/" target="_blank"><img src="assets/svg/icons/stack app/Blender.svg" alt="Blender icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -330,7 +324,7 @@
                         <p class="app-name">Blender</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.figma.com/" target="_blank"><img src="assets/svg/icons/stack app/Figma.svg" alt="Figma icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -342,7 +336,7 @@
                         <p class="app-name">Figma</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&tab=subscription" target="_blank"><img src="assets/svg/icons/stack app/Fusion 360.svg" alt="Fusion 360 icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -354,7 +348,7 @@
                         <p class="app-name">Fusion 360</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.adobe.com/products/illustrator.html" target="_blank"><img src="assets/svg/icons/stack app/Illustrator.svg" alt="Illustrator icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -366,7 +360,7 @@
                         <p class="app-name">Illustrator</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.adobe.com/products/aftereffects.html" target="_blank"><img src="assets/svg/icons/stack app/AfterEffects.svg" alt="AfterEffects icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -378,7 +372,7 @@
                         <p class="app-name">AfterEffects</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.adobe.com/products/photoshop.html" target="_blank"><img src="assets/svg/icons/stack app/Photoshop.svg" alt="Photoshop icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">
@@ -390,7 +384,7 @@
                         <p class="app-name">Photoshop</p>
                     </div>
                 </div>
-                <div class="app-container --cursor-expand-outer">
+                <div class="app-container --cursor-outer-hide">
                     <div class="app-wrapper top-stack-app">
                         <a href="https://www.adobe.com/products/premiere.html" target="_blank"><img src="assets/svg/icons/stack app/Premier Pro.svg" alt="Premier Pro icon" class="stack-app"></a>
                         <div class="arrow-wrapper --arrow-wrapper">

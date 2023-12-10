@@ -19,6 +19,7 @@
         padding: base.$internal-12px base.$internal-24px;
         border: base.$border-width_132 solid base.$gray-600;
         border-radius: base.$border-radius_4px;
+        transition: base.$animation_speed_regular;
 
         .circle-wrapper {
             position: relative;
@@ -67,9 +68,18 @@
             }
         }
 
+        &:hover {
+            border-color: base.$gray-50;
+        }
+
+        &:hover .cta {
+            color: base.$gray-50;
+        }
+
         .cta {
             color: base.$gray-200;
             font-size: base.$font-size_body-small;
+            transition: base.$animation_speed_regular;
         }
     }
 
@@ -101,7 +111,12 @@
         place-content: center;
         border: base.$border-width_132 solid base.$gray-600;
         border-radius: base.$border-radius_4px;
+        transition: base.$animation_speed_regular;
         z-index: 100;
+
+        &:hover {
+            border-color: base.$gray-50;
+        }
 
         .svg_menu-icon {
             stroke: base.$gray-200;
@@ -127,7 +142,7 @@
         position: relative;
         min-width: 20vw;
         flex-direction: column;
-        padding: base.$internal-32px base.$internal-24px base.$internal-12px base.$internal-24px;
+        padding: base.$internal-32px base.$internal-24px base.$internal-32px base.$internal-24px;
         gap: base.$gap-24px;
         border-radius: base.$border-radius_100;
         @include base.glass;
@@ -136,7 +151,14 @@
         .menu-close-wrapper {
             display: flex;
             position: relative;
+            gap: base.$gap-4px;
             padding: 0 base.$internal-8px base.$internal-12px base.$internal-8px;
+            color: base.$gray-200;
+            transition: 250ms ease-in-out;
+
+            &:hover {
+                color: base.$gray-50;
+            }
 
             .__divider_small {
                 position: absolute;
@@ -156,11 +178,46 @@
                 display: flex;
                 gap: base.$gap-8px;
                 flex: 1;
-                color: base.$gray-50;
-                font-size: base.$font-size_h5;
+
+                .menu-page-link {
+                    position: relative;
+                    color: base.$gray-50;
+                    font-size: base.$font-size_h5;
+                    transition: base.$animation_speed_regular;
+                    overflow: hidden;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        left: -105%;
+                        border-top: 0.05ch solid base.$primary-900;
+                        transition: base.$animation_speed_regular;
+                    }
+    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                        border-top: 0.05ch solid base.$gray-200;
+                        transition: base.$animation_speed_regular;
+                    }
+    
+                    &:hover {
+                        &::before {
+                            left: 0%;
+                        }
+                        &::after {
+                            left: 105%;
+                        }
+                    }
+                }
 
                 .menu-number {
-                    color: base.$gray-300;
+                    color: base.$gray-400;
                     font-size: base.$font-size_body-small;
                 }
             }
@@ -175,13 +232,13 @@
         .menu-contact-container {
             display: flex;
             flex-direction: column;
-            gap: base.$internal-24px;
+            gap: base.$gap-32px;
 
             .menu-socials-wrapper {
                 display: flex;
                 flex: 1;
-                justify-content: space-around;
                 align-items: center;
+                gap: base.$gap-24px;
 
                 .social-wrapper {
                     padding: base.$internal-8px;
@@ -209,16 +266,78 @@
                 }
             }
 
-            .menu-email-wrapper {
+            .menu-email-container {
                 display: flex;
                 flex: 1;
                 align-items: center;
                 justify-content: space-between;
 
-                .menu-contact-button {
+                .menu-contact-copy-button {
                     padding: base.$internal-4px base.$internal-8px;
                     border-radius: base.$border-radius_2px;
                     @include base.glass;
+
+                    & path {
+                        fill: base.$gray-200;
+                        transition: base.$animation_speed_regular;
+                    }
+
+                    &:hover path {
+                        fill: base.$gray-50;
+                        transition: 500ms ease-in-out;
+
+                    }
+                }
+
+                .menu-email-wrapper {
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+
+                    .menu-email {
+                        position: relative;
+                        color: base.$gray-100;
+                        transition: base.$animation_speed_regular;
+                        overflow: hidden;
+    
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            bottom: 0;
+                            left: -105%;
+                            border-top: 0.05ch solid base.$primary-900;
+                            transition: base.$animation_speed_regular;
+                        }
+        
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            bottom: 0;
+                            left: 0;
+                            border-top: 0.05ch solid base.$gray-200;
+                            transition: base.$animation_speed_regular;
+                        }
+        
+                        &:hover {
+                            color: base.$blue-50;
+    
+                            &::before {
+                                left: 0%;
+                            }
+    
+                            &::after {
+                                left: 105%;
+                            }
+                        }
+                    }
+                        
+                    .arrow-wrapper {
+                        position: absolute;
+                        right: -0.75ch;
+                        top: 0;
+                    }
                 }
             }
         }

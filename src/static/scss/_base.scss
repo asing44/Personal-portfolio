@@ -32,6 +32,7 @@ $vw-11: calc(11vw); // 156px
 $vw-08: calc(8vw); // 118px
 
 // * GRID
+$gap-4px: calc(0.2rem); // 4px
 $gap-8px: calc(0.4rem); // 8px
 $gap-12px: calc(0.6rem); // 12px
 $gap-24px: calc(1.2rem); // 24px
@@ -189,6 +190,9 @@ $font-spacing_-5: calc(-1 * 0.5rem);
 $opacity_low: 14%;
 $opacity_medium: 50%;
 $opacity_high: 85%;
+
+// * ANIMATION
+$animation_speed_regular: 250ms ease-in-out;
 
 // ** ----------------------------------------
 // ** MIXINS

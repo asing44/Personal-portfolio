@@ -216,7 +216,7 @@
                         bottom: 0;
                         left: -105%;
                         border: base.$border-width_132 solid base.$primary-900;
-                        transition: 400ms ease-in-out;
+                        transition: base.$animation_speed_regular;
                     }
 
                     &::after {
@@ -225,8 +225,8 @@
                         width: 100%;
                         bottom: 0;
                         left: 0;
-                        border: base.$border-width_132 solid base.$gray-100;
-                        transition: 400ms ease-in-out;
+                        border: base.$border-width_132 solid base.$gray-200;
+                        transition: base.$animation_speed_regular;
                     }
                 }
 

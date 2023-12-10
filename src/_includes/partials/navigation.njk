@@ -2,14 +2,14 @@
 <link rel="stylesheet" href="/css/navigation.css" />
 {% endblock %}
 <nav class="navigation-top-container">
-    <div class="header-cta-container --cursor-expand-outer">
+    <div class="header-cta-container --cursor-outer-hide">
         <div class="circle-wrapper">
             <div class="circle-static"></div>
             <div class="circle-animated"></div>
         </div>
-        <p class="cta">available to work</p>
+        <p class="cta --text-flicker">available to work</p>
     </div>
-    <div class="logo-wrapper --cursor-expand-outer">
+    <div class="logo-wrapper --cursor-outer-hide">
         <svg class="header-logo" width="627" height="411" viewBox="0 0 627 411" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M279.834 255.308L280.625 258.28H280.654L316.715 390.68H249.668L215.234 262.346C215.234 262.345 215.234 262.345 215.234 262.345C215.234 262.344 215.233 262.344 215.233 262.343C213.593 256.222 208.037 251.97 201.71 251.97H85.35C77.6209 251.97 71.35 258.241 71.35 265.97V384.68C71.35 387.991 68.6609 390.68 65.35 390.68H10C6.68914 390.68 4 387.991 4 384.68V26.01C4 22.6916 6.67766 20.0077 10.0041 20H212.65C215.362 20 217.741 21.8263 218.446 24.4623L279.834 255.308ZM71.34 188.47V192.47H75.34H191.58H196.81L195.44 187.422L166.95 82.4622L166.149 79.51H163.09H75.34H71.34V83.51V188.47Z"
@@ -26,7 +26,7 @@
                 fill="#FFC857" stroke="#050B10" stroke-width="16" />
         </svg>
     </div>
-    <div class="header-menu-wrapper --cursor-expand-outer">
+    <div class="header-menu-wrapper --cursor-outer-hide">
         <button class="header-menu">
             <svg class="svg_menu-icon" width="33" height="18" viewBox="0 0 33 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="menu-line_1" d="M11.029 0.999268H31.9146" stroke="#F3F5F7" stroke-width="1.32" stroke-linecap="round"/>
@@ -37,32 +37,46 @@
     </div>
     <div class="expanded-menu-container -inactive">
         <div class="menu-container">
-            <div class="menu-close-wrapper --cursor-expand-outer">
-                <span class="__icon_X">X</span>&nbsp;<div class="menu-close-text">close</div>
+            <div class="menu-close-wrapper --cursor-outer-hide">
+                <span class="__icon_X">X</span>&nbsp;<div class="menu-close-text --text-flicker">close</div>
                 <div class="__divider_small"></div>
             </div>
             <ul class="menu-page-links-container">
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[01] /</div>
-                    <a href="index.html" class="menu-page-link">Home</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Home</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[02] /</div>
-                    <a href="index.html" class="menu-page-link">About</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">About</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[03] /</div>
-                    <a href="index.html" class="menu-page-link">Work</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Work</a>
                 </li>
                 <li class="menu-page-link-wrapper">
                     <div class="menu-number">[04] /</div>
-                    <a href="index.html" class="menu-page-link">Contact</a>
+                    <a href="index.html" class="menu-page-link --text-flicker">Contact</a>
                 </li>
                 <div class="__divider_small"></div>
             </ul>
             <div class="menu-contact-container">
+                <div class="menu-email-container --cursor-outer-hide">
+                    <button class="menu-contact-copy-button">
+                        <svg class="__symbols_copy" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="__symbols_copy-path-1" fill-rule="evenodd" clip-rule="evenodd" d="M19.6372 7.63564C19.6372 5.82808 18.1719 4.36276 16.3643 4.36276H7.63664C5.82908 4.36276 4.36376 5.82808 4.36376 7.63564V20.7271C4.36376 22.5347 5.82908 24 7.63664 24H16.3643C18.1719 24 19.6372 22.5347 19.6372 20.7271V7.63564ZM17.4553 7.63564C17.4553 7.03312 16.9668 6.54468 16.3643 6.54468H7.63664C7.03412 6.54468 6.54568 7.03312 6.54568 7.63564V20.7271C6.54568 21.3297 7.03412 21.8181 7.63664 21.8181H16.3643C16.9668 21.8181 17.4553 21.3297 17.4553 20.7271V7.63564Z"/>
+                            <path class="__symbols_copy-path-2" d="M3.27287 2.18192H14.1824C14.785 2.18192 15.2734 1.69347 15.2734 1.09096C15.2734 0.488443 14.785 0 14.1824 0H3.27287C1.46532 0 0 1.46532 0 3.27287V18.5463C0 19.1488 0.488443 19.6372 1.09096 19.6372C1.69347 19.6372 2.18191 19.1488 2.18191 18.5463V3.27287C2.18191 2.67036 2.67036 2.18192 3.27287 2.18192Z"/>
+                        </svg>
+                    </button>
+                    <div class="menu-email-wrapper --arrow-hover-container">
+                        <a href="mailto:testemail@gmail.com" class="menu-email">myemail@domain.com</a>
+                        <div class="arrow-wrapper">
+                            <img src="./assets/svg/icons/arrows/diagonal/__arrow_diagonal_small.svg" alt="" class="__arrow_diagonal_small">
+                        </div>
+                    </div>
+                </div>
                 <ul class="menu-socials-wrapper -no-list">
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://www.linkedin.com/in/adam-j-warsing-6b92691a0/" target="_blank">
                             <img src="./assets/svg/icons/socials/Linkedin.svg" alt="Link to my LinkedIn page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -70,7 +84,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://github.com/asing44" target="_blank">
                             <img src="./assets/svg/icons/socials/GitHub.svg" alt="Link to my GitHub page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -78,7 +92,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="social-wrapper --arrow-hover-container --cursor-expand-outer">
+                    <li class="social-wrapper --arrow-hover-container --cursor-outer-hide">
                         <a href="https://www.instagram.com/_asing44/" target="_blank">
                             <img src="./assets/svg/icons/socials/Instagram.svg" alt="Link to my Instagram page" class="menu-social">
                             <div class="arrow-wrapper">
@@ -87,21 +101,6 @@
                         </a>
                     </li>
                 </ul>
-                <div class="menu-email-wrapper">
-                    <button class="menu-contact-button menu-copy-button-wrapper">
-                        <svg class="__symbols_copy" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="__symbols_copy-path-1" fill-rule="evenodd" clip-rule="evenodd" d="M12 4.66602C12 3.56145 11.1046 2.66602 9.99996 2.66602H4.66663C3.56206 2.66602 2.66663 3.56145 2.66663 4.66602V12.666C2.66663 13.7706 3.56206 14.666 4.66663 14.666H9.99996C11.1046 14.666 12 13.7706 12 12.666V4.66602ZM10.6666 4.66602C10.6666 4.29783 10.3682 3.99935 9.99996 3.99935H4.66663C4.29844 3.99935 3.99996 4.29783 3.99996 4.66602V12.666C3.99996 13.0342 4.29844 13.3327 4.66663 13.3327H9.99996C10.3682 13.3327 10.6666 13.0342 10.6666 12.666V4.66602Z" fill="#D8DADD"/>
-                            <path class="__symbols_copy-path-2" d="M2 1.33333H8.66667C9.03487 1.33333 9.33333 1.03485 9.33333 0.666667C9.33333 0.29848 9.03487 0 8.66667 0H2C0.895433 0 0 0.895433 0 2V11.3333C0 11.7015 0.29848 12 0.666667 12C1.03485 12 1.33333 11.7015 1.33333 11.3333V2C1.33333 1.63181 1.63181 1.33333 2 1.33333Z" fill="#D8DADD"/>
-                        </svg>
-                    </button>
-                    <button class="menu-contact-button menu-email-button-wrapper">
-                        <svg class="__symbols_email" width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="__symbols_email-path-1" d="M12.1776 0.775391H2.39721C1.62555 0.775391 1 1.40094 1 2.1726V9.15862C1 9.93028 1.62555 10.5558 2.39721 10.5558H12.1776C12.9493 10.5558 13.5749 9.93028 13.5749 9.15862V2.1726C13.5749 1.40094 12.9493 0.775391 12.1776 0.775391Z" stroke="#D8DADD" stroke-width="1.32" stroke-linecap="round"/>
-                            <path class="__symbols_email-path-2" d="M1.46912 1.98929L5.9783 5.40867C6.7541 5.99696 7.82074 5.99696 8.59654 5.40867L13.1057 1.98926" stroke="#D8DADD" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <p class="menu-email">myemail@domain.com</p>
-                </div>
             </div>
         </div>
         <div class="menu-selection-container">
