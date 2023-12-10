@@ -653,7 +653,6 @@ class Gradient {
 * Gradient.updateFrequency(freq)
 */
 
-
 // Create your instance
 const gradient = new Gradient()
 
@@ -694,23 +693,13 @@ function cursorMove(e) {
     localStorage.setItem("cursorY", cursorY);
 }
 
-// Cursor hover timeline
-let cursorChangeInner_tl = gsap.timeline({
-    paused: true,
-    onReverseComplete: function() {
-        cursorText.innerHTML = '';
-    }
-});
-
-// Expand the outer cursor on hover
-$('.--cursor-expand-outer').on('mouseenter', function(){
-    gsap.to(cursor, {scale: 0});
-    gsap.to(cursorOuter, {scale: 2, opacity: 0.5});
-    gsap.to(cursorOuterCircle, {strokeWidth: 0.5})
+// Hide the outer cursor on hover
+$('.--cursor-outer-hide').on('mouseenter', function(){
+    gsap.to(cursor, {mixBlendMode: "normal"});
+    gsap.to(cursorOuter, {opacity: 0});
 }).on('mouseleave', function(){
-    gsap.to(cursor, {scale: 1});
-    gsap.to(cursorOuter, {scale: 1, opacity: 1});
-    gsap.to(cursorOuterCircle, {strokeWidth: 1})
+    gsap.to(cursor, {mixBlendMode: "exclusion"});
+    gsap.to(cursorOuter, {opacity: 1});
 });
 
 // ?? ----------------------------------------
@@ -752,7 +741,7 @@ textRevealArr.forEach(el => {
     
 })
 
-// Text expand
+// ! Text expand
 let expandWordArr = gsap.utils.toArray(".--expand-word");
 
 expandWordArr.forEach(el => {
@@ -769,6 +758,46 @@ expandWordArr.forEach(el => {
     //     }
     // })    
 })
+
+// Text flicker
+let textFlickerArr = gsap.utils.toArray(".--text-flicker");
+
+textFlickerArr.forEach(el => {
+    // ? Maybe add in a separate, duplicate timeline that you can toggle elsewhere?
+    let tl = gsap.timeline({
+        paused: true
+    });
+
+    charArr = Array.from($(el).text()).map(char => {
+        let charSpan = document.createElement('span');
+        $(charSpan).text(char)
+        return charSpan;
+    });
+
+    $(el).text('');
+
+    charArr.forEach(newSpan => el.appendChild(newSpan));
+
+    charArr.forEach(item => {
+        let randomTime = gsap.utils.random(0, 0.25);
+
+        tl.to(item, {
+            duration: 0.5,
+            keyframes: {
+                "0%": {opacity: 0},
+                "40%": {opacity: 0.5},
+                "70%": {opacity: 0},
+                "100%": {opacity: 1}
+            }
+        }, randomTime)
+    })
+
+    $(el).hover(function() {
+        tl.restart();
+    }, function() {
+        tl.restart();
+    });
+});
 
 // ** ----------------------------------------
 // ** BLINK
@@ -925,7 +954,7 @@ headerMenuIcon.on("click", function() {
 });
 
 // Close menu
-$(".menu-close-wrapper").on("click", function() {
+$(".menu-close-wrapper, .menu-selection-container").on("click", function() {
     expandedMenu_tl.timeScale(1.5).reverse()
 })
 
@@ -965,6 +994,19 @@ arrowHoverContainer.forEach(container => {
 })
 
 // * ---- / ----
+
+// Menu email copy icon click feedback
+let copyIconSVG = gsap.utils.selector(".menu-contact-copy-button");
+
+$(".menu-contact-copy-button").on("click", function() {
+    gsap.to(copyIconSVG("path"), {
+        duration: 0.25,
+        repeat: 1,
+        repeatDelay: 0.75,
+        yoyo: true,
+        fill: "#57FF74"
+    })
+})
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE

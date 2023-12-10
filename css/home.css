@@ -456,7 +456,7 @@ input, button, textarea, select {
   bottom: 0;
   left: -105%;
   border: 1.32px solid #FFC857;
-  transition: 400ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 .about-section-container .about-middle-container .about-blurb-wrapper .about-button .button-text::after {
   content: "";
@@ -464,8 +464,8 @@ input, button, textarea, select {
   width: 100%;
   bottom: 0;
   left: 0;
-  border: 1.32px solid #BEC0C3;
-  transition: 400ms ease-in-out;
+  border: 1.32px solid #A4A7AA;
+  transition: 250ms ease-in-out;
 }
 .about-section-container .about-middle-container .about-blurb-wrapper .about-button .__arrow_horizontal_medium {
   position: relative;

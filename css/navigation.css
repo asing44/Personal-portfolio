@@ -25,6 +25,7 @@
   padding: 0.6rem 1.2rem;
   border: 1.32px solid #46494C;
   border-radius: 4px;
+  transition: 250ms ease-in-out;
 }
 .navigation-top-container .header-cta-container .circle-wrapper {
   position: relative;
@@ -66,9 +67,16 @@
     opacity: 100%;
   }
 }
+.navigation-top-container .header-cta-container:hover {
+  border-color: #D8DADD;
+}
+.navigation-top-container .header-cta-container:hover .cta {
+  color: #D8DADD;
+}
 .navigation-top-container .header-cta-container .cta {
   color: #A4A7AA;
   font-size: 0.75rem;
+  transition: 250ms ease-in-out;
 }
 .navigation-top-container .logo-wrapper {
   display: grid;
@@ -95,7 +103,11 @@
   place-content: center;
   border: 1.32px solid #46494C;
   border-radius: 4px;
+  transition: 250ms ease-in-out;
   z-index: 100;
+}
+.navigation-top-container .header-menu-wrapper:hover {
+  border-color: #D8DADD;
 }
 .navigation-top-container .header-menu-wrapper .svg_menu-icon {
   stroke: #A4A7AA;
@@ -119,19 +131,25 @@
   position: relative;
   min-width: 20vw;
   flex-direction: column;
-  padding: 1.6rem 1.2rem 0.6rem 1.2rem;
+  padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   gap: 1.2rem;
   border-radius: 1rem;
   background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 100;
+  z-index: 101;
 }
 .expanded-menu-container .menu-container .menu-close-wrapper {
   display: flex;
   position: relative;
+  gap: 0.2rem;
   padding: 0 0.4rem 0.6rem 0.4rem;
+  color: #A4A7AA;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-close-wrapper:hover {
+  color: #D8DADD;
 }
 .expanded-menu-container .menu-container .menu-close-wrapper .__divider_small {
   position: absolute;
@@ -149,11 +167,40 @@
   display: flex;
   gap: 0.4rem;
   flex: 1;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-page-link {
+  position: relative;
   color: #D8DADD;
   font-size: 1.78rem;
+  transition: 250ms ease-in-out;
+  overflow: hidden;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-page-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: -105%;
+  border-top: 0.05ch solid #FFC857;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-page-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 0.05ch solid #A4A7AA;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-page-link:hover::before {
+  left: 0%;
+}
+.expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-page-link:hover::after {
+  left: 105%;
 }
 .expanded-menu-container .menu-container .menu-page-links-container .menu-page-link-wrapper .menu-number {
-  color: #8B8E91;
+  color: #737679;
   font-size: 0.75rem;
 }
 .expanded-menu-container .menu-container .menu-page-links-container .__divider_small {
@@ -164,13 +211,13 @@
 .expanded-menu-container .menu-container .menu-contact-container {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 .expanded-menu-container .menu-container .menu-contact-container .menu-socials-wrapper {
   display: flex;
   flex: 1;
-  justify-content: space-around;
   align-items: center;
+  gap: 1.2rem;
 }
 .expanded-menu-container .menu-container .menu-contact-container .menu-socials-wrapper .social-wrapper {
   padding: 0.4rem;
@@ -196,19 +243,70 @@
   filter: grayscale(0);
   transition: 250ms ease-in-out;
 }
-.expanded-menu-container .menu-container .menu-contact-container .menu-email-wrapper {
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container {
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: space-between;
 }
-.expanded-menu-container .menu-container .menu-contact-container .menu-email-wrapper .menu-contact-button {
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-contact-copy-button {
   padding: 0.2rem 0.4rem;
   border-radius: 2px;
   background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-contact-copy-button path {
+  fill: #A4A7AA;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-contact-copy-button:hover path {
+  fill: #D8DADD;
+  transition: 500ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email {
+  position: relative;
+  color: #BEC0C3;
+  transition: 250ms ease-in-out;
+  overflow: hidden;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: -105%;
+  border-top: 0.05ch solid #FFC857;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 0.05ch solid #A4A7AA;
+  transition: 250ms ease-in-out;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email:hover {
+  color: #EEF4FF;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email:hover::before {
+  left: 0%;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .menu-email:hover::after {
+  left: 105%;
+}
+.expanded-menu-container .menu-container .menu-contact-container .menu-email-container .menu-email-wrapper .arrow-wrapper {
+  position: absolute;
+  right: -0.75ch;
+  top: 0;
 }
 .expanded-menu-container .menu-selection-container {
   display: grid;
@@ -219,6 +317,7 @@
   top: 0;
   left: 0;
   opacity: 0%;
+  z-index: 100;
 }
 .expanded-menu-container .menu-selection-container .menu-selection-wrapper {
   display: flex;
