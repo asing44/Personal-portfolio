@@ -389,6 +389,7 @@
         display: grid;
         width: 100%;
         grid-template: 100% / calc(base.$vw-57) 1fr;
+        gap: base.$gap-60px;
 
         .core-qualities-container {
             display: flex;
@@ -401,7 +402,7 @@
                 height: base.$vh-25;
                 justify-content: center;
                 align-items: center;
-                flex: 1 1 base.$vh-14;
+                flex: 1 0 base.$vh-14;
                 z-index: 1;
 
                 &:hover {
@@ -465,13 +466,72 @@
                     transform: skewX(-15deg);
                     transform-origin: bottom middle;
                     z-index: -1;
-                    @include base.glass;
+                    @include base.glass("dark");
                 }
             }
         }
 
         .quote-container {
+            position: relative;
+            border-radius: base.$border-radius_75;
+            overflow: none;
+            z-index: 1;
 
+            .apostrophe-wrapper {
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                left: 0;
+                padding: base.$internal-8px base.$internal-24px;
+                z-index: 1;
+            }
+
+            .quote-content-container {
+                position: absolute;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                left: 0;
+                padding: 0 base.$internal-32px;
+
+                .quote-content-wrapper {
+                    display: flex;
+                    flex-direction: column;
+
+                    .quote {
+                        color: base.$gray-100;
+                        font-size: base.$font-size_h5;
+                        font-style: italic;
+                    }
+
+                    .author-wrapper {
+                        padding-right: base.$internal-32px;
+                        color: base.$gray-50;
+                        text-align: right;
+                    }
+                }
+            }
+
+            .quote-background-wrapper {
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+
+                .quote-background-SVG {
+                    height: 100%;
+                    width: 100%;
+
+                    .quote-background-SVG-path {
+                        fill: base.$background-blur_dark;
+                        box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                    }
+                }
+            }
         }
     }
 }

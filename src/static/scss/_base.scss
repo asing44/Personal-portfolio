@@ -134,6 +134,7 @@ $error-100: #D99B8E;
 $error-50: #E5BDB4;
 $error-25: #F2DED9;
 // Blur
+$background-blur_light: rgba(207, 223, 239, 0.2);
 $background-blur_dark: rgba(207, 223, 239, 0.05);
 $background-blur_darker: rgba(5, 11, 16, 0.5);
 // Overlay
@@ -218,11 +219,23 @@ $animation_speed_regular: 250ms ease-in-out;
 // ---- Effects ----
 
 // Glass
-@mixin glass() {
-    background: $background-blur_dark;
-    box-shadow: 0 4px 30px transparentize($dark, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+@mixin glass($type) {
+    @if $type == "light" {
+        background: $background-blur_light;
+        box-shadow: 0 4px 30px transparentize($dark, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    } @else if $type == "dark" {
+        background: $background-blur_dark;
+        box-shadow: 0 4px 30px transparentize($dark, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    } @else if $type == "darker" {
+        background: $background-blur_darker;
+        box-shadow: 0 4px 30px transparentize($dark, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
 }
 
 // Box shadow

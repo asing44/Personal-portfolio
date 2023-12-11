@@ -608,6 +608,7 @@ input, button, textarea, select {
   display: grid;
   width: 100%;
   grid-template: 100%/57vw 1fr;
+  gap: 3rem;
 }
 .work-top-container .work-top-content-container .core-qualities-container {
   display: flex;
@@ -620,7 +621,7 @@ input, button, textarea, select {
   height: 25vh;
   justify-content: center;
   align-items: center;
-  flex: 1 1 14vh;
+  flex: 1 0 14vh;
   z-index: 1;
 }
 .work-top-container .work-top-content-container .core-qualities-container .quality-container:hover .core-quality-container .core-quality-wrapper .core-quality {
@@ -669,6 +670,60 @@ input, button, textarea, select {
   transform-origin: bottom middle;
   z-index: -1;
   background: rgba(207, 223, 239, 0.05);
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.work-top-container .work-top-content-container .quote-container {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: none;
+  z-index: 1;
+}
+.work-top-container .work-top-content-container .quote-container .apostrophe-wrapper {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  padding: 0.4rem 1.2rem;
+  z-index: 1;
+}
+.work-top-container .work-top-content-container .quote-container .quote-content-container {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  padding: 0 1.6rem;
+}
+.work-top-container .work-top-content-container .quote-container .quote-content-container .quote-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.work-top-container .work-top-content-container .quote-container .quote-content-container .quote-content-wrapper .quote {
+  color: #BEC0C3;
+  font-size: 1.78rem;
+  font-style: italic;
+}
+.work-top-container .work-top-content-container .quote-container .quote-content-container .quote-content-wrapper .author-wrapper {
+  padding-right: 1.6rem;
+  color: #D8DADD;
+  text-align: right;
+}
+.work-top-container .work-top-content-container .quote-container .quote-background-wrapper {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.work-top-container .work-top-content-container .quote-container .quote-background-wrapper .quote-background-SVG {
+  height: 100%;
+  width: 100%;
+}
+.work-top-container .work-top-content-container .quote-container .quote-background-wrapper .quote-background-SVG .quote-background-SVG-path {
+  fill: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

@@ -145,7 +145,7 @@
         padding: base.$internal-32px base.$internal-24px base.$internal-32px base.$internal-24px;
         gap: base.$gap-24px;
         border-radius: base.$border-radius_100;
-        @include base.glass;
+        @include base.glass("dark");
         z-index: 101;
 
         .menu-close-wrapper {
@@ -275,7 +275,7 @@
                 .menu-contact-copy-button {
                     padding: base.$internal-4px base.$internal-8px;
                     border-radius: base.$border-radius_2px;
-                    @include base.glass;
+                    @include base.glass("dark");
 
                     & path {
                         fill: base.$gray-200;
@@ -388,8 +388,7 @@
             opacity: 0;
 
             rect {
-                fill: base.$background-blur_darker;
-                @include base.glass;
+                @include base.glass("darker");
             }
         }
     }
