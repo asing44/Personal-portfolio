@@ -355,8 +355,7 @@
   opacity: 0;
 }
 .expanded-menu-container .menu-background-wrapper #menu-background rect {
-  fill: rgba(5, 11, 16, 0.5);
-  background: rgba(207, 223, 239, 0.05);
+  background: rgba(5, 11, 16, 0.5);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
