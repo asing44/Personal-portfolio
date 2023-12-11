@@ -578,7 +578,52 @@
             }
 
             .all-work-link-container {
-                
+                position: relative;
+                color: base.$gray-100;
+                font: {
+                    family: base.$font-family-heading;
+                    size: base.$font-size_h6;
+                    line-height: base.$font-lineHeight_100;
+                };
+                transition: 200ms ease-in-out;
+                overflow: hidden;
+
+                &:hover {
+                    color: base.$primary-900;
+
+                    &::before {
+                        left: 0%;
+                    }
+                    &::after {
+                        left: 105%;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: -105%;
+                    border: base.$border-width_132 solid base.$primary-900;
+                    transition: base.$animation_speed_regular;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    border: base.$border-width_132 solid base.$gray-200;
+                    transition: base.$animation_speed_regular;
+                }
+
+                .arrow-wrapper {
+                    position: absolute;
+                    right: -0.2em;
+                    top: 0;
+                }
             }
         }
 

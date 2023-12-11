@@ -207,6 +207,7 @@ headerName_tl.to('.last-name', {
 // ** ABOUT
 // ** ----------------------------------------
 
+// ! Change to global
 // App stack arrow hover
 gsap.utils.toArray(".app-container").forEach(container => {
     let containerHover_tl = gsap.timeline({
