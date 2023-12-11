@@ -627,7 +627,7 @@ input, button, textarea, select {
 .work-top-container .work-top-content-container .core-qualities-container .quality-container {
   display: flex;
   position: relative;
-  height: 25vh;
+  height: clamp(25vh, 62.4%, 32vh);
   justify-content: center;
   align-items: center;
   flex: 1 0 14vh;
@@ -830,13 +830,17 @@ input, button, textarea, select {
 .featured-work-container .featured-works-container {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template: min-content/repeat(2, 1fr);
   grid-area: 1/2;
   gap: 1.2rem 1.6rem;
   padding: 1.6rem 0;
 }
 .featured-work-container .featured-works-container .column-wrapper-right {
+  height: fit-content;
   padding: 1.2rem 0;
+}
+.featured-work-container .featured-works-container .column-wrapper-left {
+  height: fit-content;
 }
 .featured-work-container .featured-works-container .work-container {
   display: flex;
@@ -845,7 +849,7 @@ input, button, textarea, select {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  background: rgba(207, 223, 239, 0.05);
+  background: rgba(5, 11, 16, 0.5);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -856,12 +860,46 @@ input, button, textarea, select {
   filter: grayscale(0%);
   transition: 250ms ease-in-out;
 }
+.featured-work-container .featured-works-container .work-container .work-content-container {
+  display: flex;
+  position: relative;
+  height: clamp(43vh, 62.4%, 57vh);
+  width: clamp(14vw, 31.2%, 25vw);
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  z-index: 1;
+  opacity: 0;
+}
+.featured-work-container .featured-works-container .work-container .work-content-container .work-title {
+  font-size: 2.37rem;
+}
+.featured-work-container .featured-works-container .work-container .work-content-container .work-subtitle {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.featured-work-container .featured-works-container .work-container .work-content-container .work-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  transform: skewX(-15deg);
+  z-index: -1;
+  background: rgba(207, 223, 239, 0.05);
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 .featured-work-container .featured-works-container .work-container .work-thumbnail-wrapper {
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 1rem;
   overflow: hidden;
+  z-index: -1;
 }
 .featured-work-container .featured-works-container .work-container .work-thumbnail-wrapper .work-thumbnail {
   height: 100%;

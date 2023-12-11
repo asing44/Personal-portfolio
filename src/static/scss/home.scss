@@ -399,7 +399,7 @@
             .quality-container {
                 display: flex;
                 position: relative;
-                height: base.$vh-25;
+                height: clamp(base.$vh-25, 62.4%, base.$vh-32);
                 justify-content: center;
                 align-items: center;
                 flex: 1 0 base.$vh-14;
@@ -639,7 +639,7 @@
     .featured-works-container {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template: min-content / repeat(2, 1fr);
         grid-area: 1 / 2;
         gap: base.$gap-24px base.$gap-32px;
         padding: base.$internal-32px 0;
@@ -647,11 +647,14 @@
         .column-wrapper {
 
             &-right {
+                height: fit-content;
                 padding: base.$internal-24px 0;
             }
 
             &-left {
+                height: fit-content;
             }
+
         }
 
         .work-container {
@@ -661,15 +664,50 @@
             justify-content: center;
             align-items: center;
             border-radius: base.$border-radius_100;
-            @include base.glass("dark");
+            @include base.glass("darker");
 
             &:hover {
-
                 .work-thumbnail-wrapper {
 
                     .work-thumbnail {
                         @include base.grayscale(0%);
                     }
+                }
+            }
+
+            .work-content-container {
+                display: flex;
+                position: relative;
+                height: clamp(base.$vh-43, 62.4%, base.$vh-57);
+                width: clamp(base.$vw-14, 31.2%, base.$vw-25);
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                z-index: 1;
+                opacity: 0;
+
+                .work-title {
+                    font-size: base.$font-size_h4
+                }
+
+                .work-subtitle {
+                    font: {
+                        family: base.$font-family-body;
+                        size: base.$font-size_body-small;
+                        weight: base.$font-weight_normal;
+                    }
+                }
+
+                .work-background {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    border-radius: base.$border-radius_100;
+                    transform: skewX(-15deg);
+                    z-index: -1;
+                    @include base.glass("dark");
                 }
             }
 
@@ -679,6 +717,7 @@
                 width: 100%;
                 border-radius: base.$border-radius_100;
                 overflow: hidden;
+                z-index: -1;
 
                 .work-thumbnail {
                     height: 100%;
