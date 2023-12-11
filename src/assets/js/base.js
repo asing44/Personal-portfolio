@@ -1059,9 +1059,10 @@ $(".menu-close-wrapper, .menu-selection-container").on("click", function() {
 
 // * ---- Arrows ----
 
-let arrowHoverContainer = gsap.utils.toArray(".--arrow-hover-container");
+// Diagonal small hover
+let arrowDiagonalSmallContainerArr = gsap.utils.toArray(".--arrow-diagonal-small-container");
 
-arrowHoverContainer.forEach(container => {
+arrowDiagonalSmallContainerArr.forEach(container => {
     let containerHover_tl = gsap.timeline({
         paused: true,
     });
@@ -1086,6 +1087,59 @@ arrowHoverContainer.forEach(container => {
     }, function(){
         containerHover_tl.restart();
     });
+})
+
+// Vertical hover
+let arrowVerticalContainerArr = gsap.utils.toArray(".--arrow-vertical-container");
+
+arrowVerticalContainerArr.forEach(container => {
+    let thisContainer = gsap.utils.selector(container);
+    if (thisContainer(".__arrow_up_medium")) {
+        let arrow = thisContainer(".__arrow_up_medium");
+
+        let containerHover_tl = gsap.timeline({
+            paused: true,
+            ease: "power2.inOut"
+        });
+    
+        containerHover_tl.set(arrow, {
+            x: 0,
+            y: 0
+        }).to(arrow, {
+            yPercent: -150
+        }).set(arrow, {
+            yPercent: 250
+        }).to(arrow, {
+            yPercent: 0
+        });
+    
+        $(container).on("mouseenter", function() {
+            containerHover_tl.restart();
+        });
+    } 
+    if (thisContainer(".__arrow_down_medium")) {
+        let arrow = thisContainer(".__arrow_down_medium");
+
+        let containerHover_tl = gsap.timeline({
+            paused: true,
+            ease: "power2.inOut"
+        });
+    
+        containerHover_tl.set(arrow, {
+            x: 0,
+            y: 0
+        }).to(arrow, {
+            yPercent: 150
+        }).set(arrow, {
+            yPercent: -250
+        }).to(arrow, {
+            yPercent: 0
+        });
+    
+        $(container).on("mouseenter", function() {
+            containerHover_tl.restart();
+        });
+    }
 })
 
 // * ---- / ----
