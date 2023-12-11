@@ -750,14 +750,13 @@ input, button, textarea, select {
 }
 .featured-work-container .content-container {
   display: grid;
-  width: 100%;
   grid-template-columns: 11vw 1fr;
-  gap: 1.2rem;
-  padding: 0 1.6rem;
+  gap: 2.25rem;
+  padding: 0 7rem 0 2.25rem;
 }
 .featured-work-container .content-aisde-container {
   display: flex;
-  max-height: calc(32vh + 3.12rem);
+  height: fit-content;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -834,15 +833,45 @@ input, button, textarea, select {
   grid-template-columns: repeat(2, 1fr);
   grid-area: 1/2;
   gap: 1.2rem 1.6rem;
-  padding: 1.6rem 1.2rem;
+  padding: 1.6rem 0;
 }
-.featured-work-container .featured-works-container .works-container {
+.featured-work-container .featured-works-container .column-wrapper-right {
+  padding: 1.2rem 0;
+}
+.featured-work-container .featured-works-container .work-container {
   display: flex;
-  height: 57vh;
+  position: relative;
+  height: 43vw;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem;
-  background-image: url("https://picsum.photos/200/300");
+  background: rgba(207, 223, 239, 0.05);
+  box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.featured-work-container .featured-works-container .work-container:hover .work-thumbnail-wrapper .work-thumbnail {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: 250ms ease-in-out;
+}
+.featured-work-container .featured-works-container .work-container .work-thumbnail-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.featured-work-container .featured-works-container .work-container .work-thumbnail-wrapper .work-thumbnail {
+  height: 100%;
+  width: 100%;
   background-size: cover;
-  overflow: clip;
+  transition: 250ms ease-in-out;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 250ms ease-in-out;
 }
 
 /*# sourceMappingURL=home.css.map */

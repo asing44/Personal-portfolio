@@ -120,6 +120,7 @@
 
         .svg_menu-icon {
             stroke: base.$gray-200;
+            mix-blend-mode: exclusion;
         }
     }
 }
