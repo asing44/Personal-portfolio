@@ -782,6 +782,47 @@ input, button, textarea, select {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+.featured-work-container .content-container .content-aisde-container .all-work-link-container {
+  position: relative;
+  color: #BEC0C3;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.3rem;
+  font-line-height: 1;
+  transition: 200ms ease-in-out;
+  overflow: hidden;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover {
+  color: #FFC857;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover::before {
+  left: 0%;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover::after {
+  left: 105%;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: -105%;
+  border: 1.32px solid #FFC857;
+  transition: 250ms ease-in-out;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border: 1.32px solid #A4A7AA;
+  transition: 250ms ease-in-out;
+}
+.featured-work-container .content-container .content-aisde-container .all-work-link-container .arrow-wrapper {
+  position: absolute;
+  right: -0.2em;
+  top: 0;
+}
 .featured-work-container .content-container .works-container {
   width: 100%;
   grid-area: 1/2;
