@@ -262,5 +262,4 @@ ScrollTrigger.create({
     pin: ".content-aisde-container",
     scrub: true,
     ease: "power2.inOut",
-    markers: true
 })

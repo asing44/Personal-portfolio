@@ -908,22 +908,24 @@ flickerContainer.forEach(flickerContainer => {
         }
     });
 
-    gsap.utils.toArray(containerElement(".--flicker-element")).forEach(flickerItem => {
+    let elementsArr = gsap.utils.toArray(containerElement(".--flicker-element"));
+    let adjustedTiming = gsap.utils.mapRange(0, 100, 0, 10, elementsArr.length);
+
+    elementsArr.forEach(flickerItem => {
         let tl = gsap.timeline();
         gsap.set(flickerItem, {
             opacity: 0
         })
         tl.to(flickerItem, {
-            duration: 1.5,
-            delay: () => gsap.utils.random(0,0.5),
+            duration: 0.4 + adjustedTiming,
+            delay: () => gsap.utils.random(0,(adjustedTiming / 10) - 0.05),
             keyframes: {
                 "0%": {opacity: "0%"},
-                "25%": {opacity: "50%"},
-                "50%": {opacity: "20%"},
-                "75%": {opacity: "0%"},
-                "100%": {opacity: 1}
+                "50%": {opacity: "75%"},
+                "75%": {opacity: "40%"},
+                "100%": {opacity: 1},
+                ease: "power1.inOut"
             },
-            ease: "power2.in"
         });
         randomFlicker_tl.add(tl, gsap.utils.random(0,1))
     })
@@ -937,6 +939,13 @@ flickerContainer.forEach(flickerContainer => {
 $(".--delay-link").on("click", function(e) {
     e.preventDefault();
 });
+
+// ** ----------------------------------------
+// ** IMAGES
+// ** ----------------------------------------
+
+// Parallex effect
+let imgParallexContainer = gsap.utils.toArray(".--img-parallex-container");
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE

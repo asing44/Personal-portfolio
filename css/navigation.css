@@ -111,6 +111,7 @@
 }
 .navigation-top-container .header-menu-wrapper .svg_menu-icon {
   stroke: #A4A7AA;
+  mix-blend-mode: exclusion;
 }
 
 .expanded-menu-container {
