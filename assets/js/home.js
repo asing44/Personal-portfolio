@@ -204,39 +204,6 @@ headerName_tl.to('.last-name', {
 }, 0);
 
 // ** ----------------------------------------
-// ** ABOUT
-// ** ----------------------------------------
-
-// ! Change to global
-// App stack arrow hover
-gsap.utils.toArray(".app-container").forEach(container => {
-    let containerHover_tl = gsap.timeline({
-        paused: true,
-    });
-    let thisContainer = gsap.utils.selector(container);
-
-    containerHover_tl.set(thisContainer(".__arrow_diagonal_small"), {
-        x: 0,
-        y: 0
-    }).to(thisContainer(".__arrow_diagonal_small"), {
-        xPercent: 120,
-        yPercent: -120
-    }).set(thisContainer(".__arrow_diagonal_small"), {
-        xPercent: -240,
-        yPercent: 250
-    }).to(thisContainer(".__arrow_diagonal_small"), {
-        xPercent: 0,
-        yPercent: 0
-    });
-
-    $(container).hover(function(){
-        containerHover_tl.restart();
-    }, function(){
-        containerHover_tl.restart();
-    });
-})
-
-// ** ----------------------------------------
 // ** WORK
 // ** ----------------------------------------
 
@@ -287,3 +254,13 @@ coreQualitiesContainerArr.forEach(el => {
         tl.reverse()
     });
 });
+
+// Featured work aside pinning on scroll
+
+ScrollTrigger.create({
+    trigger: ".featured-work-container",
+    pin: ".content-aisde-container",
+    scrub: true,
+    ease: "power2.inOut",
+    markers: true
+})

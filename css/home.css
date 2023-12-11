@@ -739,7 +739,6 @@ input, button, textarea, select {
 }
 
 .featured-work-container {
-  width: 100%;
   margin-top: 2.25rem;
 }
 .featured-work-container .section-blurb-wrapper {
@@ -752,11 +751,13 @@ input, button, textarea, select {
 .featured-work-container .content-container {
   display: grid;
   width: 100%;
-  grid-template-columns: 14vw 1fr;
+  grid-template-columns: 11vw 1fr;
+  gap: 1.2rem;
   padding: 0 1.6rem;
 }
-.featured-work-container .content-container .content-aisde-container {
+.featured-work-container .content-aisde-container {
   display: flex;
+  max-height: calc(32vh + 3.12rem);
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -769,20 +770,24 @@ input, button, textarea, select {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.featured-work-container .content-container .content-aisde-container .arrow-buttons-wrapper {
+.featured-work-container .content-aisde-container .arrow-buttons-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
-.featured-work-container .content-container .content-aisde-container .arrow-buttons-wrapper .arrow-button {
+.featured-work-container .content-aisde-container .arrow-buttons-wrapper .arrow-button {
   padding: 0.6rem 1.6rem;
   border-radius: 0.57rem;
+  overflow: hidden;
   background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container {
+.featured-work-container .content-aisde-container .all-work-link-container {
+  position: relative;
+}
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work {
   position: relative;
   color: #BEC0C3;
   font-family: "Titillium Web", sans-serif;
@@ -791,16 +796,16 @@ input, button, textarea, select {
   transition: 200ms ease-in-out;
   overflow: hidden;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover {
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work:hover {
   color: #FFC857;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover::before {
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work:hover::before {
   left: 0%;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container:hover::after {
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work:hover::after {
   left: 105%;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container::before {
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -809,7 +814,7 @@ input, button, textarea, select {
   border: 1.32px solid #FFC857;
   transition: 250ms ease-in-out;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container::after {
+.featured-work-container .content-aisde-container .all-work-link-container .all-work-wrapper .all-work::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -818,14 +823,26 @@ input, button, textarea, select {
   border: 1.32px solid #A4A7AA;
   transition: 250ms ease-in-out;
 }
-.featured-work-container .content-container .content-aisde-container .all-work-link-container .arrow-wrapper {
+.featured-work-container .content-aisde-container .all-work-link-container .arrow-wrapper {
   position: absolute;
-  right: -0.2em;
+  right: -0.5em;
   top: 0;
 }
-.featured-work-container .content-container .works-container {
+.featured-work-container .featured-works-container {
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(2, 1fr);
   grid-area: 1/2;
+  gap: 1.2rem 1.6rem;
+  padding: 1.6rem 1.2rem;
+}
+.featured-work-container .featured-works-container .works-container {
+  display: flex;
+  height: 57vh;
+  border-radius: 1rem;
+  background-image: url("https://picsum.photos/200/300");
+  background-size: cover;
+  overflow: clip;
 }
 
 /*# sourceMappingURL=home.css.map */
