@@ -19,6 +19,7 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
+// Log viewport for dev
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
@@ -112,7 +113,24 @@ if (config.reversed) {
     return tl;
 }
 
-// Delay links
+// * ---- Get total scroll ----
+
+let global_scrollProgress = 0;
+
+ScrollTrigger.create({
+    trigger: "body",
+    start: "top top",
+    end: "bottom bottom",
+    // Scroll progress function
+    onUpdate: (self) => {
+        global_scrollProgress = Math.round(self.progress  * 100);
+    }
+});
+
+// * ---- / ----
+
+// * ---- Delay links -----
+
 var pageChangeHref = '';
 
 function goToLink() {
@@ -121,6 +139,8 @@ function goToLink() {
         document.location.href = pageChangeHref;
     });
 };
+
+// * ---- / ----
 
 // Get cursor position
 function getCursor(e) {
@@ -134,6 +154,20 @@ function getCursor(e) {
 // ?? ----------------------------------------
 // ?? GLOBAL
 // ?? ----------------------------------------
+
+// * ---- Progress bar ----
+
+gsap.to("#scroll-progress", {
+    scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.2,
+    },
+    height: "100%"
+});
+
+// * ---- / ----
 
 // ** ----------------------------------------
 // ** BACGKROUND MESH GRADIENT
@@ -716,8 +750,8 @@ let textRevealArr = gsap.utils.toArray(".--text-reveal");
 textRevealArr.forEach(el => {
     let el_tl = gsap.timeline({
         scrollTrigger: {
-            start: "45% center",
-            end: "75% 80%",
+            start: "25% center",
+            end: "55% bottom",
             scrub: true
         }
     });
@@ -748,10 +782,10 @@ expandWordArr.forEach(el => {
     let el_tl = gsap.timeline({
         scrollTrigger: {
             trigger: el,
-            start: "top center",
+            start: "-150% center",
             end: "150% center",
             toggleActions: "play none reverse none",
-            scrub: true
+            scrub: 1.32,
         }
     });
 

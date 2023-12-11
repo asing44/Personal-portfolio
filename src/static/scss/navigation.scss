@@ -388,7 +388,10 @@
             opacity: 0;
 
             rect {
-                @include base.glass("darker");
+                fill: base.$background-blur_darker;
+                box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
             }
         }
     }

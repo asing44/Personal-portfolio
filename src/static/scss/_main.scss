@@ -163,6 +163,17 @@ input, button, textarea, select {
     }
 }
 
+// * ---- Scroll progress bar ----
+
+#scroll-progress {
+    position: fixed;
+    height: 0;
+    width: 1.32px;
+    top: 0;
+    left: 0;
+    background-color: rgba(base.$primary-900, 0.5);
+}
+
 // ?? ----------------------------------------
 // ?? GLOBAL CLASSES
 // ?? ----------------------------------------
