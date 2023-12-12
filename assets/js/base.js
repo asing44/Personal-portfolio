@@ -1022,7 +1022,8 @@ function menuBackground_anim() {
 }
 
 // Menu slection container animation
-function menuSelection_anim() {
+function menuSelection_anim(selection) {
+
     let tl = gsap.timeline();
 
     tl.to(menuSelectionContainer, {
@@ -1031,16 +1032,22 @@ function menuSelection_anim() {
     }).to(menuSelection, {
         duration: 1,
         text: currentLoc
-    })
+    });
+
+    if (selection) {
+        tl.restart();
+    };
+
     return tl;
 }
 
-// Main menu content animation
+// Main menu slide in animation
 function menuContent_anim() {
     tl = gsap.timeline();
 
     tl.to(menuContainer, {
-        xPercent: 0
+        xPercent: 0,
+        ease: "power2.out"
     });
 
     return tl
@@ -1053,12 +1060,28 @@ headerMenuIcon.on("click", function() {
     if (currentLoc.match(/[\w-]+(?=\.html)/g) == null) {
     } else {
         menuSelection.innerHTML = currentLoc.match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " ").toUpperCase();
+    };
+
+    // Menu selection change animation
+    function menuSelection(e) {
+        let menuSelection = e.target;
+
+        if (menuSelection.dataset.pageName) {
+            console.log(menuSelection.dataset.pageName);
+            currentLoc = menuSelection.dataset.pageName;
+            menuSelection_anim();
+        };
     }
+
+    // Call the selection animation whenever a menu link is hovered
+    $(".menu-page-link-wrapper").on("mouseenter", menuSelection);
+
     expandedMenu_tl.timeScale(1).play()
 });
 
+
 // Close menu
-$(".menu-close-wrapper, .menu-selection-container").on("click", function() {
+$(".menu-close-wrapper, .menu-selection-container").on("click", function(e) {
     expandedMenu_tl.timeScale(1.5).reverse()
 })
 
