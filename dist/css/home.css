@@ -757,12 +757,13 @@ input, button, textarea, select {
 .featured-work-container .content-aisde-container {
   display: flex;
   height: fit-content;
-  width: 100%;
+  width: min-content;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  justify-self: right;
   grid-area: 1/1;
-  padding: 2.25rem 0;
+  padding: 1.6rem 1.2rem;
   border-radius: 1rem;
   background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
@@ -772,7 +773,7 @@ input, button, textarea, select {
 .featured-work-container .content-aisde-container .arrow-buttons-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
 }
 .featured-work-container .content-aisde-container .arrow-buttons-wrapper .arrow-button {
   padding: 0.6rem 1.6rem;
@@ -792,6 +793,7 @@ input, button, textarea, select {
   font-family: "Titillium Web", sans-serif;
   font-size: 1.3rem;
   font-line-height: 1;
+  white-space: nowrap;
   transition: 200ms ease-in-out;
   overflow: hidden;
 }

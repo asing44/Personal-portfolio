@@ -557,19 +557,20 @@
     .content-aisde-container {
         display: flex;
         height: fit-content;
-        width: 100%;
+        width: min-content;
         flex-direction: column;
         align-items: center;
         gap: base.$gap-60px;
+        justify-self: right;
         grid-area: 1 / 1;
-        padding: base.$external-45px 0;
+        padding: base.$internal-32px base.$internal-24px;
         border-radius: base.$border-radius_100;
         @include base.glass("dark");
 
         .arrow-buttons-wrapper {
             display: flex;
             flex-direction: column;
-            gap: base.$gap-32px;
+            gap: base.$gap-24px;
 
             .arrow-button {
                 padding: base.$internal-12px base.$internal-32px;
@@ -592,6 +593,7 @@
                         size: base.$font-size_h6;
                         line-height: base.$font-lineHeight_100;
                     };
+                    white-space: nowrap;
                     transition: 200ms ease-in-out;
                     overflow: hidden;
 
