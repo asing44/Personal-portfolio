@@ -285,6 +285,7 @@ featuredWorksArr.forEach(element => {
             ease: "power3.inOut"
         });
 
+        
         return tl;
     };
 

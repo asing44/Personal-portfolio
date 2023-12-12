@@ -641,7 +641,7 @@
         width: 100%;
         grid-template: min-content / repeat(2, 1fr);
         grid-area: 1 / 2;
-        gap: base.$gap-24px base.$gap-32px;
+        gap: base.$gap-12px base.$gap-45px;
         padding: base.$internal-32px 0;
 
         .column-wrapper {
@@ -664,7 +664,7 @@
             justify-content: center;
             align-items: center;
             border-radius: base.$border-radius_100;
-            @include base.glass("darker");
+            @include base.glass("dark");
 
             &:hover {
                 .work-thumbnail-wrapper {

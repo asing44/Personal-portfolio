@@ -832,7 +832,7 @@ input, button, textarea, select {
   width: 100%;
   grid-template: min-content/repeat(2, 1fr);
   grid-area: 1/2;
-  gap: 1.2rem 1.6rem;
+  gap: 0.6rem 2.25rem;
   padding: 1.6rem 0;
 }
 .featured-work-container .featured-works-container .column-wrapper-right {
@@ -849,7 +849,7 @@ input, button, textarea, select {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  background: rgba(5, 11, 16, 0.5);
+  background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
