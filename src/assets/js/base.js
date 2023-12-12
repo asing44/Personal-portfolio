@@ -19,6 +19,9 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
+// Refresh GSAP scroll
+ScrollTrigger.refresh();
+
 // Log viewport for dev
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
@@ -750,9 +753,10 @@ let textRevealArr = gsap.utils.toArray(".--text-reveal");
 textRevealArr.forEach(el => {
     let el_tl = gsap.timeline({
         scrollTrigger: {
-            start: "25% center",
-            end: "55% bottom",
-            scrub: true
+            trigger: el,
+            start: "-25% 50%",
+            end: "80% 70%",
+            scrub: 1.2
         }
     });
 
@@ -772,8 +776,7 @@ textRevealArr.forEach(el => {
             onReverseComplete: () => item.classList.remove("--text-revealed")
         })
     })
-    
-})
+});
 
 // Text expand
 let expandWordArr = gsap.utils.toArray(".--text-expand");
@@ -1202,6 +1205,9 @@ $(".menu-contact-copy-button").on("click", function() {
         fill: "#57FF74"
     })
 })
+
+// Refresh GSAP scroll
+ScrollTrigger.refresh();
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE
