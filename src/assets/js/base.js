@@ -974,25 +974,34 @@ let menuHover_tl = gsap.timeline({
         duration: 0.5
     },
     paused: true
-})
+});
+
 menuHover_tl.to('#menu-line_1', {
     xPercent: -50
 }).to('#menu-line_2', {
     xPercent: 50
-}, '<')
+}, '<');
 
 headerMenuIcon.hover(function() {
     menuHover_tl.play()
 }, function() {
     menuHover_tl.reverse()
-})
-
-let currentLoc = "HOME"
+});
 
 // Position menu off screen to start
 gsap.set(menuContainer, {
     xPercent: 120
 })
+
+// Current selected element for selection hover change animation
+let currentPage = "";
+if (window.location.href.match(/[\w-]+(?=\.html)/g)) {
+    currentPage = currentLoc.match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " ").toUpperCase();
+} else {
+    currentPage = "HOME";
+}
+
+let currentSelected = currentPage;
 
 // Parent timeline for menu animation
 let expandedMenu_tl = gsap.timeline({
@@ -1019,27 +1028,7 @@ function menuBackground_anim() {
     })
 
     return tl
-}
-
-// Menu slection container animation
-function menuSelection_anim(selection) {
-
-    let tl = gsap.timeline();
-
-    tl.to(menuSelectionContainer, {
-        opacity: 1,
-        ease: "sine.inOut"
-    }).to(menuSelection, {
-        duration: 1,
-        text: currentLoc
-    });
-
-    if (selection) {
-        tl.restart();
-    };
-
-    return tl;
-}
+};
 
 // Main menu slide in animation
 function menuContent_anim() {
@@ -1051,30 +1040,55 @@ function menuContent_anim() {
     });
 
     return tl
-}
+};
+
+// Menu slection container animation
+function menuSelection_anim(selection) {
+
+    let tl = gsap.timeline();
+
+    tl.set(menuSelection, {
+        text: ""
+    });
+
+    tl.to(menuSelectionContainer, {
+        opacity: 1,
+        ease: "sine.inOut"
+    }).to(menuSelection, {
+        duration: 1,
+        text: currentSelected
+    });
+
+    if (selection) {
+        tl.restart();
+    };
+
+    return tl;
+};
 
 // Menu click event listener
 headerMenuIcon.on("click", function() {
     $(expandedMenuContainer).toggleClass("-inactive");
-    currentLoc = window.location.href;
-    if (currentLoc.match(/[\w-]+(?=\.html)/g) == null) {
-    } else {
-        menuSelection.innerHTML = currentLoc.match(/[\w-]+(?=\.html)/g).toString().replaceAll("-", " ").toUpperCase();
-    };
 
     // Menu selection change animation
-    function menuSelection(e) {
-        let menuSelection = e.target;
+    function changeMenuSelection(e) {
+        let selected = e.target;
 
-        if (menuSelection.dataset.pageName) {
-            console.log(menuSelection.dataset.pageName);
-            currentLoc = menuSelection.dataset.pageName;
-            menuSelection_anim();
+        if (selected.dataset.pageName && (selected.dataset.pageName != currentSelected)) {
+            currentSelected = selected.dataset.pageName;
+            
+            gsap.to(menuSelection, {
+                duration: 0.5,
+                text: "",
+                onComplete: () => menuSelection_anim()
+            })
         };
     }
 
     // Call the selection animation whenever a menu link is hovered
-    $(".menu-page-link-wrapper").on("mouseenter", menuSelection);
+    $(".menu-page-link-wrapper").on("mouseenter", (e) => {
+        changeMenuSelection(e);
+    });
 
     expandedMenu_tl.timeScale(1).play()
 });
