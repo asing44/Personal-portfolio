@@ -181,10 +181,23 @@ input, button, textarea, select {
 // * ---- Spacers and dividers ----
 
 .__spacer {
-    width: 100%;
-    background: transparent;
+
+    &_small {
+        height: base.$external-60px;
+        width: 100%;
+        background: transparent;
+    }
+
     &_regular {
         height: base.$external-80px;
+        width: 100%;
+        background: transparent;
+    }
+
+    &_large {
+        height: base.$external-140px;
+        width: 100%;
+        background: transparent;
     }
 }
 
@@ -225,6 +238,14 @@ input, button, textarea, select {
 // ?? ----------------------------------------
 // ?? ELEMENTS
 // ?? ----------------------------------------
+
+// Inline emphasis
+.-inline-emphasize {
+    font: {
+        style: italic;
+        weight: base.$font-weight_bold;
+    }
+}
 
 // ** ----------------------------------------
 // ** ICONS

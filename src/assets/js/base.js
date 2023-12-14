@@ -32,7 +32,7 @@ window.addEventListener("resize", () => {
     viewportWidth = window.innerWidth;
 });
 
-// !Scroll to top on load
+// Scroll to top on load
 // gsap.to(window, {
 //     duration: 1,
 //     scrollTo: 0,
