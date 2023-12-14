@@ -259,6 +259,7 @@ coreQualitiesContainerArr.forEach(el => {
 ScrollTrigger.create({
     trigger: ".featured-work-container",
     pin: ".content-aisde-container",
+    pinSpacing: false,
     scrub: true,
     ease: "power2.inOut",
 })
@@ -271,7 +272,7 @@ featuredWorksArr.forEach(element => {
 
     let work_tl = gsap.timeline({
         paused: true
-    }).add(thumbnail_anim()).add(content_anim(), "80%")
+    }).add(thumbnail_anim()).add(content_anim(), "<")
 
     function thumbnail_anim() {
         let tl = gsap.timeline({});
@@ -292,13 +293,13 @@ featuredWorksArr.forEach(element => {
     function content_anim() {
         let tl = gsap.timeline({});
 
-        tl.to(container(".work-content-container"), {
-            opacity: 1,
+        tl.to(container(".work-content-container, .work-background"), {
+            opacity: "100%",
             ease: "power3.inOut"
         })
 
         return tl;
-    }
+    };
 
     $(element).hover(function() {
         work_tl.restart();
