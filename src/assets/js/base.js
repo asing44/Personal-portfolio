@@ -172,6 +172,18 @@ gsap.to("#scroll-progress", {
 
 // * ---- / ----
 
+// * ---- Scroll to section ----
+
+function scrollToSection(section) {
+    gsap.to(window, {
+        duration: 1.5,
+        scrollTo: section,
+        ease: "power2.inOut"
+    });
+};
+
+// * ---- / ----
+
 // ** ----------------------------------------
 // ** BACGKROUND MESH GRADIENT
 // ** ----------------------------------------

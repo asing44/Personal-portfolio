@@ -156,82 +156,35 @@ cssSrc: ./css/home.css
     </section>
     <section class="featured-work-container">
         <h4 class="subsection-blurb-wrapper"><div class="__corner_vertical_small"></div>My featured work</h4>
-        <div class="__spacer_small"></div>
-        <div class="content-container">
-            <div class="content-aisde-container">
-                <div class="arrow-buttons-wrapper">
-                    <button class="arrow-up-wrapper arrow-button --arrow-vertical-container --cursor-outer-hide">
-                        <img src="./assets/svg/icons/arrows/vertical/__arrow_up_medium.svg" alt="" class="__arrow_up_medium">
-                    </button>
-                    <button class="arrow-down-wrapper arrow-button --arrow-vertical-container --cursor-outer-hide">
-                        <img src="./assets/svg/icons/arrows/vertical/__arrow_down_medium.svg" alt="" class="__arrow_down_medium">
-                    </button>
+        <div class="__spacer_tiny"></div>
+        <div class="featured-works-container --flicker-container">
+            <div class="work-main-content-container">
+                <div class="work-image-wrapper">
+                    <img src="" alt="" class="work-image">
                 </div>
-                <a href="" class="all-work-link-container --text-flicker-container --arrow-diagonal-small-container --cursor-outer-hide">
-                    <div class="all-work-wrapper">
-                        <p class="all-work --text-flicker">All work</p>
+
+                <div class="work-title-wrapper">
+                    <div class="__corner_horizontal_medium_wrapper">
+                        <div class="__inner-corner"></div>
                     </div>
-                    <div class="arrow-wrapper --arrow-wrapper">
-                        <img src="./assets/svg/icons/arrows/diagonal/__arrow_diagonal_small.svg" alt="" class="__arrow_diagonal_small">
-                    </div>
-                </a>
+                    <h5 class="work-title">Work title</h5>
+                </div>
             </div>
-            <div class="featured-works-container --flicker-container">
-                <div class="column-wrapper-left">
-                    <div class="work-container --flicker-element --img-parallex-container --cursor-outer-hide ">
-                        <div class="work-content-container">
-                            <div class="work-blurb-wrapper">
-                                <h5 class="work-title">Title</h5>
-                                <h6 class="work-subtitle">Subtitle</h6>
-                            </div>
-                            <div class="work-background"></div>
-                        </div>
-                        <div class="work-thumbnail-wrapper">
-                            <img class="work-thumbnail --img-parallex" src="https://picsum.photos/200/300"></img>
-                        </div>
-                    </div>
+            <aside class="work-aside-pagination-container">
+                <div class="work-pagination-wrapper">
+                    <div class="work-pagination-selection -active"></div>
+                    <div class="work-pagination-selection"></div>
+                    <div class="work-pagination-selection"></div>
+                    <div class="work-pagination-selection"></div>
                 </div>
-                <div class="column-wrapper-right">
-                    <div class="work-container --flicker-element --img-parallex-container --cursor-outer-hide">
-                        <div class="work-content-container">
-                            <div class="work-blurb-wrapper">
-                                <h5 class="work-title">Title</h5>
-                                <h6 class="work-subtitle">Subtitle</h6>
-                            </div>
-                            <div class="work-background"></div>
-                        </div>
-                        <div class="work-thumbnail-wrapper">
-                            <img class="work-thumbnail" src="https://picsum.photos/200/300"></img>
-                        </div>
-                    </div>
-                </div>
-                <div class="column-wrapper-left">
-                    <div class="work-container --flicker-element --img-parallex-container --cursor-outer-hide ">
-                        <div class="work-content-container">
-                            <div class="work-blurb-wrapper">
-                                <h5 class="work-title">Title</h5>
-                                <h6 class="work-subtitle">Subtitle</h6>
-                            </div>
-                            <div class="work-background"></div>
-                        </div>
-                        <div class="work-thumbnail-wrapper">
-                            <img class="work-thumbnail" src="https://picsum.photos/200/300"></img>
-                        </div>
-                    </div>
-                </div>
-                <div class="column-wrapper-right">
-                    <div class="work-container --flicker-element --img-parallex-container --cursor-outer-hide">
-                        <div class="work-content-container">
-                            <div class="work-blurb-wrapper">
-                                <h5 class="work-title">Title</h5>
-                                <h6 class="work-subtitle">Subtitle</h6>
-                            </div>
-                            <div class="work-background"></div>
-                        </div>
-                        <div class="work-thumbnail-wrapper">
-                            <img class="work-thumbnail" src="https://picsum.photos/200/300"></img>
-                        </div>
-                    </div>
+            </aside>
+            <div class="work-details-container">
+                <div class="work-details-wrapper">
+                    <p class="work-client">Client</p>
+                    <span class="work-details-divider">/</span>
+                    <p class="work-category">Category</p>
+                    <span class="work-details-divider">/</span>
+                    <p class="work-date">December 10, 2023</p>
                 </div>
             </div>
         </div>
@@ -240,7 +193,7 @@ cssSrc: ./css/home.css
 </section>
 <div class="__spacer_regular"></div>
 <!-- Contact -->
-<section class="contact-section-container">
+<section id="contact-section" class="contact-section-container">
     <header class="section-header-container contact-header-container">
         <p class="section-number-wrapper">[03] /</p>
         <h2 class="section-title --text-expand">CONTACT</h2>
@@ -257,7 +210,6 @@ cssSrc: ./css/home.css
                 <h4 class="title">Let's connect</h4>
             </div>
             <form class="contact-form-container">
-                
             </form>
         </div>
     </div>
