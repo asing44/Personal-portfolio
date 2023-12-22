@@ -796,23 +796,36 @@ input, button, textarea, select {
   gap: 0.6rem;
   grid-area: 1/2;
 }
-.featured-works-container .work-main-content-container .work-image-wrapper {
-  display: flex;
-  min-height: 444px;
+.featured-works-container .work-main-content-container .work-images-container {
+  position: relative;
+  height: 57vh;
+  max-height: 57vh;
   width: 57vw;
-  justify-content: center;
-  align-items: center;
   padding: 1.6rem 1.2rem;
   border-radius: 1rem;
+  overflow: hidden;
   background: rgba(207, 223, 239, 0.05);
   box-shadow: 0 4px 30px rgba(5, 11, 16, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.featured-works-container .work-main-content-container .work-image-wrapper .work-image {
+.featured-works-container .work-main-content-container .work-images-container .work-image-wrapper {
+  display: flex;
+  position: relative;
   height: 100%;
   width: 100%;
-  border: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.featured-works-container .work-main-content-container .work-images-container .work-image-wrapper .work-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  mask-image: linear-gradient(120deg, rgba(0, 0, 0, 0) 50%, rgb(255, 255, 255) 50%);
 }
 .featured-works-container .work-main-content-container .work-title-wrapper {
   display: flex;
@@ -820,8 +833,8 @@ input, button, textarea, select {
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
-  top: 32%;
-  left: 7rem;
+  top: 24%;
+  left: 5%;
 }
 .featured-works-container .work-main-content-container .work-title-wrapper .work-title {
   font-size: 2.37rem;
