@@ -5,6 +5,13 @@
 // GSAP
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
+document.addEventListener("touchstart", e => {
+    if (scrollTween) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+}, {capture: true, passive: false})
+
 // Smooth scroll
 const lenis = new Lenis({
     duration: 1.2,
@@ -714,8 +721,6 @@ gradient.initGradient('#gradient-canvas')
 
 const cursor = document.querySelector('.__cursor');
 const cursorBall = document.getElementsByClassName('__cursor-ball')[0];
-const cursorOuter = document.querySelector('.__cursor-outer');
-const cursorOuterCircle = $('.__cursor-outer-circle');
 
 document.body.addEventListener('mousemove', cursorMove);
 
@@ -731,24 +736,20 @@ function cursorMove(e) {
     tl.to(cursor, {
         x: cursorX,
         y: cursorY,
-        ease: "power4"
-    }).to(cursorOuter, {
-        x: cursorX - 25,
-        y: cursorY - 25,
-        ease: "power4"
-    }, '<5%')
+        ease: "power2"
+    });
 
     localStorage.setItem("cursorX", cursorX);
     localStorage.setItem("cursorY", cursorY);
 }
 
 // Hide the outer cursor on hover
-$('.--cursor-outer-hide').on('mouseenter', function(){
+$('.--cursor-hide').on('mouseenter', function(){
     gsap.to(cursor, {mixBlendMode: "normal"});
-    gsap.to(cursorOuter, {opacity: 0});
+    gsap.to(cursorBall, {opacity: 0});
 }).on('mouseleave', function(){
     gsap.to(cursor, {mixBlendMode: "exclusion"});
-    gsap.to(cursorOuter, {opacity: 1});
+    gsap.to(cursorBall, {opacity: 1});
 });
 
 // ?? ----------------------------------------
@@ -970,18 +971,18 @@ let imgParallexContainer = gsap.utils.toArray(".--img-parallex-container");
 // ** NAVIGATION
 // ** ----------------------------------------
 
-const headerMenuIcon = $('.header-menu-wrapper');
+const headerMenuIcon = $('.header-menu-w');
 const headerMenuIconSVG = $('.svg_menu-icon');
 
-const expandedMenuContainer = $(".expanded-menu-container");
+const expandedMenuContainer = $(".expanded-menu-c");
 
-const menuContainer = $(".menu-container");
+const menuContainer = $(".menu-c");
 
-const menuSelectionContainer = $(".menu-selection-container");
+const menuSelectionContainer = $(".menu-selection-c");
 const menuSelection = $(".menu-selection");
 
-const menuBackgroundSVGContainer = $("#menu-background");
-const menuBackgroundSVG = $("#menu-background rect");
+const menuBackgroundContainer = document.getElementsByClassName("expanded-menu-background-c");
+const menuBackgroundBarsArr = gsap.utils.toArray(".menu-background-bar");
 
 // Menu icon hover animation
 let menuHover_tl = gsap.timeline({
@@ -1024,22 +1025,21 @@ let expandedMenu_tl = gsap.timeline({
     onReverseComplete: () => $(expandedMenuContainer).toggleClass("-inactive")
 }).add(menuBackground_anim()).add(menuSelection_anim(), "<75%").add(menuContent_anim(), "<")
 
-// Background darkening animation
+// Background animation
 function menuBackground_anim() {
     let tl = gsap.timeline({
-        onComplete: () => {$(body).toggleClass("-lockScroll")}
+        onComplete: () => $(body).toggleClass("-lockScroll")
     });
 
-    tl.to(menuBackgroundSVGContainer, {
-        duration: 1,
-        keyframes: {
-            "25%": {scaleX: 1, scaleY: 1, opacity: 1},
-            "100%": {scaleX: 4, scaleY: 4, skewX: 15, ease: "sine.out"}
-        }
-    }).to(menuBackgroundSVGContainer, {
-        duration: 1,
-        scale: 40,
-        skewX: 0
+    tl.set(".expanded-menu-background-c", {
+        visibility: "visible"
+    });
+
+    menuBackgroundBarsArr.forEach(item => {
+        tl.to(item, {
+            scaleY: "100%",
+            ease: "cubic-bezier(1.000, 0.000, 0.000, 1.000)"
+        }, '<50%')
     })
 
     return tl
@@ -1110,7 +1110,7 @@ headerMenuIcon.on("click", function() {
 
 
 // Close menu
-$(".menu-close-wrapper, .menu-selection-container").on("click", function(e) {
+$(".menu-close-w, .menu-selection-c").on("click", function(e) {
     expandedMenu_tl.timeScale(1.5).reverse()
 })
 
@@ -1121,7 +1121,7 @@ $(".menu-close-wrapper, .menu-selection-container").on("click", function(e) {
 // * ---- Arrows ----
 
 // Diagonal small hover
-let arrowDiagonalSmallContainerArr = gsap.utils.toArray(".--arrow-diagonal-small-container");
+let arrowDiagonalSmallContainerArr = gsap.utils.toArray(".arrow-diagonal-small-c");
 
 arrowDiagonalSmallContainerArr.forEach(container => {
     let containerHover_tl = gsap.timeline({
@@ -1151,7 +1151,7 @@ arrowDiagonalSmallContainerArr.forEach(container => {
 })
 
 // Vertical hover
-let arrowVerticalContainerArr = gsap.utils.toArray(".--arrow-vertical-container");
+let arrowVerticalContainerArr = gsap.utils.toArray(".--arrow-vertical-c");
 
 arrowVerticalContainerArr.forEach(container => {
     let thisContainer = gsap.utils.selector(container);
@@ -1217,9 +1217,6 @@ $(".menu-contact-copy-button").on("click", function() {
         fill: "#57FF74"
     })
 })
-
-// Refresh GSAP scroll
-ScrollTrigger.refresh();
 
 // ?? ----------------------------------------
 // ?? TESTING ZONE

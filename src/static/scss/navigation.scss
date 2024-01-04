@@ -4,7 +4,7 @@
 
 // * Top navigation
 
-.navigation-top-container {
+.navigation-top-c {
     display: flex;
     position: relative;
     width: 100%;
@@ -12,7 +12,7 @@
     align-items: center;
     padding: base.$internal-24px;
 
-    .header-cta-container {
+    .header-cta-c {
         display: flex;
         align-items: center;
         gap: base.$internal-12px;
@@ -21,7 +21,7 @@
         border-radius: base.$border-radius_4px;
         transition: base.$animation_speed_regular;
 
-        .circle-wrapper {
+        .circle-w {
             position: relative;
             height: base.$internal-12px;
             width: base.$internal-12px;
@@ -83,7 +83,7 @@
         }
     }
 
-    .logo-wrapper {
+    .logo-w {
         display: grid;
         position: absolute;
         place-content: center;
@@ -101,7 +101,7 @@
         }
     }
 
-    .header-menu-wrapper {
+    .header-menu-w {
         position: fixed;
         top: base.$internal-24px;
         right: calc(base.$internal-24px + (base.$external-60px / 2));
@@ -125,7 +125,7 @@
     }
 }
 
-.expanded-menu-container {
+.expanded-menu-c {
     display: flex;
     position: fixed;
     height: 100dvh;
@@ -138,7 +138,7 @@
     overflow: hidden;
     z-index: 100;
 
-    .menu-container {
+    .menu-c {
         display: flex;
         position: relative;
         min-width: 20vw;
@@ -149,7 +149,7 @@
         @include base.glass("dark");
         z-index: 101;
 
-        .menu-close-wrapper {
+        .menu-close-w {
             display: flex;
             position: relative;
             gap: base.$gap-4px;
@@ -168,14 +168,14 @@
             }
         }
 
-        .menu-page-links-container {
+        .menu-page-links-c {
             display: flex;
             position: relative;
             flex-direction: column;
             gap: base.$gap-24px;
             padding: 0 0 base.$internal-32px  base.$internal-12px;
 
-            .menu-page-link-wrapper {
+            .menu-page-link-w {
                 display: flex;
                 gap: base.$gap-8px;
                 flex: 1;
@@ -230,18 +230,18 @@
             }
         }
 
-        .menu-contact-container {
+        .menu-contact-c {
             display: flex;
             flex-direction: column;
             gap: base.$gap-32px;
 
-            .menu-socials-wrapper {
+            .menu-socials-w {
                 display: flex;
                 flex: 1;
                 align-items: center;
                 gap: base.$gap-24px;
 
-                .social-wrapper {
+                .social-w {
                     padding: base.$internal-8px;
                     background: base.$background-blur_dark;
                     border-radius: base.$border-radius_4px;
@@ -253,7 +253,7 @@
                         @include base.grayscale(100%);
                     }
 
-                    .arrow-wrapper {
+                    .arrow-w {
                         right: 0;
                         top: 0;
                     }
@@ -267,7 +267,7 @@
                 }
             }
 
-            .menu-email-container {
+            .menu-email-c {
                 display: flex;
                 flex: 1;
                 align-items: center;
@@ -290,7 +290,7 @@
                     }
                 }
 
-                .menu-email-wrapper {
+                .menu-email-w {
                     display: flex;
                     position: relative;
                     justify-content: center;
@@ -334,7 +334,7 @@
                         }
                     }
                         
-                    .arrow-wrapper {
+                    .arrow-w {
                         position: absolute;
                         right: -0.75ch;
                         top: 0;
@@ -344,7 +344,7 @@
         }
     }
 
-    .menu-selection-container {
+    .menu-selection-c {
         display: grid;
         position: absolute;
         height: 100%;
@@ -355,7 +355,7 @@
         opacity: 0%;
         z-index: 100;
 
-        .menu-selection-wrapper {
+        .menu-selection-w {
             display: flex;
 
             .menu-selection {
@@ -374,26 +374,25 @@
         }
     }
 
-    .menu-background-wrapper {
+    .expanded-menu-background-c {
         display: grid;
         position: absolute;
-        height: 100%;
-        width: 100%;
-        place-content: center;
+        height: 100dvh;
+        width: 100dvw;
+        grid-auto-flow: column;
         top: 0;
         left: 0;
+        visibility: hidden;
         z-index: -1;
 
-        #menu-background {
-            transform: scale(0);
-            opacity: 0;
-
-            rect {
-                fill: base.$background-blur_darker;
-                box-shadow: 0 4px 30px transparentize(base.$dark, 0.8);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
+        .menu-background-bar {
+            height: 100%;
+            width: 100%;
+            transform-origin: 50% 0%;
+            background-color: base.$dark;
+            transform: scaleY(0%);
+            visibility: visible;
+            z-index: 1;
         }
     }
 }

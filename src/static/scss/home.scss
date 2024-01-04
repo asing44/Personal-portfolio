@@ -534,33 +534,28 @@
     column-gap: base.$gap-24px;
 
     .work-main-content-container {
-        display: flex;
-        flex-direction: column;
+        position: relative;
+        height: base.$vh-57;
+        max-height: base.$vh-57;
         justify-self: center;
-        justify-content: center;
-        align-items: center;
         gap: base.$gap-12px;
         grid-area: 1 / 2;
+        padding: base.$internal-32px base.$internal-24px;
+        border-radius: base.$border-radius_100;
+        overflow: hidden;
+        @include base.glass("dark");
 
         .work-images-container {
             position: relative;
-            height: base.$vh-57;
-            max-height: base.$vh-57;
             width: base.$vw-57;
-            padding: base.$internal-32px base.$internal-24px;
+            flex-direction: column;
             border-radius: base.$border-radius_100;
-            overflow: hidden;
-            @include base.glass("dark");
 
             .work-image-wrapper {
-                display: flex;
                 position: relative;
-                height: 100%;
+                height: calc(base.$vh-57 - (2 * base.$internal-32px));
                 width: 100%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: base.$internal-32px;
+                margin-bottom: base.$external-80px;
                 border-radius: base.$border-radius_100;
                 overflow: hidden;
     
