@@ -273,13 +273,13 @@ input, button, textarea, select {
   height: 1.2rem;
   width: 2.25rem;
 }
-.arrow-wrapper {
+.arrow-w {
   position: absolute;
   right: 0.4rem;
   top: 0.4rem;
   overflow: hidden;
 }
-.arrow-wrapper img, .arrow-wrapper svg {
+.arrow-w img, .arrow-w svg {
   transition: initial !important;
 }
 
@@ -788,19 +788,12 @@ input, button, textarea, select {
   column-gap: 1.2rem;
 }
 .featured-works-container .work-main-content-container {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  grid-area: 1/2;
-}
-.featured-works-container .work-main-content-container .work-images-container {
   position: relative;
   height: 57vh;
   max-height: 57vh;
-  width: 57vw;
+  justify-self: center;
+  gap: 0.6rem;
+  grid-area: 1/2;
   padding: 1.6rem 1.2rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -809,15 +802,17 @@ input, button, textarea, select {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.featured-works-container .work-main-content-container .work-images-container .work-image-wrapper {
-  display: flex;
+.featured-works-container .work-main-content-container .work-images-container {
   position: relative;
-  height: 100%;
-  width: 100%;
+  width: 57vw;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.6rem;
+  border-radius: 1rem;
+}
+.featured-works-container .work-main-content-container .work-images-container .work-image-wrapper {
+  position: relative;
+  height: calc(57vh - 3.2rem);
+  width: 100%;
+  margin-bottom: 4rem;
   border-radius: 1rem;
   overflow: hidden;
 }

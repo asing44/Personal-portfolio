@@ -254,3 +254,31 @@ coreQualitiesContainerArr.forEach(el => {
         tl.reverse()
     });
 });
+
+// * ---- Featured Work ----
+
+const workThumbnailsContainer = document.getElementsByClassName("--work-scroll-container")[0];
+const workImagesArr = gsap.utils.toArray(".--work-img");
+
+const workThumbnailsContainerHeight = parseInt(window.getComputedStyle(workThumbnailsContainer).height);
+const workImageHeight = parseInt(window.getComputedStyle(workImagesArr[0]).height) + parseInt(window.getComputedStyle(workImagesArr[0]).marginBottom);
+
+let featuredWork_tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".featured-work-container",
+        pin: true,
+        scrub: 2
+    }
+}).add(workScroll())
+
+function workScroll() {
+    let tl = gsap.timeline();
+
+    tl.to(".--work-scroll-container", {
+        yPercent: -100
+    });
+
+    return tl;
+}
+
+// * ---- / ----
