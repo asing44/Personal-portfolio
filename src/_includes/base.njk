@@ -12,12 +12,14 @@
     <canvas id="gradient-canvas" data-transition-in></canvas>
     {# Fixed reference #}
     <div id="viewport"></div>
+    {# Fade and blur bottom and top of viewport #}
+    <div id="viewport-clip"></div>
     {# Scroll progress #}
     <div id="scroll-progress"></div>
     {# Cursor #}
     <div class="__cursor">
       <svg class="__cursor-ball" height="14" width="14">
-        <circle cx="7" cy="7" r="6" stroke-width="0"></circle>
+        <circle cx="7" cy="7" r="6" stroke-width="0.57"></circle>
       </svg>
     </div>
     {# Page change #}

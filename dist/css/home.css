@@ -124,6 +124,18 @@ input, button, textarea, select {
   z-index: 0;
 }
 
+#viewport-clip {
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(5, 11, 16, 0.5), transparent 20%, transparent 80%, rgba(5, 11, 16, 0.5));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 500;
+}
+
 .__cursor {
   position: fixed;
   display: flex;

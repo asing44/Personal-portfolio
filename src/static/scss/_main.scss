@@ -104,8 +104,7 @@ input, button, textarea, select {
 // ** FIXED
 // ** ----------------------------------------
 
-// * ---- Background mesh gradient ----
-
+// Background mesh gradient
 #gradient-canvas {
     position: fixed;
     width: 100%;
@@ -119,8 +118,7 @@ input, button, textarea, select {
     z-index: -1;
 }
 
-// * ---- Viewport reference ----
-
+// Viewport reference
 #viewport {
     position: fixed;
     height: 100vh;
@@ -131,8 +129,20 @@ input, button, textarea, select {
     z-index: 0;
 }
 
-// * ---- Cursor ----
+// Viewport clip
+#viewport-clip {
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top, base.$background-blur_darker, transparent 20%, transparent 80%, base.$background-blur_darker);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 500;
+}
 
+// * ---- Cursor ----
 .__cursor {
     position: fixed;
     display: flex;
@@ -163,8 +173,7 @@ input, button, textarea, select {
     }
 }
 
-// * ---- Scroll progress bar ----
-
+// Scroll progress bar
 #scroll-progress {
     position: fixed;
     height: 0;

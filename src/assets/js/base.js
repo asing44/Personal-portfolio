@@ -743,13 +743,23 @@ function cursorMove(e) {
     localStorage.setItem("cursorY", cursorY);
 }
 
-// Hide the outer cursor on hover
-$('.--cursor-hide').on('mouseenter', function(){
-    gsap.to(cursor, {mixBlendMode: "normal"});
-    gsap.to(cursorBall, {opacity: 0});
+// Curosr hover
+let cursorHover_tl = gsap.timeline({
+    paused: true
+});
+
+cursorHover_tl.to(cursorBall, {
+    fill: "rgba(255,200,87,0)",
+    stroke: "rgba(255,200,87,1)",
+}).to(cursorBall, {
+    scale: 2.64,
+    ease: "power3.inOut"
+}, "<");
+
+$('.--cursor-hover').on('mouseenter', function(){
+    cursorHover_tl.play();
 }).on('mouseleave', function(){
-    gsap.to(cursor, {mixBlendMode: "exclusion"});
-    gsap.to(cursorBall, {opacity: 1});
+    cursorHover_tl.reverse();
 });
 
 // ?? ----------------------------------------
@@ -1121,7 +1131,7 @@ $(".menu-close-w, .menu-selection-c").on("click", function(e) {
 // * ---- Arrows ----
 
 // Diagonal small hover
-let arrowDiagonalSmallContainerArr = gsap.utils.toArray(".arrow-diagonal-small-c");
+let arrowDiagonalSmallContainerArr = gsap.utils.toArray(".--arrow-c");
 
 arrowDiagonalSmallContainerArr.forEach(container => {
     let containerHover_tl = gsap.timeline({
