@@ -10,7 +10,6 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
-    cursor: none;
 }
 
 * {
@@ -136,10 +135,10 @@ input, button, textarea, select {
     width: 100dvw;
     top: 0;
     left: 0;
-    background: linear-gradient(to top, base.$background-blur_darker, transparent 20%, transparent 80%, base.$background-blur_darker);
+    background: linear-gradient(to top, base.$background-blur_darkest, transparent 20%, transparent 80%, base.$background-blur_darkest);
     mix-blend-mode: multiply;
     pointer-events: none;
-    z-index: 500;
+    z-index: 450;
 }
 
 // * ---- Cursor ----
@@ -150,7 +149,7 @@ input, button, textarea, select {
     left: -7px;
     pointer-events: none;
     mix-blend-mode: exclusion;
-    z-index: 500;
+    z-index: 1000;
 
     .__cursor-ball {
         fill: base.$primary-900;
@@ -380,25 +379,60 @@ input, button, textarea, select {
     font-family: base.$font-family-display;
 }
 
+// Inline squares
+.square {
+    display: inline-block;
+
+    &.--regular {
+        @extend .square;
+    }
+}
+
 // ?? ----------------------------------------
 // ?? INTERACTIVE
 // ?? ----------------------------------------
 
 // ** ----------------------------------------
-// ** SYMBOLS
-// ** ----------------------------------------
-
-// ** ----------------------------------------
-// ** ICONS
-// ** ----------------------------------------
-
-// ** ----------------------------------------
-// ** LINKS
-// ** ----------------------------------------
-
-// ** ----------------------------------------
 // ** BUTTONS
 // ** ----------------------------------------
+
+.button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: base.$internal-32px;
+
+    .button-outline {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &--primary {
+        @extend .button;
+    }
+}
+
+// ** ----------------------------------------
+// ** LOGOS
+// ** ----------------------------------------
+
+.logo {
+    display: flex;
+    position: relative;
+    min-width: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: base.$internal-32px;
+
+
+    &--light {
+        @extend .logo;
+    }
+}
 
 // ?? ----------------------------------------
 // ?? ANIMATION

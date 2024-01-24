@@ -12,7 +12,6 @@
 /* 15px */
 *, *::before, *::after {
   box-sizing: border-box;
-  cursor: none;
 }
 
 * {
@@ -44,7 +43,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Orbitron", sans-serif;
   line-height: 1.32;
 }
 
@@ -130,10 +129,10 @@ input, button, textarea, select {
   width: 100dvw;
   top: 0;
   left: 0;
-  background: linear-gradient(to top, rgba(5, 11, 16, 0.5), transparent 20%, transparent 80%, rgba(5, 11, 16, 0.5));
+  background: linear-gradient(to top, rgba(5, 11, 16, 0.7), transparent 20%, transparent 80%, rgba(5, 11, 16, 0.7));
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 500;
+  z-index: 450;
 }
 
 .__cursor {
@@ -143,7 +142,7 @@ input, button, textarea, select {
   left: -7px;
   pointer-events: none;
   mix-blend-mode: exclusion;
-  z-index: 500;
+  z-index: 1000;
 }
 .__cursor .__cursor-ball {
   fill: #FFC857;
@@ -299,6 +298,31 @@ input, button, textarea, select {
   font-family: "Orbitron", sans-serif;
 }
 
+.square, .square.--regular {
+  display: inline-block;
+}
+.button, .button--primary {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+.button .button-outline, .button--primary .button-outline {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.logo, .logo--light {
+  display: flex;
+  position: relative;
+  min-width: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
 .--parallex-img {
   aspect-ratio: 1/1;
 }
@@ -511,7 +535,7 @@ input, button, textarea, select {
   flex: 1;
 }
 .about-section-container .about-middle-container .about-blurb-wrapper .about-blurb {
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 3.16rem;
   line-height: 1.32;
 }
@@ -529,62 +553,7 @@ input, button, textarea, select {
 }
 .about-section-container .about-middle-container .about-blurb-wrapper .about-button {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
   align-self: flex-end;
-  padding-right: 1.2rem;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .link-corner {
-  transform: translateY(-1.5ch);
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .button-text {
-  position: relative;
-  color: #BEC0C3;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.3rem;
-  font-line-height: 1;
-  transition: 200ms ease-in-out;
-  overflow: hidden;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .button-text::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: -105%;
-  border: 1.32px solid #FFC857;
-  transition: 250ms ease-in-out;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .button-text::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  border: 1.32px solid #A4A7AA;
-  transition: 250ms ease-in-out;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .__arrow_horizontal_medium {
-  position: relative;
-  transform: translateY(0.5ch);
-  overflow: hidden;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button .__arrow_horizontal_medium svg {
-  position: absolute;
-  left: -100%;
-  transition: 200ms ease-in-out;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button:hover .button-text {
-  color: #FFC857;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button:hover .button-text::before {
-  left: 0%;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button:hover .button-text::after {
-  left: 105%;
-}
-.about-section-container .about-middle-container .about-blurb-wrapper .about-button:hover .__arrow_horizontal_medium svg {
-  left: 0%;
 }
 .about-section-container .about-stack-container {
   display: flex;

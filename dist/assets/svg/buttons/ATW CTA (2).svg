@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 523.58 225.6">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        fill: #f1bd50;
+        filter: url(#outer-glow-1);
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #f1bd50;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-6 {
+        fill: #efebe1;
+        font-family: Orbitron-Medium, Orbitron;
+        font-size: 50px;
+        font-weight: 500;
+      }
+
+      .cls-7 {
+        letter-spacing: -.04em;
+      }
+    </style>
+    <filter id="outer-glow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="20"/>
+      <feFlood flood-color="#fefefe" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="ATW_CTA" data-name="ATW CTA">
+    <path class="cls-5" d="M477.58,19.11H4.27v142.32c17.57,17.57,27.43,27.43,45,45h473.31V64.11c-17.57-17.57-27.43-27.43-45-45Z"/>
+    <text class="cls-6" transform="translate(208.54 98.53)"><tspan x="0" y="0">Avail</tspan><tspan class="cls-3" x="141.5" y="0">a</tspan><tspan x="175.3" y="0">ble </tspan><tspan x="0" y="60">to </tspan><tspan class="cls-7" x="69.6" y="60">w</tspan><tspan class="cls-1" x="120.85" y="60">o</tspan><tspan class="cls-4" x="154.45" y="60">rk</tspan></text>
+    <path class="cls-2" d="M165.6,112.78c-32.24,11.33-41.42,20.51-52.75,52.75-11.33-32.24-20.51-41.42-52.75-52.75,32.24-11.33,41.42-20.51,52.75-52.75,11.33,32.24,20.51,41.42,52.75,52.75Z"/>
+  </g>
+</svg>

@@ -192,8 +192,10 @@ function scrollToSection(section) {
 // * ---- / ----
 
 // ** ----------------------------------------
-// ** BACGKROUND MESH GRADIENT
+// ** BACGKROUNDS AND OVERLAY
 // ** ----------------------------------------
+
+// * ---- Background blob gradient ----
 
 /*
 *   Stripe WebGl Gradient Animation
@@ -202,7 +204,6 @@ function scrollToSection(section) {
 *   commented out for now.
 *   https://kevinhufnagl.com
 */
-
 //Converting colors to proper format
 function normalizeColor(hexCode) {
     return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
@@ -715,6 +716,8 @@ const gradient = new Gradient()
 // Call `initGradient` with the selector to your canvas
 gradient.initGradient('#gradient-canvas')
 
+// * ---- / ----
+
 // ** ----------------------------------------
 // ** CURSOR
 // ** ----------------------------------------
@@ -760,6 +763,21 @@ $('.--cursor-hover').on('mouseenter', function(){
     cursorHover_tl.play();
 }).on('mouseleave', function(){
     cursorHover_tl.reverse();
+});
+
+// Cursor expand
+let cursorExpand_tl = gsap.timeline({
+    paused: true
+});
+
+cursorExpand_tl.to(cursorBall, {
+    scale: 2.30
+});
+
+$('.--cursor-expand').on('mouseenter', function(){
+    cursorExpand_tl.play();
+}).on('mouseleave', function(){
+    cursorExpand_tl.reverse();
 });
 
 // ?? ----------------------------------------
@@ -961,17 +979,13 @@ flickerContainer.forEach(flickerContainer => {
 // ** DELAY LINK
 // ** ----------------------------------------
 
-// ! Needs changed
-$(".--delay-link").on("click", function(e) {
+$(".--delay-link").on("click", (e) => {
     e.preventDefault();
 });
 
 // ** ----------------------------------------
 // ** IMAGES
 // ** ----------------------------------------
-
-// Parallex effect
-let imgParallexContainer = gsap.utils.toArray(".--img-parallex-container");
 
 // ?? ----------------------------------------
 // ?? INTERACTIVE
@@ -1117,7 +1131,6 @@ headerMenuIcon.on("click", function() {
 
     expandedMenu_tl.timeScale(1).play()
 });
-
 
 // Close menu
 $(".menu-close-w, .menu-selection-c").on("click", function(e) {

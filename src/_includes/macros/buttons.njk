@@ -1,0 +1,24 @@
+{% macro button(buttonType, class = "", text = "button") %}
+    {% if buttonType == "primary" %}
+        <a class="button--primary {{ class }}">
+            <svg class="button-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520.31 189.32">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: none;
+                            stroke: #f1bd50;
+                            stroke-miterlimit: 10;
+                            stroke-width: 1.32px;
+                            vector-effect: non-scaling-stroke;
+                        }
+                    </style>
+                </defs>
+                <g>
+                    <path class="cls-1"
+                        d="M474.31,1H1v142.32c17.57,17.57,27.43,27.43,45,45h473.31V46c-17.57-17.57-27.43-27.43-45-45Z" />
+                </g>
+            </svg>
+            {{ text }}
+        </a>
+    {% endif %}
+{% endmacro %}

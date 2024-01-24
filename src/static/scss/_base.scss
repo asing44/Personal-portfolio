@@ -138,10 +138,7 @@ $error-25: #F2DED9;
 $background-blur_light: rgba(207, 223, 239, 0.2);
 $background-blur_dark: rgba(207, 223, 239, 0.05);
 $background-blur_darker: rgba(5, 11, 16, 0.5);
-// Overlay
-// $overlay: transparentize($gray-dark, 0.5);
-// Box shadow
-// $box-shadow: transparentize($gray-light, 0.85);
+$background-blur_darkest:rgba(5, 11, 16, 0.7);
 
 // * BORDER
 // Radius
@@ -161,7 +158,7 @@ $border-width_229: 2.28px;
 // * FONTS
 // Family
 $font-family-display: 'Orbitron', sans-serif;
-$font-family-heading: 'Titillium Web', sans-serif;
+$font-family-heading: /* 'Titillium Web', sans-serif */ 'Orbitron', sans-serif;
 $font-family-body: 'Metrophobic', sans-serif;
 // Size base size: desktop-body (20px)
 $font-size_h6: 1.3rem;       /* 26px */

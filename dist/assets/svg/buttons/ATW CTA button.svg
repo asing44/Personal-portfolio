@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="ATW-CTA-button" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520.31 189.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f1bd50;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="ATW_CTA" data-name="ATW CTA">
+    <path class="cls-1" d="M474.31,1H1v142.32c17.57,17.57,27.43,27.43,45,45h473.31V46c-17.57-17.57-27.43-27.43-45-45Z"/>
+  </g>
+</svg>

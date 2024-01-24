@@ -204,73 +204,7 @@
 
             .about-button {
                 display: flex;
-                align-items: center;
-                gap: base.$gap-12px;
                 align-self: flex-end;
-                padding-right: base.$internal-24px;
-
-                .link-corner {
-                    transform: translateY(-1.5ch)
-                }
-
-                .button-text {
-                    position: relative;
-                    color: base.$gray-100;
-                    font: {
-                        family: base.$font-family-heading;
-                        size: base.$font-size_h6;
-                        line-height: base.$font-lineHeight_100;
-                    };
-                    transition: 200ms ease-in-out;
-                    overflow: hidden;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        bottom: 0;
-                        left: -105%;
-                        border: base.$border-width_132 solid base.$primary-900;
-                        transition: base.$animation_speed_regular;
-                    }
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        bottom: 0;
-                        left: 0;
-                        border: base.$border-width_132 solid base.$gray-200;
-                        transition: base.$animation_speed_regular;
-                    }
-                }
-
-                .__arrow_horizontal_medium {
-                    position: relative;
-                    transform: translateY(0.5ch);
-                    overflow: hidden;
-
-                    svg {
-                        position: absolute;
-                        left: -100%;
-                        transition: 200ms ease-in-out;
-                    }
-                }
-
-                &:hover {
-                    .button-text {
-                        color: base.$primary-900;
-                        &::before {
-                            left: 0%;
-                        }
-                        &::after {
-                            left: 105%;
-                        }
-                    }
-                    .__arrow_horizontal_medium svg {
-                        left: 0%;
-                    }
-                }
             }
         }
     }
