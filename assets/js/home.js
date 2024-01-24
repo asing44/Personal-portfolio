@@ -175,7 +175,7 @@ Features:
 let arrowContainer = document.getElementsByClassName('arrows-container')[0];
 
 for (let i = 0; i <= (Math.floor(arrowContainer.getBoundingClientRect().height / 55)); i++) {
-    $(".arrows-container").append('<img src="assets/svg/icons/arrows/__carret_down.svg" class="header-arrow"></img>')
+    $(".arrows-container").append('<img src="assets/svg/custom/header down arrow.svg" class="header-arrow"></img>')
 }
 
 let landingArrows = document.getElementsByClassName('header-arrow');
