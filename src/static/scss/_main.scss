@@ -481,26 +481,28 @@ input, button, textarea, select {
 }
 
 #under-dev-banner {
-    display: grid;
+    display: flex;
     position: fixed;
+    height: 100dvh;
     width: 100%;
-    place-content: center;
-    padding: base.$internal-24px 0;
+    align-items: center;
+    justify-content: safe;
     bottom: 0;
     left: 0;
+    padding: base.$internal-24px 0;
+    background-color: base.$dark;
+    z-index: 1000;
 
     .text {
-        color: base.$light;
-        animation: devBannerPulse 2s 1s ease-in-out infinite alternate;
-    }
-
-    @keyframes devBannerPulse {
-        from {
-            opacity: 100%;
-        }
-
-        to {
-            opacity: 0%;
-        }
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        padding: 0 2.5rem;
+        font: {
+            family: base.$font-family-display;
+            size: 2rem;
+        };
+        text-align: center;
     }
 }
