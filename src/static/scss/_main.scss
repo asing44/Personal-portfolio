@@ -493,10 +493,13 @@ input, button, textarea, select {
     background-color: base.$dark;
     z-index: 1000;
 
-    .text {
-        display: block;
+    div {
+        display: inline-flex;
         position: absolute;
         width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         top: 50%;
         padding: 0 2.5rem;
         font: {
@@ -504,5 +507,33 @@ input, button, textarea, select {
             size: 2rem;
         };
         text-align: center;
+
+        .text {
+            animation: animate__text 5s ease-in-out infinite;
+        }
+
+        span {
+            color: base.$primary-500;
+        }
+    };
+
+    @keyframes animate__text {
+        from {
+            opacity: 100%;
+        };
+
+        25% {
+            opacity: 0%;
+        }
+
+        50% {
+            opacity: 100%;
+        }
+
+        to {
+            opacity: 100%;
+        };
     }
+
+
 }
