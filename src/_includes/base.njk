@@ -2,30 +2,25 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ cssSrc }}">
-    {% include "head.njk" %}
+    <link rel="stylesheet" href="{{ cssSrc }}"> {% include "head.njk" %}
     <!-- ** Scripts -->
     {% include "scripts.njk" %}
   </head>
-  <body id="body">
-    {# Background mesh gradient #}
-    <canvas id="gradient-canvas" data-transition-in></canvas>
+  <body
+    id="body">
     {# Fixed reference #}
     <div id="viewport"></div>
     {# Fade and blur bottom and top of viewport #}
     <div id="viewport-clip"></div>
     {# Scroll progress #}
     <div id="scroll-progress"></div>
-    {# Cursor #}
-    <div class="__cursor">
-      <svg class="__cursor-ball" height="14" width="14">
-        <circle cx="7" cy="7" r="6" stroke-width="0.57"></circle>
-      </svg>
-    </div>
-    {% include "partials/navigation.njk" %}
-    <main>{% block content %} {{ content | safe }} {% endblock %}</main>
+    <main>
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
     {% include 'partials/footer.njk' %}
   </body>
   <script content-type="text/javascript" src="{{ jsSrcBase }}"></script>
   <script content-type="text/javascript" src="{{ jsSrc }}"></script>
-</html> 
+</html>
